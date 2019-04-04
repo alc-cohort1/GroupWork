@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+    <script language="javascript">
+            function Hello(){
+                alert("Welcome. JS");
+                }
+    </script>
+    <center>
+    <fieldset>
+        <legend><h1>Registration Form</h1></legend>
+        <form action="" method="post" name="myForm">
+            <table>
+                <tr>
+                    <th colspan="2"></th>
+                </tr>
+                <tr>
+                    <td>User id:</td>
+                    <td><input type="text" name="user_id" id=""></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td> <input type="password" name="password" id=""></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                        <td>Address:</td>
+                        <td><input type="text" name="address" id=""></td>
+                    </tr>
+                    <tr>
+                            <td>Country:</td>
+                            <td><select name="coutries">
+                                    <option value="">(Please select a country)</option>
+                                    <option value="ug">Uganda</option>
+                                    <option value="tz">Tanzania</option>
+                                    <option value="rw">Rwanda</option>
+                                    <option value="ky">Kenya</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                                <td>ZIP Code:</td>
+                                <td><input type="text" name="zip" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td><input type="email" name="email" id=""></td>
+                            </tr>
+                            <tr>
+                                    <td>Sex:</td>
+                                    <td><input type="radio" name="sex">Male <input type="radio" name="sex" id="">Female</td>
+                                </tr>
+                    <tr>
+                                        <td>Language:</td>
+                                        <td><input type="checkbox" name="english" id="">English <input type="checkbox" name="non_english" id="">Non English</td>
+                    </tr>
+                    <tr>
+                        <td>About:</td>
+                        <td><textarea name="about" id="" cols="30" rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" onclick="Hello()" value="Submit"></td>
+                    </tr>
+            </table>
+        </form>
+    </fieldset>
+</center>
+</body>
+</html>

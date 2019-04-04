@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script language="javascript">
+        
+                function hello() {
+                   alert("Welcome to JS");
+                } 
+                   
+    </script>
+
+    <center>
+    <fieldset>
+        
+        <!-- Label for the Heading -->
+        <legend><h1>Registration Form</h1></legend>
+        <table>
+            
+        
+            <!-- Label for the user id -->
+            <tr>
+                <td><label for="user-id">User id: </label></td>
+                <td><input type="text" id="user-id" name="user-id"></td>
+            </tr>
+
+            <!-- Label for the password -->
+            <tr>
+                <td><label for="password">Password: </label></td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+
+            <!-- Label for the name -->
+            <tr>
+                <td><label for="name">Name: </label></td>
+                <td><input type="text" id="name" name="user-name"></td>
+            </tr>
+
+            <!-- Label for the address -->
+            <tr>
+                <td><label for="address">Address: </label></td>
+                <td><input type="address" id="address" name="address"></td>
+            </tr>
+
+            <!-- Label for the country -->
+            <tr>
+                <td><label for</table></label>Country: </label></td>
+                <td>
+                    <input type="text" name="country" id="county" list="country" placeholder="(Please select a country)">
+                    <datalist id="country">
+                        <option>Uganda</option>
+                        <option>Kenya</option>
+                        <option>Rwanda</option>
+                    </datalist>
+                </td>
+            </tr>
+
+            <!-- Label for the zip code -->
+            <tr>
+                <td><label for="zip-code">ZIP Code: </label></td>
+                <td><input type="zip-code" id="zip-code" name="zip-code"></td>
+            </tr>
+
+            <!-- Label for the email -->
+            <tr>
+                <td><label for="mail">E-mail: </label></td>
+                <td><input type="email" id="mail" name="user_email"></td>
+            </tr>
+
+            <!-- Label for the sex -->
+            <tr>
+                <td>
+                    <label for="sex">Sex: </label>
+                     
+                </td>
+                <td>
+                        <input type="radio" id="male" name="sex">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="sex">
+                        <label for="male">Female</label>
+                </td>
+            </tr>
+
+            <!-- Label for the Language -->
+            <tr>
+                <td><label for="language">Language: </label></td>
+                <td>
+                    <input type="checkbox" checked id="english" name="english" value="english">
+                    <label for="english">English</label>
+
+                    <input type="checkbox" id="non-english" name="non-english" value="non-english">
+                    <label for="english">Non English</label>
+                </td>
+            </tr>
+
+            <!-- Label for about -->
+            <tr>
+                <td><label for="msg">About:</label></td>
+                <td><textarea cols="30" rows="10" id="msg" name="user_message"></textarea></td>
+            </tr>
+
+            <!-- Submit button -->
+            <tr colspan="3">
+                <td></td>
+                <td colspan="3"><input type="submit" onclick="hello()"></td>
+            </tr>
+        </table>
+        </center>
+    </fieldset>
+</body>
+</html>

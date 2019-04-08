@@ -1,25 +1,21 @@
 <html>
 <head>
-<script type="text/javascript">
-<!--
-function hello(){
-    alert("You are Welcome");
-}
-</script>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="cuisite.js"></script>
+<link type="text/css" href="cuisite.css" rel="stylesheet" />
 </head>
 <body>
 
-<fieldset><legend><h2>Registration Form</h2></legend>
-<div class="0" align="center">
+<fieldset><legend><h2 class="h2">Registration Form</h2></legend>
+<div class="body" align="center">
+    <form name="regform" onclick="return validate()">
     <table>
-        <tbody><tr><td><label>User Id :&nbsp</label></td><td> <input type="text"  size="12" class="" placeholder="Required and must be of length 5-12"required="required"
-            /></td></tr>
-            <tr><td><label>Password :&nbsp</label></td><td><input type="password" size="12" class="" placeholder=""required="required"
-                /></tr><tr><td><label>Name :&nbsp</label></td><td><input type="text" size="40"  class="" placeholder=""required="required"
-                    /></td></tr>
-            <tr><td><label>Address :&nbsp</label></td><td><input type="text"  size="40" class="" placeholder="Optional"/></td></tr>
+        <tbody><tr><td><label>User Id :&nbsp</label></td><td> <input type="text"  size="12" id="id"/><span id="spn1"></span></td></tr>
+            <tr><td><label>Password :&nbsp</label></td><td><input type="password" size="12" id="password"/><span id="spn2"></span></tr>
+                <tr><td><label>Name :&nbsp</label></td><td><input type="text" size="40"  id="name"/><span id="spn3"></span></td></tr>
+            <tr><td><label>Address :&nbsp</label></td><td><input type="text"  size="40" id="address"/><span id="spn4"></span></td></tr>
             <tr><td><label>Country :&nbsp</label>
-                </td><td><select name="dropdown" >
+                </td><td><select name="dropdown"  id="country">
                         <option value="Uganda selected>Data Structures">(Please Select a Country)</option>
                         <option value="Uganda">Uganda</option>
                         <option value="Kenya">Kenya</option>
@@ -30,16 +26,18 @@ function hello(){
                         <option value="ss">S.Sudan</option>
                         <option value="et">Ethiopia</option>
                         </select></td></tr>
-            <tr><td><label>Zip Code :&nbsp</label></td><td><input type="number"  size="40" class="" placeholder="" required="required"/></td></tr>
-            <tr><td><label>Email :&nbsp</label></td><td><input type="email"  size="40" class="" placeholder=""/></td></tr>
-            <tr><td><label>Sex :&nbsp</label>Male :&nbsp<label><input type="radio"  class="" required="required"/></label></td><td>
-                <label>Female :&nbsp<input type="radio"  class="" required="required"/></label>
+            <tr><td><label>Zip Code :&nbsp</label></td><td><input type="number"  size="40" id="zip"/><span id="spn5"></span></td></tr>
+            <tr><td><label>Email :&nbsp</label></td><td><input type="email"  size="40" id="email"/><span id="spn6"></span></td></tr>
+            <tr><td><label>Sex :&nbsp</label>Male :&nbsp<label><input type="radio"  id="male" /></label><span id="spn7"></span></td><td>
+                <label>Female :&nbsp<input type="radio"  id="female"/></label><span id="spn8"></span>
             </td></tr>
-            <tr><td><label>Language :&nbsp</label></td><td>English<input type="checkbox"  class="" /></td><td>Non-English<input type="checkbox"/></td>td></tr>
-            <tr><td><label>About :&nbsp</label></td><td><textarea rows="5" cols="50" placeholder="Optional"></textarea></td></tr>
+            <tr><td><label>Language :&nbsp</label></td><td>English<input type="checkbox"  id="lang_en" /><span id="spn9"></span></td><td>Non-English<input type="checkbox" id="non_en"/></td>td></tr>
+            <tr><td><label>About :&nbsp</label></td><td><textarea rows="5" cols="50" id="txtarea"></textarea></td><span id="spn10"></span></tr>
         </tbody>
     </table>
-<div><input type="button" value="Submit" onclick="hello()"/></div>
+    <div><input type="button" value="Submit"  onsubmit="return(validate());"/></div>
+</form>
+
 </div></fieldset>
 </body>
 </html>

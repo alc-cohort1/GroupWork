@@ -29,7 +29,7 @@
                 return false;
             }
 
-            // Checking valididty of the email
+            // Checking valididty of the name
             if (!name.match(/^[a-zA-Z]+$/)){
                 document.getElementById('error3').innerHTML="Required and alphabets only.";
                 return false;
@@ -47,6 +47,7 @@
                 return false;
             }  
 
+            // Checking the validity of the email
             if (/\S+@\S+/.test(email) == false){
                 document.getElementById('error6').innerHTML="Required. Must be a valid email.";
                 return false;

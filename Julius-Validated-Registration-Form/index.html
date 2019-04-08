@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+    <script>
+        function validate(){
+            // Variables for keeping form values
+            var userId = document.regForm.userId.value;
+            var password = document.regForm.password.value;
+            var name = document.regForm.name.value;
+            var country = document.regForm.country.value;
+            var zipCode = document.regForm.zipCode.value;
+            var email = document.regForm.email.value;
+            var sex =document.regForm.sex.value;
+            var language = document.regForm;
+
+            // Checking userId specifications
+            if (userId.length < 5 || userId.length > 12){
+                document.getElementById('error1').innerHTML="Required and must be of length 5 to 12.";
+                return false;
+            }
+
+            // Checking password specifications
+            if (password.length < 7 || password.length > 12){
+                document.getElementById('error2').innerHTML="Required and must be of length 7 to 12.";
+                return false;
+            }
+
+            // Checking valididty of the email
+            if (!name.match(/^[a-zA-Z]+$/)){
+                document.getElementById('error3').innerHTML="Required and alphabets only.";
+                return false;
+            }
+
+            // Checking if a country is selected
+            if (country == ""){
+                document.getElementById('error4').innerHTML="Required. Must select a country.";
+                return false;
+            }
+
+            // Checking that a zip Code must be a numeric and not empty as well
+            if (isNaN(zipCode) || zipCode == ""){
+                document.getElementById('error5').innerHTML="Required. Must be numeric only.";
+                return false;
+            }  
+
+            if (/\S+@\S+/.test(email) == false){
+                document.getElementById('error6').innerHTML="Required. Must be a valid email.";
+                return false;
+            }
+
+            // Checking if a sex is selected
+            if (sex == ""){
+                document.getElementById('error7').innerHTML="Required.";
+                return false;
+            }
+            
+            // Checking if atleast one language category is selected
+            if (!language.checkbox1.checked && !language.checkbox2.checked){
+                document.getElementById('error8').innerHTML="Required.";
+                return false;   
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset>
+            <legend><h2><i></i><b>Julius's Individual ClassWork</b></i></h2></legend>
+            <h1>Registration Form</h1>
+            
+                <!-- Form name and declaration of onsubmit event -->
+                <form name="regForm" onsubmit="return validate()">
+                    <table>
+
+                        <!-- User ID field -->
+                        <tr>
+                            <td>
+                                <label>User Id: </label>
+                            </td>
+                            <td>
+                                <input name="userId">
+                                <span id="error1"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Password Field -->
+                        <tr>
+                            <td>
+                                <label>Password: </label>
+                            </td>
+                            <td>
+                                <input name="password">
+                                <span id="error2"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Name Field -->
+                        <tr>
+                            <td>
+                                <label>Name: </label>
+                            </td>
+                            <td>
+                                <input name="name">
+                                <span id="error3"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Address field -->
+                        <tr>
+                            <td>
+                                <label>Address:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="address">
+                            </td>
+                        </tr>
+
+                        <!-- Country Field -->
+                        <tr>
+                            <td>
+                                <label>Country:</label>
+                            </td>
+                            <td>
+                                <select name="country"> 
+                                    <option value="">(Please seelct a country)</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Uganda">Uganda</option>
+                                </select>
+                                <span id="error4"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Zip Code Field -->
+                        <tr>
+                            <td>
+                                <label>Zip Code:</label>
+                            </td>
+                            <td>
+                                <input name="zipCode">
+                                <span id="error5"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Email Field -->
+                        <tr>
+                            <td>
+                                <label>Email:</label>
+                            </td>
+                            <td>
+                                <input name="email">
+                                <span id="error6"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Sex Field -->
+                        <tr>
+                            <td>
+                                <label>Sex:</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="sex" value="Male">Male
+                                <input type="radio" name="sex" value="Female">Female
+                                <span id="error7"></span>
+                            </td>
+                        </tr>
+
+                        <!-- Language Field -->
+                        <tr>
+                            <td>
+                                <label>Language:</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="checkbox1" value="English" checked>English
+                                <input type="checkbox" name="checkbox2" value="Non English">Non English
+                                <span id="error8"></span>
+                            </td>
+                        </tr>
+
+                        <!-- About Field -->
+                        <tr>
+                            <td>
+                                <label>About:</label>
+                            </td>
+                            <td>
+                                <textarea cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+
+                        <!-- The submit button -->
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Submit"
+                                />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+        </fieldset>
+    </center>
+</body>
+</html>

@@ -2,6 +2,8 @@
 <head>
 <script>
 function checkLength(){
+    //declaring variables and assigning them to values gotten by the 
+    //getElementby Id
     var userid = document.getElementById("textbox").value;
     var password = document.getElementById("textbox2").value;
     var name=document.getElementById("textbox3").value;
@@ -14,10 +16,11 @@ function checkLength(){
     if(textbox.value.length < 5 && textbox.value.length >12)
     {
          alert("Reguired and must be of length 5 to 12");
-        //userid="Sorry !"
+        //user id validation
     }
     if(textbox2==""||textbox2.length<7 ||textbox2.length>12){
         alert("Reguired and must be of length 7 to 12");
+        // password validation
     }
     if(textbox3==""||!isNaN(textbox3)){
         alert("Reguired and must be alphabets");
@@ -35,6 +38,7 @@ function checkLength(){
             }
             if (isNaN(textbox6) || textbox6 == ""){
                 alert("Required. Must be numeric only.");
+                //
             }
               
                 

@@ -7,58 +7,76 @@
     <title>Class assignment. Were chrome group</title>
 </head>
 <body>
-    <script lang = "text/javascript">
-    <!--
-    function Hello(){
 
-        alert("Welcome to JS");
-    -->
-    }
+    <script>
+        <!--
 
-    function validate(){
+        function validate(){
 
-        
-    }
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
+            var user = document.getElementById("UserId");
 
+
+
+            if(user.value.length < 4 || user.value.length >= 21)
+            {
+                alert("Identification values required and must not be less than 4 or more than 20 characters");
+            }
+
+
+        }
+
+
+        -->
     </script>
+
+
     <fieldset>
     <h2>Registration Form</h2>
-       <form action="">
+       <form name="myForm" action="" method="POST">
            <table>
 
             <tr>
                 <td><label for="Id">User Id :</label></td>
-                <td><input type="text" name="user"><br><br></td>
+                <td><input type="text" name="user" id="UserId"><br><br></td>
            </tr>
 
            <tr>
                <td><label for="password">password :</label></td>
-               <td><input type="password" name="password" id="password"><br><br></td>
+               <td><input type="password" name="password" id="Password"><br><br></td>
            </tr>
 
            <tr>
               <td><label for="name">Name :</label></td>
-              <td><input type="name" name="user name" ><br><br></td>
+              <td><input type="name" name="user name" id="Name"><br><br></td>
            </tr>
 
             <tr>
                 <td><label for="adress">Adress :</label></td>
-                <td><input type="text" name="user adress" id="id"><br><br></td>
+                <td><input type="text" name="user adress" id="Adress"><br><br></td>
             </tr>
           
            <tr>
                <td><label for="country">Country :</label></td>
-               <td> <input type="text" name="country" id="id"><br><br></td>
+               <td> <input type="text" name="country" id="Country"><br><br></td>
            </tr>
 
            <tr>
                <td><label for="ZIP code">ZIP code :</label></td>
-               <td><input type="text" name="zip code" id="id"><br><br></td>
+               <td><input type="text" name="zip code" id="Zipcode"><br><br></td>
            </tr>
 
             <tr>
                 <td><label for="email">Email :</label></td>
-                <td> <input type="email" name="email" id="email"><br><br></td>
+                <td> <input type="email" name="email" id="Email"><br><br></td>
             </tr>
 
             <tr>
@@ -68,14 +86,14 @@
 
                <tr>
                      <td><label for="radio button">Female </label></td>
-                     <td><input type="radio" name="gender" id="radio" value="Female"></td>
+                     <td><input type="radio" name="gender" id="Radio"></td>
                </tr> 
                 
 
             </tr>
 
                 <td><label for="radio button">Male </label></td>
-                <td><input type="radio" name="gender" id="radio" value="male"><br><br></td>
+                <td><input type="radio" name="gender" id="Radio" ><br><br></td>
             </tr>
 
             <tr>
@@ -84,13 +102,13 @@
 
             <tr>
                 <td><label for="Id" type = "checkbox" >English </label></td>
-                <td><input type="checkbox" name="checkbox" id="id"></td>
+                <td><input type="checkbox" name="checkbox" id="English"></td>
             </tr>
 
             </tr>
 
                 <td> <label for="Id">Non English </label></td>
-                <td> <input type="checkbox" name="checkbox" id="id"><br><br></td>
+                <td> <input type="checkbox" name="checkbox" id="Non English"><br><br></td>
             </tr>
 
             <tr>
@@ -100,7 +118,7 @@
 
 
                 <td><label for="submit"></label></td>
-                <td><input type="button" onclick="Hello()" value="Submit"></td>
+                <td><input type="submit" value="Submit" onclick="validate"></td>
             </tr>
 
           </table>

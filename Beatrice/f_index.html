@@ -11,20 +11,20 @@
             function validate(){
                 //Validate user id
                 var userId = document.myform.user_id.value.length;
-                if (isNaN(userId) || userId == 0 || userId < 5 || userId > 12){
-                    document.getElementById("user_id").innerHTML="<b>Required, Must be numeric & Must be of length 5 to 12</b>";
+                if (userId == "" || userId < 5 || userId > 12){
+                    document.getElementById("user_id").innerHTML="<b>Required, Must be of length 5 to 12</b>";
                         return false;
                 }
                 //Validating password
                 var pass = document.myform.password.value.length;
-                if (pass == 0 || pass < 7 || pass > 12){
+                if (pass == "" || pass < 7 || pass > 12){
                     document.getElementById("password").innerHTML="<b>Required & Must be of length 7 to 12</b>";
                     return false;
                 }
                 //Validation for Name
                 var name = document.myform.name.value;
                 if (!name.match(/^[a-zA-Z]+$/)){
-                    document.getElementById("name").innerHTML="<b>Required & only Alphabets</b>";
+                    document.getElementById("user_name").innerHTML="<b>Required & only Alphabets</b>";
                     return false;
                 }
 
@@ -37,7 +37,7 @@
                 
                 //Validation for zip input
                 var num=document.myform.zip.value;
-                if (isNaN(num) || num == 0){
+                if (isNaN(num) || num == ""){
                     document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
                     return false;
                 }
@@ -88,7 +88,7 @@
                 <tr>
                     <!-- label for Name and input -->
                     <td>Name:</td>
-                    <td><input type="text" name="name" id="name"><span id="name"></span></td>
+                    <td><input type="text" name="name" ><span id="user_name"></span></td>
                 </tr>
                 <tr>
                     <!-- label for Address and input -->

@@ -1,0 +1,12 @@
+.body{
+    color: rgb(82, 204, 51);
+   background-color: aqua;
+}
+
+.h2 {
+    color: rgb(82, 204, 51);
+    font-weight: normal;
+    letter-spacing: .4em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    }

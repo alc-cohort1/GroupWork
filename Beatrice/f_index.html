@@ -8,67 +8,133 @@
 </head>
 <body>
     <script language="javascript">
-            function Hello(){
-                alert("Welcome. JS");
+            function validate(){
+                //Validate user id
+                var userId = document.myform.user_id.value.length;
+                if (userId == "" || userId < 5 || userId > 12){
+                    document.getElementById("user_id").innerHTML="<b>Required, Must be of length 5 to 12</b>";
+                        return false;
                 }
+                //Validating password
+                var pass = document.myform.password.value.length;
+                if (pass == "" || pass < 7 || pass > 12){
+                    document.getElementById("password").innerHTML="<b>Required & Must be of length 7 to 12</b>";
+                    return false;
+                }
+                //Validation for Name
+                var name = document.myform.name.value;
+                if (!name.match(/^[a-zA-Z]+$/)){
+                    document.getElementById("user_name").innerHTML="<b>Required & only Alphabets</b>";
+                    return false;
+                }
+
+                //Validation for country
+                var country = document.myform.country;
+                if (country.value == "Default"){
+                    document.getElementById("country").innerHTML="<b>Required & Must select a country</b>";
+                    return false;
+                }
+                
+                //Validation for zip input
+                var num=document.myform.zip.value;
+                if (isNaN(num) || num == ""){
+                    document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
+                    return false;
+                }
+                //Validation for email
+                var mail=document.myform.email.value;
+                if (/\S+@\S+/.test(mail) == false){
+                    document.getElementById('email').innerHTML="<b>Required. Must be a valid email</b>";
+                    return false;
+                }
+                //validation for sex
+                var sex = document.myform.sex.value;
+                if (sex == ""){
+                    document.getElementById("sex").innerHTML ="<b>Required</b>";
+                    return false;
+                }
+                //validation for language
+                var language = document.myform
+                if (!language.english.checked && !language.non_english.checked){
+                    document.getElementById('language').innerHTML="<b>Required</b>";
+                    return false; 
+                }
+                
+                else{
+                    return true;
+                }
+                
+            }
     </script>
     <center>
     <fieldset>
         <legend><h1>Registration Form</h1></legend>
-        <form action="" method="post" name="myForm">
+        <!-- Registration form -->
+        <form action="" method="post" name="myform" onsubmit="return validate()">
             <table>
                 <tr>
                     <th colspan="2"></th>
                 </tr>
                 <tr>
+                    <!-- label for user id and input -->
                     <td>User id:</td>
-                    <td><input type="text" name="user_id" id=""></td>
+                    <td><input type="text" name="user_id" id=""><span id="user_id"></span></td>
                 </tr>
                 <tr>
+                    <!-- label for password and input -->
                     <td>Password:</td>
-                    <td> <input type="password" name="password" id=""></td>
+                    <td> <input type="password" name="password" id=""><span id="password"></span></td>
                 </tr>
                 <tr>
+                    <!-- label for Name and input -->
                     <td>Name:</td>
-                    <td><input type="text" name="name" id="name"></td>
+                    <td><input type="text" name="name" ><span id="user_name"></span></td>
                 </tr>
                 <tr>
-                        <td>Address:</td>
-                        <td><input type="text" name="address" id=""></td>
+                    <!-- label for Address and input -->
+                    <td>Address:</td>
+                    <td><input type="text" name="address" id=""></td>
+                </tr>
+                <tr>
+                    <!-- label for country and input -->
+                    <td>Country:</td>
+                    <td><select name="country">
+                        <option selected="" value="Default">(Please select a country)</option>
+                        <option value="ug">Uganda</option>
+                        <option value="tz">Tanzania</option>
+                        <option value="rw">Rwanda</option>
+                        <option value="ky">Kenya</option>
+                        </select><span id="country"></span></td>
                     </tr>
                     <tr>
-                            <td>Country:</td>
-                            <td><select name="coutries">
-                                    <option value="">(Please select a country)</option>
-                                    <option value="ug">Uganda</option>
-                                    <option value="tz">Tanzania</option>
-                                    <option value="rw">Rwanda</option>
-                                    <option value="ky">Kenya</option>
-                                </select></td>
-                        </tr>
-                        <tr>
-                                <td>ZIP Code:</td>
-                                <td><input type="text" name="zip" id=""></td>
-                            </tr>
-                            <tr>
-                                <td>Email:</td>
-                                <td><input type="email" name="email" id=""></td>
-                            </tr>
-                            <tr>
-                                    <td>Sex:</td>
-                                    <td><input type="radio" name="sex">Male <input type="radio" name="sex" id="">Female</td>
-                                </tr>
-                    <tr>
-                                        <td>Language:</td>
-                                        <td><input type="checkbox" name="english" id="">English <input type="checkbox" name="non_english" id="">Non English</td>
+                        <!-- label for zip and input -->
+                        <td>ZIP Code:</td>
+                        <td><input type="text" name="zip" id=""> <span id="numloc"></span> </td>
                     </tr>
                     <tr>
+                        <!-- label for email and input -->
+                        <td>Email:</td>
+                        <td><input type="email" name="email" id=""><span id="email"></span></td>
+                    </tr>
+                    <tr>
+                        <!-- label for sex and input -->
+                        <td>Sex:</td>
+                        <td><input type="radio" name="sex">Male <input type="radio" name="sex" id="">Female <span id="sex"></span></td>
+                                    
+                    </tr>
+                    <tr>  <!-- label for language and input -->
+                        <td>Language:</td>
+                        <td><input type="checkbox" name="english" id="" checked>English <input type="checkbox" name="non_english" id="">Non English <span id="language"></span> </td>
+                    </tr>
+                    <tr>
+                        <!-- label for About and input -->
                         <td>About:</td>
                         <td><textarea name="about" id="" cols="30" rows="10"></textarea></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="button" onclick="Hello()" value="Submit"></td>
+                        <!-- submit button -->
+                        <td><input type="submit" value="Submit"></td>
                     </tr>
             </table>
         </form>

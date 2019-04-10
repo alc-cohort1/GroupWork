@@ -1,0 +1,192 @@
+<html>
+<head>
+<script>
+function checkLength(){
+    //declaring variables and assigning them to values gotten by the 
+    //getElementby Id
+    var userid = document.getElementById("textbox").value;
+    var password = document.getElementById("textbox2").value;
+    var name=document.getElementById("textbox3").value;
+    var address=document.getElementById("textbox4").value
+    var country=document.getElementById("textbox5").value
+    var zip=document.getElementById("textbox6").value
+    var sex=document.getElementById("textbox7").value;
+    
+    
+    if(textbox.value.length < 5 && textbox.value.length >12)
+    {
+         alert("Reguired and must be of length 5 to 12");
+        //user id validation
+    }
+    if(textbox2==""||textbox2.length<7 ||textbox2.length>12){
+        alert("Reguired and must be of length 7 to 12");
+        // password validation
+    }
+    if(textbox3==""||!isNaN(textbox3)){
+        alert("Reguired and must be alphabets");
+                                        //   return false;
+                                        //validating name
+                                   }
+            if(textbox4==""){
+                                          alert("Optional");
+                                          
+                                          //validating address
+                                   }
+            if (textbox4 == ""){
+                                        alert("Required. Must select a country.");
+                                    //validating country
+            }
+            if (isNaN(textbox6) || textbox6 == ""){
+                alert("Required. Must be numeric only.");
+                //
+            }
+              
+                
+
+                //validating zip
+            }  
+            if (/\S+@\S+/.test(email) == false|| email==""){
+                document.getElementById('answer6').innerHTML="Required. Must be a valid email.";
+                //validating email
+        }
+        if (sex == ""){
+                alert("Required.");
+                //return false;
+
+                //validating sex
+    }
+    if (!language.checkbox1.checked && !language.checkbox2.checked){
+                document.getElementById('answer8').innerHTML="Required.";
+                return false;   
+    
+}
+</script>
+</head>
+<center>
+<fieldset>
+<body>
+    <h1>Registration form</h1>
+        <form name="myform" onsubmit="return checkLength()">
+                <!-- user field -->
+                <table>
+                    <tr>
+                        <td>User ID:</td>
+                        <td><input type="text"  id="textbox">
+                    
+                            <span id ="answer">
+                
+                            </span></td>
+                        
+                    </tr>
+                    <tr>
+                         <!-- password field -->
+                        <td>Password:</td>
+                        <td><input type="password" id ="textbox2">
+                    
+                            <span id ="answer1">
+                </td>
+                        
+                        </span>
+                    </tr>
+                    <tr>
+                         <!-- name field -->
+                        <td>Name:</td>
+                        <td><input type="text"  id ="textbox3">
+                    
+                            <span id ="answer2">
+                
+                            </span></td>
+                        
+                        
+                    </tr>
+                    <tr>
+                         <!-- address field -->
+                            <td>Address:</td>
+                            <td><input type="text"  id="textbox4">
+                    
+                                <span id ="answer3">
+                    
+                                </span></td>
+                        
+                    </tr>
+                    <tr>
+                         <!-- country field -->
+                            <td> <label> Select your country:</label></td>
+                            <td><select name="country" id="option"> 
+                                    <option value="">(Please select a country)</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Uganda">Uganda</option>
+                                </select>
+                         <span id="answer4"></td>
+                       
+                        
+
+                     </span>
+                    </tr> 
+                    <tr>
+                         <!-- zip field -->
+                            <td>Zip:</td>
+                            <td> <input type="text"  id="textbox5">
+                    
+                                <span id ="answer5"></span>
+            </td>
+                   
+                </tr>
+                <tr>
+                     <!-- email field -->
+                        <td> Email:</td>
+                        <td><input type="text"  id="textbox6">
+                    
+                            <span id ="answer6"></span></td>
+                   
+                </tr>
+                <tr>
+                     <!-- sex field -->
+                        <td>Sex:</td>
+                        <td><input type="radio" name="sex" value="Male">Male
+                            <input type="radio" name="sex" value="Female">Female
+                            
+                        
+                        <span id ="answer7"></span></td>
+                        
+                </tr>
+                <tr>
+                     <!-- language field -->
+                        <td>language:</td>
+                        <td><input type="checkbox" name="checkbox1" value="English" >English
+                            <input type="checkbox" name="checkbox2" value="Non English">Non English
+                            <span id="answer8"></span></td>
+                        
+                    </tr>
+                    <tr>
+                            <td>
+                                 <!-- About -->
+                                <label>About:</label>
+                            </td>
+                            <td>
+                                <textarea cols="20" rows="10" type="text " id="textbox7"></textarea>
+                            </td>
+                        </tr>
+
+                        <!-- submit button -->
+                        <tr>
+                            <td colspan="2" align="center">
+                                    <input type="submit" name="textboxSubmit" onclick="checkLength()">
+                            </td>
+                        </tr>
+    </form>
+    </body>
+</table>
+
+</fieldset>
+</center>
+    
+    </body>
+    
+    
+
+   
+
+

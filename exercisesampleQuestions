@@ -1,0 +1,194 @@
+1. What is the HTML tag under which one can write the JavaScript code?
+A) <javascript>
+B) <scripted>
+C) <script>
+D) <js>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ans: Option C
+Explanation: If we want to write a JavaScript code under HTML tag, you will have to use the “script” tag.
+
+
+2. Choose the correct JavaScript syntax to change the content of the following HTML code.
+
+
+
+
+<p id="geek">GeeksforGeeks</p> 
+
+A) document.getElement(“geek”).innerHTML=”I am a Geek”;
+B) document.getElementById(“geek”).innerHTML=”I am a Geek”;
+C) document.getId(“geek”)=”I am a Geek”;
+D) document.getElementById(“geek”).innerHTML=I am a Geek;
+
+
+
+Ans: B
+Explanation: The correct syntax to access the element is document.getElementById(“geek”). Here we want to access the content written under that id, so we used .innerHTML to specify that and finally we replaced the content with whatever is written inside the quotes.
+
+
+
+
+
+
+
+3. Which of the following is the correct syntax to display “GeeksforGeeks” in an alert box using JavaScript?
+
+A. alertbox(“GeeksforGeeks”);
+B. msg(“GeeksforGeeks”);
+C. msgbox(“GeeksforGeeks”);
+D. alert(“GeeksforGeeks”);
+
+
+
+
+
+
+
+
+Ans: D
+Explanation: To display any text in the alert box, you need to write it as alert(“GeeksforGeeks”);.
+
+
+
+
+
+
+
+
+4. What is the correct syntax for referring to an external script called “geek.js”?
+
+A. <script src=”geek.js”>
+B. <script href=”geek.js”>
+C. <script ref=”geek.js”>
+D. <script name=”geek.js”>
+
+
+
+
+Ans: A
+Explanation: The “src” term is used to refer to any JavaScript file.
+
+
+
+
+5. The external JavaScript file must contain <script> tag. True or False?
+
+A. True
+B. False
+
+Ans: B
+Explanation: It is not necessary for any external javascript file to have <script> tag.
+
+
+6. Predict the output of the following JavaScript code.
+filter_none
+
+
+<script type="text/javascript"> 
+a = 8 + "8"; 
+document.write(a); 
+</script> 
+
+A) 16
+B) Complilation Error
+C) 88
+D) Run Time Error
+
+Ans: Option C
+Explanation: In the above given code, 8+”8″ have first integer and second string data types. Rather than adding the two numbers, it concatenated the two.
+
+
+7. Predict the output of the following JavaScript code.
+
+<script type="text/javascript"> 
+var a="GeeksforGeeks"; 
+var x=a.lastIndexOf("G"); 
+document.write(x); 
+</script> 
+
+A) 8
+B) 0
+C) 9
+D) Error
+
+Ans: A
+Explanation: The index starts with 0 in JavaScript. Here, x searches for the last occurance of “G” in the text.
+
+
+
+
+8. Which of the following is not a reserved word in JavaScript?
+
+A. interface
+B. throws
+C. program
+D. short
+
+Ans: C
+Explanation: In JavaScript, interface, throws and short are reserved keywords.
+
+
+
+9. Predict the output of the following JavaScript code.
+filter_none
+
+<script type="text/javascript" language="javascript"> 
+var a = "GeeksforGeeks"; 
+var result = a.substring(4, 5); 
+document.write(result); 
+  
+</script> 
+
+A. sf
+B. ks
+C. s
+D. k
+
+
+
+Ans: C
+Explanation: The substring command selects the substring starting from 4 to 5, excluding the 5th index. The indexing starts from 0. So, the output here is just “s” rather than sf.
+
+
+
+
+
+10. Predict the output of the following JavaScript code.
+
+
+
+<script type="text/javascript" language="javascript"> 
+  
+var x=5; 
+var y=6; 
+var res=eval("x*y"); 
+document.write(res); 
+  
+</script> 
+
+A. “30”
+B. 30
+C. 5*6
+D. “5*6”
+
+
+
+
+
+
+Ans: B
+Explanation: eval command will evaluate the operation. Here it is 5*6=30.
+ 

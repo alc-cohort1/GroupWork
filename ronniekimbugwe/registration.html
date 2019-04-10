@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ronnie Kimbugwe</title>
+</head>
+
+<body>
+        <center>
+                <fieldset>
+                    <h1>Registration Form</h1>
+    <script>
+        function validate(){
+            var userid =document.myform.userid.value;
+            var password=document.myform.password.value;
+            var name=document.myform.name.value;
+            var address =document.myform.address.value;
+            var country=document.myform.country.value;
+            var zip=document.myform.zip.value;
+            var email=document.myform.email.value;
+            var sex=document.myform.sex.value;
+            var language=document.myform;
+
+            if(isNaN(userid)||userid.length<5 ||userid.length>12||userid==""){
+                document.getElementById("answer").innerHTML="Reguired and must be of length 5 to 12";
+            
+                //validating user id
+                
+            }
+                
+        
+        if(password.length<7 ||password.length>12||password==""){
+                document.getElementById("answer1").innerHTML="Reguired and must be of length 7 to 12";
+                //validating password
+                
+                
+            }
+               
+            if(name==""||!isNaN(name)){
+                                          document.getElementById("answer2").innerHTML="Required and alphabetes Only ";
+                                        //   return false;
+                                        //validating name
+                                   }
+            if(address==""){
+                                          document.getElementById("answer3").innerHTML="Optional";
+                                          
+                                          //validating address
+                                   }
+            if (country == ""){
+                                        document.getElementById('answer4').innerHTML="Required. Must select a country.";
+                                    //validating country
+            }
+            if (isNaN(zip) || zip == ""){
+                document.getElementById('answer5').innerHTML="Required. Must be numeric only.";
+                
+
+                //validating zip
+            }  
+            if (/\S+@\S+/.test(email) == false|| email==""){
+                document.getElementById('answer6').innerHTML="Required. Must be a valid email.";
+                //validating email
+        }
+        if (sex == ""){
+                document.getElementById('answer7').innerHTML="Required.";
+                //return false;
+
+                //validating sex
+    }
+    if (!language.checkbox1.checked && !language.checkbox2.checked){
+                document.getElementById('answer8').innerHTML="Required.";
+                return false;   
+            }
+            //validating language
+}
+        
+        
+                </script>
+<table><!-- <table>                  //table housing the whole form -->
+                <form name="myform" onsubmit="return validate()">
+                <!-- user field -->
+                    <tr>
+                        <td>User ID:</td>
+                        <td><input type="text"  name="userid">
+                    
+                            <span id ="answer">
+                
+                            </span></td>
+                        
+                    </tr>
+                    <tr>
+                         <!-- password field -->
+                        <td>Password:</td>
+                        <td><input type="password"  name="password">
+                    
+                            <span id ="answer1">
+                </td>
+                        
+                        </span>
+                    </tr>
+                    <tr>
+                         <!-- name field -->
+                        <td>Name:</td>
+                        <td><input type="text"  name="name">
+                    
+                            <span id ="answer2">
+                
+                            </span></td>
+                        
+                        
+                    </tr>
+                    <tr>
+                         <!-- address field -->
+                            <td>Address:</td>
+                            <td><input type="text"  name="address">
+                    
+                                <span id ="answer3">
+                    
+                                </span></td>
+                        
+                    </tr>
+                    <tr>
+                         <!-- country field -->
+                            <td> <label> Select your country:</label></td>
+                            <td><select name="country"> 
+                                    <option value="">(Please select a country)</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Uganda">Uganda</option>
+                                </select>
+                         <span id="answer4"></td>
+                       
+                        
+
+                     </span>
+                    </tr> 
+                    <tr>
+                         <!-- zip field -->
+                            <td>Zip:</td>
+                            <td> <input type="text"  name="zip">
+                    
+                                <span id ="answer5"></span>
+            </td>
+                   
+                </tr>
+                <tr>
+                     <!-- email field -->
+                        <td> Email:</td>
+                        <td><input type="text"  name="email">
+                    
+                            <span id ="answer6"></span></td>
+                   
+                </tr>
+                <tr>
+                     <!-- sex field -->
+                        <td>Sex:</td>
+                        <td><input type="radio" name="sex" value="Male">Male
+                            <input type="radio" name="sex" value="Female">Female
+                            
+                        
+                        <span id ="answer7"></span></td>
+                        
+                </tr>
+                <tr>
+                     <!-- language field -->
+                        <td>language:</td>
+                        <td><input type="checkbox" name="checkbox1" value="English" >English
+                            <input type="checkbox" name="checkbox2" value="Non English">Non English
+                            <span id="answer8"></span></td>
+                        
+                    </tr>
+                    <tr>
+                            <td>
+                                 <!-- About -->
+                                <label>About:</label>
+                            </td>
+                            <td>
+                                <textarea cols="20" rows="10"></textarea>
+                            </td>
+                        </tr>
+
+                        <!-- submit button -->
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Submit"
+                                />
+                            </td>
+                        </tr>
+                   
+                        
+                    </form>
+                    </table>
+                    </fieldset>
+                    </center>
+    
+</body>
+</html>

@@ -1,0 +1,261 @@
+
+<htm>
+	<head>
+		<style >
+			.form input[type=text] {
+				/*background: rgba(207, 85, 132, 0);*/
+				border: 1px solid #795f79;
+				border-radius: 5px;
+				width: 100%;
+				height: 30px;
+                color: #254117;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-weight: 1000;
+                font-size:16px;
+
+				
+			}
+			.form button {
+				border-radius: 5px;
+				border: 1px solid #AAA;
+				width: 100%;
+				
+				  /* Size and position */
+				  width: 100%;
+                  padding: 8px 5px;
+		          background: #ff00ff;
+		          color: snow;
+					font-family: Georgia;
+					font-size: 24px;
+					font-weight: 200px;
+					border: none;
+    
+ 
+			}
+			.form button:hover{
+				background-color: green;
+				color: yellow
+			}
+			.form button:active {
+               background-color: #3e8e41;
+               box-shadow: 0 5px #666;
+                
+			.form label{font-size: 20; color: #151B54;}
+			input[type=text]:focus{border:3px solid rgb(133, 186, 235);}
+			select:focus{border:1px solid #555;}
+			textarea.focus{border:4px solid #555;}
+			::-moz-placeholder{
+				color: red;
+				font-size: 13
+			}
+
+			
+}
+		</style>
+	</head>
+	<body background="bg.jpg" >
+		<script>
+			function validate(){
+				
+		var UserIda=document.formreg.userid.value;
+		var password=document.formreg.pass.value;
+		var fname=document.formreg.name.value;
+		var nation=document.formreg.Country.value;
+		var EmailAddress=document.formreg.email.value;
+
+		var gendermale=document.getElementById("male").checked;
+		var genderfemale=document.getElementById("female").checked;
+
+		var LangEnglish=document.getElementById("english").checked;
+		var LangNonEnglish=document.getElementById("nonenglish").checked;
+
+		if (UserIda==null || UserIda=="")
+		{
+			
+				document.getElementById("demo").innerHTML="Please the ID is needed"
+				
+				return false;
+				
+				}
+	
+		else{
+					
+		
+		if(isNaN(UserIda)){
+			
+			document.getElementById("demo").innerHTML="* It must be a number";
+			
+			return false;
+			}
+			else{
+				 
+                     if (UserIda < 5 ){
+					    
+					    document.getElementById("demo").innerHTML="*the number must be greater than 5";
+					return false;
+				             }
+				             else if(UserIda>=12){
+				             	
+				             	document.getElementById("demo").innerHTML="*the number must be  less than 12";
+					return false;
+				             }
+				   //  else{
+					    //document.getElementById("demo").innerHTML="input value Ok";
+			            //alert("input valid"+UserIda);
+					//return true;
+				   //       }
+					
+				}
+				}
+	//validate password	
+	
+				if(password.length<6) {
+					document.getElementById("demopass").innerHTML="password must be at lest 6 characters";
+					
+					return false;
+				}
+				
+					else if(password.length>12){
+					
+					document.getElementById("demopass").innerHTML="password must be  less than 12 characters";
+					return false;
+				}
+				//else{
+					
+				//	return true;
+				//}
+
+	//	validating name
+				var text=/^[A-Za-z]+$/;
+	
+					if(fname.match(text))
+					{
+						//alert(success);
+						//return true;
+					}
+					else{
+					document.getElementById("demoname").innerHTML="Only alphabets are needed";	
+					return false;
+					}
+	//validating Country
+				if(nation=="Select your Country"){
+					document.getElementById("democountry").innerHTML="* please select your Country";
+					return false;
+
+				}
+				//else{
+					//return true;
+				//}
+
+					//validating Email
+					var atposition=EmailAddress.indexOf("@");
+					var dotposition=EmailAddress.lastIndexOf(".");
+					if(atposition<1 || dotposition<atposition +2|| dotposition+2>=EmailAddress.length){
+						
+						document.getElementById("demoemail").innerHTML="please enter a valid amail address \n atposition:";
+						return false;
+
+					}
+					else{
+						//return true;
+					}
+
+    //validating gender
+				if((gendermale==false)&&(genderfemale==false)){
+					document.getElementById("demogender").innerHTML="*Required";
+					
+					return false;
+
+				}
+				else{
+					//return true;
+				}
+
+	//validating language
+				if((LangEnglish==false)&&(LangNonEnglish==false)){
+					document.getElementById("demolanguage").innerHTML=" *Required";
+					
+					return false;
+
+				}
+				else{
+					//return true;
+				}
+				
+	
+
+				}
+			
+			
+			
+		 
+		</script>
+		<center>
+			<fieldset background="b.jpg" style="width: 700px;padding-left: 0%; border: 4px solid #ff00ff; border-radius: 15px;"><legend><h1 style="color:indigo"> Registration Form</h1></legend>
+<form class="form" name="formreg" onsubmit="return validate()" >	<table width=90%;>
+
+			<tr><td><label>User Id:</label></td><td><input type="text" name="userid" min="100" max="300" autofocus></td><td></td></tr>
+
+			<tr><td></td><td><span id="demo" style="color:red"></span></td></tr>
+			<tr><td><label>Password:</label></td><td><input type="text" name="pass" ></td></tr>
+               <tr><td></td><td><span id="demopass" style="color:red"></span></td></tr>
+				<tr><td><label>Name:</label></td><td><input type="text" name="name" ></td></tr>
+                <tr><td></td><td><span id="demoname" style="color:red"></span></td></tr>
+				<tr><td><label>Address:</label></td><td>	<input type="text" name="address" ><span id="demoaddress" style="color:red">Optional</span></td></tr>
+				<tr><td><label>Country:</label></td><td><select style="border:none;background-color:#f1f1f1;width:100%;
+				border-radius:5px; height: 30px; color: #254117; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 16;" name="Country">
+				    <option>Select your Country</option>
+					<option>Uganda</option>
+					<option>Kenya</option>
+			        <option>Tanzania</option>
+					<option>South Sudan</option>
+					<option>Egypt</option>
+					<option>US</option>
+					<option>UK</option>
+					<option>Somalia</option>
+					<option>DRC</option>
+					<option>Malawi</option>
+					<option>South Africa</option>  </select></td></tr>
+                <tr><td></td><td><span id="democountry" style="color:red"></span></td></tr>
+				<tr><td><label>	Zip Code:</label></td><td><input type="text" name="" placeholder="Optional"></td></tr>
+				<tr><td><label>Email:</label>	</td><td><input type="text" name="email"></td></tr>
+				  <tr><td></td><td><span id="demoemail" style="color:red"></span></td></tr>
+				<tr><td>	<label>Sex:</label><td><input type="radio" name="gender" id="male"><label>Male</label><input type="radio" name="gender" id="female"><label>Female</label><span id="demogender" style="color:red"></span></td></tr>
+				
+				<tr><td><label>	Language</label></td><td>
+				<input type="checkbox" name="lang" id="english" checked><label>English</label>
+				<input type="checkbox" name="lang" id="nonenglish"><label>Non English</label><span id="demolanguage" style="color:red"></span>
+			</td></tr>
+				<tr><td><label>About:</label>	</td><td><textarea style="border:2px solid #ccc;width:100%; border-radius:5px; background-color:#f8f8f8; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 16px; font-weight: 30; color:254117;" placeholder="Optional"></textarea></td></tr>
+				<tr><td colspan="2" align="center">	<button value="submit">Submit</button>	</td></tr>
+
+			</table>
+			
+			</fieldset>
+					</center>
+  
+		
+
+		
+
+			
+
+		
+
+				
+
+			
+					
+
+
+			
+
+
+			
+					
+
+
+			
+		</form>
+	</body>
+	</html>

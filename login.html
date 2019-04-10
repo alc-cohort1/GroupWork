@@ -14,7 +14,7 @@
         function validate(){
 
             var user = document.getElementById("UserId");
-            var pass = document.getElementById("password");
+            var pass = document.getElementById("Password");
             var name = document.getElementById("Name");
             var adress = document.getElementById("Adress");
             var country = document.getElementById("Country");
@@ -33,7 +33,65 @@
             }
 
 
-            if()
+            if(pass.value.length < 8)
+            {
+                alert("Password must be atleast 8 characters");
+            }
+
+
+            if(name.value == "")
+            {
+                alert("Name field required ");
+            }
+
+
+
+            if(adress.value == "")
+            {
+                alert("Where do you stay?");
+            }
+
+
+
+            if(country.value == "")
+            {
+                alert("Select your country");
+            }
+
+            //zip code shoulb be numbers and symbols
+
+            if(zip.value.length <2 || zip.value.length >= 6)
+            {
+                alert("Zip code must be less than 6 characters and more than 2 characters");
+            }
+
+
+
+            if(email.value.length < 4 || user.value.length >= 21)
+            {
+                alert("");
+            }
+
+
+
+            if(sex.value.length < 4 || user.value.length >= 21)
+            {
+                alert("");
+            }
+
+
+
+            if(Language.value.length < 4 || user.value.length >= 21)
+            {
+                alert("");
+            }
+
+
+
+            if(about.value.length < 4 || user.value.length >= 21)
+            {
+                alert("");
+            }
 
 
         }
@@ -41,11 +99,11 @@
 
         -->
     </script>
-
+    <legend>
     <center>
     <fieldset>
     <h2>Registration Form</h2>
-       <form name="myForm" action="" method="POST" >
+       <form name="myForm" action="" method="POST" onclick="validate();">
            <table>
 
             <tr>
@@ -75,7 +133,7 @@
 
            <tr>
                <td><label for="ZIP code">ZIP code :</label></td>
-               <td><input type="text" name="zip code" id="Zipcode"></td>
+               <td><input type="text" name="zip code" id="Zipcode" placeholder="eg +256 is uganda's zipcode"></td>
            </tr>
 
             <tr>
@@ -122,12 +180,13 @@
 
 
                 <td><label for="submit"></label></td>
-                <td><input type="submit" value="Submit" onclick="validate();"></td>
+                <td><input type="submit" value="Submit" ></td>
             </tr>
 
           </table>
        </form>
        </fieldset>
        </center>
+       </legend>
 </body>
 </html>

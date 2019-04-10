@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>regt</title>
+    <script>
+        function validate()
+        {
+            var user_id = document.getElementById("usid");
+            var password = document.getElementById("pw");
+            var Name = document.getElementById("name");
+            var letters = /^[A-Za-z]+$/;
+            var country = document.getElementById("ctry");
+            var zipcode = document.getElementById("zip");
+             
+             //validate user_id
+             if (isNaN(userId) || userId == 0 || userId < 5 || userId > 12){
+                    document.getElementById("usid").innerHTML="<b>Required, Must be numeric & Must be of length 5 to 12</b>";
+                        return false;
+                }
+                // validate passward
+             if (passward == 0 || passward < 7 || passward > 12){
+                    document.getElementById("pw").innerHTML="<b>Required & Must be of length 7 to 12</b>";
+                    return false;
+                }
+                // validate name
+
+             if (name == 0 || name.value.match(letters)){
+                    document.getElementById("name").innerHTML="<b>Required & only Alphabets</b>";
+                     return false;
+                 }
+                 //validate country
+             if (country.value == "Default"){
+                    document.getElementById("ctry").innerHTML="<b>Required & Must select a country</b>";
+                    return false;
+                }  
+             if (isNaN(num) || num == 0){
+                    document.getElementById("zip").innerHTML = "Required & Must be Numeric only";
+                    return false;
+                }   
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset>
+            <legend><h1>Registration Form</h1></legend>
+            <form action="" method="post" name="myform" onsubmit="return validate()">
+                <table>
+                    <tr>
+                        <th colspan="2"></th>
+                    </tr>
+                    <tr>
+                        <!-- label for user id and input -->
+                        <td>User id:</td>
+                        <td><input type="text" name="user_id" id=""><span id="usid"></span></td>
+                    </tr>
+                    <tr>
+                        <!-- label for password and input -->
+                        <td>Password:</td>
+                        <td> <input type="password" name="password" id=""><span id="pw"></span></td>
+                    </tr>
+                    <tr>
+                        <!-- label for Name and input -->
+                        <td>Name:</td>
+                        <td><input type="text" name="name" id="name"><span id="name"></span></td>
+                    </tr>
+                    <tr>
+                        <!-- label for Address and input -->
+                            <td>Address:</td>
+                            <td><input type="text" name="address" id=""></td>
+                        </tr>
+                        <tr>
+                            <!-- label for country and input -->
+                                <td>Country:</td>
+                                <td><select name="country">
+                                        <option selected="" value="Default">(Please select a country)</option>
+                                        <option value="ug">Uganda</option>
+                                        <option value="tz">Tanzania</option>
+                                        <option value="rw">Rwanda</option>
+                                        <option value="ky">Kenya</option>
+                                    </select><span id="country"></span></td>
+                            </tr>
+                            <tr>
+                                <!-- label for zip and input -->
+                                    <td>ZIP Code:</td>
+                                    <td><input type="text" name="zip" id=""> <span id="zip"></span> </td>
+                                </tr>
+                                <tr>
+                                    <!-- label for email and input -->
+                                    <td>Email:</td>
+                                    <td><input type="email" name="email" id=""><span id="email"></span></td>
+                                </tr>
+                                <tr>
+                                    <!-- label for sex and input -->
+                                        <td>Sex:</td>
+                                        <td><input type="radio" name="sex">Male <input type="radio" name="sex" id="">Female</td>
+                                    </tr>
+                        <tr>                <!-- label for language and input -->
+                                            <td>Language:</td>
+                                            <td><input type="checkbox" name="english" id="">English <input type="checkbox" name="non_english" id="">Non English</td>
+                        </tr>
+                        <tr>
+                            <!-- label for About and input -->
+                            <td>About:</td>
+                            <td><textarea name="about" id="" cols="30" rows="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <!-- submit button -->
+                            <td><input type="submit" value="Submit"></td>
+                        </tr>
+                </table>
+            </form>
+        </fieldset>
+    </center>  
+</body>
+</html>

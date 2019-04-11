@@ -18,7 +18,7 @@
             var name = document.getElementById("Name");
             var adress = document.getElementById("Adress");
             var country = document.getElementById("Country");
-            var Zip = document.getElementById("Zipcode");
+            var zip = document.getElementById("Zipcode");
             var email= document.getElementById("Email");
             var sex = document.getElementById("Sex");
             var Language = document.getElementById("Language");
@@ -55,42 +55,43 @@
 
             if(country.value == "")
             {
-                alert("Select your country");
+                alert("Must be from uganda stricly");
             }
 
             //zip code shoulb be numbers and symbols
 
-            if(zip.value.length <2 || zip.value.length >= 6)
+            if(zip.value == "")
             {
-                alert("Zip code must be less than 6 characters and more than 2 characters");
+                alert("Whats your country's zip code");
             }
 
 
+            //email validation 
 
-            if(email.value.length < 4 || user.value.length >= 21)
+            if(email.value.length)
             {
                 alert("");
             }
 
 
 
-            if(sex.value.length < 4 || user.value.length >= 21)
+            if(sex.value == "")
             {
-                alert("");
+                alert("Pliz select your gender");
             }
 
 
 
-            if(Language.value.length < 4 || user.value.length >= 21)
+            if(Language.value == "")
             {
-                alert("");
+                alert("Do you speak English? if diferent select non English");
             }
 
 
 
-            if(about.value.length < 4 || user.value.length >= 21)
+            if(about.value == "")
             {
-                alert("");
+                alert("Say something about yourself");
             }
 
 
@@ -103,7 +104,7 @@
     <center>
     <fieldset>
     <h2>Registration Form</h2>
-       <form name="myForm" action="" method="POST" onclick="validate();">
+       <form name="myForm" action="" method="POST" onsubmit="return validate();">
            <table>
 
             <tr>
@@ -128,7 +129,7 @@
           
            <tr>
                <td><label for="country">Country :</label></td>
-               <td> <input type="text" name="country" id="Country"></td>
+               <td><input type="text" name="country" id="Country"></td>
            </tr>
 
            <tr>

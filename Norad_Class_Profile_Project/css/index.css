@@ -1,4 +1,6 @@
 body{background-color: burlywood; margin: 44px 0px 0px 0px;}
+
+/*This is the header styling.*/
 div#header{
     position: fixed;
     top: 0px;
@@ -8,6 +10,8 @@ div#header{
     background: lightgreen;
     padding: 8px;
 }
+
+/*This is the footer styling.*/
 div#footer{
     position: fixed;
     bottom: 0px;

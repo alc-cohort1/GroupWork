@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--html tag with language atribute-->
+<HTML Lang="en">
+  <head>
+    <!--head section for title and meta data-->
+    <title>form</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    
+    <script language = "javascript" >
+      function validate() {
+
+var userId = document.myform.user_id.value.length;// variable diclaration
+if (userId == "" || userId < 5 || userId > 12) {//if statement
+    document.getElementById("usid").innerHTML = "<b>Required, Must be of length 5 to 12</b>";
+    return false;
+}
+
+var pass = document.myform.password.value.length;//Validating password
+if (pass == "" || pass < 7 || pass > 12) {//if statement
+    document.getElementById("pass").innerHTML = "<b>Required & Must be of length 7 to 12</b>";
+    return false;
+}
+
+var name = document.myform.name.value;//Validation for Name
+if (!name.match(/^[a-zA-Z]+$/)) {
+    document.getElementById("name").innerHTML = "<b>Required & only Alphabets</b>";
+    return false;
+}
+
+
+var country = document.myform.country;
+if (country.value == "Default") {
+    document.getElementById("country").innerHTML = "<b>Required & Must select a country</b>";
+    return false;
+}
+
+
+var num = document.myform.zip.value;
+if (isNaN(num) || num == "") {
+    document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
+    return false;
+}
+var mail = document.myform.email.value;
+if (/\S+@\S+/.test(mail) == false) {
+    document.getElementById('email').innerHTML = "<b>Required. Must be a valid email</b>";
+    return false;
+}
+
+var sex = document.myform.sex.value;
+if (sex == "") {
+    document.getElementById("sex").innerHTML = "<b>Required</b>";
+    return false;
+}
+
+var language = document.myform
+if (!language.english.checked && !language.non_english.checked) {
+    document.getElementById('language').innerHTML = "<b>Required</b>";
+    return false;
+}
+
+else {
+    return true;
+}
+
+}
+    </script>
+  </head>
+  <body>
+    <!--body where main contant is placed-->
+
+    <div class="formitem">
+      <!--div for the form items-->
+      <form name="myform" name="myform" onsubmit="return validate()">
+        <!--opening form tag-->
+        
+          <table align="center">
+            <!--opening table tag -->
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <h1>Registration Form</h1>
+                </td>
+              </tr>
+              <!--opening table body tag-->
+              <tr>
+                <td>user id:</td>
+                <td>
+                  <input type="text" name="userid" id="usid" /><span id="usid"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>password:</td>
+                <td><input type="password" name="password" id="pass"/><span id="pass"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>name:</td>
+                <td><input type="text" name="name" id="name"/><span id="name"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>address:</td>
+                <td><input type="text" name="address" id="addr"/><span id="addr"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>country:</td>
+                <td>
+                  <select name="country" id="cntry"><span id="cntry"></span>
+                    <option value="UG">Uganda</option>
+                    <option value="KY">Kenya</option>
+                    <option value="TZ">Tanzania</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>zipcode:</td>
+                <td><input type="number" name="zip" id="zpcd"/><span id="zpcd"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>email:</td>
+                <td><input type="email" name="email" id="eml"/><span id="eml"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>sex:</td>
+                <td>
+                  <input type="radio" name="gender" value="male" checked id="male"/> Male<span id="male"></span>
+                  <input type="radio" name="gender" value="female" id="fmale"/>Female<span id="fmale"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>language:</td>
+                <td>
+                  <input type="checkbox" name="english" value="english" id="laneng"/> english<span id="laneng"></span>
+                  <input type="checkbox" name="noenglish" value="noenglish" id="nolaneng"/> noenglish<span id="nolaneng"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>about:</td>
+                <td>
+                  <textarea rows="5" cols="22" id="txtarea"></textarea><span id="txtarea"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" value="submit" onclick="validate();" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+       
+      </form>
+    </div>
+    
+  </body>
+</HTML>

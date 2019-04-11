@@ -1,0 +1,16 @@
+We are doing Pro 4 
+
+Items,
+Contact me
+About me
+Experience
+Skills
+Home
+Projects - linked to projects done in class
+Reference - gorup members profiles
+Gallery
+
+Page can move but the menu should not move - use anchors
+Footer - put partners
+
+Me and Biel - Make a scrollable links to each individual profile page, make it visible (colours and legibility)

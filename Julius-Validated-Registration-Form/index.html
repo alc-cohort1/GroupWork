@@ -7,6 +7,7 @@
     <title>Registration Form</title>
     <script>
         function validate(){
+
             // Variables for keeping form values
             var userId = document.regForm.userId.value;
             var password = document.regForm.password.value;
@@ -21,49 +22,67 @@
             if (userId.length < 5 || userId.length > 12){
                 document.getElementById('error1').innerHTML="Required and must be of length 5 to 12.";
                 return false;
+            }else{
+                document.getElementById('error1').innerHTML="";
             }
 
             // Checking password specifications
             if (password.length < 7 || password.length > 12){
                 document.getElementById('error2').innerHTML="Required and must be of length 7 to 12.";
                 return false;
+            }else{
+                document.getElementById('error2').innerHTML="";
             }
 
             // Checking valididty of the name
             if (!name.match(/^[a-zA-Z]+$/)){
                 document.getElementById('error3').innerHTML="Required and alphabets only.";
                 return false;
+            }else{
+                document.getElementById('error3').innerHTML="";
             }
 
             // Checking if a country is selected
             if (country == ""){
                 document.getElementById('error4').innerHTML="Required. Must select a country.";
                 return false;
+            }else{
+                document.getElementById('error4').innerHTML="";
             }
 
             // Checking that a zip Code must be a numeric and not empty as well
             if (isNaN(zipCode) || zipCode == ""){
                 document.getElementById('error5').innerHTML="Required. Must be numeric only.";
                 return false;
-            }  
+            }else{
+                document.getElementById('error5').innerHTML="";   
+            }
 
             // Checking the validity of the email
             if (/\S+@\S+/.test(email) == false){
                 document.getElementById('error6').innerHTML="Required. Must be a valid email.";
                 return false;
+            }else{
+                document.getElementById('error6').innerHTML=""
             }
 
             // Checking if a sex is selected
-            if (sex == ""){
+            if (!sex){
                 document.getElementById('error7').innerHTML="Required.";
                 return false;
+            }else{
+                document.getElementById('error7').innerHTML="";
             }
             
             // Checking if atleast one language category is selected
             if (!language.checkbox1.checked && !language.checkbox2.checked){
                 document.getElementById('error8').innerHTML="Required.";
                 return false;   
+            }else{
+                document.getElementById('error8').innerHTML=""; 
+                return true;
             }
+
 
         }
     </script>
@@ -75,7 +94,7 @@
             <h1>Registration Form</h1>
             
                 <!-- Form name and declaration of onsubmit event -->
-                <form name="regForm" onsubmit="return validate()">
+                <form name="regForm" onsubmit="return validate()" method="post" action="index.html">
                     <table>
 
                         <!-- User ID field -->

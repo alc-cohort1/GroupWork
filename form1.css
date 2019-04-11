@@ -1,0 +1,21 @@
+body{
+    background-color:black;
+}
+form{
+    text-align: center;
+    background-color: grey;
+    font-size: 20px;
+}
+label{
+  width: 240px;
+  display: inline-block;  
+
+}
+textarea{
+    width:200px;
+    height: 200px;
+    align-content: right;
+}
+button{
+    background-color:blue;
+}

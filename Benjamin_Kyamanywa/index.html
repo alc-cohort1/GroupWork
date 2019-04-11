@@ -8,78 +8,69 @@
 </head>
 <body>
     <script language="javascript">
-                            // // Variable for sex
-                    
 
         // Form validation
         function validate() {
+        // User id validation
+        var userId = document.my_form.user_id.value; 
+        if (userId.length == "" || userId.length < 5 || userId.length > 12){
+            document.getElementById("user_id_error").innerHTML="<b>Required and Must be of length 5 to 12.</b>";
+            return false;
+        }
 
-                    //    Validation for user id
-                    var userId = document.myform.user_id.value;                     
-                    if (userId.length < 5 || userId.length > 12){
-                        document.getElementById("user_id_error").innerHTML="<b>Required and must be of length 5 to 12.</b>"; 
+        // Password validation
+        var password = document.my_form.password.value;
+        if (password.length == "" || password.length < 7 || password.length > 12) {
+            document.getElementById("password_error").innerHTML="<b>Required and Must be of length 7 to 12.</b>";
+            return false;
+        }
 
-                        return false;
-                    }
+        // Name validation
+        var name = document.my_form.name.value;
+        if (name == "" || name.value.match(/^[A-Za-z]+$/)) {
+            document.getElementById("name_error").innerHTML="<b>Required and alphabets only.</b>";
+            return false;
+        }
 
-                    // Validation for password
-                    var password = document.myform.password.value;
-                    if (password.length < 7 || password.length > 12 ){
-                        document.getElementById("password_error").innerHTML="<b>Required and must be of length 7 to 12.</b>";
-                    
-                        return false;
-                    }
+        // Country validation button
+        var country = document.my_form.country.value;
+        if (country == "") {
+            document.getElementById("country_error").innerHTML="<b>Required. Must select a country.</b>";
+            return false;
+        }
 
-                    // Validation for name
-                    var name = document.myform.name.value;
-                    if (name.value.match(/^[A-Za-z]+$/)) {
-                        document.getElementById("name_error").innerHTML="<b>Required and alphabets only.</b>";
-                        
-                        return false;
-                    }
-
-                    // Validation for country
-                    var country = document.myform.country.value;
-                    if (country == "") {
-                        document.getElementById("country_error").innerHTML="<b>Required. Must select a country.</b>";
-
-                        return false;
-                    }
-
-                    // Validation for zip code
-                    var num = document.myform.num.value;
+        // Zip Code Validation
+        var num = document.my_form.num.value;
                    if (isNaN(num) || num == "") {
                        document.getElementById("zip_code_error").innerHTML="<b>Required. Must be numeric only.</b>";
-                       
-                       return false;
-                   }else{
-                       return true;
+            return false;
                    }
 
-                //    Validation for email
-                var email = document.myform.email.value;
-                if (email == "/^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-z0-9]{2,4}$/") {
-                    return true;
-                }else {
-                    document.getElementById("email_error").innerHTML="<b>Required. Must be a valid email.</b>";
-
-                    return false;
+        // Email validation
+        var email = document.my_form.email.value;
+        if (/\S+@\S+/.test(email) == false){
+                    document.getElementById("email_error").innerHTML="<b>Required. Must be a valid email</b>";
+            return false;
                 }
 
-                // Validation for sex
-                var sex = document.myform.sex.value;
-                if (sex == "") {
-                    document.getElementById("sex_error").innerHTML="<b>Required</b>";
-
-                    return false;
-                }
-
-                // Validation for language
-                var language = document.myform.language.value;
-                if (!language.checkbox.checked && !language.checkbox.non_english.checked) {
-                    document.getElementById("language_error").innerHTML="<b>Required</b>"
-                }
+        //    Sex Validation
+        var sex = document.my_form.sex.value;
+        if (sex == ""){
+            document.getElementById("sex_error").innerHTML ="<b>Required</b>";
+            return false;
+        }
                 
+        // Language Validation
+        var language = document.my_form;
+        if (!language.english.checked && !language.non_english.checked){
+            document.getElementById("language_error").innerHTML="<b>Required</b>";
+            return false; 
+        }
+        
+        else{
+            return true;
+        }
+ 
                } 
                    
     </script>
@@ -90,7 +81,7 @@
         <!-- Label for the Heading -->
         <legend><h1>Registration Form</h1></legend> <br>
         
-        <form name="myform" onsubmit="return validate()" >
+        <form name="my_form" onsubmit="return validate()" >
         
             <table>   
                 
@@ -109,7 +100,7 @@
                 <!-- Label for the name -->
                 <tr>
                     <td><label for="name">Name: </label></td>
-                    <td><input type="text" name="user_name"><span id="name_error"></span></td>
+                    <td><input type="text" name="name"><span id="name_error"></span></td>
                 </tr>
 
                 <!-- Label for the address -->
@@ -147,7 +138,7 @@
                 <tr>
                     <td>
                         <label for="sex">Sex: </label>
-                        
+                        return false;
                     </td>
                     <td>
                             <input type="radio" name="sex">

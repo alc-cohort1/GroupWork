@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding-top: 60px;
+        }
+    </style>
+    <script src="calculate.js"></script>
+</head>
+<body>
+    <center>
+<table>
+  <tr><th>Enter Loan Data:</th>
+    <td></td>
+    <th>Loan Balance, Cumulative Equity, and Interest Payments</th></tr>
+    <!-- loan amount input row -->
+	<tr><td>Amount of the loan ($):</td>
+	<td><input id="amount" onchange="calculate();" ></td>
+	<td rowspan=8>
+      <canvas id="graph" width="400" height="250"></canvas></td></tr>
+      <!-- Annual interest input row -->
+	<tr><td>Annual interest (%):</td>
+      <td><input id="apr" onchange="calculate();"></td></tr>
+      <!-- Repayment period input row -->
+	<tr><td>Repayment period (years):</td>
+      <td><input id="years" onchange="calculate();"></td>
+      <!-- Zipcode input row -->
+	<tr><td>Zipcode (to find lenders):</td>
+      <td><input id="zipcode" onchange="calculate();"></td>
+      <!-- Approximate Payments input row -->
+	<tr><th>Approximate Payments:</th>
+      <td><button onclick="calculate();">Calculate</button></td></tr>
+      <!-- Monthly payment row -->
+	<tr><td>Monthly payment:</td>
+      <td>$<span class="output" id="payment"></span></td></tr>
+      <!-- Total payment row -->
+	<tr><td>Total payment:</td>
+      <td>$<span class="output" id="total"></span></td></tr>
+      <!-- Total interest row -->
+	<tr><td>Total interest:</td>
+	  <td>$<span class="output" id="totalinterest"></span></td></tr>
+	<tr><th>Sponsors:</th>
+      <td>Apply for your loan with one of these fine lenders:</td>
+    </tr>
+    <tr><th></th>
+            <td colspan=2>
+	    <div >
+            <ul>
+                <!-- sponser links -->
+                <li><a href="">Bank of Javascript</a></li>
+                <li><a href="">HTML Credit Union</a></li>
+            </ul>
+        </div>
+        </td>
+    </tr>
+    </table>
+</center>
+</body>
+</html>

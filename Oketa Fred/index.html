@@ -22,7 +22,7 @@
             </tr>
             <tr>
               <td>Name</td>
-              <td><input type="text" id="name" /></td>
+              <td><input type="text" id="user_name" placeholder="eg. oketafred" /></td>
               <td><span id="name_error"></span></td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
             </tr>
             <tr>
               <td>Zip Code</td>
-              <td><input type="text" name="zipCode" /></td>
+              <td><input type="text" id="zipCode" /></td>
               <td><span id="zipcode_error"></span></td>
             </tr>
             <tr>
@@ -96,7 +96,8 @@
         let non_english = document.getElementById("non_english");
         let email = document.getElementById("email");
         let password = document.getElementById("password").value;
-        let name = document.getElementById("name").value;
+        let user_name = document.getElementById("user_name").value;
+        let zipCode = document.getElementById("zipCode").value;
 
 
         // User_ ID
@@ -110,14 +111,14 @@
         if (password.length < 7 || password.length > 12){
             document.getElementById('password_error').innerHTML="Required and must be of length 7 to 12.";
         }else{
-          document.getElementById('password_error').innerHTML="Required and alphabets only.";
+          document.getElementById('password_error').innerHTML="";
         }
 
         // Name
-        if (!name.match(/^[a-zA-Z]+$/)){
+        if (!user_name.match(/^[a-zA-Z]+$/)){
             document.getElementById('name_error').innerHTML="Required and alphabets only.";
         }else{
-          document.getElementById('name_error').innerHTML="Required and alphabets only.";
+          document.getElementById('name_error').innerHTML="";
         }
 
         // Errors
@@ -131,6 +132,13 @@
 
           country_error.innerHTML = "";
 
+        }
+
+        // ZipCode
+        if (isNaN(zipCode) || zipCode == ""){
+          document.getElementById('zipcode_error').innerHTML="Required. Must be numeric only.";
+        } else{
+          document.getElementById('zipcode_error').innerHTML="";
         }
 
 

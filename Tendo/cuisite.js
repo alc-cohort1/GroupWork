@@ -1,7 +1,7 @@
 function validate(){
-    var idNum=document.regform.id.value;
-    var nm=document.regform.name.value;
-    var psswd=document.regform.password.value;
+    var idNum=document.regform.id.value;//id field Tag
+    var nm=document.regform.name.value;//Name tag 
+    var psswd=document.regform.password.value;//password tag
     var addss=document.regform.address.value;
     var cnt=document.regform.country.value;
     var zp=document.regform.zip.value;
@@ -24,7 +24,7 @@ if((psswd!="" ) ||(7<=psswd.toString().length<=12)){
         document.getElementById('spn3').innerHTML="<font color='red'>Required and must be of length 7 to 12 ";
         return false;
         }
-            if((addss!="" ) ||(7<=addss.length<=12)){
+            if((addss!="" ) ||(7<=aspn1ddss.length<=12)){
                 document.getElementById('spn4').innerHTML="<font color='red'>Optional";
                 return false;
                 }
@@ -57,6 +57,7 @@ if((psswd!="" ) ||(7<=psswd.toString().length<=12)){
                             else{
                 return true;
             }
+
 }
 
 

@@ -1,0 +1,23 @@
+body{background-color: burlywood; margin: 44px 0px 0px 0px;}
+
+/*This is the header styling.*/
+div#header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    color: darkred;
+    background: lightgreen;
+    padding: 8px;
+}
+
+/*This is the footer styling.*/
+div#footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    color: darkred;
+    background: lightgreen;
+    padding: 8px;
+}

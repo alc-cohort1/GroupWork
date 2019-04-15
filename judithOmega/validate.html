@@ -10,6 +10,7 @@
 
     <script>
         <!--
+        //am validating an html form, this form is meant for validation, values must be entered or else you nwont be able to sunmit
 
         function validate(){
 
@@ -24,7 +25,7 @@
             var Language = document.getElementById("Language");
             var about = document.getElementById("About");
             
-
+// lets get started with validation. make sure the user does not submit more than required values
 
 
             if(user.value.length < 4 || user.value.length >= 21)
@@ -66,7 +67,7 @@
             }
 
 
-            /*email validation 
+            /*email validation. i need the right formular for email adress, untill then , ill get back to jackson for help, alichan, julius, fred and james
 
             if(email.value.length)
             {
@@ -79,7 +80,7 @@
             }
              
 
-
+//this is still part of my validation. will update more when i add more languages.
             if(Language.checked == true)
             {
                 alert("Do you speak English? if diferent select non English");

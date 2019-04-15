@@ -13,18 +13,18 @@
                 <h1>Registration Form</h1>
 <script>
     function validate(){
-        var userid =document.myform.userid.value;
+        var userid =document.reg.userid.value;
         var password=document.myform.password.value;
-        var name=document.myform.name.value;
-        var address =document.myform.address.value;
-        var country=document.myform.country.value;
-        var zip=document.myform.zip.value;
-        var email=document.myform.email.value;
-        var sex=document.myform.sex.value;
-        var language=document.myform;
+        var name=document.reg.name.value;
+        var address =document.reg.address.value;
+        var country=document.reg.country.value;
+        var zip=document.reg.zip.value;
+        var email=document.reg.email.value;
+        var sex=document.reg.sex.value;
+        var language=document.reg;
 
         if(isNaN(userid)||userid.length<5 ||userid.length>12||userid==""){
-            document.getElementById("answer").innerHTML="Reguired and must be of length 5 to 12";
+            document.getElementById("ans").innerHTML="Reguired and must be of length 5 to 12";
         
             //validating user id
             
@@ -32,44 +32,44 @@
             
     
     if(password.length<7 ||password.length>12||password==""){
-            document.getElementById("answer1").innerHTML="Reguired and must be of length 7 to 12";
+            document.getElementById("ans1").innerHTML="Reguired and must be of length 7 to 12";
             //validating password
             
             
         }
            
         if(name==""||!isNaN(name)){
-                                      document.getElementById("answer2").innerHTML="Required and alphabetes Only ";
+                                      document.getElementById("ans").innerHTML="Required and alphabetes Only ";
                                     //   return false;
                                     //validating name
                                }
         if(address==""){
-                                      document.getElementById("answer3").innerHTML="Optional";
+                                      document.getElementById("ans3").innerHTML="Optional";
                                       
                                       //validating address
                                }
         if (country == ""){
-                                    document.getElementById('answer4').innerHTML="Required. Must select a country.";
+                                    document.getElementById('ans4').innerHTML="Required. Must select a country.";
                                 //validating country
         }
         if (isNaN(zip) || zip == ""){
-            document.getElementById('answer5').innerHTML="Required. Must be numeric only.";
+            document.getElementById('ans5').innerHTML="Required. Must be numeric only.";
             
 
             //validating zip
         }  
         if (/\S+@\S+/.test(email) == false|| email==""){
-            document.getElementById('answer6').innerHTML="Required. Must be a valid email.";
+            document.getElementById('ans6').innerHTML="Required. Must be a valid email.";
             //validating email
     }
     if (sex == ""){
-            document.getElementById('answer7').innerHTML="Required.";
+            document.getElementById('ans7').innerHTML="Required.";
             //return false;
 
             //validating sex
 }
 if (!language.checkbox1.checked && !language.checkbox2.checked){
-            document.getElementById('answer8').innerHTML="Required.";
+            document.getElementById('ans8').innerHTML="Required.";
             return false;   
         }
         //validating language
@@ -78,13 +78,13 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
     
             </script>
 <table><!-- <table>                  //table housing the whole form -->
-            <form name="myform" onsubmit="return validate()">
+            <form name="reg" onsubmit="return validate()">
             <!-- user field -->
                 <tr>
                     <td>User ID:</td>
                     <td><input type="text"  name="userid">
                 
-                        <span id ="answer">
+                        <span id ="ans">
             
                         </span></td>
                     
@@ -94,7 +94,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                     <td>Password:</td>
                     <td><input type="password"  name="password">
                 
-                        <span id ="answer1">
+                        <span id ="ans1">
             </td>
                     
                     </span>
@@ -104,7 +104,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                     <td>Name:</td>
                     <td><input type="text"  name="name">
                 
-                        <span id ="answer2">
+                        <span id ="ans2">
             
                         </span></td>
                     
@@ -115,7 +115,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                         <td>Address:</td>
                         <td><input type="text"  name="address">
                 
-                            <span id ="answer3">
+                            <span id ="ans3">
                 
                             </span></td>
                     
@@ -154,7 +154,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                
             </tr>
             <tr>
-                 <!-- sex field -->
+                 <!-- gender field -->
                     <td>Sex:</td>
                     <td><input type="radio" name="sex" value="Male">Male
                         <input type="radio" name="sex" value="Female">Female

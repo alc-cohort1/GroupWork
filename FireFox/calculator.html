@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>calculator</title>
+
+	<script type="text/javascript" src="calculate.js"></script>
+</head>
+<body>
+	
+	
+	<center>
+		<fieldset style="padding-left: 0%; border: 2px solid #0000A0; "><legend><h1 style="color:indigo"> </h1></legend>
+		
+	<table>
+		<form name="form1" onsubmit="return calculate()">
+			<tr><td colspan="2"><h2>LOAN CALCULATOR</h2></td><td><h3>Loan Balace, Cumulatve Equity, and Interest Payment</h3></td></tr>
+		<tr><td>Amount of the loan($);</td><td><input type="text" name="amount_of_loan"></td><td rowspan="10"><img src="graph.png" width="500px"></td></tr>
+		<tr><td></td><td><span id="lblloan" style="color: red;"></span></td></tr>
+		<tr><td>Annual interest (%):</td><td><input type="text" name="annual_interest"></td></tr>
+		<tr><td></td><td><span id="lblinterest" style="color: red;"></span></td></tr>
+		<tr><td>Repayment period(year):</td><td><input type="text" name="Repayment_period"></td></tr>
+		<tr><td></td><td><span id="lblRperiod" style="color: red;"></span></td></tr>
+		<tr><td>Zipcode (to find lenders):</td><td><input type="text" name=""></td></tr>
+		<tr><td><b>Approximate payment</b></td><td><input type="submit" name="" value="submit"></td></tr>
+		<tr><td>Monthly payment</td><td><b>$<label id="lblmonthly"></label></b></td></tr>
+		<tr><td>Total payment:</td><td><b>$<label id="lblTpayment"></label></b></td></tr>
+		<tr><td>Total interest</td><td><b>$<span id="lblTinterest"></span></b></td></tr>
+		</form>
+	</table>
+	
+	<b>Sponsors:</b>Apply for your loan with one of these fine lenders:
+	<ul style="list-style: none;">
+		<li><a href="#">Bank of JavaScript</a></li>
+		<li><a href="#">HTML Credit Union</a></li>
+	</ul>
+
+
+	</fieldset>
+</center>
+</center>
+
+</body>
+</html>
+</body>
+</htm>

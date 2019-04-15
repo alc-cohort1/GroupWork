@@ -14,7 +14,7 @@ body {
 
 .container .wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-gap: 1em;
     grid-auto-rows: minmax(100px, auto);
 	margin: 50px;

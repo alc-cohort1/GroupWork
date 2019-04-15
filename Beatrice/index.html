@@ -9,24 +9,24 @@
 <body>
     <script language="javascript">
        <!--
-        //This function validates myform
+        //This function validates registration form
             function validate(){
                 //Checking if user id is not left empty and of length 5 to 12
-                var userId = document.myform.user_id.value.length;
+                var userId = document.form.user_id.value.length;
                 if (userId == "" || userId < 5 || userId > 12)
                 {
                     document.getElementById("user_id").innerHTML="<b>Required, Must be of length 5 to 12</b>";
                         return false;
                 }
                 //Checking if password is not left empty and of length 7 to 12
-                var pass = document.myform.password.value.length;
+                var pass = document.form.password.value.length;
                 if (pass == "" || pass < 7 || pass > 12)
                 {
                     document.getElementById("password").innerHTML="<b>Required & Must be of length 7 to 12</b>";
                     return false;
                 }
                 //Checking if name is not left empty and only Alphabets are entered
-                var name = document.myform.name.value;
+                var name = document.form.name.value;
                 if (!name.match(/^[a-zA-Z]+$/))
                 {
                     document.getElementById("user_name").innerHTML="<b>Required & only Alphabets</b>";
@@ -34,7 +34,7 @@
                 }
 
                 //Checking if country is not left empty
-                var country = document.myform.country;
+                var country = document.form.country;
                 if (country.value == "Default")
                 {
                     document.getElementById("country").innerHTML="<b>Required & Must select a country</b>";
@@ -42,27 +42,27 @@
                 }
                 
                 //Checking if zip is not left empty
-                var num=document.myform.zip.value;
+                var num=document.form.zip.value;
                 if (isNaN(num) || num == "")
                 {
                     document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
                     return false;
                 }
                 //Checking if email input is in the right format
-                var mail=document.myform.email.value;
+                var mail=document.form.email.value;
                 if (/\S+@\S+/.test(mail) == false)
                 {
                     document.getElementById('email').innerHTML="<b>Required. Must be a valid email</b>";
                     return false;
                 }
                 //Checking if gender is not left empty
-                var gender = document.myform.gender.value;
+                var gender = document.form.gender.value;
                 if (gender == ""){
                     document.getElementById("gender").innerHTML ="<b>Required</b>";
                     return false;
                 }
                 //Checking if language is not left empty
-                var language = document.myform
+                var language = document.form
                 if (!language.english.checked && !language.non_english.checked)
                 {
                     document.getElementById('language').innerHTML="<b>Required</b>";
@@ -80,7 +80,7 @@
     <fieldset>
         <legend><h1>Registration Form</h1></legend>
         <!-- Registration form -->
-        <form action="" method="post" name="myform" onsubmit="return validate()">
+        <form action="" method="post" name="form" onsubmit="return validate()">
             <table>
                 <tr>
                     <th colspan="2"></th>

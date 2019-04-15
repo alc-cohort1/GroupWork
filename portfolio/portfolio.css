@@ -1,0 +1,37 @@
+body,html{
+    padding: 0px;
+    margin: 0px;
+
+}
+#nav{
+    background-color:#000080;
+    padding: 
+
+}
+
+#nav li{
+
+display: inline-block;
+
+}
+
+.right{
+
+    float: right;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+#nav a{
+   text-decoration: none;
+   color:white;
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#logo{
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+}

@@ -14,32 +14,29 @@
       function validate() {
 
 var userId = document.myform.user_id.value.length;// variable diclaration
-if (userId == "" || userId < 5 || userId > 12) {//if statement
+if (userId == "" || userId < 5 || userId > 12) {//if statement to check if the input is less that 5 or greater than 12
     document.getElementById("usid").innerHTML = "<b>Required, Must be of length 5 to 12</b>";
     return false;
 }
 
 var pass = document.myform.password.value.length;//Validating password
-if (pass == "" || pass < 7 || pass > 12) {//if statement
+if (pass == "" || pass < 7 || pass > 12) {//if statement to check the length of the statement
     document.getElementById("pass").innerHTML = "<b>Required & Must be of length 7 to 12</b>";
     return false;
 }
 
-var name = document.myform.name.value;//Validation for Name
-if (!name.match(/^[a-zA-Z]+$/)) {
-    document.getElementById("name").innerHTML = "<b>Required & only Alphabets</b>";
+var name = document.myform.name.value;// 
+if (!name.match(/^[a-zA-Z]+$/)) {//check for email formart 
+    document.getElementById("name").innerHTML = "<b>Required. Must be a valid email</b>";
     return false;
 }
-
-
 var country = document.myform.country;
 if (country.value == "Default") {
     document.getElementById("country").innerHTML = "<b>Required & Must select a country</b>";
     return false;
 }
 
-
-var num = document.myform.zip.value;
+var num = document.myform.zip.value;//variable for zip
 if (isNaN(num) || num == "") {
     document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
     return false;
@@ -71,9 +68,8 @@ else {
   </head>
   <body>
     <!--body where main contant is placed-->
-
-    <div class="formitem">
-      <!--div for the form items-->
+    
+      
       <form name="myform" name="myform" onsubmit="return validate()">
         <!--opening form tag-->
         
@@ -110,7 +106,7 @@ else {
               <tr>
                 <td>country:</td>
                 <td>
-                  <select name="country" id="cntry"><span id="cntry"></span>
+                  <select name="country" id="cntry"><span id="cntry"></span><!--list items-->
                     <option value="UG">Uganda</option>
                     <option value="KY">Kenya</option>
                     <option value="TZ">Tanzania</option>
@@ -144,19 +140,19 @@ else {
               <tr>
                 <td>about:</td>
                 <td>
-                  <textarea rows="5" cols="22" id="txtarea"></textarea><span id="txtarea"></span>
+                  <textarea rows="5" cols="22" id="txtarea"></textarea><span id="txtarea"></span><!--textarea-->
                 </td>
               </tr>
               <tr>
                 <td>
-                  <input type="submit" value="submit" onclick="validate();" />
+                  <input type="submit" value="submit" />
                 </td>
               </tr>
             </tbody>
           </table>
        
       </form>
-    </div>
+    
     
   </body>
 </HTML>

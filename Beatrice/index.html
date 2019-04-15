@@ -9,54 +9,62 @@
 <body>
     <script language="javascript">
        <!--
+        //This function validates registration form
             function validate(){
-                //Validate user id
-                var userId = document.myform.user_id.value.length;
-                if (userId == "" || userId < 5 || userId > 12){
+                //Checking if user id is not left empty and of length 5 to 12
+                var userId = document.form.user_id.value.length;
+                if (userId == "" || userId < 5 || userId > 12)
+                {
                     document.getElementById("user_id").innerHTML="<b>Required, Must be of length 5 to 12</b>";
                         return false;
                 }
-                //Validating password
-                var pass = document.myform.password.value.length;
-                if (pass == "" || pass < 7 || pass > 12){
+                //Checking if password is not left empty and of length 7 to 12
+                var pass = document.form.password.value.length;
+                if (pass == "" || pass < 7 || pass > 12)
+                {
                     document.getElementById("password").innerHTML="<b>Required & Must be of length 7 to 12</b>";
                     return false;
                 }
-                //Validation for Name
-                var name = document.myform.name.value;
-                if (!name.match(/^[a-zA-Z]+$/)){
+                //Checking if name is not left empty and only Alphabets are entered
+                var name = document.form.name.value;
+                if (!name.match(/^[a-zA-Z]+$/))
+                {
                     document.getElementById("user_name").innerHTML="<b>Required & only Alphabets</b>";
                     return false;
                 }
 
-                //Validation for country
-                var country = document.myform.country;
-                if (country.value == "Default"){
+                //Checking if country is not left empty
+                var country = document.form.country;
+                if (country.value == "Default")
+                {
                     document.getElementById("country").innerHTML="<b>Required & Must select a country</b>";
                     return false;
                 }
                 
-                //Validation for zip input
-                var num=document.myform.zip.value;
-                if (isNaN(num) || num == ""){
+                //Checking if zip is not left empty
+                var num=document.form.zip.value;
+                if (isNaN(num) || num == "")
+                {
                     document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
                     return false;
                 }
-                //Validation for email
-                var mail=document.myform.email.value;
-                if (/\S+@\S+/.test(mail) == false){
+                //Checking if email input is in the right format
+                var mail=document.form.email.value;
+                if (/\S+@\S+/.test(mail) == false)
+                {
                     document.getElementById('email').innerHTML="<b>Required. Must be a valid email</b>";
                     return false;
                 }
-                //validation for sex
-                var sex = document.myform.sex.value;
-                if (sex == ""){
-                    document.getElementById("sex").innerHTML ="<b>Required</b>";
+                //Checking if gender is not left empty
+                var gender = document.form.gender.value;
+                if (gender == ""){
+                    document.getElementById("gender").innerHTML ="<b>Required</b>";
                     return false;
                 }
-                //validation for language
-                var language = document.myform
-                if (!language.english.checked && !language.non_english.checked){
+                //Checking if language is not left empty
+                var language = document.form
+                if (!language.english.checked && !language.non_english.checked)
+                {
                     document.getElementById('language').innerHTML="<b>Required</b>";
                     return false; 
                 }
@@ -72,33 +80,33 @@
     <fieldset>
         <legend><h1>Registration Form</h1></legend>
         <!-- Registration form -->
-        <form action="" method="post" name="myform" onsubmit="return validate()">
+        <form action="" method="post" name="form" onsubmit="return validate()">
             <table>
                 <tr>
                     <th colspan="2"></th>
                 </tr>
                 <tr>
-                    <!-- label for user id and input -->
+                    <!-- label for user id input -->
                     <td>User id:</td>
-                    <td><input type="text" name="user_id" id=""><span id="user_id"></span></td>
+                    <td><input type="text" name="user_id" ><span id="user_id"></span></td>
                 </tr>
                 <tr>
-                    <!-- label for password and input -->
+                    <!-- label for password input -->
                     <td>Password:</td>
-                    <td> <input type="password" name="password" id=""><span id="password"></span></td>
+                    <td> <input type="password" name="password" ><span id="password"></span></td>
                 </tr>
                 <tr>
-                    <!-- label for Name and input -->
+                    <!-- label for Name input -->
                     <td>Name:</td>
                     <td><input type="text" name="name" ><span id="user_name"></span></td>
                 </tr>
                 <tr>
-                    <!-- label for Address and input -->
+                    <!-- label for Address input -->
                     <td>Address:</td>
-                    <td><input type="text" name="address" id=""></td>
+                    <td><input type="text" name="address" ></td>
                 </tr>
                 <tr>
-                    <!-- label for country and input -->
+                    <!-- label for country input -->
                     <td>Country:</td>
                     <td><select name="country">
                         <option selected="" value="Default">(Please select a country)</option>
@@ -109,29 +117,29 @@
                         </select><span id="country"></span></td>
                     </tr>
                     <tr>
-                        <!-- label for zip and input -->
+                        <!-- label for zip input -->
                         <td>ZIP Code:</td>
-                        <td><input type="text" name="zip" id=""> <span id="numloc"></span> </td>
+                        <td><input type="text" name="zip"> <span id="numloc"></span> </td>
                     </tr>
                     <tr>
-                        <!-- label for email and input -->
+                        <!-- label for email input -->
                         <td>Email:</td>
-                        <td><input type="email" name="email" id=""><span id="email"></span></td>
+                        <td><input type="email" name="email"><span id="email"></span></td>
                     </tr>
                     <tr>
-                        <!-- label for sex and input -->
-                        <td>Sex:</td>
-                        <td><input type="radio" name="sex">Male <input type="radio" name="sex" id="">Female <span id="sex"></span></td>
+                        <!-- label for gender input -->
+                        <td>Gender:</td>
+                        <td><input type="radio" name="gender">Male <input type="radio" name="gender" >Female <span id="gender"></span></td>
                                     
                     </tr>
-                    <tr>  <!-- label for language and input -->
+                    <tr>  <!-- label for language input -->
                         <td>Language:</td>
-                        <td><input type="checkbox" name="english" id="" checked>English <input type="checkbox" name="non_english" id="">Non English <span id="language"></span> </td>
+                        <td><input type="checkbox" name="english" checked>English <input type="checkbox" name="non_english" id="">Non English <span id="language"></span> </td>
                     </tr>
                     <tr>
-                        <!-- label for About and input -->
+                        <!-- label for About input -->
                         <td>About:</td>
-                        <td><textarea name="about" id="" cols="30" rows="10"></textarea></td>
+                        <td><textarea name="about" cols="30" rows="10"></textarea></td>
                     </tr>
                     <tr>
                         <td></td>

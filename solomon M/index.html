@@ -1,9 +1,10 @@
 
 <htm>
 	<head>
+		<title>submit your details</title>
 		<style >
 			.form input[type=text] {
-				/*background: rgba(207, 85, 132, 0);*/
+				
 				border: 1px solid #795f79;
 				border-radius: 5px;
 				width: 100%;
@@ -32,6 +33,7 @@
     
  
 			}
+			/*apperance of the button on mause hover*/
 			.form button:hover{
 				background-color: green;
 				color: yellow
@@ -54,8 +56,12 @@
 		</style>
 	</head>
 	<body background="bg.jpg" >
-		<script>
+
+		<script >
+			//fuction called on form submission
 			function validate(){
+
+				//assigning  values from the form to variables
 				
 		var UserIda=document.formreg.userid.value;
 		var password=document.formreg.pass.value;
@@ -69,6 +75,7 @@
 		var LangEnglish=document.getElementById("english").checked;
 		var LangNonEnglish=document.getElementById("nonenglish").checked;
 
+//checking if the user id is empty
 		if (UserIda==null || UserIda=="")
 		{
 			
@@ -80,7 +87,7 @@
 	
 		else{
 					
-		
+//checking if the user id value entered is a number
 		if(isNaN(UserIda)){
 			
 			document.getElementById("demo").innerHTML="* It must be a number";
@@ -89,25 +96,23 @@
 			}
 			else{
 				 
+//checking if the user id value entered has less than 5 characters
                      if (UserIda < 5 ){
 					    
 					    document.getElementById("demo").innerHTML="*the number must be greater than 5";
 					return false;
 				             }
+//checking if the user id value entered has greater than 12 characters
 				             else if(UserIda>=12){
 				             	
 				             	document.getElementById("demo").innerHTML="*the number must be  less than 12";
 					return false;
 				             }
-				   //  else{
-					    //document.getElementById("demo").innerHTML="input value Ok";
-			            //alert("input valid"+UserIda);
-					//return true;
-				   //       }
+				 
 					
 				}
 				}
-	//validate password	
+	//checking  if the length of entered password is greater than 6 and less than 12	
 	
 				if(password.length<6) {
 					document.getElementById("demopass").innerHTML="password must be at lest 6 characters";
@@ -120,12 +125,9 @@
 					document.getElementById("demopass").innerHTML="password must be  less than 12 characters";
 					return false;
 				}
-				//else{
-					
-				//	return true;
-				//}
+				
 
-	//	validating name
+	//	restricting the user to enter only letters
 				var text=/^[A-Za-z]+$/;
 	
 					if(fname.match(text))
@@ -137,17 +139,15 @@
 					document.getElementById("demoname").innerHTML="Only alphabets are needed";	
 					return false;
 					}
-	//validating Country
+	//checking if atleast a country has been selected
 				if(nation=="Select your Country"){
 					document.getElementById("democountry").innerHTML="* please select your Country";
 					return false;
 
 				}
-				//else{
-					//return true;
-				//}
+				
 
-					//validating Email
+	//entering a valid email address
 					var atposition=EmailAddress.indexOf("@");
 					var dotposition=EmailAddress.lastIndexOf(".");
 					if(atposition<1 || dotposition<atposition +2|| dotposition+2>=EmailAddress.length){
@@ -160,7 +160,7 @@
 						//return true;
 					}
 
-    //validating gender
+    //select atleast one option
 				if((gendermale==false)&&(genderfemale==false)){
 					document.getElementById("demogender").innerHTML="*Required";
 					
@@ -168,10 +168,10 @@
 
 				}
 				else{
-					//return true;
+				
 				}
 
-	//validating language
+	//required ,and checking atleast if one option is checked
 				if((LangEnglish==false)&&(LangNonEnglish==false)){
 					document.getElementById("demolanguage").innerHTML=" *Required";
 					
@@ -179,7 +179,7 @@
 
 				}
 				else{
-					//return true;
+					
 				}
 				
 	

@@ -11,29 +11,29 @@
        <!--
         //This function validates registration form
             function validate(){
-                //Checking if user id is not left empty and of length 5 to 12
+                //Checking if user id input is not left empty and of length 5 to 12
                 var userId = document.form.user_id.value.length;
                 if (userId == "" || userId < 5 || userId > 12)
                 {
                     document.getElementById("user_id").innerHTML="<b>Required, Must be of length 5 to 12</b>";
                         return false;
                 }
-                //Checking if password is not left empty and of length 7 to 12
+                //Checking if password input is not left empty and of length 7 to 12
                 var pass = document.form.password.value.length;
                 if (pass == "" || pass < 7 || pass > 12)
                 {
                     document.getElementById("password").innerHTML="<b>Required & Must be of length 7 to 12</b>";
                     return false;
                 }
-                //Checking if name is not left empty and only Alphabets are entered
+                //Checking if name input is not left empty and only Alphabets are entered
                 var name = document.form.name.value;
                 if (!name.match(/^[a-zA-Z]+$/))
                 {
                     document.getElementById("user_name").innerHTML="<b>Required & only Alphabets</b>";
-                    return false;
+                    return false;input
                 }
 
-                //Checking if country is not left empty
+                //Checking if country input is not left empty
                 var country = document.form.country;
                 if (country.value == "Default")
                 {
@@ -41,7 +41,7 @@
                     return false;
                 }
                 
-                //Checking if zip is not left empty
+                //Checking if zip input is not left empty
                 var num=document.form.zip.value;
                 if (isNaN(num) || num == "")
                 {
@@ -55,13 +55,13 @@
                     document.getElementById('email').innerHTML="<b>Required. Must be a valid email</b>";
                     return false;
                 }
-                //Checking if gender is not left empty
+                //Checking if gender input is not left empty
                 var gender = document.form.gender.value;
                 if (gender == ""){
                     document.getElementById("gender").innerHTML ="<b>Required</b>";
                     return false;
                 }
-                //Checking if language is not left empty
+                //Checking if language input is not left empty
                 var language = document.form
                 if (!language.english.checked && !language.non_english.checked)
                 {

@@ -1,27 +1,26 @@
-class Rectangle {
-    constructor(height, width) {
-      this.height = height;
-      this.width = width;
-    }
+//car is the class having different types
+class car{
+    audi;
+    benz;
+    ferari;
+    bmw;
   }
-
-  class Point {
-    constructor(x, y) {
-      this.x = x;
-      this.y = y;
+  //garden is the class containing different sub-gardens
+  class garden {
+   flower garden;
+   tomato garden;
+   vege garden
     }
-
+   //animal is the class with different animals
     class Animal { 
-        speak() {
-          return this;
-        }
-        static eat() {
-          return this;
-        }
+       monkey;
+       rabbit;
+       cow;
+       goat;
       }
-      lass Rectangle {
-        constructor(height, width) {
-          this.height = height;
-          this.width = width;
-        }
+      //shape is the class with different shapes
+      class shape{
+        rectangle;
+        square;
+        trapezium;
       }

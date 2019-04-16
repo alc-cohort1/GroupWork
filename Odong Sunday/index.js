@@ -1,5 +1,5 @@
 
-// JavaScript classes containing various properties and methods. 
+// JavaScript classes containing various properties and methods 
 
 class computer{
     -color

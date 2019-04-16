@@ -13,18 +13,17 @@
                 <h1>Registration Form</h1>
 <script>
     function validate(){
-        var userid =document.myform.userid.value;
+        var userid =document.reg.userid.value;
         var password=document.myform.password.value;
-        var name=document.myform.name.value;
-        var address =document.myform.address.value;
-        var country=document.myform.country.value;
-        var zip=document.myform.zip.value;
-        var email=document.myform.email.value;
-        var sex=document.myform.sex.value;
-        var language=document.myform;
-
+        var name=document.reg.name.value;
+        var address =document.reg.address.value;
+        var country=document.reg.country.value;
+        var zip=document.reg.zip.value;
+        var email=document.reg.email.value;
+        var sex=document.reg.sex.value;
+        var language=document.reg;
         if(isNaN(userid)||userid.length<5 ||userid.length>12||userid==""){
-            document.getElementById("answer").innerHTML="Reguired and must be of length 5 to 12";
+            document.getElementById("ans").innerHTML="Reguired and must be of length 5 to 12";
         
             //validating user id
             
@@ -32,44 +31,44 @@
             
     
     if(password.length<7 ||password.length>12||password==""){
-            document.getElementById("answer1").innerHTML="Reguired and must be of length 7 to 12";
+            document.getElementById("ans1").innerHTML="Reguired and must be of length 7 to 12";
             //validating password
             
             
         }
            
         if(name==""||!isNaN(name)){
-                                      document.getElementById("answer2").innerHTML="Required and alphabetes Only ";
+                                      document.getElementById("ans").innerHTML="Required and alphabetes Only ";
                                     //   return false;
                                     //validating name
                                }
         if(address==""){
-                                      document.getElementById("answer3").innerHTML="Optional";
+                                      document.getElementById("ans3").innerHTML="Optional";
                                       
                                       //validating address
                                }
         if (country == ""){
-                                    document.getElementById('answer4').innerHTML="Required. Must select a country.";
+                                    document.getElementById('ans4').innerHTML="Required. Must select a country.";
                                 //validating country
         }
         if (isNaN(zip) || zip == ""){
-            document.getElementById('answer5').innerHTML="Required. Must be numeric only.";
+            document.getElementById('ans5').innerHTML="Required. Must be numeric only.";
             
 
             //validating zip
         }  
         if (/\S+@\S+/.test(email) == false|| email==""){
-            document.getElementById('answer6').innerHTML="Required. Must be a valid email.";
+            document.getElementById('ans6').innerHTML="Required. Must be a valid email.";
             //validating email
     }
     if (sex == ""){
-            document.getElementById('answer7').innerHTML="Required.";
+            document.getElementById('ans7').innerHTML="Required.";
             //return false;
 
-            //validating sex
+            //validating gender
 }
 if (!language.checkbox1.checked && !language.checkbox2.checked){
-            document.getElementById('answer8').innerHTML="Required.";
+            document.getElementById('ans8').innerHTML="Required.";
             return false;   
         }
         //validating language
@@ -78,33 +77,33 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
     
             </script>
 <table><!-- <table>                  //table housing the whole form -->
-            <form name="myform" onsubmit="return validate()">
+            <form name="reg" onsubmit="return validate()">
             <!-- user field -->
                 <tr>
                     <td>User ID:</td>
                     <td><input type="text"  name="userid">
                 
-                        <span id ="answer">
+                        <span id ="ans">
             
                         </span></td>
                     
                 </tr>
                 <tr>
-                     <!-- password field -->
+                     <!--input passward  -->
                     <td>Password:</td>
                     <td><input type="password"  name="password">
                 
-                        <span id ="answer1">
+                        <span id ="ans1">
             </td>
                     
                     </span>
                 </tr>
                 <tr>
-                     <!-- name field -->
+                     <!-- input the name -->
                     <td>Name:</td>
                     <td><input type="text"  name="name">
                 
-                        <span id ="answer2">
+                        <span id ="ans2">
             
                         </span></td>
                     
@@ -115,13 +114,13 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                         <td>Address:</td>
                         <td><input type="text"  name="address">
                 
-                            <span id ="answer3">
+                            <span id ="ans3">
                 
                             </span></td>
                     
                 </tr>
                 <tr>
-                     <!-- country field -->
+                     <!-- selecting  country input  -->
                         <td> <label> Select your country:</label></td>
                         <td><select name="country"> 
                                 <option value="">(Please select a country)</option>
@@ -130,45 +129,45 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                                 <option value="Rwanda">Rwanda</option>
                                 <option value="Uganda">Uganda</option>
                             </select>
-                     <span id="answer4"></td>
+                     <span id="ans4"></td>
                    
                     
 
                  </span>
                 </tr> 
                 <tr>
-                     <!-- zip field -->
+                     <!-- zip input field -->
                         <td>Zip:</td>
                         <td> <input type="text"  name="zip">
                 
-                            <span id ="answer5"></span>
+                            <span id ="ans5"></span>
         </td>
                
             </tr>
             <tr>
-                 <!-- email field -->
+                 <!-- email input field -->
                     <td> Email:</td>
                     <td><input type="text"  name="email">
                 
-                        <span id ="answer6"></span></td>
+                        <span id ="ans6"></span></td>
                
             </tr>
             <tr>
-                 <!-- sex field -->
+                 <!-- gender inputfield field -->
                     <td>Sex:</td>
                     <td><input type="radio" name="sex" value="Male">Male
                         <input type="radio" name="sex" value="Female">Female
                         
                     
-                    <span id ="answer7"></span></td>
+                    <span id ="ans7"></span></td>
                     
             </tr>
             <tr>
-                 <!-- language field -->
+                 <!-- language input field -->
                     <td>language:</td>
                     <td><input type="checkbox" name="checkbox1" value="English" >English
                         <input type="checkbox" name="checkbox2" value="Non English">Non English
-                        <span id="answer8"></span></td>
+                        <span id="ans8"></span></td>
                     
                 </tr>
                 <tr>

@@ -12,12 +12,41 @@ div#header{
 }
 
 /*This is the footer styling.*/
-div#footer{
+.f_container{
+    background-color: platinum;
     position: fixed;
     bottom: 0px;
-    left: 0px;
     width: 100%;
-    color: darkred;
-    background: lightgreen;
-    padding: 8px;
+}
+.f_top{
+    background-color: #E5E4E2;
+}
+.f_bottom{
+    background-color:blue;     
+    
+}
+.fb_one{
+    background-color:chocolate; 
+    width: 10%; 
+    position: relative;
+    display:block;
+}
+.fb_two{
+    background-color:chocolate; 
+    width: 10%; 
+    position: relative;
+    display: block;
+}
+.fb_three{
+    background-color:chocolate; 
+    width: 10%; 
+    position: relative;
+    display: block;
+}
+.fb_four{
+    background-color:chocolate; 
+    width: 10%; 
+    position: relative;
+    display: block;
+}
 }

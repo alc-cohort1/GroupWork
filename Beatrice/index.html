@@ -50,7 +50,7 @@
                 }
                 //Checking if email input is in the right format
                 var mail=document.form.email.value;
-                if (/\S+@\S+/.test(mail) == false)
+                if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail) == false)
                 {
                     document.getElementById('email').innerHTML="<b>Required. Must be a valid email</b>";
                     return false;
@@ -122,7 +122,7 @@
                         <td><input type="text" name="zip"> <span id="numloc"></span> </td>
                     </tr>
                     <tr>
-                        <!-- label for email input -->
+                        <!-- label for email input --> 
                         <td>Email:</td>
                         <td><input type="email" name="email"><span id="email"></span></td>
                     </tr>

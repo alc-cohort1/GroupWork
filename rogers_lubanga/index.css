@@ -1,0 +1,9 @@
+.textbox{
+	
+	width: 300px;
+
+}
+li{
+	list-style: none;
+	display: inline-block;
+}

@@ -1,0 +1,50 @@
+/* Setting a background color for the page  and various fonts in case the client can't see one of them*/
+body {
+background-color: rgb(255, 208, 0);
+margin: 0px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 14px;
+}
+
+/* I've given my header - Olive - a top panel ID and thereby styling it */
+#top_pannel{
+    font-weight: bolder;
+  text-align: center;
+    font-style: oblique;
+    font-size: 150px;
+    font-family: Moonlights on the Beach;
+}
+
+/* Styling the first heading so it appears on the right below the header */
+h1 {position:absolute;
+  right: 500px;
+  position: absolute;
+  top: 95px;
+  font-family: aakar;
+}
+
+/* Removing the bullets from the unordered list and aligning to center */
+#menubar ul {
+list-style-type: none;
+text-align: center;
+}
+
+/*Making sure that the menu categories are on the same line */
+#menubar ul li {
+  display: inline;
+}
+
+/*Styling the menu bar */
+#menubar {
+  font-family: aakar;
+  color: black;
+  font-size: 30px;
+}
+
+* {box-sizing: border-box}
+/*Creating a Slideshow container */
+.Slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}

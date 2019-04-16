@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Form Registration</title>
 </head>
 <body>
     <form id="register_form" onsubmit="validation(event)">
     <div class="container">
         <div class="center" style="width:50%; padding-left: 30%;padding-top: 40px">
                 <h1>Registration Form</h1>
+            <!-- Table containg the different HTML elements-->    
            <table>
+               <!--Table row containing user id input field-->
                <tr style="height: 35px;">
                    <td style="text-align: right">
                     <label id="user_id" min="5" max="7">
                         User ID:
-                    </label></td>
+                    </label>
+                    </td>
                    <td style="padding-left: 10px" >
                        <input type="text" style="width: 200px "id="one">
                    </td>
@@ -24,6 +27,7 @@
                        <span id="id_error"></span>
                    </td>
                </tr>
+                <!--Table row containing password input field-->
                <tr style="height: 35px;">
                 <td style="text-align: right">
                     <label min="5" max="7">
@@ -36,6 +40,7 @@
                     <span id="password_error"></span>
                 </td>
             </tr>
+            <!--Table row containing name input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
                     <label id="name" min="5" max="7">
@@ -48,6 +53,7 @@
                     <span id="name_error"></span>
                 </td>
             </tr>
+            <!--Table row containing address input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
                     <label min="5" max="7">
@@ -60,6 +66,7 @@
                     <span id="address_error"></span>
                 </td>
             </tr>
+            <!--Table row containing country input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
                     <label id="">
@@ -78,6 +85,7 @@
                     <span id="country_error"></span>
                 </td>
             </tr>
+            <!--Table row containing ZIP Code input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
                     <label id="zip" min="5" max="7">
@@ -90,6 +98,7 @@
                     <span id="zip_error"></span>
                 </td>
             </tr>
+            <!--Table row containing email input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
                     <label id="address" min="5" max="7">
@@ -102,6 +111,7 @@
                     <span id="email_error"></span>
                 </td>
             </tr>
+            <!--Table row containing gender input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">Sex:</td>
                 <td style="padding-left: 10px">
@@ -115,6 +125,7 @@
                 </td>
                 <td></td>
             </tr>
+            <!--Table row containing language input field-->
             <tr style="height: 35px;">
                     <td style="text-align: right">Language:</td>
                     <td style="padding-left: 10px">
@@ -136,11 +147,6 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
            </table>
         </div>
         <div style="padding-left: 47%; padding-top: 10px">
@@ -150,9 +156,9 @@
 </form>
     <script>
 
+    //Accessing variables to differnt HTML elements by ids
    function validation(event){
 
-    //Assigning variables to differnt elements by ids
     var user_id = document.getElementById("one").value;
     var password_val = document.getElementById("two").value;
     var name= document.getElementById("three").value;
@@ -165,7 +171,7 @@
     var language_non = document.getElementById("language_non").value;
 
 
-    //validation for user id
+    //Checking if password input is empty or the entered password is between 5 and 12
     if((user_id=="") || !(user_id.length <= 10 && user_id.length >= 5)){
        document.getElementById("id_error").innerHTML="Required and the value btn 5 and 12";
 
@@ -174,7 +180,6 @@
         document.getElementById("id_error").innerHTML="";
     }
 
-    //validation for password
     if((password_val=="") || !(password_val.length <=10 && password_val.length >=5)){
         document.getElementById("password_error").innerHTML="Required and the value btn 5 and 12";
     }
@@ -182,7 +187,7 @@
         document.getElementById("password_error").innerHTML="";
     }
 
-    //validation for name 
+    //Checking if name input is empty or the entered name is 5 and above
     if((name=="") || !(name.length <=10 && name.length >=5)){
         document.getElementById("name_error").innerHTML="Required and the value btn 5 and 12";
     }
@@ -190,7 +195,7 @@
         document.getElementById("name_error").innerHTML="";
     }
 
-    //validation for zip code 
+    //Checking if zip code input is empty or the entered password is between 5 and 12
     if((zip_code=="") || !(zip_code.length <= 10 && zip_code.length >=5)){
         document.getElementById("zip_error").innerHTML="Required and the value btn 5 and 12";
     }
@@ -198,7 +203,7 @@
         document.getElementById("zip_error").innerHTML="";
     }
 
-    //validation for address
+    //Checking if address input is empty or the entered password id between 5 and 12
      if((address=="") || !(address.length <= 10 && address.length >=5)){
         document.getElementById("address_error").innerHTML="Required and the value btn 5 and 12";
     }
@@ -206,7 +211,7 @@
         document.getElementById("address_error").innerHTML="";
     }
 
-    // validation for email
+    //Checking if email input is empty or the entered password is between 5 and 12
     if((email=="") || !(email.length <= 30 && email.length >=5)){
         document.getElementById("email_error").innerHTML="Required and the value btn 5 and 20";
     }
@@ -215,7 +220,7 @@
     }
 
 
-    //validation for country
+    //Checking if country is selected
     if(country.selectedIndex == ""){
           
           country_error.innerHTML = "Required. Must Select a Country";
@@ -226,14 +231,14 @@
 
         }
 
-    //validation for sex
+    //Checking if gender is selected
     if (!(sex[0].checked || sex[1].checked)) {
                   document.getElementById("required_sex").innerHTML = "<b>Required</b>";
                 }else{
                   document.getElementById("required_sex").innerHTML = "";
                 }
 
-     // validation for Language
+     //Checking if Language is selected
 
         if (!(language.checked || language_non.checked)) {
           document.getElementById("ling").innerHTML = "Required";

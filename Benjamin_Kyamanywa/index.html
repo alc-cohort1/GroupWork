@@ -9,7 +9,7 @@
 <body>
     <script language="javascript">
     <!--
-        // Validation function that checks for all the fields of the HTML my_form when submitted.
+        // Validation function that checks for all the fields of the HTML Registration form when submitted.
         function validate() {
         // Variable to check whether the length of the userId input is between 5 and 12 characters.  
         var userId = document.my_form.user_id.value; 
@@ -31,7 +31,7 @@
             document.getElementById("name_error").innerHTML="<b>Required and alphabets only.</b>";
             return false;
         }
-
+        my_
         // Variable to check whether a country has been selected.
         var country = document.my_form.country.value;
         if (country == "") {
@@ -48,7 +48,7 @@
 
         // Variable to check whether the email input is valid. 
         var email = document.my_form.email.value;
-        if (/\S+@\S+/.test(email) == false){
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) == false){
                     document.getElementById("email_error").innerHTML="<b>Required. Must be a valid email</b>";
             return false;
                 }

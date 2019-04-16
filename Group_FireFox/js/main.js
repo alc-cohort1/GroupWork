@@ -1,4 +1,4 @@
-
+// Declaration of a function validate()
 function validate(){
 
     // Variables for keeping input values
@@ -6,9 +6,14 @@ function validate(){
     var annualInterest = parseFloat(document.loanForm.annualInterest.value);
     var repaymentPeriod = parseFloat(document.loanForm.repaymentPeriod.value);
     var zipCode = document.loanForm.zipCode.value;
-    var totalInterest = (annualInterest * loanAmount * repaymentPeriod / 100);
-    var totalPayment = (loanAmount + totalInterest);
-    var monthlyPayment = (totalPayment / (repaymentPeriod * 12));
+
+    // Manipulation/logical operations on the input variables 
+    var monthlyInterestRate = annualInterest/(100 * 12);
+    var monthlyRepaymentPeriod = repaymentPeriod * 12;
+    var evaluator = Math.pow(1 + monthlyInterestRate, monthlyRepaymentPeriod);
+    var monthlyPayment = (loanAmount * evaluator * monthlyInterestRate) / (evaluator - 1);
+    var totalPayment = monthlyPayment * monthlyRepaymentPeriod;
+    var totalInterest = totalPayment - loanAmount;
 
     // Checking that the Amount of Loan value is numeric and also not empty
     if (isNaN(loanAmount) || loanAmount == ""){
@@ -34,6 +39,7 @@ function validate(){
         document.getElementById('error3').innerHTML = "";
     }
 
+    // Using innerHTML property to output the results into the HTML page
     document.getElementById('monthlyPayment').innerHTML = `$ ${monthlyPayment.toFixed(2)}`;
     document.getElementById('totalPayment').innerHTML = `$ ${totalPayment.toFixed(2)}`;
     document.getElementById('totalInterest').innerHTML = `$ ${totalInterest.toFixed(2)}`;

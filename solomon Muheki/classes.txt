@@ -1,0 +1,38 @@
+
+var dog= new object();
+dog.name='viper';
+dog.color='black';
+dog.barking= function(){
+alert('hi I\'m'+this.name+'.'+this.color);
+}
+
+var computers= new object();
+computers.name='TOSHIBA';
+computers.memory='2GB';
+computers.processing_speed= function(){
+alert('hi I\'m'+this.name+'.'+this.memory);
+}
+
+
+var car= new object();
+car.name='FUSO';
+car.manufacturer='TATA';
+car.speed= function(){
+alert('hi I\'m'+this.name+'.'+this.manufacturer);
+}
+
+
+
+var horse= new object();
+horse.name='viper';
+horse.age='black';
+horse.drinks= function(){
+alert('hi I\'m'+this.name+'.'+this.age);
+}
+
+var pen= new object();
+pen.name='bic';
+dog.color='red';
+dog.writes= function(){
+alert('hi I\'m'+this.name+'.'+this.color);
+}

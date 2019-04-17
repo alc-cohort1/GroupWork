@@ -13,19 +13,30 @@
           }  
         }  
 
-        function validateform()
+        function validatename()
         {  
-        var name=document.myform.name.value;  
-        var password=document.myform.password.value;  
-  
+        var name=document.myform.name.value;           
         if (name==null || name==""){  
         alert("Name can't be blank");  
         return false;  
-          }else if(password.length<6){  
+          }else if(name.length<5){
+            alert("Name should be less than 5 characters");
+            return false;
+          }  
+          else if(name.length>12){
+            alert("Name should not be more than 12 characters");
+            return false;
+          }
+        }
+
+          function validatepass()
+          {
+            var password=document.myform.password.value; 
+            if(password.length<6){  
           alert("Password must be at least 6 characters long.");  
-          return false;  
-  }  
-}  
+          return false; 
+          }
+  }    
         </script> 
 </head>
 
@@ -39,11 +50,11 @@
     <table>
     <tr>
       <td><label for="User Id">User Id:</label></td>
-    <td><input type="text" name="name"><br/></td>
+    <td><input type="text" name="name" onblur="validatename();"><br/></td>
   </tr>
     <tr>
         <td> <label for="Password">Password:</label></td>
-          <td><input type="Password" name="password" onblur="validateform();"><br/></td>
+          <td><input type="Password" name="password" onblur="validatepass();"><br/></td>
   </tr>
     <tr>
         <td> <label for="Name">Name:</label></td>

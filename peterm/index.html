@@ -12,6 +12,7 @@
             <fieldset>
                 <h1>Registration Form</h1>
 <script>
+    //validating values  entered in the form input fields
     function validate(){
         var userid =document.reg.userid.value;
         var password=document.reg.password.value;
@@ -83,7 +84,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                     </span>
                 </tr>
                 <tr>
-                     <!-- input the name -->
+                     <!-- input field for the name-->
                     <td>Name:</td>
                     <td><input type="text"  name="name">
                 
@@ -101,7 +102,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                             </span></td>
                 </tr>
                 <tr>
-                     <!-- selecting  country input  -->
+                     <!-- selecting  country in the country inputfield  -->
                         <td> <label> Select your country:</label></td>
                         <td><select name="country"> 
                                 <option value="">(Please select a country)</option>
@@ -154,7 +155,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
                         </td>
                     </tr>
 
-                    <!-- submition of the inputs -->
+                    <!-- submition of the inputs of the form -->
                     <tr>
                         <td colspan="2" align="center">
                             <input type="submit" value="Submit"

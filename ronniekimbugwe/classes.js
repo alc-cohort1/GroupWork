@@ -35,7 +35,7 @@ class Tiles {
   }
 }
 
-let Cats = new Object();
+let tile = new Object();
 {
   // new object or class Tiles called tile
   tile.name = "vinyl";

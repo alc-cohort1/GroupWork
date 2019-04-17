@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+    <script language="javascript">
+       <!--
+        //This function validates registration form
+            function validate(){
+                //Checking if user id is not left empty and of length 5 to 12
+                var userId = document.form.user_id.value.length;
+                if (userId == "" || userId < 5 || userId > 12)
+                {
+                    document.getElementById("user_id").innerHTML="<b>Required, Must be of length 5 to 12</b>";
+                        return false;
+                }
+                //Checking if password is not left empty and of length 7 to 12
+                var pass = document.form.password.value.length;
+                if (pass == "" || pass < 7 || pass > 12)
+                {
+                    document.getElementById("password").innerHTML="<b>Required & Must be of length 7 to 12</b>";
+                    return false;
+                }
+                //Checking if name is not left empty and only Alphabets are entered
+                var name = document.form.name.value;
+                if (!name.match(/^[a-zA-Z]+$/))
+                {
+                    document.getElementById("user_name").innerHTML="<b>Required & only Alphabets</b>";
+                    return false;
+                }
+
+                //Checking if country is not left empty
+                var country = document.form.country;
+                if (country.value == "Default")
+                {
+                    document.getElementById("country").innerHTML="<b>Required & Must select a country</b>";
+                    return false;
+                }
+                
+                //Checking if zip is not left empty
+                var num=document.form.zip.value;
+                if (isNaN(num) || num == "")
+                {
+                    document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
+                    return false;
+                }
+                //Checking if email input is in the right format
+                var mail=document.form.email.value;
+                if (/\S+@\S+/.test(mail) == false)
+                {
+                    document.getElementById('email').innerHTML="<b>Required. Must be a valid email</b>";
+                    return false;
+                }
+                //Checking if gender is not left empty
+                var gender = document.form.gender.value;
+                if (gender == ""){
+                    document.getElementById("gender").innerHTML ="<b>Required</b>";
+                    return false;
+                }
+                //Checking if language is not left empty
+                var language = document.form
+                if (!language.english.checked && !language.non_english.checked)
+                {
+                    document.getElementById('language').innerHTML="<b>Required</b>";
+                    return false; 
+                }
+                
+                else{
+                    return true;
+                }
+                
+            }
+           --> 
+    </script>
+    <center>
+    <fieldset>
+        <legend><h1>Registration Form</h1></legend>
+        <!-- Registration form -->
+        <form action="" method="post" name="form" onsubmit="return validate()">
+            <table>
+                <tr>
+                    <th colspan="2"></th>
+                </tr>
+                <tr>
+                    <!-- label for user id input -->
+                    <td>User id:</td>
+                    <td><input type="text" name="user_id" ><span id="user_id"></span></td>
+                </tr>
+                <tr>
+                    <!-- label for password input -->
+                    <td>Password:</td>
+                    <td> <input type="password" name="password" ><span id="password"></span></td>
+                </tr>
+                <tr>
+                    <!-- label for Name input -->
+                    <td>Name:</td>
+                    <td><input type="text" name="name" ><span id="user_name"></span></td>
+                </tr>
+                <tr>
+                    <!-- label for Address input -->
+                    <td>Address:</td>
+                    <td><input type="text" name="address" ></td>
+                </tr>
+                <tr>
+                    <!-- label for country input -->
+                    <td>Country:</td>
+                    <td><select name="country">
+                        <option selected="" value="Default">(Please select a country)</option>
+                        <option value="ug">Uganda</option>
+                        <option value="tz">Tanzania</option>
+                        <option value="rw">Rwanda</option>
+                        <option value="ky">Kenya</option>
+                        </select><span id="country"></span></td>
+                    </tr>
+                    <tr>
+                        <!-- label for zip input -->
+                        <td>ZIP Code:</td>
+                        <td><input type="text" name="zip"> <span id="numloc"></span> </td>
+                    </tr>
+                    <tr>
+                        <!-- label for email input -->
+                        <td>Email:</td>
+                        <td><input type="email" name="email"><span id="email"></span></td>
+                    </tr>
+                    <tr>
+                        <!-- label for gender input -->
+                        <td>Gender:</td>
+                        <td><input type="radio" name="gender">Male <input type="radio" name="gender" >Female <span id="gender"></span></td>
+                                    
+                    </tr>
+                    <tr>  <!-- label for language input -->
+                        <td>Language:</td>
+                        <td><input type="checkbox" name="english" checked>English <input type="checkbox" name="non_english" id="">Non English <span id="language"></span> </td>
+                    </tr>
+                    <tr>
+                        <!-- label for About input -->
+                        <td>About:</td>
+                        <td><textarea name="about" cols="30" rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <!-- submit button -->
+                        <td><input type="submit" value="Submit"></td>
+                    </tr>
+            </table>
+        </form>
+    </fieldset>
+</center>
+</body>
+</html>

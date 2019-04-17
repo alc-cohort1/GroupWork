@@ -11,7 +11,7 @@ class Cats {
   }
 }
 
-let Cats = new Object();
+let cat = new Object();
 {
   // new object of class Cats called cat
   cat.name = "cat";

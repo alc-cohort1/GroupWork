@@ -143,5 +143,5 @@ let belt = new Object();
   belt["color"] = "black";
   belt["isUnisex"] = true;
 
-  belt.description(); //function call
+  belt.description(); //function call by object belt
 }

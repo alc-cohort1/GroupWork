@@ -17,5 +17,29 @@ let Cats = new Object();
   cat.name = "cat";
   cat["breed"] = "purina";
   cat["origin"] = "russia";
-  cat.description();
+  cat.description(); // function call
+}
+class Tiles {
+  //class called Tiles
+  tiles(name, make, location) {
+    this.name = name;
+    this.make = make;
+    this.origin = location;
+    //constructor with parameters name,make and location
+  }
+
+  description() {
+    alert(
+      this.name + "is of make " + this.make + "and is put " + this.location
+    );
+  }
+}
+
+let Cats = new Object();
+{
+  // new object or class Tiles called tile
+  tile.name = "vinyl";
+  tile["make"] = "granite";
+  tile["origin"] = "floor";
+  tile.description(); //function call
 }

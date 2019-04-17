@@ -67,3 +67,24 @@ let Clan = new Object();
   clan["motto"] = "Kiiso bwe kikulaba obulungi naawe okiraba.!";
   clan.description(); //function call
 }
+class Clouds {
+  //class called Clouds
+  clouds(name, isManMade) {
+    this.name = name;
+    this.isManMade = isManMade;
+
+    //constructor with parameters name,isManMade
+  }
+
+  description() {
+    alert(this.name + "is man made " + this.isManMade);
+  }
+}
+
+let cloud = new Object();
+{
+  // new object or class Clouds called cloud
+  cloud.name = " ‎Cumulusclouds";
+  cloud[isManMade] = false;
+  cloud.description(); //function call
+}

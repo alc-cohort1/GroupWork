@@ -3,7 +3,7 @@ class Cats {
     this.name = name;
     this.breed = breed;
     this.origin = origin;
-    //constructor with parameters name,breed and origin
+    //parameters name,breed and origin
   }
 
   description() {
@@ -11,9 +11,9 @@ class Cats {
   }
 }
 
-let Cats = new Object();
+let cat = new Object();
 {
-  // new object or class Cats called cat
+  // new object of class Cats called cat
   cat.name = "cat";
   cat["breed"] = "purina";
   cat["origin"] = "russia";
@@ -35,7 +35,7 @@ class Tiles {
   }
 }
 
-let Cats = new Object();
+let tile = new Object();
 {
   // new object or class Tiles called tile
   tile.name = "vinyl";
@@ -44,7 +44,7 @@ let Cats = new Object();
   tile.description(); //function call
 }
 class Clans {
-  //class called Tiles
+  //class called Clans
   clans(name, totem, motto) {
     this.name = name;
     this.totem = totem;
@@ -54,15 +54,15 @@ class Clans {
 
   description() {
     alert(
-      this.name + " totem is " + this.totem + "and the motto " + this.motto
+      this.name + " totem is " + this.totem + "and the motto is" + this.motto
     );
   }
 }
 
-let Clan = new Object();
+let clan = new Object();
 {
-  // new object or class Tiles called tile
-  clan.name = "Balangira";
+  // new object of class Clans called clan
+  clan.name = "Akasimba";
   clan["totem"] = "Engo";
   clan["motto"] = "Kiiso bwe kikulaba obulungi naawe okiraba.!";
   clan.description(); //function call
@@ -83,9 +83,9 @@ class Clouds {
 
 let cloud = new Object();
 {
-  // new object or class Clouds called cloud
+  // new object of class Clouds called cloud
   cloud.name = " ‎Cumulusclouds";
-  cloud[isManMade] = false;
+  cloud["isManMade"] = false;
   cloud.description(); //function call
 }
 
@@ -112,10 +112,10 @@ class Shoes {
 
 let shoe = new Object();
 {
-  // new object or class Shoes called shoe
+  // new object of class Shoes called shoe
   shoe.name = " ‎plimsoms";
-  shoe[isAllsizes] = true;
-  shoe[isUnisex] = true;
+  shoe["isAllsizes"] = true;
+  shoe["isUnisex"] = true;
 
   shoe.description(); //function call
 }
@@ -140,8 +140,8 @@ let belt = new Object();
 {
   // new object of class Belt called belt
   belt.name = " ‎zara";
-  belt[color] = "black";
-  belt[isUnisex] = false;
+  belt["color"] = "black";
+  belt["isUnisex"] = true;
 
-  belt.description(); //function call
+  belt.description(); //function call by object belt
 }

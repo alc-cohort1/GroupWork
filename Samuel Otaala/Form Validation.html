@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<body>
+    <script>
+       function Hello(){
+         alert ("welcome to JS")  
+        } 
+       
+       </script>
+<form>
+  
+  <fieldset>
+    <!-- <legend>Registration Form</legend> -->
+    <h1>Registration Form</h1>
+    <table>
+    <tr>
+      <td><label for="User Id">User Id:</label></td>
+    <td><input type="text" name="User Id" required><br/></td>
+  </tr>
+    <tr>
+        <td> <label for="Password">Password:</label></td>
+          <td><input type="Password" name="Password" required><br/></td>
+  </tr>
+    <tr>
+        <td> <label for="Name">Name:</label></td>
+          <td> <input type="text" name="Name" required><br/></td>
+  </tr>
+    <tr>
+        <td><label for="Address">Address:</label></td>
+          <td><input type="text" name="Address"><br/></td>
+  </tr>
+    <tr>
+        <td> <label for="Name">Country:</label></td>
+          <td> <input type="text" name="Country" required><br/></td>
+  </tr>
+    <tr>
+        <td><label for="Zip Code">Zip Code:</label></td>
+          <td> <input type="text" name="Zip Code"><br/></td>
+  </tr>
+    <tr>
+        <td><label for="emailaddress">Email:</label></td>
+          <td><input type="email" name="emailaddress"><br/></td>
+  </tr>
+<tr>
+  <td>Sex:</td>
+      <td><input type="radio" id="Sex" name="male"  required>
+    <label for="male">male</label>
+
+    <input type="radio" id="Sex" name="female" required>
+    <label for="female">female</label><br/></td>
+  </tr>
+<tr>
+  <td>Language:</td>
+    <td>
+      <input type="checkbox" name="language" value="English"> English
+  <input type="checkbox" name="language" value="Non English" checked> Non English<br>
+</td>
+</tr>
+<tr>
+  <td>
+    <label for="about">About:</label>
+  </td>
+<td>
+  <textarea cols="40" rows="5" name="aboutme">
+    
+Write anything about you inside here.
+</textarea>
+</td>
+</tr>
+</table>
+<div>
+<button onclick="Hello()">Submit</button>
+</div>
+<br><br>
+  </fieldset>
+</form>
+</body>

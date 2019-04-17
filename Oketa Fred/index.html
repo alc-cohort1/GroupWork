@@ -2,35 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>JavaScript Section</title>
+    <title>Registration Form | Using JavaScript </title>
   </head>
   <body>
     <center>
       <h2>Registration Form</h2>
+      <!-- The Form containing labels, Input fields and the Submit Button -->
       <form id="register_form">
         <table>
           <tbody>
+            <!-- Table Row containing the Label for User Id, Input Field for User Id -->
             <tr>
-              <td>User Id</td>
+              <td><label>User Id</label></td>
               <td><input type="text" id="user_id" /></td>
               <td><span id="user_id_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Password, Input Field for Password -->
             <tr>
-              <td>Password</td>
-              <td><input type="text" id="password" /></td>
+              <td><label>Password</label></td>
+              <td><input type="password" id="password" /></td>
               <td><span id="password_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Name, Input Field for Name -->
             <tr>
-              <td>Name</td>
+              <td><label>Name</label></td>
               <td><input type="text" id="user_name" placeholder="eg. oketafred" /></td>
               <td><span id="name_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Address, Input Field for Address-->
             <tr>
-              <td>Address</td>
+              <td><label>Address</label></td>
               <td><input type="text" /></td>
             </tr>
+            <!-- Table Row containing the Label for Counry, Select Field for Country -->
             <tr>
-              <td>Country</td>
+              <td><label>Country</label></td>
               <td>
                 <select id="country">
                   <option value="">Select a Country</option>
@@ -41,38 +47,44 @@
               </td>
               <td><span id="country_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Zip Code, Input Field for Zip Code -->
             <tr>
-              <td>Zip Code</td>
+              <td><label>Zip Code</label></td>
               <td><input type="text" id="zipCode" /></td>
               <td><span id="zipcode_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Email, Input Field for Email -->
             <tr>
-              <td>Email</td>
+              <td><label>Email</label></td>
               <td><input type="email" id="email" /></td>
               <td><span id="email_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Gender, Input Field for Gender -->
             <tr>
-              <td>Sex</td>
+              <td><label>Gender</label></td>
               <td>
                 <input type="radio" name="gender" /> Male
                 <input type="radio" name="gender" /> Female
               </td>
               <td><span id="gender_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for Language, Input Field for Language -->
             <tr>
-              <td>Language</td>
+              <td><label>Language</label></td>
               <td>
                 <input type="checkbox" id="english" /> English
                 <input type="checkbox" id="non_english" /> Non English
               </td>
               <td><span id="language_error"></span></td>
             </tr>
+            <!-- Table Row containing the Label for About, Input Field for About -->
             <tr>
-              <td>About</td>
+              <td><label>About</label></td>
               <td>
                 <textarea cols="20" rows="4"></textarea>
               </td>
             </tr>
+            <!-- Table Row containing the Submit Button for the form -->
             <tr>
               <td></td>
               <td><button type="submit">Submit</button></td>
@@ -80,17 +92,18 @@
           </tbody>
         </table>
       </form>
+      <!-- The End of the form containing labels, Input fields and the Submit Button -->
     </center>
     <script>
-      // Calling the form by its ID
+      // Access the Form using the ID
       const registerForm = document.querySelector("#register_form");
 
-      // Adding EventListener to the Form
+      // Adding a submit EventListener to the Form
       registerForm.addEventListener("submit", event => {
-        // calling the User Id field and getting its value
+
+        // Accessing the elements of the different input Fields using their Ids
         let userId = document.querySelector("#user_id").value;
         let country = document.querySelector("#country");
-
         let gender = document.getElementsByName("gender");
         let english = document.getElementById("english");
         let non_english = document.getElementById("non_english");
@@ -98,31 +111,31 @@
         let password = document.getElementById("password").value;
         let user_name = document.getElementById("user_name").value;
         let zipCode = document.getElementById("zipCode").value;
+        let country_error = document.getElementById("country_error");
 
 
-        // User_ ID
+        // Checking whether the length of the User ID is less than 12 and Less than 5 characters.
         if (userId.length < 5 || userId.length > 12){
             document.getElementById('user_id_error').innerHTML="Required and must be of length 5 to 12.";
         }else{
             document.getElementById('user_id_error').innerHTML="";
         }
 
-        // Password
+        // Checking whether the length of the Password is less than 12 and Less than 7 characters
         if (password.length < 7 || password.length > 12){
             document.getElementById('password_error').innerHTML="Required and must be of length 7 to 12.";
         }else{
           document.getElementById('password_error').innerHTML="";
         }
 
-        // Name
+        // Checking whether the email address entered is in the correct format.
         if (!user_name.match(/^[a-zA-Z]+$/)){
             document.getElementById('name_error').innerHTML="Required and alphabets only.";
         }else{
           document.getElementById('name_error').innerHTML="";
         }
 
-        // Errors
-        country_error = document.getElementById("country_error");
+        // Checking whether a country is selected from the list of countries.
 
         if(country.selectedIndex == ""){
           
@@ -134,7 +147,7 @@
 
         }
 
-        // ZipCode
+        // Checking whether the Zip Code entered is empty or is a Numeric.
         if (isNaN(zipCode) || zipCode == ""){
           document.getElementById('zipcode_error').innerHTML="Required. Must be numeric only.";
         } else{
@@ -142,14 +155,14 @@
         }
 
 
-        // Gender
+        // Checking whether the User Selected Male or Female.
         if (!(gender[0].checked || gender[1].checked)) {
           document.getElementById("gender_error").innerHTML = "Required";
         }else{
           document.getElementById("gender_error").innerHTML = "";
         }
 
-        // Language
+        // Checking whether the User Selected a Language or more than one language.
 
         if (!(english.checked || non_english.checked)) {
           document.getElementById("language_error").innerHTML = "Required";
@@ -157,7 +170,7 @@
           document.getElementById("language_error").innerHTML = "";
         }
 
-        // Email
+        // Checking whether the User entered a Valid Email Address.
         const email_regex = /\S+@\S+/
         if (!email_regex.test(email.value) || email.value.length == "") {
           document.getElementById("email_error").innerHTML = "Required. Must be a valid email";
@@ -165,12 +178,7 @@
           document.getElementById("email_error").innerHTML = "";
         }
 
-
-
-        
-
-        
-
+        // Overwriting the Default Form Submission behavior.
         event.preventDefault();
       });
     </script>

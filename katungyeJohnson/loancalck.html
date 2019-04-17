@@ -15,10 +15,12 @@
     <td></td>
 	<th>Loan Balance, Cumulative Equity, and Interest Payments</th></tr>
 	<tr><td>Amount of the loan ($):</td>
-	<td><input id="amount" onchange="calculate();"></td>
+    <td><input id="amount" onchange="calculate();"></td>
+    <!--the canvas will help us display the graph-->
 	<td rowspan=8>
 	  <canvas id="graph" width="400" height="250"></canvas></td></tr>
-	<tr><td>Annual interest (%):</td>
+    <tr><td>Annual interest (%):</td>
+        <!--the input field for annual interest work-->
 	  <td><input id="apr" onchange="calculate();"></td></tr>
 	<tr><td>Repayment period (years):</td>
 	  <td><input id="years" onchange="calculate();"></td>

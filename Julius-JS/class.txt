@@ -38,7 +38,7 @@ class tvChannel ()
 	+paid
 	-location
 	shout()
-	integrate
+	integrate()
 	consume()
 
 	

@@ -14,7 +14,7 @@ class Cats {
 let cat = new Object();
 {
   // new object of class Cats called cat
-  cat.name = "cat";
+  cat.name = "Mycat";
   cat["breed"] = "purina";
   cat["origin"] = "russia";
   cat.description(); // function call

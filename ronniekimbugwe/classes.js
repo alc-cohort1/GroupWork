@@ -119,3 +119,29 @@ let shoe = new Object();
 
   shoe.description(); //function call
 }
+class Belts {
+  //class called Belts
+  belts(name, isUnisex, color) {
+    this.name = name;
+    this.color = color;
+    this.isUnisex = isUnisex;
+
+    //constructor function with parameters name,isUnisex and color
+  }
+
+  description() {
+    alert(
+      this.name + "is unisex" + this.isUnisex + " of color" + this.isAllsizes
+    );
+  }
+}
+
+let belt = new Object();
+{
+  // new object of class Belt called belt
+  belt.name = " ‎zara";
+  belt[color] = "black";
+  belt[isUnisex] = false;
+
+  belt.description(); //function call
+}

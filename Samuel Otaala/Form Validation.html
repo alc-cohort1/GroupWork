@@ -13,18 +13,18 @@
           }  
         }  
 
-        function validatename()
+        function validateuserid()
         {  
-        var name=document.myform.name.value;           
-        if (name==null || name==""){  
-        alert("Name can't be blank");  
+        var userid=document.myform.userid.value;           
+        if (userid==null || userid==""){  
+        alert("User ID can't be blank");  
         return false;  
-          }else if(name.length<5){
-            alert("Name should be less than 5 characters");
+          }else if(userid.length<5){
+            alert("User ID should not be less than 5 characters");
             return false;
           }  
-          else if(name.length>12){
-            alert("Name should not be more than 12 characters");
+          else if(userid.length>12){
+            alert("User ID should not be more than 12 characters");
             return false;
           }
         }
@@ -37,6 +37,21 @@
           return false; 
           }
   }    
+  function validatename()
+        {  
+        var name=document.myform.name.value;           
+        if (name==null || name==""){  
+        alert("Name can't be blank");  
+        return false;  
+          }else if(name.length<5){
+            alert("Name should not be less than 5 characters");
+            return false;
+          }  
+          else if(name.length>12){
+            alert("Name should not be more than 12 characters");
+            return false;
+          }
+        }
         </script> 
 </head>
 
@@ -50,7 +65,7 @@
     <table>
     <tr>
       <td><label for="User Id">User Id:</label></td>
-    <td><input type="text" name="name" onblur="validatename();"><br/></td>
+    <td><input type="text" name="userid" onblur="validatename();"><br/></td>
   </tr>
     <tr>
         <td> <label for="Password">Password:</label></td>
@@ -58,7 +73,7 @@
   </tr>
     <tr>
         <td> <label for="Name">Name:</label></td>
-          <td> <input type="text" name="Name" ><br/></td>
+          <td> <input type="text" name="name" onblur="validatename();" ><br/></td>
   </tr>
     <tr>
         <td><label for="Address">Address:</label></td>

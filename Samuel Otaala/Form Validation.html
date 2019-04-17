@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <script>
+       
+        function validateemail()  
+        {  
+        var x=document.myform.email.value;  
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");  
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+          }  
+        }  
+
+        function validateform()
+        {  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+  
+        if (name==null || name==""){  
+        alert("Name can't be blank");  
+        return false;  
+          }else if(password.length<6){  
+          alert("Password must be at least 6 characters long.");  
+          return false;  
+  }  
+}  
+        </script> 
+</head>
+
+<body>
+     
+<form name="myform"  method="post" action="#" onsubmit="return validateemail();">
+  
+  <fieldset>
+    <!-- <legend>Registration Form</legend> -->
+    <h1>Registration Form</h1>
+    <table>
+    <tr>
+      <td><label for="User Id">User Id:</label></td>
+    <td><input type="text" name="name"><br/></td>
+  </tr>
+    <tr>
+        <td> <label for="Password">Password:</label></td>
+          <td><input type="Password" name="password" onblur="validateform();"><br/></td>
+  </tr>
+    <tr>
+        <td> <label for="Name">Name:</label></td>
+          <td> <input type="text" name="Name" ><br/></td>
+  </tr>
+    <tr>
+        <td><label for="Address">Address:</label></td>
+          <td><input type="text" name="Address"><br/></td>
+  </tr>
+    <tr>
+        <td> <label for="Name">Country:</label></td>
+          <td> <input type="text" name="Country" ><br/></td>
+  </tr>
+    <tr>
+        <td><label for="Zip Code">Zip Code:</label></td>
+          <td> <input type="text" name="Zip Code"><br/></td>
+  </tr>
+    <tr>
+        <td><label for="emailaddress">Email:</label></td>
+          <td><input type="text" name="email"><br/></td>
+  </tr>
+<tr>
+  <td>Sex:</td>
+      <td><input type="radio" id="Sex" name="male">
+    <label for="male">male</label>
+
+    <input type="radio" id="Sex" name="female">
+    <label for="female">female</label><br/></td>
+  </tr>
+<tr>
+  <td>Language:</td>
+    <td>
+      <input type="checkbox" name="language" value="English"> English
+  <input type="checkbox" name="language" value="Non English" checked> Non English<br>
+</td>
+</tr>
+<tr>
+  <td>
+    <label for="about">About:</label>
+  </td>
+<td>
+  <textarea cols="40" rows="5" name="aboutme">
+    
+Write anything about you inside here.
+</textarea>
+</td>
+</tr>
+</table>
+<input type="submit" value="submit">  
+<br><br>
+  </fieldset>
+</form>
+</body>

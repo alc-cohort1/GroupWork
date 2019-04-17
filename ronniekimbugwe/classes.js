@@ -88,3 +88,34 @@ let cloud = new Object();
   cloud[isManMade] = false;
   cloud.description(); //function call
 }
+
+class Shoes {
+  //class called shoes
+  shoes(name, isUnisex, isAllsizes) {
+    this.name = name;
+    this.isAllsizes = isAllsizes;
+    this.isUnisex = isUnisex;
+
+    //constructor function with parameters name,isUnisex and isAllsizes
+  }
+
+  description() {
+    alert(
+      this.name +
+        "is unisex" +
+        this.isUnisex +
+        " and is allsized" +
+        this.isAllsizes
+    );
+  }
+}
+
+let shoe = new Object();
+{
+  // new object or class Shoes called shoe
+  shoe.name = " ‎plimsoms";
+  shoe[isAllsizes] = true;
+  shoe[isUnisex] = true;
+
+  shoe.description(); //function call
+}

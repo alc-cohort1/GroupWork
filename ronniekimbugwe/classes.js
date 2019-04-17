@@ -44,7 +44,7 @@ let tile = new Object();
   tile.description(); //function call
 }
 class Clans {
-  //class called Tiles
+  //class called Clans
   clans(name, totem, motto) {
     this.name = name;
     this.totem = totem;
@@ -59,7 +59,7 @@ class Clans {
   }
 }
 
-let Clan = new Object();
+let clan = new Object();
 {
   // new object of class Clans called clan
   clan.name = "Akasimba";

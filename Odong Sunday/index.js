@@ -1,4 +1,4 @@
-// JavaScript Objects containing various properties and methods
+// Adding javascript objects
 
 
  const computer = new object();

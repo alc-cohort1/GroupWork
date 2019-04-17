@@ -1,9 +1,9 @@
 
 <htm>
 	<head>
-		<title>submit your details</title>
+		<title>Registration Form</title>
 		<style >
-			/*styling the appearance of the input fields>*/
+/*styling the appearance of the input fields>*/
 			.form input[type=text] {
 				
 				border: 1px solid #795f79;
@@ -17,7 +17,7 @@
 
 				
 			}
-			/* styling the appearance of the form button*/
+/* styling the appearance of the form button*/
 			.form button {
 				border-radius: 5px;
 				border: 1px solid #AAA;
@@ -35,17 +35,17 @@
     
  
 			}
-			/*apperance of the button on mause hover*/
+/*appearance of the button on mause hover*/
 			.form button:hover{
 				background-color: green;
 				color: yellow
 			}
-			/*appearance of the button when clicked*/
+/*appearance of the button when clicked*/
 			.form button:active {
                background-color: #3e8e41;
                box-shadow: 0 5px #666;
                
-               /*styling the appearance of the form labels*/ 
+/*styling the appearance of the form labels*/ 
 			.form label{font-size: 20; color: #151B54;}
 			input[type=text]:focus{border:3px solid rgb(133, 186, 235);}
 			select:focus{border:1px solid #555;}
@@ -64,21 +64,19 @@
 
 		<script >
 			<!--
-			//function called on form submission to validate different form inputs
+//function called on form submission to validate different form inputs
 	function validate(){
 
-				//assigning  values from the form to variables
+//assigning  values from the form to variables
 				
 		var User_Id=document.formreg.userid.value;
 		var password=document.formreg.pass_word.value;
 		var fname=document.formreg.name.value;
 		var nation=document.formreg.Country.value;
 		var EmailAddress=document.formreg.email.value;
-
+		var zipCode=document.formreg.zip_code.value;
 		var gendermale=document.getElementById("male").checked;
 		var genderfemale=document.getElementById("female").checked;
-		
-
 		var LangEnglish=document.getElementById("english").checked;
 		var LangNonEnglish=document.getElementById("nonenglish").checked;
 
@@ -119,7 +117,7 @@
 					
 				}
 				}
-	//checking  if the length of entered password is greater than 6 and less than 12	
+//checking  if the length of entered password is greater than 6 and less than 12	
 	
 				if(password.length<6) {
 				document.getElementById("error_password").innerHTML="password must be at lest 6 characters";
@@ -134,7 +132,7 @@
 				}
 				
 
-	//	restricting the user to enter only letters
+//	restricting the user to enter only letters
 				var text=/^[A-Za-z]+$/;
 	
 				if(fname.match(text))
@@ -145,15 +143,20 @@
 				document.getElementById("error_name").innerHTML="Only alphabets are needed";	
 				return false;
 				}
-	//checking if atleast a country has been selected
+			
+//checking if atleast if a country has been selected
 				if(nation=="Select your Country"){
 					document.getElementById("error_country").innerHTML="* please select your Country";
 					return false;
 
 				}
 				
-
-	//entering a valid email address
+//checking if a valid zip code has been entered,it must be a number
+				if(isNaN(zipCode) ||zipCode==""){
+					document.getElementById("error_zipcode").innerHTML="*zip code must be a number and not empty";
+					return false;
+				}
+//checking if a valid email address has been entered
 				var atposition=EmailAddress.indexOf("@");
 				var dotposition=EmailAddress.lastIndexOf(".");
 				if(atposition<1 || dotposition<atposition +2|| dotposition+2>=EmailAddress.length){
@@ -164,7 +167,7 @@
 					}
 				
 
-    //select atleast one option
+//checking if  atleast one option is selected
 				if((gendermale==false)&&(genderfemale==false)){
 					document.getElementById("error_gender").innerHTML="*Required";
 					
@@ -175,7 +178,7 @@
 				
 				}
 
-	//required ,and checking atleast if one option is checked
+//required ,and checking atleast if one option is checked
 				if((LangEnglish==false)&&(LangNonEnglish==false)){
 					document.getElementById("error_language").innerHTML=" *Required";
 					
@@ -194,7 +197,7 @@
 			
 		  -->
 		</script>
-		<!--centering the form-->
+<!--centering the form-->
 		<center>
 			<fieldset background="b.jpg" style="width: 700px;padding-left: 0%; border: 4px solid #ff00ff; border-radius: 15px;"><legend><h1 style="color:indigo"> Registration Form</h1></legend>
 				<form class="form" name="formreg" onsubmit="return validate()" >	
@@ -205,7 +208,7 @@
 						<tr><td></td><td><span id="error_label" style="color:red"></span></td></tr>
 						<tr><td><label>Password:</label></td><td><input type="text" name="pass_word" ></td></tr>
               			 <tr><td></td><td><span id="error_password" style="color:red"></span></td></tr>
- <!--display error if wrong password is entered-->
+<!--display error if wrong password is entered-->
 						<tr><td><label>Name:</label></td><td><input type="text" name="name" ></td></tr>
 <!--display error if wrong name withnumbers is entered-->
                			 <tr><td></td><td><span id="error_name" style="color:red"></span></td></tr>
@@ -226,7 +229,8 @@
 								<option>South Africa</option>  </select></td></tr>
 <!--display error if no country is selected-->
                 		<tr><td></td><td><span id="error_country" style="color:red"></span></td></tr>
-						<tr><td><label>	Zip Code:</label></td><td><input type="text" name="" placeholder="Optional"></td></tr>
+						<tr><td><label>	Zip Code:</label></td><td><input type="text" name="zip_code" ></td></tr>
+						 <tr><td></td><td><span id="error_zipcode" style="color:red"></span></td></tr>
 						<tr><td><label>Email:</label>	</td><td><input type="text" name="email"></td></tr>
 <!--display error if wrong email is entered-->
 				 		 <tr><td></td><td><span id="error_email" style="color:red"></span></td></tr>

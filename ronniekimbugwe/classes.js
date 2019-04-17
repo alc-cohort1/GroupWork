@@ -3,7 +3,7 @@ class Cats {
     this.name = name;
     this.breed = breed;
     this.origin = origin;
-    //parameters name,breed and origin
+    //attributes name,breed and origin
   }
 
   description() {
@@ -14,7 +14,7 @@ class Cats {
 let cat = new Object();
 {
   // new object of class Cats called cat
-  cat.name = "cat";
+  cat.name = "Mycat";
   cat["breed"] = "purina";
   cat["origin"] = "russia";
   cat.description(); // function call
@@ -25,7 +25,7 @@ class Tiles {
     this.name = name;
     this.make = make;
     this.origin = location;
-    //constructor with parameters name,make and location
+    //constructor with attributes name,make and location
   }
 
   description() {
@@ -49,7 +49,7 @@ class Clans {
     this.name = name;
     this.totem = totem;
     this.motto = motto;
-    //constructor with parameters name,make and location
+    //constructor with attributes name totem motto
   }
 
   description() {
@@ -73,7 +73,7 @@ class Clouds {
     this.name = name;
     this.isManMade = isManMade;
 
-    //constructor with parameters name,isManMade
+    //constructor with attributes name,isManMade
   }
 
   description() {
@@ -96,7 +96,7 @@ class Shoes {
     this.isAllsizes = isAllsizes;
     this.isUnisex = isUnisex;
 
-    //constructor function with parameters name,isUnisex and isAllsizes
+    //constructor function with attributes name,isUnisex and isAllsizes
   }
 
   description() {
@@ -126,7 +126,7 @@ class Belts {
     this.color = color;
     this.isUnisex = isUnisex;
 
-    //constructor function with parameters name,isUnisex and color
+    //constructor function with attributes name,isUnisex and color
   }
 
   description() {

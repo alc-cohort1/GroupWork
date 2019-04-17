@@ -141,7 +141,7 @@ let belt = new Object();
   // new object of class Belt called belt
   belt.name = " ‎zara";
   belt["color"] = "black";
-  belt[isUnisex] = false;
+  belt["isUnisex"] = false;
 
   belt.description(); //function call
 }

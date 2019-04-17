@@ -32,7 +32,7 @@ alert('hi I\'m'+this.name+'.'+this.age);
 
 var pen= new object();
 pen.name='bic';
-dog.color='red';
-dog.writes= function(){
+pen.color='red';
+pen.writes= function(){
 alert('hi I\'m'+this.name+'.'+this.color);
 }

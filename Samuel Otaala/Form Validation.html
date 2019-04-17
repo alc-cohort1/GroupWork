@@ -13,19 +13,45 @@
           }  
         }  
 
-        function validateform()
+        function validateuserid()
         {  
-        var name=document.myform.name.value;  
-        var password=document.myform.password.value;  
-  
+        var userid=document.myform.userid.value;           
+        if (userid==null || userid==""){  
+        alert("User ID can't be blank");  
+        return false;  
+          }else if(userid.length<5){
+            alert("User ID should not be less than 5 characters");
+            return false;
+          }  
+          else if(userid.length>12){
+            alert("User ID should not be more than 12 characters");
+            return false;
+          }
+        }
+
+          function validatepass()
+          {
+            var password=document.myform.password.value; 
+            if(password.length<6){  
+          alert("Password must be at least 6 characters long.");  
+          return false; 
+          }
+  }    
+  function validatename()
+        {  
+        var name=document.myform.name.value;           
         if (name==null || name==""){  
         alert("Name can't be blank");  
         return false;  
-          }else if(password.length<6){  
-          alert("Password must be at least 6 characters long.");  
-          return false;  
-  }  
-}  
+          }else if(name.length<5){
+            alert("Name should not be less than 5 characters");
+            return false;
+          }  
+          else if(name.length>12){
+            alert("Name should not be more than 12 characters");
+            return false;
+          }
+        }
         </script> 
 </head>
 
@@ -39,15 +65,15 @@
     <table>
     <tr>
       <td><label for="User Id">User Id:</label></td>
-    <td><input type="text" name="name"><br/></td>
+    <td><input type="text" name="userid" onblur="validatename();"><br/></td>
   </tr>
     <tr>
         <td> <label for="Password">Password:</label></td>
-          <td><input type="Password" name="password" onblur="validateform();"><br/></td>
+          <td><input type="Password" name="password" onblur="validatepass();"><br/></td>
   </tr>
     <tr>
         <td> <label for="Name">Name:</label></td>
-          <td> <input type="text" name="Name" ><br/></td>
+          <td> <input type="text" name="name" onblur="validatename();" ><br/></td>
   </tr>
     <tr>
         <td><label for="Address">Address:</label></td>

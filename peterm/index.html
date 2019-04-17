@@ -30,20 +30,20 @@
     if(password.length<7 ||password.length>12||password==""){
             document.getElementById("out1").innerHTML="Reguired and must be of length 7 to 12";        
         }
-         //checking if the inputname is alphabete  
+         //checking if the inputname is alphabetic  
         if(name==""||!isNaN(name)){
             document.getElementById("out").innerHTML="Required and alphabetes Only ";
         //   return false;
                                }
         if(address==""){
-                                      document.getElementById("out3").innerHTML="Optional";       
+      document.getElementById("out3").innerHTML="Optional";       
                                }
-        // checking if the country is selected
+        // checking if the country field is selected
         if (country == ""){
            document.getElementById('out4').innerHTML="Required. Must select a country.";
                                 
         }
-        //checking if  the ZIP is filled with numeric
+        //checking if  the ZIP code field is filled with numeric
         if (isNaN(zip) || zip == ""){
             document.getElementById('out5').innerHTML="Required. Must be numeric only.";
         }  
@@ -64,7 +64,7 @@ if (!language.checkbox1.checked && !language.checkbox2.checked){
 }   
             </script>
 <table>       <!--table housing the whole form -->
-    <!-- on submition the is validated-->
+    <!-- on submition the form is validated-->
             <form name="reg" onsubmit="return validate()">
                 <tr>
                     <td>User ID:</td>

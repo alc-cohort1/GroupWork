@@ -85,7 +85,7 @@ let cloud = new Object();
 {
   // new object of class Clouds called cloud
   cloud.name = " ‎Cumulusclouds";
-  cloud[isManMade] = false;
+  cloud["isManMade"] = false;
   cloud.description(); //function call
 }
 

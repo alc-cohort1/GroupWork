@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <head>
-
+    <script>
+       
+        function validateemail()  
+        {  
+        var x=document.myform.email.value;  
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");  
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+          }  
+        }  
+        </script> 
 </head>
 
 <body>
-    <script>
-       function Hello(){
-         alert ("welcome to JS")  
-        } 
-       
-       </script>
-<form>
+     
+<form name="myform"  method="post" action="#" onsubmit="return validateemail();">
   
   <fieldset>
     <!-- <legend>Registration Form</legend> -->
@@ -18,15 +25,15 @@
     <table>
     <tr>
       <td><label for="User Id">User Id:</label></td>
-    <td><input type="text" name="User Id" required><br/></td>
+    <td><input type="text" name="User Id"><br/></td>
   </tr>
     <tr>
         <td> <label for="Password">Password:</label></td>
-          <td><input type="Password" name="Password" required><br/></td>
+          <td><input type="Password" name="Password" ><br/></td>
   </tr>
     <tr>
         <td> <label for="Name">Name:</label></td>
-          <td> <input type="text" name="Name" required><br/></td>
+          <td> <input type="text" name="Name" ><br/></td>
   </tr>
     <tr>
         <td><label for="Address">Address:</label></td>
@@ -34,7 +41,7 @@
   </tr>
     <tr>
         <td> <label for="Name">Country:</label></td>
-          <td> <input type="text" name="Country" required><br/></td>
+          <td> <input type="text" name="Country" ><br/></td>
   </tr>
     <tr>
         <td><label for="Zip Code">Zip Code:</label></td>
@@ -42,14 +49,14 @@
   </tr>
     <tr>
         <td><label for="emailaddress">Email:</label></td>
-          <td><input type="email" name="emailaddress"><br/></td>
+          <td><input type="text" name="email"><br/></td>
   </tr>
 <tr>
   <td>Sex:</td>
-      <td><input type="radio" id="Sex" name="male"  required>
+      <td><input type="radio" id="Sex" name="male">
     <label for="male">male</label>
 
-    <input type="radio" id="Sex" name="female" required>
+    <input type="radio" id="Sex" name="female">
     <label for="female">female</label><br/></td>
   </tr>
 <tr>
@@ -71,9 +78,7 @@ Write anything about you inside here.
 </td>
 </tr>
 </table>
-<div>
-<button onclick="Hello()">Submit</button>
-</div>
+<input type="submit" value="submit">  
 <br><br>
   </fieldset>
 </form>

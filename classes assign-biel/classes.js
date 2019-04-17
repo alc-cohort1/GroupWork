@@ -1,26 +1,28 @@
-//car is the class having different types
-class car{
-    audi;
-    benz;
-    ferari;
-    bmw;
-  }
-  //garden is the class containing different sub-gardens
-  class garden {
-   flower garden;
-   tomato garden;
-   vege garden
+//declaring different classes with different objets
+class food {
+    constructor(rice, posho) {
+      this.rice = rice;
+      this.posho = posho;
     }
-   //animal is the class with different animals
-    class Animal { 
-       monkey;
-       rabbit;
-       cow;
-       goat;
+  }
+
+  class garden {
+    constructor(flower, veges) {
+      this.flower = flower;
+      this.veges = veges;
+    }
+  }
+
+    class Animal{
+      constructor (goat, rabbit){
+        this.goat = goat;
+        this.rabbit = rabbit;
       }
-      //shape is the class with different shapes
-      class shape{
-        rectangle;
-        square;
-        trapezium;
+    }
+
+     class cars {
+        constructor(audi, benz) {
+          this.audi = audi;
+          this.benz = benz;
+        }
       }

@@ -43,3 +43,27 @@ let Cats = new Object();
   tile["origin"] = "floor";
   tile.description(); //function call
 }
+class Clans {
+  //class called Tiles
+  clans(name, totem, motto) {
+    this.name = name;
+    this.totem = totem;
+    this.motto = motto;
+    //constructor with parameters name,make and location
+  }
+
+  description() {
+    alert(
+      this.name + " totem is " + this.totem + "and the motto " + this.motto
+    );
+  }
+}
+
+let Clan = new Object();
+{
+  // new object or class Tiles called tile
+  clan.name = "Balangira";
+  clan["totem"] = "Engo";
+  clan["motto"] = "Kiiso bwe kikulaba obulungi naawe okiraba.!";
+  clan.description(); //function call
+}

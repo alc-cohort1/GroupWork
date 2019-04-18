@@ -9,11 +9,17 @@
     <script src="js/main.js"></script>
 </head>
 <body>
+
+    <!-- div with container as a class -->
     <div class="container">
+
+        <!-- div with a wrapper class for displaying 3 divs in a grid -->
         <div class="wrapper">
             <div class="left">
                 <h4>Enter Loan Data:</h4>
                 <form method="post" name="loanForm">
+
+                    <!-- input data -->
                     <div class="loanForm">
                         <div>
                             <label>Amount of Loan ($):</label>
@@ -29,7 +35,7 @@
                             <input name="annualInterest">
                             <span id="error2" style="color: red"></span>
                         </div>
-                        <div>4
+                        <div>
                             <label>Repayment Period (years):</label>
                         </div>
                         <div>
@@ -51,12 +57,14 @@
                         </div>
                     </div>
                 </form><br>
+
+                <!--   div which is used for displaying the calculator results  -->
                 <div class="results"> 
                     <div>
                         <label>Monthly Payment:</label>  
                     </div>  
                     <div>
-                        <span id="monthlyPayment"></span>
+                        <u><span id="monthlyPayment"></span></u>
                     </div>
                     <div>
                         <label>Total Payment:</label>
@@ -71,11 +79,15 @@
                         <span id="totalInterest"></span>
                     </div>
                 </div>
+
+            <!-- this div has contents to be display on the right of the page -->
             </div>
                  <div class="right">
                 <h4>Loan Balance, Cumulative Equity, and Interest Payments</h4>
                 <img src="images/graph.png" alt="Graph" width="500px" height="250px">
             </div>
+
+            <!-- this div contains links to get in touch with loan finders -->
             <div class="bottom">
                 <h4>Sponsors: Apply for your loan with one of this loan finders</h4>
                 <ul>

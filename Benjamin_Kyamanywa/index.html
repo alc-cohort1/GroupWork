@@ -4,63 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registration Form Validation</title>
+    <title>Registration Form</title>
 </head>
 <body>
     <script language="javascript">
     <!--
-        // Validation function that checks for all the fields of the HTML my_form when submitted.
+        // Validation function that checks for all the fields of the HTML Registration form when submitted.
         function validate() {
-        // Variable to check whether the length of the userId input is between 5 and 12 characters.  
+        // Variable to check whether the length of the userId input field is between 5 and 12 characters.  
         var userId = document.my_form.user_id.value; 
         if (userId.length == "" || userId.length < 5 || userId.length > 12){
             document.getElementById("user_id_error").innerHTML="<b>Required and Must be of length 5 to 12.</b>";
             return false;
         }
 
-        // Variable to check whether the length of the password input is between 7 and 12 characters.
+        // Variable to check whether the length of the password input field is between 7 and 12 characters.
         var password = document.my_form.password.value;
         if (password.length == "" || password.length < 7 || password.length > 12) {
             document.getElementById("password_error").innerHTML="<b>Required and Must be of length 7 to 12.</b>";
             return false;
         }
 
-        // Variable to check whether the name field input has alphabets only.
+        // Variable to check whether the name input field has alphabets only.
         var name = document.my_form.name.value;
-        if (name == "" || name.value.match(/^[A-Za-z]+$/)) {
+        if (!name.match(/^[A-Za-z]+$/)) {
             document.getElementById("name_error").innerHTML="<b>Required and alphabets only.</b>";
             return false;
         }
-
-        // Variable to check whether a country has been selected.
+        
+        // Variable to check whether a country input field has been selected.
         var country = document.my_form.country.value;
         if (country == "") {
             document.getElementById("country_error").innerHTML="<b>Required. Must select a country.</b>";
             return false;
         }
 
-        // Variable to check whether the zip code input is a number.
+        // Variable to check whether the zip code input field is a number.
         var num = document.my_form.num.value;
                    if (isNaN(num) || num == "") {
                        document.getElementById("zip_code_error").innerHTML="<b>Required. Must be numeric only.</b>";
             return false;
                    }
 
-        // Variable to check whether the email input is valid. 
+        // Variable to check whether the email input field is valid. 
         var email = document.my_form.email.value;
-        if (/\S+@\S+/.test(email) == false){
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) == false){
                     document.getElementById("email_error").innerHTML="<b>Required. Must be a valid email</b>";
             return false;
                 }
 
-        //  Variable to check gender selection.
+        //  Variable to check whether the gender field has a selection.
         var gender = document.my_form.gender.value;
         if (gender == ""){
             document.getElementById("gender_error").innerHTML ="<b>Required</b>";
             return false;
         }
                 
-        // Variable to check language selection.
+        // Variable to check whether at least one language checkbox field has been selected.
         var language = document.my_form;
         if (!language.english.checked && !language.non_english.checked){
             document.getElementById("language_error").innerHTML="<b>Required</b>";
@@ -78,10 +78,10 @@
     <center>
     <fieldset>
         
-        <!-- Label for the Heading of the form -->
+        <!-- Label for the Heading of the Registration form -->
         <legend><h1>Registration Form</h1></legend> <br>
         
-        <form name="my_form" onsubmit="return validate()" >
+        <form name="my_form" action="post" onsubmit="return validate()" >
         
             <table>   
                 
@@ -140,10 +140,11 @@
                         <label for="gender">Sex: </label>
                     </td>
                     <td>
-                            <input type="radio" name="sex">
+                            <input type="radio" name="gender">
                             <label for="male">Male</label>
                             <input type="radio" name="gender">
-                            <label for="male">Female</label><span id="gender_error"></s>
+                            <label for="male">Female</label>
+                            <span id="gender_error"></span>
                     </td>
                 </tr>
 

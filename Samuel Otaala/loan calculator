@@ -1,0 +1,18 @@
+var amountOfLoan=document.getElementByID("amountOfLoan").value;
+var annualInterest=document.
+var repaymentPeriod
+
+//calulate annualInterestvar MIR = annualInterest/(100*12);
+var x = (1+ MIR);
+var NM = repaymentPeriod*12;
+var y = Math.pow(x, NM);
+var numerator = amount of loan*MIR*y;
+var denominator = y-1;
+
+var MP= numerator/denominator;
+var totalPayment = MP*repaymentPeriod*12;
+var totalInterest = totalPayment-amountOfLoan;
+
+document.getElementById('MP').innerHTML=MP;
+document.getElementById('totalPayment').innerHTML=totalPayment;
+document.getElementById('totalInterest').innerHTML=totalInterest;

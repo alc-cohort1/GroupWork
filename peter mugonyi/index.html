@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>formvalidation</title>
+</head>
+
+<body>
+    <center>
+            <fieldset>
+                <h1>Registration Form</h1>
+<script>
+    //validating values  entered in the form input fields
+    function validate(){
+        var userid =document.reg.userid.value;
+        var password=document.reg.password.value;
+        var name=document.reg.name.value;
+        var address =document.reg.address.value;
+        var country=document.reg.country.value;
+        var zip=document.reg.zip.value;
+        var email=document.reg.email.value;
+        var sex=document.reg.sex.value;
+        var language=document.reg;
+      // checking if the input userid is  a number or min length is not less than 5 and max length is > 12
+        if(isNaN(userid)||userid.length<5 ||userid.length>12||userid==""){
+            document.getElementById("out").innerHTML="Reguired and must be of length 5 to 12"; 
+        }
+        // checking if the passward length is not < 7 or maximum length is not >12
+    if(password.length<7 ||password.length>12||password==""){
+            document.getElementById("out1").innerHTML="Reguired and must be of length 7 to 12";        
+        }
+         //checking if the inputname is alphabetic  
+        if(name==""||!isNaN(name)){
+            document.getElementById("out").innerHTML="Required and alphabetes Only ";
+        //   return false;
+                               }
+        if(address==""){
+      document.getElementById("out3").innerHTML="Optional";       
+                               }
+        // checking if the country field is selected
+        if (country == ""){
+           document.getElementById('out4').innerHTML="Required. Must select a country.";
+                                
+        }
+        //checking if  the ZIP code field is filled with numeric
+        if (isNaN(zip) || zip == ""){
+            document.getElementById('out5').innerHTML="Required. Must be numeric only.";
+        }  
+        //checking if the email is inputed and valid
+        if (/\S+@\S+/.test(email) == false|| email==""){
+            document.getElementById('out6').innerHTML="Required. Must be a valid email.";
+    }
+    //checking if the gender is selected from the radio button
+    if (sex == ""){
+            document.getElementById('out7').innerHTML="Required.";
+            //return false;
+}
+//checking if the language is checked in the checkbox
+if (!language.checkbox1.checked && !language.checkbox2.checked){
+            document.getElementById('out8').innerHTML="Required.";
+            return false;   
+        }  
+}   
+            </script>
+<table>       <!--table housing the whole form -->
+    <!-- on submition the form is validated-->
+            <form name="reg" onsubmit="return validate()">
+                <tr>
+                    <td>User ID:</td>
+                    <td><input type="text"  name="userid">
+                
+                        <span id ="out"></span></td>
+                </tr>
+                <tr>
+                     <!--input passward field  -->
+                    <td>Password:</td>
+                    <td><input type="password"  name="password">
+                
+                        <span id ="out1">
+            </td>
+                    
+                    </span>
+                </tr>
+                <tr>
+                     <!-- input field for the name-->
+                    <td>Name:</td>
+                    <td><input type="text"  name="name">
+                
+                        <span id ="out2">
+            
+                        </span></td> 
+                </tr>
+                <tr>
+                     <!-- address inputarea -->
+                        <td>Address:</td>
+                        <td><input type="text"  name="address">
+                
+                            <span id ="out3">
+                
+                            </span></td>
+                </tr>
+                <tr>
+                     <!-- selecting  country in the country inputfield  -->
+                        <td> <label> Select your country:</label></td>
+                        <td><select name="country"> 
+                                <option value="">(Please select a country)</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Uganda">Uganda</option>
+                            </select>
+                     <span id="out4"></td>
+                 </span>
+                </tr> 
+                <tr>
+                     <!-- zip input field area -->
+                        <td>Zip:</td>
+                        <td> <input type="text"  name="zip">
+                
+                            <span id ="out5"></span>
+        </td>
+               
+            </tr>
+            <tr>
+                 <!-- the input field for email in the form -->
+                    <td> Email:</td>
+                    <td><input type="text"  name="email">
+                
+                        <span id ="out6"></span></td>
+               
+            </tr>
+            <tr>
+                 <!-- gender inputfield field with a radio button -->
+                    <td>Gender:</td>
+                    <td><input type="radio" name="sex" value="Male">Male
+                        <input type="radio" name="sex" value="Female">Female
+                    <span id ="out7"></span></td>
+            </tr>
+            <tr>
+                 <!-- language input field using a checkbox -->
+                    <td>language:</td>
+                    <td><input type="checkbox" name="checkbox1" value="English" >English
+                        <input type="checkbox" name="checkbox2" value="Non English">Non English
+                        <span id="out8"></span></td> 
+                </tr>
+                <tr>
+                        <td>
+                             <!-- About contains the input text area-->
+                            <label>About:</label>
+                        </td>
+                        <td>
+                            <textarea cols="15" rows="10"></textarea>
+                        </td>
+                    </tr>
+
+                    <!-- submition of the inputs of the form -->
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit"
+                            />
+                        </td>
+                    </tr>
+               
+                    
+                </form>
+                </table>
+                </fieldset>
+                </center>
+
+</body>
+</html>

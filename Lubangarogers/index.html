@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Regform</title>
+	<title>Registration form</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script  type="text/javascript" src="index.js">
-	<!--
-	/*
 	
+	/*
 	javascript form validations using alerts
 	*/
+
 	/*
-	
-	creating a fuction with the name validate to work on all field validattions
+	creating a fuction with the name validate
+	 to work on authenticity of data filled in
+	 different fields of the form
 	*/
 	function validate(){
-          //assigning variable x to the input1 id
+          //assigning variable x to the user id input1 which is a user ID field
 		  var x = document.getElementById("input1")
+		  //condition statement checking the  length of characters within the input box
+
 		  if(x.value.length <= 12 && x.value.length >=5 ){
 			  alert("success")
   
 		  }else{
 			  alert("enter value betweek 5 and 12")
 		  }
-  
+
+       //password field validations
+	   //assigning variable input2 to the user id input2 which is a password field
 	  var input2 = document.getElementById("input2")
 	  if(input2.value.length <= 12 && input2.value.length >= 7){
 		  alert("Success")
@@ -34,13 +39,48 @@
 		  alert('enter value between 7 and 12')
 	  }
 		  
-		 }
-	
-	
-	
-	-->
-	
-	
+		
+	 //name field validations to check if a value entered is an alphabet
+
+	 var input3 = document.getElementById("input3").value;
+	 if(input3 = '' || input3.value.match(/^[A-Za-z]+$/) ){
+            alert("Alphabets only please")
+			return false;
+
+	 }
+// Variable to check whether a country input field has been selected.
+var country = document.getElementById("select").value
+        if (country == "") {
+           alert('country must be selected')
+            return false;
+        }
+
+        // checking if the value entered is a number
+        var num = document.getElementById("input5");
+                   if (isNaN(num) || num == "") {
+                      alert("field required. numbers only please")
+            return false;
+        }
+
+        //  checking if the gender field options are selected
+		var female = document.getElementById("input6").value;
+		var male = document.getElementById("input7").value;
+		if(female || male ==""){
+			alert("please select your gender")
+			return false;
+		}
+
+		//checking if a language checkbox is checked
+		var language = document.getElementById("input8").value;
+		if(laguage ==""){
+			alert("select a language please")
+		}
+	}
+      
+               
+           
+
+	 
 	
 	
 	</script>
@@ -63,7 +103,7 @@
 						<label>Address</label>
 						<input type="password" name="password"  class="textbox" id="input4"><br><br>
 						<label>Country</label>
-						<select>
+						<select id="select">
 							<option value="">kenya</option>
 							<option value="">uganda</option>
 						</select><br><br>
@@ -75,9 +115,8 @@
 								<span>
 										<label>sex:</label>
 										<label>male</label>
-										<input type="radio" name="male" id="input6">
-										<label>female</label>
-										<input type="radio" name="female" id="input7">
+										<input type="radio" id="input6" name="gender" value="male" checked> Male<br>
+                                        <input type="radio" id="input7" name="gender" value="female"> Female<br>
 								</span><br><br>
 								<span>
 									<label for="">Language</label>

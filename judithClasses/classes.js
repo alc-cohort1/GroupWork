@@ -1,12 +1,12 @@
 //understanding claases or OOP 
 
-var jackets = new Object();
-jackets.name = "louisViutone";
-jackets.price = $2000;
-jackets.material = "leather";
-jackets.weight = "light";
-jackets.colors = "diverse";
-jackets.seasons = function(){
+var jacket = new Object();
+jacket.name = "louisViutone";
+jacket.price = $2000;
+jacket.material = "leather";
+jacket.weight = "light";
+jacket.colors = "diverse";
+jacket.seasons = function(){
     alert("Hello there, welcome to the world of"
      + this.name + "," + "We\'re the world\'s coolest jacket line and we range from"
      + this.price + "grab yourself a" + this.name + "today" 
@@ -52,11 +52,11 @@ country.weather = function(){
 }
 
 
-//class of birds
+//class of abird
 var birds = new object();
-birds.name = "owls";
-birds.eyes = "round";
-birds.type = function(){
+bird.name = "owls";
+bird.eyes = "round";
+bird.type = function(){
     alert(this.name + "have" + this.eyes + "eyes.")
 }
 

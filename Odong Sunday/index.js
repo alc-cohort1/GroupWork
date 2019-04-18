@@ -41,23 +41,23 @@ operatingSystem.accessibility = function(){
 }
 
 // Adding properties and methods to a new javaScript object called medicalExpert
-const medicalExpert = new object();
+const Doctors = new object();
 medicalExpert.age = 25;
 medicalExpert.name ="Sunday";
 medicalExpert.yearOfExperience = "below 5 years"
-medicalExpert.doctor = function(){
+medicalExpert.operation = function(){
    return "My name is " +  this.name + "and i am" + this.age;
 }
-medicalExpert.nurse = function(){
+medicalExpert.councelling = function(){
    return "Any person below " + this.age + "is considered an experienced nurse"
 }
-medicalExpert.medicalTrainee = function(){
+medicalExpert.consultancy = function(){
    return "Everyone having" + this.yearOfExperience + " in medical field is a trainee"
 } 
 
 
 // Adding properties and methods to a new javaScript object called sportsPerson
-const sportsPerson = new object();
+const Athletes = new object();
 sportsman['age'] = 25;
 sportsman.gender = "male";
 sportsman.numberOfGames = "3";

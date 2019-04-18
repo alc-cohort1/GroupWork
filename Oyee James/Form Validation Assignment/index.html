@@ -7,7 +7,7 @@
     <title>Form Registration</title>
 </head>
 <body>
-    <form id="register_form" onsubmit="validation(event)">
+    <form id="registerForm" onsubmit="validation(event)">
     <div class="container">
         <div class="center" style="width:50%; padding-left: 30%;padding-top: 40px">
                 <h1>Registration Form</h1>
@@ -16,62 +16,54 @@
                <!--Table row containing user id input field-->
                <tr style="height: 35px;">
                    <td style="text-align: right">
-                    <label id="user_id" min="5" max="7">
-                        User ID:
-                    </label>
+                        <label id="userId">User ID:</label>
                     </td>
                    <td style="padding-left: 10px" >
                        <input type="text" style="width: 200px "id="one">
                    </td>
                    <td>
-                       <span id="id_error"></span>
+                       <span id="idError"></span>
                    </td>
                </tr>
                 <!--Table row containing password input field-->
                <tr style="height: 35px;">
-                <td style="text-align: right">
-                    <label min="5" max="7">
-                        Password:
-                    </label></td>
-                <td style="padding-left: 10px" >
-                    <input type="text" style="width: 200px" id="two">
-                </td>
-                <td>
-                    <span id="password_error"></span>
-                </td>
-            </tr>
+                    <td style="text-align: right">
+                        <label>Password:</label></td>
+                    <td style="padding-left: 10px" >
+                        <input type="text" style="width: 200px" id="two">
+                    </td>
+                    <td>
+                        <span id="passwordError"></span>
+                    </td>
+                </tr>
             <!--Table row containing name input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
-                    <label id="name" min="5" max="7">
-                        Name:
-                    </label></td>
+                    <label id="name">Name:</label>
+                </td>
                 <td style="padding-left: 10px">
                     <input type="text" style="width: 200px" id="three">
                 </td>
                 <td>
-                    <span id="name_error"></span>
+                    <span id="nameError"></span>
                 </td>
             </tr>
             <!--Table row containing address input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
-                    <label min="5" max="7">
-                    Address:
-                    </label></td>
+                    <label>Address:</label>
+                </td>
                 <td style="padding-left: 10px">
                     <input type="text" style="width: 200px" id="four">
                 </td>
                 <td>
-                    <span id="address_error"></span>
+                    <span id="addressError"></span>
                 </td>
             </tr>
             <!--Table row containing country input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
-                    <label id="">
-                        Country:
-                    </label>
+                    <label>Country:</label>
                 </td>
                 <td style="padding-left: 10px">
                     <select name="conutry" id="country">
@@ -82,33 +74,30 @@
                     </select>
                 </td>
                 <td>
-                    <span id="country_error"></span>
+                    <span id="countryError"></span>
                 </td>
             </tr>
             <!--Table row containing ZIP Code input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
-                    <label id="zip" min="5" max="7">
-                    Zip Code:
-                    </label></td>
+                    <label id="zip">Zip Code:</label></td>
                 <td style="padding-left: 10px">
                     <input type="text" style="width: 200px" id="five">
                 </td>
                 <td>
-                    <span id="zip_error"></span>
+                    <span id="zipError"></span>
                 </td>
             </tr>
             <!--Table row containing email input field-->
             <tr style="height: 35px;">
                 <td style="text-align: right">
-                    <label id="address" min="5" max="7">
-                    Email:
-                    </label></td>
+                    <label id="address">Email:</label>
+                </td>
                 <td style="padding-left: 10px;">
                     <input type="email" style="width: 200px" id="six">
                 </td>
                 <td>
-                    <span id="email_error"></span>
+                    <span id="emailError"></span>
                 </td>
             </tr>
             <!--Table row containing gender input field-->
@@ -119,33 +108,29 @@
                     <input type="radio" name="gender" id="sex">Female
                 </td>
                 <td >
-                    <label for="">
-                        <span id="required_sex"></span>
+                    <label>
+                        <span id="requiredGender"></span>
                     </label>
                 </td>
-                <td></td>
             </tr>
             <!--Table row containing language input field-->
             <tr style="height: 35px;">
                     <td style="text-align: right">Language:</td>
                     <td style="padding-left: 10px">
                         <input type="checkbox" name="language1" id="language">English
-                        <input type="checkbox" name="language2" id="language_non">Non English
+                        <input type="checkbox" name="language2" id="languageNon">Non English
                     </td>
                     <td style="padding-right: 40px">
                         <label>
-                            <span id="ling"></span>
+                            <span id="languageError"></span>
                         </label>
                     </td>
-                    <td></td>
-                </tr>
-               
+                </tr>               
                 <tr style="height: 35px;">
                     <td style="text-align: right">About:</td>
                     <td style="padding-left: 10px" rowspan="8" colspan="3">
                         <input type="text" style="height: 150px;width: 350px">
                     </td>
-                    <td></td>
                 </tr>
            </table>
         </div>
@@ -156,97 +141,92 @@
 </form>
     <script>
 
-    //Accessing variables to differnt HTML elements by ids
-   function validation(event){
+        function validation(event){
 
-    var user_id = document.getElementById("one").value;
-    var password_val = document.getElementById("two").value;
-    var name= document.getElementById("three").value;
-    var address = document.getElementById("four").value
-    var zip_code = document.getElementById("five").value;
-    var email = document.getElementById("six").value;
-    var country = document.getElementById("country");
-    var Sex =document.getElementById("sex");
-    var language = document.getElementById("language").value;
-    var language_non = document.getElementById("language_non").value;
+        //Accessing variables to differnt HTML elements by ids
+        var user_id = document.getElementById("one").value;
+        var password_val = document.getElementById("two").value;
+        var name= document.getElementById("three").value;
+        var address = document.getElementById("four").value
+        var zip_code = document.getElementById("five").value;
+        var email = document.getElementById("six").value;
+        var country = document.getElementById("country");
+        var Sex =document.getElementById("sex");
+        var language = document.getElementById("language").value;
+        var language_non = document.getElementById("languageNon").value;
 
-
-    //Checking if password input is empty or the entered password is between 5 and 12
-    if((user_id=="") || !(user_id.length <= 10 && user_id.length >= 5)){
-       document.getElementById("id_error").innerHTML="Required and the value btn 5 and 12";
-
-    }
-    else{
-        document.getElementById("id_error").innerHTML="";
-    }
-
-    if((password_val=="") || !(password_val.length <=10 && password_val.length >=5)){
-        document.getElementById("password_error").innerHTML="Required and the value btn 5 and 12";
-    }
-    else{
-        document.getElementById("password_error").innerHTML="";
-    }
-
-    //Checking if name input is empty or the entered name is 5 and above
-    if((name=="") || !(name.length <=10 && name.length >=5)){
-        document.getElementById("name_error").innerHTML="Required and the value btn 5 and 12";
-    }
-    else{
-        document.getElementById("name_error").innerHTML="";
-    }
-
-    //Checking if zip code input is empty or the entered password is between 5 and 12
-    if((zip_code=="") || !(zip_code.length <= 10 && zip_code.length >=5)){
-        document.getElementById("zip_error").innerHTML="Required and the value btn 5 and 12";
-    }
-    else{
-        document.getElementById("zip_error").innerHTML="";
-    }
-
-    //Checking if address input is empty or the entered password id between 5 and 12
-     if((address=="") || !(address.length <= 10 && address.length >=5)){
-        document.getElementById("address_error").innerHTML="Required and the value btn 5 and 12";
-    }
-    else{
-        document.getElementById("address_error").innerHTML="";
-    }
-
-    //Checking if email input is empty or the entered password is between 5 and 12
-    if((email=="") || !(email.length <= 30 && email.length >=5)){
-        document.getElementById("email_error").innerHTML="Required and the value btn 5 and 20";
-    }
-    else{
-        document.getElementById("email_error").innerHTML="";
-    }
-
-
-    //Checking if country is selected
-    if(country.selectedIndex == ""){
-          
-          country_error.innerHTML = "Required. Must Select a Country";
-
-        }else{
-
-          country_error.innerHTML = "";
+        //Checking if password input is empty or the entered password is between 5 and 12
+        if((user_id=="") || !(user_id.length <= 10 && user_id.length >= 5)){
+        document.getElementById("idError").innerHTML="Required and the value btn 5 and 12";
 
         }
-
-    //Checking if gender is selected
-    if (!(sex[0].checked || sex[1].checked)) {
-                  document.getElementById("required_sex").innerHTML = "<b>Required</b>";
-                }else{
-                  document.getElementById("required_sex").innerHTML = "";
-                }
-
-     //Checking if Language is selected
-
-        if (!(language.checked || language_non.checked)) {
-          document.getElementById("ling").innerHTML = "Required";
-        }else{
-          document.getElementById("ling").innerHTML = "";
+        else{
+            document.getElementById("idError").innerHTML="";
         }
-    event.preventDefault();
-   }
+
+        if((password_val=="") || !(password_val.length <=10 && password_val.length >=5)){
+            document.getElementById("passwordError").innerHTML="Required and the value btn 5 and 12";
+        }
+        else{
+            document.getElementById("passwordError").innerHTML="";
+        }
+
+        //Checking if name input is empty or the entered name is 5 and above
+        if((name=="") || !(name.length <=10 && name.length >=5)){
+            document.getElementById("nameError").innerHTML="Required and the value btn 5 and 12";
+        }
+        else{
+            document.getElementById("nameError").innerHTML="";
+        }
+
+        //Checking if zip code input is empty or the entered password is between 5 and 12
+        if((zip_code=="") || !(zip_code.length <= 10 && zip_code.length >=5)){
+            document.getElementById("zipError").innerHTML="Required and the value btn 5 and 12";
+        }
+        else{
+            document.getElementById("zipError").innerHTML="";
+        }
+
+        //Checking if address input is empty or the entered password id between 5 and 12
+        if((address=="") || !(address.length <= 10 && address.length >=5)){
+            document.getElementById("addressError").innerHTML="Required and the value btn 5 and 12";
+        }
+        else{
+            document.getElementById("addressError").innerHTML="";
+        }
+
+        //Checking if email input is empty or the entered password is between 5 and 12
+        if((email=="") || !(email.length <= 30 && email.length >=5)){
+            document.getElementById("emailError").innerHTML="Required and the value btn 5 and 20";
+        }
+        else{
+            document.getElementById("emailError").innerHTML="";
+        }
+
+
+        //Checking if country is selected
+        if(country.selectedIndex == ""){
+            countryError.innerHTML = "Required. Must Select a Country";
+            }else{
+            countryError.innerHTML = "";
+        }
+
+        //Checking if gender is selected
+        if (!(sex[0].checked || sex[1].checked)) {
+            document.getElementById("requiredGender").innerHTML = "<b>Required</b>";
+            }else{
+            document.getElementById("requiredGender").innerHTML = "";
+        }
+
+        //Checking if Language is selected
+
+            if (!(language.checked || languageNon.checked)) {
+            document.getElementById("LanguageError").innerHTML = "Required";
+            }else{
+            document.getElementById("LanguageError").innerHTML = "";
+        }
+        event.preventDefault();
+    }
 
     </script>
 </body>

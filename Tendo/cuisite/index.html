@@ -1,10 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta >
 <!--link to "validate_cuisite.js"-->
-<script type="text/javascript" src="validate_cuisite.js"></script>
+<script type="text/javascript" src="index.js"></script>
 
 <!--link to External Css "cuisite.css"-->
-<link type="text/css" href="cuisite.css" rel="stylesheet" />
+<link type="text/css" href="index.css" rel="stylesheet" />
 <title>Registration Form</title>
 </head>
 <body>
@@ -34,10 +36,10 @@
             <tr><td><label>Country :&nbsp</label>
                 </td><td><select name="dropdown"  id="country">
                         <option value="default" id="def_country">(Please Select a Country)</option>
-                        <option value="Uganda">Uganda</option>
-                        <option value="Kenya">Kenya</option>
-                        <option value="Tanzania">Tanzania</option>
-                        <option value="Rwanda">Rwanda</option>
+                        <option value="ug">Uganda</option>
+                        <option value="Ke">Kenya</option>
+                        <option value="Tz">Tanzania</option>
+                        <option value="Rw">Rwanda</option>
                         <option value="br">Burundi</option>
                         <option value="cg">Congo</option>
                         <option value="ss">S.Sudan</option>
@@ -59,8 +61,11 @@
             <tr><td><label>About :&nbsp</label></td><td><textarea rows="5" cols="50" id="txtarea"></textarea></td><span id="spn10"></span></tr>
         </tbody>
     </table>
-            <!--Create Division and include a Button -->
+            <!--Create Division and include a Button 
     <div><input type="button" value="Submit" name="textboxSubmit" onclick="validateFields()"/></div>
+   -->
+    <div><button  onclick="validateFields()"></button></div>
+
 </form>
 
 </div></fieldset>

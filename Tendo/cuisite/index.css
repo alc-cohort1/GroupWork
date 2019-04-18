@@ -1,14 +1,14 @@
  
 /*Add Style to Body */
 .body{
-    background: burlywood;
+    background: #3498DB;
 }
 /*Add Style Input fields*/
 input{
     text-align: center;
 	background-color: #ECF0F1;
 	border: 2px solid transparent;
-	border-radius: 3px;
+	border-radius: 5px;
 	font-size: 16px;
 	font-weight: 200;
 	padding: 10px 0;
@@ -16,6 +16,9 @@ input{
 	transition: border .5s;
 }
 
+legend{
+    color: #3498DB;
+}
 /*Add formatting to Heading*/
 .h2 {
     color: black(82, 204, 51);
@@ -25,17 +28,14 @@ input{
     text-transform: capitalize;
     }
 
-   
-  
-
      /*Add Style to all inputs on focus*/
-    input:focus {
-        border: 2px solid #3498DB;
+    input:focus{
+        border: 2px solid #73d216;
         box-shadow: none;
         }
 
          /*Add Style and effects to Button*/
-         .button {
+         button{
         border: 2px solid transparent;
         background: #73d216;
         color: #ffffff;
@@ -52,9 +52,7 @@ input{
         margin: 0 auto;
         }
         
-        .button:hover {
-        background-color: #2980B9;
-        }
+       
         
         
 	

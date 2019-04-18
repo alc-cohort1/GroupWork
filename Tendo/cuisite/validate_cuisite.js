@@ -55,7 +55,7 @@ function validateFields(){
     document.getElementById('spn9').innerHTML="<font color=red>Attention You did not select a Country";
     alert("Sorry Name Field is empty");
   }
-//Validate Zip filed
+//Validate Zip Field
   if((zip.value=="")|| !isNaN(zip.value)){
     document.getElementById('spn3').innerHTML="<font color=red>Sorry Field is empty";
     alert("Sorry Name Field is empty");

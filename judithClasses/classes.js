@@ -1,3 +1,5 @@
+//understanding claases or OOP 
+
 var jackets = new Object();
 jackets.name = "louisViutone";
 jackets.price = $2000;
@@ -13,6 +15,8 @@ jackets.seasons = function(){
 }
 
 
+//tried to generate objects of class food
+
 var food = new Object();
 food.name = 'Otigo';
 food.type = 'Greens';
@@ -25,10 +29,36 @@ food.health = function(){
 }
 
 
+//claas of football club
+
 var arsenal = new object();
 arsenal.city = 'unknown';
 arsenal.manager = 'not sure';
 arsenal.former = 'HENRY THIERY';
 arsenal.team = function(){
-    alert('Home bases of most arsenal players is')
+    alert('Home bases of most arsenal players is' + 
+    this.city + "to me" + ", and am not really" +
+     this.manager + "of who the current manager is" + "." + "I like" + this.former)
 }
+
+
+//class of countries
+
+var coutry = new object();
+country.location = "east african";
+country.curruption = "high";
+country.weather = function(){
+    alert("uganda is one of the " ) + this.location + "and the levels of corruption is really" + this.corruption + "." 
+}
+
+
+//class of birds
+var birds = new object();
+birds.name = "owls";
+birds.eyes = "round";
+birds.type = function(){
+    alert(this.name + "have" + this.eyes + "eyes.")
+}
+
+   
+

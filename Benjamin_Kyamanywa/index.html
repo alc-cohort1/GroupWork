@@ -27,7 +27,7 @@
 
         // Variable to check whether the name input field has alphabets only.
         var name = document.my_form.name.value;
-        if (name == "" || name.value.match(/^[A-Za-z]+$/)) {
+        if (!name.match(/^[A-Za-z]+$/)) {
             document.getElementById("name_error").innerHTML="<b>Required and alphabets only.</b>";
             return false;
         }
@@ -53,14 +53,14 @@
             return false;
                 }
 
-        //  Variable to check whether the gender field has a selection..
+        //  Variable to check whether the gender field has a selection.
         var gender = document.my_form.gender.value;
         if (gender == ""){
             document.getElementById("gender_error").innerHTML ="<b>Required</b>";
             return false;
         }
                 
-        // Variable to check whether the language field has a selection.
+        // Variable to check whether at least one language checkbox field has been selected.
         var language = document.my_form;
         if (!language.english.checked && !language.non_english.checked){
             document.getElementById("language_error").innerHTML="<b>Required</b>";
@@ -81,7 +81,7 @@
         <!-- Label for the Heading of the Registration form -->
         <legend><h1>Registration Form</h1></legend> <br>
         
-        <form name="my_form" onsubmit="return validate()" >
+        <form name="my_form" action="post" onsubmit="return validate()" >
         
             <table>   
                 
@@ -140,10 +140,11 @@
                         <label for="gender">Sex: </label>
                     </td>
                     <td>
-                            <input type="radio" name="sex">
+                            <input type="radio" name="gender">
                             <label for="male">Male</label>
                             <input type="radio" name="gender">
-                            <label for="male">Female</label><span id="gender_error"></s>
+                            <label for="male">Female</label>
+                            <span id="gender_error"></span>
                     </td>
                 </tr>
 

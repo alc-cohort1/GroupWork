@@ -1,8 +1,9 @@
 
 
-// Adding javascript objects
+// Adding javascript methods and properties to objects 
 
 
+// Adding properties and methods to a new javaScript object called computer
 const computer = new object();
 computer.Color = "black";
 computer.size = "21 inches";
@@ -21,8 +22,25 @@ computer.operation = function(){
 }
 
 
+// Adding properties and methods to a new javaScript object called operatingSystem
+const operatingSystem = new object();
+operatingSystem.openSource = "Linux";
+operatingSystem.highSecurity = "Macintosh";
+operatingSystem.virusProne = "Windows";
+operatingSystem.dualBoot = function(){
+    return "both" + operatingSystem.openSource + "and" + operatingSystem.virusProne 
+        + "can be used on dual boot";
+}
+operatingSystem.compatibility = function(){
+    return "A" + operatingSystem.virusProne + "operating system can not be installed on a " 
+        + operatingSystem.highSecurity + "computer";
+}
+operatingSystem.accessibility = function(){
+    return "One can easily download a" + operatingSystem.virusProne + "operating system or a " 
+        + operatingSystem.openSource + "operating system" 
+}
 
-
+// Adding properties and methods to a new javaScript object called medicalExpert
 const medicalExpert = new object();
 medicalExpert.age = 25;
 medicalExpert.name ="Sunday";
@@ -38,7 +56,7 @@ medicalExpert.medicalTrainee = function(){
 } 
 
 
-
+// Adding properties and methods to a new javaScript object called sportsPerson
 const sportsPerson = new object();
 sportsman['age'] = 25;
 sportsman.gender = "male";
@@ -56,7 +74,7 @@ sportsman.dressCode = function(){
 }
 
 
-
+// Adding properties and methods to a new javaScript object called television
 const television = new object();
 television.color = "green";
 television.screenSize = "13 inches";

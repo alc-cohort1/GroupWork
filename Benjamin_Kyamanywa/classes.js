@@ -4,7 +4,7 @@
 var motorbike = new object ();
 motorbike.brand = "Harley Davidson Street 750";
 motorbike.type = "cruiser";
-motrobike.engineType = "Liquid Cooled";
+motorbike.engineType = "Liquid Cooled";
 motorbike.condition = "New";
 motorbike.speedometer = "Digital";
 motorbike.tractionControl = "No";

@@ -15,7 +15,7 @@ jackets.seasons = function(){
 }
 
 
-//tried to generate objects of class food
+//modifying obects
 
 var food = new Object();
 food.name = 'Otigo';
@@ -25,8 +25,12 @@ food.taste = 'Sour';
 food.health = function(){
     alert('Ever know there\,s such a healthy delicasy called' + this.name 
     + "?" + this.type + "are healthy and can be found in any" + this.source + "." + 
-    "Its kind of" + this.taste + "but at the end of the day healthy, so treat your health")
+    "Its kind of" + this.taste + "but at the end of the day healthy, so treat your health");
 }
+object.difineProperty(food, 'taste' , {enumerable: false})
+
+
+
 
 
 //claas of football club
@@ -41,6 +45,8 @@ arsenal.team = function(){
      this.manager + "of who the current manager is" + "." + "I like" + this.former)
 }
 
+object.
+
 
 //class of countries
 
@@ -53,12 +59,19 @@ country.weather = function(){
 
 
 //class of birds
-var birds = new object();
+var bird = new object();
 birds.name = "owls";
 birds.eyes = "round";
 birds.type = function(){
-    alert(this.name + "have" + this.eyes + "eyes.")
+    alert(this.name + "have" + this.eyes + "eyes.");
 }
+
+object.getProperty(bird , "round", {value:"black"});
+object.getProperty(bird , "owls", {value:"eagles"})
+object.getProperty(bird , "round", {value:"sleepy"})
+object.getProperty(bird , "round", {value:"scary"})
+object.getProperty(bird , "round", {value:"weak"})
+
 
    
 

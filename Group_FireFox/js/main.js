@@ -1,4 +1,3 @@
-// Declaration of a function validate()
 function validate() {
   // Variables for keeping input values
   var loanAmount = parseFloat(document.loanForm.loanAmount.value);

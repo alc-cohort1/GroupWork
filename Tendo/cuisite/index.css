@@ -1,0 +1,124 @@
+<<<<<<< HEAD
+ 
+/*Add Style to Body */
+.body{
+    background: rgb(179, 200, 214);
+    width: 70%;
+}
+
+/*Add Style Input fields*/
+input,textarea{
+    text-align: center;
+	background-color: #ECF0F1;
+	border: 2px solid transparent;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 200;
+	padding: 10px 0;
+	width: 250px;
+	transition: border .5s;
+}
+
+.textarea:focus-within{
+ animation-iteration-count: infinite;   
+}
+legend{
+    color: #3498DB;
+}
+/*Add formatting to Heading*/
+.h2 {
+    color: black(82, 204, 51);
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .4em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    }
+
+     /*Add Style to all inputs on focus*/
+    input:focus{
+        border: 2px solid #03f82c;
+        box-shadow: none;
+        }
+
+         /*Add Style and effects to Button*/
+         .button{
+        border: 2px solid transparent;
+        background: #73d216;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 10px 0;
+        text-decoration: none;
+        text-shadow: black;
+        border-radius: 3px;
+        box-shadow: none;
+        transition: 0.25s;
+        display: block;
+        width: 250px;
+        margin: 0 auto;
+        }
+        
+       
+        
+        
+=======
+ 
+/*Add Style to Body */
+.body{
+    background: #3498DB;
+}
+/*Add Style Input fields*/
+input{
+    text-align: center;
+	background-color: #ECF0F1;
+	border: 2px solid transparent;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 200;
+	padding: 10px 0;
+	width: 250px;
+	transition: border .5s;
+}
+
+legend{
+    color: #3498DB;
+}
+/*Add formatting to Heading*/
+.h2 {
+    color: black(82, 204, 51);
+    font-weight: normal;
+    letter-spacing: .4em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    }
+
+     /*Add Style to all inputs on focus*/
+    input:focus{
+        border: 2px solid #73d216;
+        box-shadow: none;
+        }
+
+         /*Add Style and effects to Button*/
+         button{
+        border: 2px solid transparent;
+        background: #73d216;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 10px 0;
+        text-decoration: none;
+        text-shadow: none;
+        border-radius: 3px;
+        box-shadow: none;
+        transition: 0.25s;
+        display: block;
+        width: 250px;
+        margin: 0 auto;
+        }
+        
+       
+        
+        
+>>>>>>> 040e5ce3641bcad5d7848a846465c3270a91b71c
+	

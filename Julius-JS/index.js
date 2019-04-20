@@ -220,7 +220,7 @@ var operatingSystem4 = {
 };
 
 // Declaring an object operatingSystem4
-var operatingSystem4 = {
+var operatingSystem5 = {
 
     // assigning values to property of operatingSystem4
     name: 'IOS',

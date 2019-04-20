@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login details</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+
+<body>
+<div class="register_div">
+<center><h1 style="font-size:20px;">Registration here</h1></center>
+<hr>
+    <table width="50%" align="center">
+        <form name="Form" method="post" onclick="return validateForm();">
+            <tr>
+
+            </tr>
+                <td>
+                    <label for="fist_name">USER ID:</label>
+                </td>
+                <td>
+                    <input type="text" name="userId" placeholder="" id="userId">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">PASSWORD:</label>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fist_name">NAME:</label>
+                </td>
+                <td>
+                    <input type="text" name="name" placeholder="name" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fist_name">ADDRESS:</label>
+                </td>
+                <td>
+                    <input type="text" name="address" placeholder="address" id="address">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fist_name">COUNTRY:</label>
+                </td>
+                tr>
+               <td><label for="country">Country :</label></td>
+               <td><section><select name="country" id="country"><br>
+               <option value="">(Please Select your Country)</option>
+                    <option value="kenya">kenya</option>
+                    <option value="Norway">Norway</option><br>
+                    <option value="Uganda">Uganda</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="United KIngdom">United KIngdom</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="NewZealand">NewZealand</option>
+                </select><br>
+           </tr>
+            <tr>
+                <td>
+                    <label for="zip_code">Zip code:</label>
+                </td>
+                <td>
+                    <input type="text" name="zip_code" placeholder="" id="zip">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input type="email" name="email" placeholder="" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Gender">SEX:</label>
+                </td>
+                <td>
+                    Female :<input type="radio" name="gender"  value="female" style="width:10%" id="sex">
+                Male :<input type="radio" name="gender" value="male" style="width:10%" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Gender">Language:</label>
+                </td>
+                <td>
+                    English :<input type="checkbox" name="gender" value="female" style="width:10%" checked>
+                     Non English :<input type="checkbox" name="gender" value="male" style="width:10%" id="language">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="About">About:</label>
+                </td>
+                <td>
+                    <textarea name="message" rows="9" cols="40" id="about">
+                        Optional
+                        </textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit" name="Submit" id="button" onclick="return validateForm((">Submit</button></td>
+                
+
+            </tr>
+
+        </form>
+
+    </table>
+
+</div>
+<script src="form.js"></script>
+</body>
+</html>

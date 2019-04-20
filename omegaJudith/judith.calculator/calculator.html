@@ -14,17 +14,17 @@
             <h2>Enter Loan Data</h2>
             <tr>
                 <td><label for="">Amout of the loan ($): </label></td>
-                <td><input type="text" name="amout" id ="amountOfTheLoan"></td>
+                <td><input type="number" name="amout" id ="amout" min="1"  max="1000000000000000" onchange="computeLoan"></td>
             </tr>
 
             <tr>
                 <td><label for="">Annual Interest (%): </label></td>
-                <td><input type="text" name="annualInterest" id ="annualInterest"></td>
+                <td><input type="number" min="0" max="100" name="annualInterest" value="5" step=".1" id ="annualInt" onchange="computeLoan"></td>
             </tr>
 
             <tr>
                 <td><label for="">Payment Period (Years): </label></td>
-                <td><input type="text" name="paymentPeriod" id ="paymentPeriod"></td>
+                <td><input type="number" name="repayment" min="1" max="30" value="1" step="1" id ="repayment" onchange="computeLoan"></td>
              </tr>
 
              <tr>
@@ -38,15 +38,12 @@
              </tr>
              <tr>
                  <td><label for="">Monthly Payment: </label></td>
-                 <td><input type="text" name="monthlyPayment" id="monthlyPayment"></td>
              </tr>
              <tr>
                <td><label for=""></label>Total Payments: </td>
-               <td><input type="text" name="totalPayment" id="totalPayment"></td>
             </tr>
             <tr>
                  <td><label for=""></label>Total Interest: </td>
-                 <td><input type="text" name="" id="totalInterest"></td>
             </tr>
 
             <tr>
@@ -61,6 +58,29 @@
                    </ul>
                 </td>
             </tr>
+            <script type="text/javaScript">
+                <!--
+                function conputeLoan(){
+
+                    //variables for capturing values
+                    var amount = document.getElementById('amount').value
+                    var annualInt = document.getElementById('annualInt').value
+                    var repayment = document.getElementById('repayment').value
+
+                    //variables for calculating loan principle
+                    var annualInt = (amount * (annualInt * .01)) / repayment;
+                    var repayment = ((amout / months ) + annualInt) .toFix(2);
+                    document.getElementById('repayment').innerHTML = "monthly payment = " + repayment;
+
+
+                }
+
+
+
+
+
+                -->
+            </script>
 
 
 

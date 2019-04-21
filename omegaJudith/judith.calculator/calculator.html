@@ -7,6 +7,33 @@
     <title>Loan Calculator</title>
 </head>
 <body>
+<script>
+        <!--
+        //variables holding captured id values
+
+        var amountOfLoan=document.getElementByID("").value;
+        var annualInterest=document.getElementById("").value;
+        var repaymentPeriod= document.getElementById("").value;
+
+        //calulate annualInterestvar MIR = annualInterest/(100*12);
+        var x = (1+ MIR);
+        var NM = repaymentPeriod*12;
+        var y = Math.pow(x, NM);
+        var numerator = amount of loan*MIR*y;
+        var denominator = y-1;
+
+        var MP= numerator/denominator;
+        var totalPayment = MP*repaymentPeriod*12;
+        var totalInterest = totalPayment-amountOfLoan;
+
+        document.getElementById('MP').innerHTML=MP;
+        document.getElementById('totalPayment').innerHTML=totalPayment;
+        document.getElementById('totalInterest').innerHTML=totalInterest;
+        -->
+</script>
+
+
+
     
 <form action="" POST>
 
@@ -58,42 +85,7 @@
                    </ul>
                 </td>
             </tr>
-            <script type="text/javaScript">
-                <!--
-                function conputeLoan(){
-
-                    //variables for capturing values
-                    var amount = document.getElementById('amount').value
-                    var annualInt = document.getElementById('annualInt').value
-                    var repayment = document.getElementById('repayment').value
-
-                    //variables for calculating loan principle
-                    var annualInt = (amount * (annualInt * .01)) / repayment;
-                    var repayment = ((amout / months ) + annualInt) .toFix(2);
-                    document.getElementById('repayment').innerHTML = "monthly payment = " + repayment;
-
-
-                }
-
-
-
-
-
-                -->
-            </script>
-
-
-
         </table>
     </form>
-
-
-    <script src="text/javaScript">
-        <!--
-
-            
-        -->
-    </script>
-
 </body>
 </html>

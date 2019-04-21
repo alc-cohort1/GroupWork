@@ -1,0 +1,58 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.register_div{
+padding: 40px;
+background-color: rgb(109, 109, 68);
+margin: 60px;
+width: 50%;
+margin-left:250px; 
+position: absolute;
+-webkit-box-shadow: 0 7px 4px #777;
+-moz-box-shadow: 0 7px 4px olive;
+box-shadow: 0 7px 4px darkgreen;
+border-radius: 10px;
+}
+table{
+padding: 7px;
+cellspacing:10;
+}
+input{
+width: 100%;
+padding: 8px;
+border-radius: 8px;
+border-style: inherit;
+
+}
+select{
+width: 100%;
+padding: 8px;
+border-radius: 10px;
+
+}
+button{
+  background-color: rgb(42, 44, 42);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 8px;
+}
+
+
+button:hover{
+background-color: lime;
+}
+
+
+textarea{
+overflow: auto;
+ outline: none;
+ border: 1px solid #888; 
+ border-radius: 8px;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Magic Form</title>
+</head>
+
+
+
+        <!--this script supports html-->
+<script language="javascript">
+
+    <!--
+         function validate(){
+             //To check out if user id is filled.
+             var userId = document.RegistrationForm.user_id.value.length;
+             if (userId == "" || userId < 5 || userId > 12){
+              alert('Enter your Id name');
+                 document.getElementById("user_id").innerHTML="<b> Required, Must be of length 5 to 12</b>";
+                     return false;
+             }
+
+
+
+             //Validating password 
+             var pass = document.RegistrationForm.password.value.length;
+             if (pass == "" || pass < 8 || pass > 12){
+                 alert('Enter your password at least 8 characters')
+                 document.getElementById("password").innerHTML=" <b>Required & Must be of length 8 to 12</b>";
+                 return false;
+             }
+
+
+             //Validate to check the alphabets
+             var name = document.RegistrationForm.name.value;
+             if (!name.match(/^[a-zA-Z]+$/)){
+                 alert('Enter your Name')
+                 document.getElementById("user_name").innerHTML=" <b>Requires an alphabets only</b>";
+                 return false;
+             }
+
+                             
+
+             //supports/reminds to check in to select a country...
+             var country = document.RegistrationForm.country;
+             if (country.value == "Default"){
+                 alert('choose your country');
+                 document.getElementById("country").innerHTML="<b>Required & Must select a country</b>" ;
+                 return false;
+             }
+             
+
+             //Validation for zip input
+             var num=document.RegistrationForm.zip.value;
+             alert('Enter you zip code')
+             if (isNaN(num) || num == ""){
+                 document.getElementById("numloc").innerHTML = "<b>Required & Must be Numeric only</b>";
+                 return false;
+
+
+             }
+             //Validation for email
+             var mail=document.RegistrationForm.email.value;
+             if (/\S+@\S+/.test(mail) == false){
+                 alert('Enter your Email account!')
+                 document.getElementById('email').innerHTML="<b>Required. Must be a valid Email</b>";
+                 return false;
+             }
+
+
+
+             //validate to check the checkbox for a Gender
+             var Gender = document.RegistrationForm.Gender.value;
+             if (Gender == ""){
+                 alert('Required, muust be chosen male or female');
+                 document.getElementById("Gender").innerHTML ="<label>Required</label>";
+                 return false;
+             }
+
+
+             //supports to choose the language that the user undrestands better
+             var language = document.RegistrationForm.Gender.value;
+             if (!language.english.checked && !language.non_english.checked){
+                 alert('choose the language you undresttand better');
+                 document.getElementById('language').innerHTML="<b>Required</b>";
+                 return false; 
+             }
+             
+             else{
+                 return true;
+             }
+             
+         }
+        --> 
+
+ </script>
+
+
+
+
+
+<body style="background-color:; " >
+
+
+
+
+    <center style="border: 2px solid; width: 51.9%; margin-left: 30%; background-color: chartreuse "  ><h1 >Registration Form</h1></center>
+
+    <fieldset style="width: 50%; height: 100%; margin-left: 30%;background-image: url(img.GIF); " >
+
+
+        <!-- Registration form -->
+        <form action="" method="post" name="RegistrationForm" onsubmit="return validate()" style="width: 100%;height: 100%; background-image: url(img.GIF)">
+
+
+
+
+            <div style="background-image: url()" >
+               
+                    <th colspan="9"></th>
+
+                    <!-- this raw is required to input user id -->
+                    <a style="margin: 130px"></a>User id<br><p></p>
+
+                    <a style="margin: 100px"></a>
+                    <input type="text" name="user_id" id=""><span id="user_id"></span><br><p></p>
+                
+
+                    <!-- here is required to input password only and ... -->
+                    <a style="margin: 130px"></a>Password<br><p></p>
+
+                    <a style="margin: 100px"></a>
+                    <input type="password" name="password" id=""><span id="password"></span><br><p></p>
+
+
+                
+                    <!-- required to fill by the user name -->
+                    <a style="margin: 130px"></a>Name<br><p></p>
+
+                    <a style="margin: 100px"></a>
+                    <input type="text" name="name" ><span id="user_name"></span><br><p></p>
+
+
+
+                    <!-- required to input the Address of the user -->
+                    <a style="margin: 130px"></a>Address<br><p></p>
+
+                    <a style="margin: 100px"></a>
+                    <input type="text" name="address" placeholder="Option" style="color: red"  ><span id="Addre"></span></br><p></p>
+
+
+                
+                    <!-- required to select the user's country to get use  -->
+                    <a style="margin: 130px"></a>Country<br><p></p>
+
+                    <a style="margin: 100px"></a>
+                    <select name="country">
+                        <option selected="" value="Default">(Please select a country)</option>
+                        <option value="ug">Uganda</option>
+                        <option value="tz">Tanzania</option>
+                        <option value="rw">Rwanda</option>
+                        <option value="ky">Kenya</option>
+                    </select><span id="country"></span><br><p></p>
+                    
+                    
+                        <!-- Required to input Zip code-->
+                        <a style="margin: 130px"></a>ZIP Code<br>
+
+                        <a style="margin: 100px"></a>
+                        <input type="text" name="zip" id="" > <span id="numloc" ></span> <br><p></p>
+
+
+        
+                        <!-- Required to input Email accout if its not, display use '@'!  -->
+                        <a style="margin: 130px"></a> Email<br><p></p>
+
+                        <a style="margin: 100px"></a>
+                        <input type="email" name="email" id=""  ><span id="email"></span> <br><p></p>
+
+
+                    
+                        <!-- required to choose gender -->
+                        <a style="margin: 100px"></a>Gender:
+
+                        
+                        <input type="radio" name="Gender">Male <input type="radio" name="Gender" id="">Female <span id="Gender"></span><br><p></p>
+                                    
+
+
+                    
+                      <!-- Required to checkbox for a language -->
+                      <a style="margin: 100px"></a>Language:
+
+                        <input type="checkbox" name="english" id="" checked>English <br><p></p>
+                        <a style="margin: 98px"></a>
+                        <input type="checkbox" name="Uganda" id="">Uganda <span id="language"></span>
+                        <input type="checkbox" name="non_english" id="">Non English <span id="language"></span> <br><p></p>
+                    
+
+
+                        <!-- Required to write about you/he/she -->
+                        <a style="margin: 130px"></a>About<br>
+
+                        <a style="margin-left: 150px"></a>
+                        <textarea name="about" id="" cols="40" rows="15" placeholder="Descripe about yourself here" style="width: 80%; margin-left: 49px; text-align: center;" ></textarea><br>
+
+
+
+                        
+                        <!-- submit button for checking if the is filled and submit the above requirments -->
+                        <a style="margin: 130px"></a> <input type="submit" value="Submit">
+ 
+                </div>
+            </center>
+        </form>
+    </fieldset>
+
+</body>
+</html>

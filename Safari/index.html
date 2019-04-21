@@ -4,105 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript Loan Calculator</title>
+    <title>Loan Calculator</title>
     <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="info">
-          <label>
-              <b>Enter Loan Data:</b>
-          </label> 
-      </div>
-      <div class="graph_info">
-        <label for="">
-          <b>
-            Loan Balance, Cumulative Equity, and Interest payments
-          </b>
-        </label>
-      </div>
-    </div>
-      <div class="data">
-    <div class="calculator">
-        <form name="loandata">
-          <table>   
-            <!--Table row for Amount of loans-->           
-            <tr>
-              <td>
-                <label>
-                    Amount of the loan($):
-                </label> 
-              </td>
-              <td>
-                <input type="text" id="loan_amount" style="width: 120px" onchange  ="calculate();">
-              </td>
-            </tr>
-            <!--Table row for Annual Interests-->
-            <tr>
-              <td>
-                <label>
-                    Annual Interest(%):
-                </label>
-              </td>
-              <td>
-                <input type="text" id="annual_interest" style="width: 120px" onchange="calculate();">
-              </td>
-            </tr>
-            <!--Table row for Repayment Period-->
-            <tr>
-              <td>
-                <label>
-                    Repayment Period(Years):
-                </label> 
-              </td>
-              <td>
-                <input type="text" id="repayment_period" style="width: 120px" onchange="calculate();"></td>
-            </tr>
-                          <!--Table row for ZipCode Input-->
-            <tr>
-              <td>ZipCode (To find lenders):</td>
-              <td>
-                <input type="text" id="repayment_period" style="width: 120px" onchange="calculate();">
-              </td>
-            </tr>
-            <!--Table row for Approximating payment-->
-            <tr>
-                <td>
-          
-                    <label>
-                          <b>Approximate Payments:</b>
-                    </label>
-                </td>
+<!-- main content -->
+
+<div class="content">
+<!-- heading div holding the title /heading -->
+<div class="heading">
+    <h1>
+      <span class="fa fa-spinner fa-spin" aria-hidden="true" style="font-size:40px; color:#FFB103;">
+      </span>&nbsp &nbsp Loan Calculator Designed By <span style="color:#500AE1">
+      Safari Group
+      </span>
+    </h1>
+</div>
+    <hr>
+    <div class="calculator" >
+      <form name="loan_data" onsubmit="calculate(event)">
+        <table>
+          <!--Table row for Amount of loans-->
+          <tr>
             <td>
-              <input type="button" value="Compute" onclick="calculate();">
-            </td></tr>
-            <!--Table row for monthly payment-->
-            <tr>
-              <td>Monthly Payment:</td>
-              <td>
-                <input type="text" id="monthly_payment" style="width: 120px">
-              </td>
-            </tr>
-              <!--Table row for total payment-->
-            <tr>
-              <td>Total Payment:</td>
-              <td><input type="text" id="total_payment" style="width: 120px"></td>
-            </tr>
-            <!--Table row for total interest payment-->
-            <tr>
-              <td>Total Interest:</td>
-              <td><input type="text" id="total_interest" style="width: 120px;"></td>
-            </tr>
-          </table>
-        </form>
-      </div>  
-    <div class="graph">
-      <fieldset>
-          <img src="calc_pic.png" alt="">
-      </fieldset>
+              <label>
+                Amount of the loan($):
+              </label>
+            </td>
+            <td>
+              <input type="text" id="loan_amount">
+            </td>
+          </tr>
+          <!--Table row for Annual Interests-->
+          <tr>
+            <td>
+              <label>
+                Annual Interest(%):
+              </label>
+            </td>
+            <td>
+              <input type="text" id="annual_interest">
+            </td>
+          </tr>
+          <!--Table row for Repayment Period-->
+          <tr>
+            <td>
+              <label>
+                Repayment Period(Years):
+              </label>
+            </td>
+            <td>
+              <input type="text" id="repayment_period">
+            </td>
+          </tr>
+          <!--Table row for ZipCode Input-->
+          <tr>
+            <td>ZipCode (To find lenders):</td>
+            <td>
+              <input type="text" id="zip_code">
+            </td>
+          </tr>
+          <!--Table row for Approximating payment-->
+          <tr>
+            <td>
+              <label>
+                <b>Approximate Payments:</b>
+              </label>
+            </td>
+            <td>
+              <input type="submit"  id="button" value="Compute">
+            </td>
+          </tr>
+          <!--Table row for monthly payment-->
+          <tr>
+            <td>Monthly Payment:</td>
+            <td>
+              <input type="text" id="monthly_payment" >
+            </td>
+          </tr>
+
+          <!--Table row for total payment-->
+
+          <tr>
+            <td>Total Payment:</td>
+            <td><input type="text" id="total_payment" ></td>
+          </tr>
+
+          <!--Table row for total interest payment-->
+
+          <tr>
+            <td>Total Interest:</td>
+            <td><input type="text" id="total_interest"></td>
+          </tr>
+        </table>
+      </form>
     </div>
-  </div>
-  </div>
+    <!-- right side div showing th graph -->
+    <div class="graph">
+        <img src="images/graph_bg.png" alt="Graph" style="width:100%;">
+    </div>
+</div>
+
+<script src="javaScript/app.js"></script>
+ 
 </body>
 </html>

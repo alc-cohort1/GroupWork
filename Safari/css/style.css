@@ -1,0 +1,110 @@
+/* styling the background of the page */
+body{
+background: #500AE1;
+
+}
+/* global styling */
+*{
+font-size:20px;
+font-family: 'DINPro Regular';
+
+/* styling the heading div */
+}
+.heading{
+padding: 10px;
+background:white;
+border-radius: 5px;
+text-decoration: none;
+
+}
+/* styling the .calculator div */
+.calculator{
+float: left;
+width: 49%;
+background:#FFB103;
+box-sizing: border-box;
+paddding:30px;
+margin: 5px;
+margin-top: 10px;
+text-decoration: none;
+border-radius: 5px;
+-webkit-box-shadow: 0 3px 2px #777;
+	-moz-box-shadow: 0 3px 2px #777;
+	box-shadow: 0 3px 2px #777;
+
+}
+/* styling the input fields */
+input{
+width: 100%;
+margin-top:10px;
+height: 35px;
+margin-right: 90px;
+border-radius: 10px;
+border-style: none;
+text-align: center;
+
+}
+/* stling the graph div on the right */
+.graph{
+float:right;
+background:white;
+height: 400px;
+width:49%;
+margin-top: 10px;
+text-decoration: none;
+border-radius: 5px;
+padding: 5px
+
+}
+/* general styling of the table */
+table{
+width: 100%;
+
+}
+h1{
+margin-left: 20px;
+
+}
+/* styling the horizontal line */
+hr{
+height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+	color: #FFB103;
+	height: 1px;
+  color: #FFB103;;
+  background-color: #FFB103;
+  border: none;
+
+}
+/* style for the button */
+button{
+width: 100%;
+border-style: none;
+height: 35px;
+margin-right: 90px;
+border-radius: 10px;
+text-align: left;
+
+
+}
+#button{
+color:white;
+background: #500AE1;
+
+}
+/* styling button on hover */
+#button:hover{
+background: green;
+color:white;
+border: 1px;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}

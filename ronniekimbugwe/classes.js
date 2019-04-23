@@ -1,4 +1,3 @@
-
 class Cats {
   cats(name, breed, origin) {
     this.name = name;
@@ -240,14 +239,3 @@ let shoe2 = new Object();
 
   shoe.description(); //function call
 }
-
-class Belts {
-  //class called Belts
-  belts(name, isUnisex, color) {
-    this.name = name;
-    this.color = color;
-    this.isUnisex = isUnisex;
-
-    //constructor function with attributes name,isUnisex and color
- 
-  

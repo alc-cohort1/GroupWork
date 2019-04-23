@@ -268,14 +268,4 @@ class Cats {
     //attributes name,breed and origin
   }
 
-  PlaceOforigin() {
-    alert(this.name + "of  " + this.breed + "is from " + this.origin);
-  }
-  sound() {
-    alert(this.name + "meows and its from  " + this.origin);
-  }
-  size() {
-    alert(this.name + "bigger than other cats of  breed " + this.breed);
-  }
-}
-
+  

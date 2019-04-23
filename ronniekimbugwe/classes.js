@@ -258,11 +258,3 @@ class Belts {
 }
 
 let belt = new Object();
-{
-  // new object of class Belt called belt
-  belt.name = " ‎zara";
-  belt["color"] = "black";
-  belt["isUnisex"] = true;
-
-  belt.description(); //function call by object belt
-}

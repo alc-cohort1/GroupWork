@@ -1,4 +1,4 @@
-function calculate()
+function calculate(event)
 {
     // Create variable and assign it the amount of money loaned.
     var loan_amount = document.getElementById("loan_amount").value;
@@ -50,4 +50,5 @@ function calculate()
         document.getElementById("total_payment").value = "";
         document.getElementById("total_interest").value = "";
     }
+    event.preventDefault();
 }

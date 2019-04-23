@@ -41,35 +41,35 @@ operatingSystem.accessibility = function(){
 }
 
 // Adding properties and methods to a new javaScript object called medicalExpert
-const medicalExpert = new object();
-medicalExpert.age = 25;
-medicalExpert.name ="Sunday";
-medicalExpert.yearOfExperience = "below 5 years"
-medicalExpert.doctor = function(){
+const Doctors = new object();
+Doctors.age = 25;
+Doctors.name ="Sunday";
+Doctors.yearOfExperience = "below 5 years"
+Doctors.operation = function(){
    return "My name is " +  this.name + "and i am" + this.age;
 }
-medicalExpert.nurse = function(){
+Doctors.councelling = function(){
    return "Any person below " + this.age + "is considered an experienced nurse"
 }
-medicalExpert.medicalTrainee = function(){
+Doctors.consultancy = function(){
    return "Everyone having" + this.yearOfExperience + " in medical field is a trainee"
 } 
 
 
 // Adding properties and methods to a new javaScript object called sportsPerson
-const sportsPerson = new object();
-sportsman['age'] = 25;
-sportsman.gender = "male";
-sportsman.numberOfGames = "3";
-sportsman.footWare = "boots";
-sportsman.jersey = "addidas"
-sportsman.levelofExperience = function(){
+const Athlete = new object();
+Athlete['age'] = 25;
+Athlete.gender = "male";
+Athlete.numberOfGames = "3";
+Athlete.footWare = "boots";
+Athlete.jersey = "addidas"
+Athlete.levelofExperience = function(){
    return "All " + this.gender + "footballers claim to be below " + this.age + "years old";
 }
-sportsman.typeOfSport = function(){
+Athlete.typeOfSport = function(){
    return "he plays more than" + this.numberOfGames + "games";
 }
-sportsman.dressCode = function(){
+Athlete.dressCode = function(){
    return "he wares" + this.footWare + "and" + this.jersey;
 }
 

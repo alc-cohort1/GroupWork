@@ -131,7 +131,7 @@ let clan1 = new Object();
   // new object of class Clans called clan
   clan1.name = "Ngabbi";
   clan1["totem"] = "jjerengesa";
-  clan1["motto"] = "Kiiso bwe kikulaba obulungi naawe okiraba.!";
+  clan1["motto"] = "Kalikutanda ne kakutwala mu Bengabi Abasambaganyi!";
   clan1.size(); //function call
 }
 let clan2 = new Object();

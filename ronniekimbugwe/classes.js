@@ -28,18 +28,18 @@ let cat = new Object();
 let cat1 = new Object();
 {
   // new object of class Cats called cat
-  cat.name = "Mycat1";
-  cat["breed"] = "Russian Blue";
-  cat["origin"] = "Russia";
-  cat.sound(); // function call
+  cat1.name = "Mycat1";
+  cat1["breed"] = "Russian Blue";
+  cat1["origin"] = "Russia";
+  cat1.sound(); // function call
 }
 let cat2 = new Object();
 {
   // new object of class Cats called cat
-  cat.name = "Mycat2";
-  cat["breed"] = "ragdoll";
-  cat["origin"] = "america";
-  cat.size(); // function call
+  cat2.name = "Mycat2";
+  cat2["breed"] = "ragdoll";
+  cat2["origin"] = "america";
+  cat2.size(); // function call
 }
 class Tiles {
   //class called Tiles

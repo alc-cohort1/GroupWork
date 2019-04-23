@@ -173,9 +173,9 @@ let cloud = new Object();
 let cloud1 = new Object();
 {
   // new object of class Clouds called cloud
-  cloud.name = " ‎Cumulusclouds";
-  cloud["isManMade"] = false;
-  cloud.description(); //function call
+  cloud1.name = " ‎Cumulusclouds";
+  cloud1["isManMade"] = false;
+  cloud1.description(); //function call
 }
 let cloud2 = new Object();
 {

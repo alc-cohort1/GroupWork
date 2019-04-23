@@ -1,5 +1,5 @@
 
-//creating  class  of dogs
+//creating an object dog from dog class 
 var dog= new object();
 
 //class  dog properties
@@ -17,7 +17,7 @@ dog.barking= function(){
 alert('hi I\'m'+this.name+'.'+this.color);
 }
 
-//creating  class  of compuetrs
+//creating  an object computers from computers class 
 var computers= new object();
 
 //class  computers properties
@@ -36,7 +36,7 @@ alert('hi I\'m'+this.name+'.'+this.memory);
 }
 
 
-//creating  class  of car
+//creating  an object car from car class 
 var car= new object();
 //class  car properties
 car.name='HARRIER';
@@ -55,7 +55,7 @@ alert('hi I\'m'+this.name+'.'+this.manufacturer);
 
 
 
-//creating  class  of horse
+//creating an object horse from horse class  
 var horse= new object();
 //class  horse properties
 horse.name='VIAN';
@@ -73,7 +73,7 @@ alert('hi I\'m'+this.name+'.'+this.age);
 }
 
 
-//creating  class  of pen
+//creating an object of pen from pen class
 var pen= new object();
 
 //class  pen properties

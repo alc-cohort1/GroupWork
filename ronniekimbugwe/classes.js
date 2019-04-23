@@ -260,12 +260,5 @@ class Belts {
 
 let belt = new Object();
 =======
-class Cats {
-  cats(name, breed, origin) {
-    this.name = name;
-    this.breed = breed;
-    this.origin = origin;
-    //attributes name,breed and origin
-  }
 
   

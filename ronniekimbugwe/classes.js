@@ -249,16 +249,5 @@ class Belts {
     this.isUnisex = isUnisex;
 
     //constructor function with attributes name,isUnisex and color
-  }
-
-  description() {
-    alert(
-      this.name + "is unisex" + this.isUnisex + " of color" + this.isAllsizes
-    );
-  }
-}
-
-let belt = new Object();
-=======
-
+ 
   

@@ -180,9 +180,9 @@ let cloud1 = new Object();
 let cloud2 = new Object();
 {
   // new object of class Clouds called cloud
-  cloud.name = " ‎Cumulusclouds";
-  cloud["isManMade"] = false;
-  cloud.description(); //function call
+  cloud2.name = " ‎Cumulusclouds";
+  cloud2["isManMade"] = false;
+  cloud2.description(); //function call
 }
 
 class Shoes {

@@ -224,7 +224,7 @@ let shoe = new Object();
 let shoe1 = new Object();
 {
   // new object of class Shoes called shoe
-  shoe.name = " ‎plimsoms";
+  shoe.name = " ‎jungleboots";
   shoe["isAllsizes"] = true;
   shoe["isUnisex"] = true;
 
@@ -233,9 +233,9 @@ let shoe1 = new Object();
 let shoe2 = new Object();
 {
   // new object of class Shoes called shoe
-  shoe.name = " ‎plimsoms";
+  shoe.name = "stillettos";
   shoe["isAllsizes"] = true;
-  shoe["isUnisex"] = true;
+  shoe["isUnisex"] = false;
 
   shoe.description(); //function call
 }

@@ -19,7 +19,7 @@
         if (userid==null || userid==""){  
         alert("User ID can't be blank");  
         return false;  
-          }else if(userid.length<5){
+          }else if(userid.length<5 ||){
             alert("User ID should not be less than 5 characters");
             return false;
           }  
@@ -81,7 +81,14 @@
   </tr>
     <tr>
         <td> <label for="Name">Country:</label></td>
-          <td> <input type="text" name="Country" ><br/></td>
+             <td>
+                <select name = "Country">
+                   <option value = "-1" selected>[choose yours]</option>
+                   <option value = "1">Uganda</option>
+                   <option value = "2">Kenya</option>
+                   <option value = "3">Tanzania</option>
+                </select>
+             </td><br/></td>
   </tr>
     <tr>
         <td><label for="Zip Code">Zip Code:</label></td>

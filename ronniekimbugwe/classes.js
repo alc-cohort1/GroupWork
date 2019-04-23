@@ -1,3 +1,4 @@
+
 class Cats {
   cats(name, breed, origin) {
     this.name = name;
@@ -258,3 +259,23 @@ class Belts {
 }
 
 let belt = new Object();
+=======
+class Cats {
+  cats(name, breed, origin) {
+    this.name = name;
+    this.breed = breed;
+    this.origin = origin;
+    //attributes name,breed and origin
+  }
+
+  PlaceOforigin() {
+    alert(this.name + "of  " + this.breed + "is from " + this.origin);
+  }
+  sound() {
+    alert(this.name + "meows and its from  " + this.origin);
+  }
+  size() {
+    alert(this.name + "bigger than other cats of  breed " + this.breed);
+  }
+}
+

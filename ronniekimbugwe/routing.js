@@ -1,0 +1,229 @@
+//server.js
+const http = require("http"),
+  url = require("url"),
+  makeServer = function(request, response) {
+    let path = url.parse(request.url).pathname;
+    console.log(path);
+    if (path === "/") {
+      response.writeHead(200, { "Content-Type": "text/plain" });
+      response.write("Hello world");
+    } else if (path === "/about") {
+      response.writeHead(200, { "Content-Type": "text/plain" });
+      response.write("About page");
+    } else if (path === "/blog") {
+      response.writeHead(200, { "Content-Type": "text/html" });
+      response.write(`<!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>Form Validation</title>
+      </head>
+      
+      <body>
+              
+          
+      <center>
+                      <fieldset>
+                          <h1>Registration Form</h1>
+          <script>
+              //  function to validate values entered
+              //  in the fields
+              function validate(){
+                  var userid =document.myform.userid.value;
+                  var password=document.myform.password.value;
+                  var name=document.myform.name.value;
+                  var address =document.myform.address.value;
+                  var country=document.myform.country.value;
+                  var zip=document.myform.zip.value;
+                  var email=document.myform.email.value;
+                  var sex=document.myform.sex.value;
+                  var language=document.myform;
+      //checking if userid is not number or less than 5 or greater than 12
+                  if(isNaN(userid)||userid.length<5 ||userid.length>12||userid==""){
+                      document.getElementById("answer").innerHTML="Reguired and must be of length 5 to 12";
+                  
+                      
+                      
+                  }
+                      
+              
+              if(password.length<7 ||password.length>12||password==""){
+                      document.getElementById("answer1").innerHTML="Reguired and must be of length 7 to 12";
+                      //checking if password field is less than 7 or empty or greater than 12
+                      
+                      
+                  }
+                     
+                  if(name==""||!isNaN(name)){
+                                                document.getElementById("answer2").innerHTML="Required and alphabetes Only ";
+                                          
+                      //checking if name field is empty or is a number
+                                         }
+                  if(address==""){
+                                                document.getElementById("answer3").innerHTML="Optional";
+                                                
+                                                //checking if address field is empty
+                                         }
+                  if (country == ""){
+                                              document.getElementById('answer4').innerHTML="Required. Must select a country.";
+                                          //checking if country field is empty
+                  }
+                  if (isNaN(zip) || zip == ""){
+                      document.getElementById('answer5').innerHTML="Required. Must be numeric only.";
+                      
+                      //checking if zip field is not a number or is empty
+                  }  
+                  if (/\S+@\S+/.test(email) == false|| email==""){
+                      document.getElementById('answer6').innerHTML="Required. Must be a valid email.";
+                      //checking if email field ha a false email or field is emptuy
+              }
+              if (sex == ""){
+                      document.getElementById('answer7').innerHTML="Required.";
+                      //checking if gender field is empty
+                      
+          }
+          if (!language.checkbox1.checked && !language.checkbox2.checked){
+                      document.getElementById('answer8').innerHTML="Required.";
+                      return false;   
+                  }
+                  //checking if language check box is checked
+      }
+              
+              
+                      </script>
+      <table><!-- <table>                  //table housing the whole form -->
+                      <form name="myform" onsubmit="return validate()">
+                          <!-- event listener onsubmit -->
+                      <!-- user field -->
+                          <tr>
+                              <!-- user id label and field -->
+                              <td>User ID:</td>      
+                              <td><input type="text"  name="userid">
+                          
+                                  <span id ="answer">
+                      
+                                  </span></td>
+                              
+                          </tr>
+                          <tr>
+                               <!-- password label field -->
+                              <td>Password:</td>
+                              <td><input type="password"  name="password">
+                          
+                                  <span id ="answer1">
+                      </td>
+                              
+                              </span>
+                          </tr>
+                          <tr>
+                               <!-- name label and  field -->
+                              <td>Name:</td>
+                              <td><input type="text"  name="name">
+                          
+                                  <span id ="answer2">
+                      
+                                  </span></td>
+                              
+                              
+                          </tr>
+                          <tr>
+                               <!-- address label  and field -->
+                                  <td>Address:</td>
+                                  <td><input type="text"  name="address">
+                          
+                                      <span id ="answer3">
+                          
+                                      </span></td>
+                              
+                          </tr>
+                          <tr>
+                               <!-- country label  and  field -->
+                                  <td> <label> Select your country:</label></td>
+                                  <td><select name="country"> 
+                                          <option value="">(Please select a country)</option>
+                                          <option value="Kenya">Kenya</option>
+                                          <option value="Tanzania">Tanzania</option>
+                                          <option value="Rwanda">Rwanda</option>
+                                          <option value="Uganda">Uganda</option>
+                                          <!-- list of country options -->
+                                      </select>
+                               <span id="answer4"></td>
+                             
+                              
+      
+                           </span>
+                          </tr> 
+                          <tr>
+                               <!-- zip  label and field -->
+                                  <td>Zip:</td>
+                                  <td> <input type="text"  name="zip">
+                          
+                                      <span id ="answer5"></span>
+                  </td>
+                         
+                      </tr>
+                      <tr>
+                           <!-- email label and field -->
+                              <td> Email:</td>
+                              <td><input type="text"  name="email">
+                          
+                                  <span id ="answer6"></span></td>
+                         
+                      </tr>
+                      <tr>
+                           <!-- gender label and  field -->
+                              <td>Gender:</td>
+                              <td><input type="radio" name="sex" value="Male">Male
+                                  <input type="radio" name="sex" value="Female">Female
+                                  
+                              
+                              <span id ="answer7"></span></td>
+                              
+                      </tr>
+                      <tr>
+                           <!-- language label and  field -->
+                              <td>language:</td>
+                              <td><input type="checkbox" name="checkbox1" value="English" >English
+                                  <input type="checkbox" name="checkbox2" value="Non English">Non English
+                                  <span id="answer8"></span></td>
+                              
+                          </tr>
+                          <tr>
+                                  <td>
+                                       <!-- About label and field -->
+                                      <label>About:</label>
+                                  </td>
+                                  <td>
+                                      <textarea cols="20" rows="10"></textarea>
+                                  </td>
+                              </tr>
+      
+                              <!-- submit button -->
+                              <tr>
+                                  <td colspan="2" align="center">
+                                      <input type="submit" value="Submit"
+                                      />
+                                  </td>
+                              </tr>
+                         
+                              
+                          </form>
+                          </table>
+                          </fieldset>
+                          </center>
+          
+      </body>
+      </html>
+      `);
+    } else {
+      response.writeHead(404, { "Content-Type": "text/plain" });
+      response.write("not found");
+    }
+    response.end();
+  },
+  server = http.createServer(makeServer);
+server.listen(3000, () => {
+  console.log("Node server created at port 3000");
+});

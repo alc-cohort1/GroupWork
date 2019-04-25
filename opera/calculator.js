@@ -11,8 +11,8 @@ function calculate_interest() {
   var interest = document.myform.interest.value;
   var interest_rate = document.myform.interest_rate.value;
   var number_of_years = document.myform.number_of_years.value;
-  monthlypayment = (borrowed_amount * interest_rate) / 12;
-  totalpayment = borrowed_amount + monthlypayment * 60;
-  totalinterest = monthlypayment * 60;
+  monthlypayment = (borrowed_amount * interest_rate) / 12; // monthly payment
+  totalpayment = borrowed_amount + monthlypayment * 60; // total payment for 5 years
+  totalinterest = monthlypayment * 60; //total interest of the 5 years
   //please use the monthlypayment,totalpayment,totalinterest as the span ids
 }

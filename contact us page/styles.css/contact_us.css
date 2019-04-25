@@ -1,0 +1,75 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    background-color: blueviolet;
+    margin-top: 0%;
+    padding-top: 150px;
+    width: 85%;
+    height: 500px;
+    padding-left: 95px;
+    padding-right: 150px;  
+}
+
+.container .left{
+    width: 70%;
+    background-color: brown;
+    position: relative;
+    float: left;
+    height: 60%;
+
+}
+
+.container .right{
+    width: 29.5%;
+    background-color: aqua;
+    position: relative;
+    float: right;
+    height: 60%;
+}
+
+.container .left .first{
+    width: 49.5%;
+    /*background-color: chartreuse;*/
+    position: relative;
+    float: left;
+    height: 100%;
+}
+
+.container .left .second{
+    width: 49.5%;
+    /*background-color: darkblue;*/
+    position: relative;
+    float: right;
+    height: 100%;
+}
+
+.container .left .first .name{
+    padding-left: 20%;
+    padding-top: 23%
+}
+
+.container .left .first .email{
+    padding-top: 20px;
+    padding-left: 20%;
+}
+
+.container .left .first .name .name_input{
+    width: 280px;
+    height: 24px;
+}
+
+.container .left .first .email .email_input{
+    width: 280px;
+    height: 24px;
+}
+
+.container .left .second .about{
+    padding-top: 10%;
+} 
+
+input, textarea {
+    border-radius: 5px;
+    border: none;
+}

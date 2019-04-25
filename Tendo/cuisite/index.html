@@ -1,3 +1,79 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta >
+<!--link to "validate_cuisite.js"-->
+<script type="text/javascript" src="index.js"></script>
+
+<!--link to External Css "cuisite.css"-->
+<link type="text/css" href="index.css" rel="stylesheet" />
+<title>Registration Form</title>
+</head>
+<body>
+<!--Create Fieldset Element with label-->
+<fieldset><legend><h2 class="h2">Registration Form</h2></legend>
+
+<!--Main Body Division-->
+    <div class="body" align="center">
+    
+<!--Create a Form called "regform"-->
+        <form name="regform">
+
+<!--Create a Table within the Form-->
+            <table>
+                
+<!--Create Table Body and It's Contents-->
+        <tbody>
+            <!--Create  Id Label and Textfield-->
+            <tr><td><label>User Id   &nbsp</label></td><td> <input type="text"  size="12" id="id">&nbsp &nbsp<span id="spn1"></span></input></td></tr>
+            <!--Create  Pasword Label and Textfield-->
+            <tr><td><label>Password   &nbsp</label></td><td><input type="password" size="12" id="password"/>&nbsp &nbsp<span id="spn2"></span></td></tr>
+            <!--Create  Name Label and Textfield-->    
+            <tr><td><label>Name :&nbsp</label></td><td><input type="text" size="40"  id="name"/>&nbsp &nbsp<span id="spn3"></span></td></tr>
+            <!--Create  Address Label and Textfield-->
+            <tr><td><label>Address :&nbsp</label></td><td><input type="text"  size="40" id="address"/>&nbsp &nbsp<span id="spn4"><font color="green">*This Field is Optional</span></td></tr>
+            <!--Create  Country Label and Select Element-->
+            <tr><td><label>Country :&nbsp</label>
+                </td><td><select name="dropdown"  id="country">
+                        <option value="default" id="def_country">(Please Select a Country)</option>
+                        <option value="ug">Uganda</option>
+                        <option value="Ke">Kenya</option>
+                        <option value="Tz">Tanzania</option>
+                        <option value="Rw">Rwanda</option>
+                        <option value="br">Burundi</option>
+                        <option value="cg">Congo</option>
+                        <option value="ss">S.Sudan</option>
+                        <option value="et">Ethiopia</option>
+                        </select>&nbsp &nbsp<span id="spnC"></span></td></tr>
+            <!--Create Zip Label and Textfield Element-->
+                        <tr><td><label>Zip Code :&nbsp</label></td><td><input type="number"  size="40" id="zip"/>&nbsp &nbsp<span id="spn5"></span></td></tr>
+            <!--Create Email Label and Textfield Element-->
+                        <tr><td><label>Email :&nbsp</label></td><td><input type="email"  size="40" id="email"/>&nbsp &nbsp<span id="spn6"></span></td></tr>
+            <!--Create Gender Label and Select Element-->
+                        <tr><td><label>Gender :&nbsp</label></td><td><input type="radio"  id="male"/><label>Male :&nbsp</label>&nbsp &nbsp<span id="spn7"></span></td><td>
+               <input type="radio"  id="female"/><label>Female :&nbsp</label>&nbsp &nbsp<span id="spn8"></span>
+            </td></tr>
+            
+            <!--Create Language Label and Select Element-->
+            <tr><td><label>Language :&nbsp</label></td><td><input type="checkbox"  id="lang_en" /><label>English</label></td>
+                <td><input type="checkbox" id="non_en"/><label>Non-English</label>&nbsp &nbsp<span id="spn9"></span></td></tr>
+            <!--Create About Label and Textarea Element-->
+            <tr><td><label>About :&nbsp</label></td><td><textarea rows="5" cols="50" id="txtarea"></textarea></td>&nbsp &nbsp<span id="spn10"></span></tr>
+        </tbody>
+    </table>
+            <!--Create Division and include a Button --> 
+    <div><input type="button" class="button" value="Submit" name="textboxSubmit" onclick="validateFields()"/></div>
+   
+   <!--
+    <div><button  onclick="validateFields()"></button></div>
+-->
+</form>
+
+</div></fieldset>
+</body>
+</html>
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,3 +147,4 @@
 </div></fieldset>
 </body>
 </html>
+>>>>>>> 040e5ce3641bcad5d7848a846465c3270a91b71c

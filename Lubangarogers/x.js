@@ -1,6 +1,6 @@
 <html>
 <head>
-<script>
+<script type="text/JavaScript">
 function checkLength(){
     var textbox = document.getElementById("textbox");
     if(textbox.value.length <= 10 && textbox.value.length >= 5){
@@ -14,6 +14,8 @@ function checkLength(){
 </head>
 <body>
 <input type="text" id="textbox"></input>
-<input type="submit" name="textboxSubmit" onclick="checkLength()"
+<input type="submit" name="textboxSubmit" onclick="checkLength()">
+
+
 
 </body>

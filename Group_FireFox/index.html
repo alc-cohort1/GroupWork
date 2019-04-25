@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>JavaScript Loan Calculator</title>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <!-- div with container as a class for wrapping up the entire body-->
+    <div class="container">
+      <!-- div with a wrapper class for displaying 3 divs in a grid -->
+      <div class="wrapper">
+        <div class="left">
+          <h4>Enter Loan Data:</h4>
+          <form method="post" name="loanForm">
+            <!-- input data for loan amount, annual interest and repayment period -->
+            <div class="loanForm">
+              <div>
+                <label>Amount of Loan ($):</label>
+              </div>
+              <div>
+                <input name="loanAmount" />
+                <span id="error1" style="color: red"></span>
+              </div>
+              <div>
+                <label>Annual Interest (%):</label>
+              </div>
+              <div>
+                <input name="annualInterest" />
+                <span id="error2" style="color: red"></span>
+              </div>
+              <div>
+                <label>Repayment Period (years):</label>
+              </div>
+              <div>
+                <input name="repaymentPeriod" />
+                <span id="error3" style="color: red"></span>
+              </div>
+              <div>
+                <label>Zipcode (to find lenders):</label>
+              </div>
+              <div>
+                <input name="zipCode" />
+                <span id="error4"></span>
+              </div>
+              <div>
+                <label><b>Approximate Payments:</b></label>
+              </div>
+              <div>
+                <!-- Button for initiating the calculation -->
+                <input
+                  type="button"
+                  value="Calculate"
+                  onclick="return validate()"
+                />
+              </div>
+            </div>
+          </form>
+          <br />
+
+          <!--   div which is used for displaying the calculator results  -->
+          <div class="results">
+            <div>
+              <label>Monthly Payment:</label>
+            </div>
+            <div>
+              <u><span id="monthlyPayment"></span></u>
+            </div>
+            <div>
+              <label>Total Payment:</label>
+            </div>
+            <div>
+              <span id="totalPayment"></span>
+            </div>
+            <div>
+              <label>Total Interest:</label>
+            </div>
+            <div>
+              <span id="totalInterest"></span>
+            </div>
+          </div>
+
+          <!-- this div has contents to be display on the right of the page -->
+        </div>
+        <div class="right">
+          <h4>Loan Balance, Cumulative Equity, and Interest Payments</h4>
+          <img
+            src="images/graph.png"
+            alt="Graph"
+            width="500px"
+            height="250px"
+          />
+        </div>
+
+        <!-- this div contains links to get in touch with loan finders -->
+        <div class="bottom">
+          <h4>Sponsors: Apply for your loan with one of this loan finders</h4>
+          <ul>
+            <li><a href="#">Bank of JavaScript</a></li>
+            <li><a href="#">HTML Credit Union</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

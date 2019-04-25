@@ -1,0 +1,45 @@
+/* Setting the margin and padding to zero in the entire body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling the container class */
+.container {
+  width: 1200px;
+  height: 526px;
+  border: 1px solid #d9dadf;
+  margin: auto;
+  margin-top: 70px;
+  border-radius: 10px;
+}
+
+/* Styling the wrapper class which encompasses the grid */
+.container .wrapper {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 50px;
+}
+
+/* Styling the grid for the loanForm and results of the calculation */
+.container .wrapper .left .loanForm,
+.results {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 0.8em;
+  grid-auto-rows: minmax(20px, auto);
+  justify-items: start;
+}
+
+/* Styling the bottom grid */
+.bottom {
+  grid-column: 1/3;
+  justify-self: center;
+}
+
+/* Styling all the input tags */
+input {
+  border-radius: 5px;
+}

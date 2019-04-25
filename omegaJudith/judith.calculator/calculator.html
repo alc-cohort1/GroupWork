@@ -15,17 +15,20 @@
         var annualInterest=document.getElementById("").value;
         var repaymentPeriod= document.getElementById("").value;
 
-        //calulate annualInterestvar MIR = annualInterest/(100*12);
+        //calulate annualInterestvar MIR = annualInterest/(100*12); // javaScript formular and variables holding methods
         var x = (1+ MIR);
         var NM = repaymentPeriod*12;
         var y = Math.pow(x, NM);
         var numerator = amount of loan*MIR*y;
         var denominator = y-1;
 
+        //variables holding methods
+
         var MP= numerator/denominator;
         var totalPayment = MP*repaymentPeriod*12;
         var totalInterest = totalPayment-amountOfLoan;
 
+        //getting on capturing data
         document.getElementById('MP').innerHTML=MP;
         document.getElementById('totalPayment').innerHTML=totalPayment;
         document.getElementById('totalInterest').innerHTML=totalInterest;
@@ -33,9 +36,9 @@
 </script>
 
 
-
+<!--form holding text field and name labels-->
     
-<form action="" POST>
+<form action="" POST name="form">
 
         <table>
             <h2>Enter Loan Data</h2>

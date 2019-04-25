@@ -14,7 +14,7 @@
 <center><h1 style="font-size:20px;">Registration here</h1></center>
 <hr>
     <table width="50%" align="center">
-        <form name="RegForm" method="post">
+        <form name="Form" method="post" onclick="return validateForm();">
             <tr>
 
             </tr>
@@ -22,7 +22,7 @@
                     <label for="fist_name">USER ID:</label>
                 </td>
                 <td>
-                    <input type="text" name="user_id" placeholder="" id="">
+                    <input type="text" name="userId" placeholder="" id="userId">
                 </td>
             </tr>
             <tr>
@@ -38,7 +38,7 @@
                     <label for="fist_name">NAME:</label>
                 </td>
                 <td>
-                    <input type="text" name="name" placeholder="name" id="">
+                    <input type="text" name="name" placeholder="name" id="name">
                 </td>
             </tr>
             <tr>
@@ -46,7 +46,7 @@
                     <label for="fist_name">ADDRESS:</label>
                 </td>
                 <td>
-                    <input type="text" name="address" placeholder="address" id="">
+                    <input type="text" name="address" placeholder="address" id="address">
                 </td>
             </tr>
             <tr>
@@ -75,7 +75,7 @@
                     <label for="zip_code">Zip code:</label>
                 </td>
                 <td>
-                    <input type="text" name="zip_code" placeholder="" id="">
+                    <input type="text" name="zip_code" placeholder="" id="zip">
                 </td>
             </tr>
             <tr>
@@ -83,15 +83,15 @@
                     <label for="email">Email:</label>
                 </td>
                 <td>
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="" id="email">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="Gender">Gender:</label>
+                    <label for="Gender">SEX:</label>
                 </td>
                 <td>
-                    Female :<input type="radio" name="gender"  value="female" style="width:10%" >
+                    Female :<input type="radio" name="gender"  value="female" style="width:10%" id="sex">
                 Male :<input type="radio" name="gender" value="male" style="width:10%" />
                 </td>
             </tr>
@@ -101,15 +101,15 @@
                 </td>
                 <td>
                     English :<input type="checkbox" name="gender" value="female" style="width:10%" checked>
-                     Non English :<input type="checkbox" name="gender" value="male" style="width:10%" >
+                     Non English :<input type="checkbox" name="gender" value="male" style="width:10%" id="language">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="Gender">About:</label>
+                    <label for="About">About:</label>
                 </td>
                 <td>
-                    <textarea name="message" rows="9" cols="40">
+                    <textarea name="message" rows="9" cols="40" id="about">
                         Optional
                         </textarea>
                 </td>
@@ -117,7 +117,7 @@
 
             <tr>
                 <td></td>
-                <td><button type="submit" name="Submit">Submit</button></td>
+                <td><button type="submit" name="Submit" id="button" onclick="return validateForm((">Submit</button></td>
                 
 
             </tr>
@@ -127,5 +127,6 @@
     </table>
 
 </div>
+<script src="form.js"></script>
 </body>
 </html>

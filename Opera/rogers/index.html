@@ -5,30 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Loan Calculator</title>
-    <link rel="stylesheet" href="calculator.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    
 </head>
-<!--Team Marks-->
-<!--Team Quality-9/10-->
-<!--Team Collaboration-10/10-->
-<body>
-<!-- main content -->
 
-<div class="content">
-<!-- heading div holding the title /heading -->
-<div class="heading">
-    <h1>
-      <span class="fa fa-spinner fa-spin" aria-hidden="true" style="font-size:40px; color:#FFB103;">
-      </span>&nbsp &nbsp Loan Calculator Designed By <span style="color:#500AE1">
-      Safari Group
-      </span>
-    </h1>
-</div>
-    <hr>
+<body>
+<header class="top_header">
+  <a>
+#TeamOpera
+  </a>
+</header>
+<section class="main_section">
+
+
     <div class="calculator" >
       <form name="loan_data" onsubmit="calculate(event)">
-        <table>
+        <table id="content">
           <!--Table row for Amount of loans-->
           <tr>
             <td>
@@ -77,12 +69,17 @@
               </label>
             </td>
             <td>
-              <input type="submit"  id="button" value="Compute">
+              <input type="submit"  id="button" value="Calculate">
             </td>
           </tr>
           <!--Table row for monthly payment-->
           <tr>
-            <td>Monthly Payment:</td>
+            <td> 
+              
+            <label>
+                Monthly Payment:
+            </label>
+          </td>
             <td>
               <input type="text" id="monthly_payment" >
             </td>
@@ -91,14 +88,24 @@
           <!--Table row for total payment-->
 
           <tr>
-            <td>Total Payment:</td>
+            <td>
+               <label>
+                  Total Payment:
+               </label>
+            
+            </td>
             <td><input type="text" id="total_payment" ></td>
           </tr>
 
           <!--Table row for total interest payment-->
 
           <tr>
-            <td>Total Interest:</td>
+            <td>
+        <label>
+            Total Interest:
+        </label>
+             
+            </td>
             <td><input type="text" id="total_interest"></td>
           </tr>
         </table>
@@ -106,11 +113,16 @@
     </div>
     <!-- right side div showing th graph -->
     <div class="graph">
-        <img src="images/graph_bg.png" alt="Graph" style="width:100%;">
+       <img src="images/graph.png" alt=""width="500" height="400">
     </div>
-</div>
 
-<script src="javaScript/app.js"></script>
+
+
+
+</section>
+
+
+
  
 </body>
 </html>

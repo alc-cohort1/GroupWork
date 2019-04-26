@@ -5,31 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="contact_us.css">
+    <link rel="stylesheet" href="styles.css/contact_us.css">
 </head>
 <body>
     <div class="container">
+        <div class="upper">
+            <div class="upper_section"></div>
+        </div>
         <div class="left">
             <div class="first">
+                <div class="wayToContact">
+                    <div class="phone">
+                        <div class="phone_img">
+                            <div class="image">
+                                <img src="images/phone.png" alt="phone image">
+                            </div>
+                            <div class="phone_label">
+                                <label for="phone">
+                                    Phone
+                                </label><br>
+                            </div>
+                        </div>
+                        <span>+256-777338787/+256-756871687</span>
+                    </div>
+                    <div class="emailContact">
+                        <div class="emailContact_img">
+                            <div class="contact_image">
+                                <div class="image">
+                                    <img src="images/email2.png" alt="email image">
+                                </div>
+                                <div class="email_label">
+                                    <label for="email">
+                                        Email
+                                    </label><br>
+                                </div>
+                            </div>
+                            <span>ClarkinternationalUniversity@co.ug</span>
+                        </div>
+                    </div>                   
+                    <div class="location">
+                        <div class="location_img">
+                            <div class="image">
+                                <img src="images/location.png" alt="location image">
+                            </div>
+                            <div class="location_label">
+                                <label for="location">
+                                    Location
+                                </label><br>
+                            </div>
+                        </div>
+                        <span>Plot 19, Tank-Hill Road Muyenga</span>
+                    </div>
+                </div>
+                <div class="feedback">
+                    <label for="feedback">
+                        <b style="font-size: larger">FEEDBACK</b>
+                    </label>
+                </div>
                 <div class="name">
-                    <label for="name">Name</label><br/>
-                    <input type="text" name="name" class="name_input">
+                    <input type="text" name="name" class="name_input" placeholder="Name">
                 </div>
                 <div class="email">
-                    <label for="email">Email</label><br/>
-                    <input type="text" name="email" class="email_input">
+                    <input type="text" name="email" class="email_input" placeholder="Email">
+                </div>
+                <div class="phoneNumber">
+                    <input type="text" name="phoneNumber" class="phoneNumber_input" placeholder="Phone Number">
                 </div>
             </div>
             <div class="second">
                 <div class="about">
                     <label for="about">
-                        About
+                        Comment
                     </label><br/>
-                    <textarea name="about" cols="40" rows="12" class="about_input"></textarea>
+                    <textarea name="about" cols="50" rows="10" class="about_input"></textarea>
+                </div>
+                <div class="text_box">
+                    <textarea name="about" cols="50" rows="10" class="about_input"></textarea>
+                </div>
+                <div class="comment_button">
+                    <input type="submit" value="Submit">
                 </div>
             </div>
         </div>
-        <div class="right"></div>
+        <div class="right">
+            <div class="headquaters"></div>
+            <div class="working_with_us"></div>
+            <div class="organisation"></div>
+        </div>
     </div>
 </body>
 </html>

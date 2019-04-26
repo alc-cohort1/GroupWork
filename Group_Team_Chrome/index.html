@@ -4,13 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Team Chrome Loan Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="">
-    <script src="javaScript/cal.js"></script>
+    <title>Loan Calculator | Team Chrome</title>
 </head>
 <body>
+<!-- Content Wrapper -->
+<div class="content_wrapper">
+<!-- Header containing the Page Heading -->
+  <header>
+      <h1>Loan Calculator</h1>
+  </header>
+    <hr>
+    <div>
+      <form>
+        <table>
+          <!--table row containing label and input field for amount of loans-->
+          <tr>
+            <td>
+              <label>Amount of the loan ($):</label>
+            </td>
+            <td>
+              <input type="text">
+            </td>
+          </tr>
+          <!--table row containing label and input field for Annual Interests-->
+          <tr>
+            <td>
+              <label>
+                Annual Interest(%):
+              </label>
+            </td>
+            <td>
+              <input type="text">
+            </td>
+          </tr>
+          <!--table row containing label and input field for Repayment Period-->
+          <tr>
+            <td>
+              <label>
+                Repayment Period(Years):
+              </label>
+            </td>
+            <td>
+              <input type="text">
+            </td>
+          </tr>
+          <!--table row containing label and input field for ZipCode Input-->
+          <tr>
+            <td>ZipCode (To find lenders):</td>
+            <td>
+              <input type="text">
+            </td>
+          </tr>
+          <!--table row containing label and input field for Approximating payment-->
+          <tr>
+            <td>
+              <label>
+                <b>Approximate Payments:</b>
+              </label>
+            </td>
+            <td>
+              <button>Calculate</button>
+            </td>
+          </tr>
+          <!--table row containing label and input field for monthly payment-->
+          <tr>
+            <td>Monthly Payment:</td>
+            <td>
+              <input disabled="" type="text">
+            </td>
+          </tr>
 
+          <!--table row containing label and input field for total payment-->
 
+          <tr>
+            <td>Total Payment:</td>
+            <td><input disabled="" type="text"></td>
+          </tr>
+
+          <!--table row containing label and input field for total interest payment-->
+
+          <tr>
+            <td>Total Interest:</td>
+            <td><input disabled="" type="text"></td>
+          </tr>
+        </table>
+      </form>
+      <!-- The End of the Form containing the different labels and input fields -->
+    </div>
+</div>
+
+<!-- Linking to an External JavaScript File -->
+<script src="js/main.js"></script>
+ 
 </body>
 </html>

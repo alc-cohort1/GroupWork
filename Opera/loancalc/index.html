@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loan Chart</title>
+    <script type="text/JavaScript" src="index.js">
+    </script>
+</head>
+
+
+<body style=" padding: 0%;
+    margin-top: 0%;" >
+
+    <div class="low" style="width: 100%; height: 600px; background-color: white; margin-top:0vw; " >
+
+
+        <div class="one" style="background-color: white" ></div>
+
+
+        <div class="left" style="width: 35%; height: 530px; background-color:white; float: left " >
+                <a style="margin-left: 30px; margin-top: 50px;"></a> <b style="text-align: center" >  Loan Date: </b>
+<p></p>
+
+            <form name ="myform" onsubmit="return validate()">
+
+
+            Amount of the loan ($); <a style="margin-left: 21px" ></a>
+            <input type="number" name="num" style="width: 60%; " id="loan_ammount"><span onchange="calculate"  id="Amount" ></span>
+              <br><p></p>
+              <br><p></p>
+            Annual interest (%); <a style="margin-left: 43px" ></a>
+            <input type="number" name="num" style="width: 60%" id="annual_interest"><span onchange="calculate"  id="Annual"></span>
+            <br><p></p>
+            <br><p></p>
+                      Repayment period (year); <a style="margin-left: 9.6px" ></a>
+                <input type="number" name="num" style="width: 60%" id="repayment_period"><span onchange="calculate"  id="year" ></span>
+            <br><p></p>
+             <br><p></p>
+            
+  
+              <!--this row is rquired zip code--> 
+  
+                                    
+             Zip Code (To find lenders); 
+              <input type="text" name="zip" style="width: 60%"><span onchange="calculate" id="zip"></span>
+      
+          <p></p>
+
+     
+      
+                <b>Approximate Payments:</b>
+                    <a style="margin-left: 10px"></a>
+                 <button onclick="calculate()">calculate</button><span onchange="calculate"  id="calculator"></span>  
+                  <br><br>
+                  <p></p>
+                  Monthly payements:<a style="margin-left: 10%"></a>
+                  <input type="text" name="calculator" id="monthly_payments_result"><span onchange="calculate" id="Monthly">
+                    <br>
+                    <p></p>
+                    <p></p>
+                    Total Payment:<a style="margin-left: 17%"></a>
+                    <input type="text" name="Calculator" id="total_payment_result"><span onchange="calculate"  id="Totalin">
+                        <br>
+                        <p></p>
+                        <p></p>
+                        Total Interest:<a style="margin-left: 19%"></a>
+                        <input type="text" name="Total" id="total_interest_result"><span onchange="calculate"  id="Totalpay">
+
+                </form>
+  
+  
+        </div>
+        <b>Loan Balance, Cumulative Equity, and Interest Payments</b><p></p>
+
+        <div class="right" style="width: 65%; height: 530px; background-color: white; float: right" >
+        <fieldset style="width: 95.3%; height: 550px; " >
+
+        </fieldset>
+        </div>
+
+
+    </div>
+    <div class="footer" style="width: 90%;height: 100px; " >
+        <a style="margin-left: 10%"></a> Sponsors:
+        <a style="margin-left: 20%"></a>
+        Apply for your loans with one of these fine lenders:<br>
+        <p></p>
+        
+        <center> 
+            
+                        <li><a href="https://www.blank of javaScript">Bank of JavaScript</a></li>
+                
+                <li><a href="https://www.html.credit.union.com">HTML Credit Union</a></li>
+
+            
+            </center>
+        
+
+    </div>
+    <div>
+        <p id="pgf">
+
+        </p>
+    </div>
+</body>
+</html>

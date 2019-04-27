@@ -4,97 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Loan Calculator for Group Team Chrome</title>
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="calc.css">
 </head>
 <body>
-<!-- Div Content Wrapper for holding the input feilds  -->
-<div class="content_wrapper">
-<!-- Header containing the Page Heading -->
-  <header>
-      <h1>Loan Calculator</h1>
-  </header>
-    <hr>
-    <div>
-    <!-- Form containing the different labels and input fields -->
-      <form>
-        <!--table containing labels and input fields for the calculator-->
+<!--form holding text field and name labels-->
+    
+<form POST id="myForm">
+
         <table>
-          <tr>
-            <td>
-              <label>Amount of the loan ($):</label>
-            </td>
-            <td>
-              <input type="text">
-            </td>
-          </tr>
-          <!--table row containing label and input field for Annual Interests-->
-          <tr>
-            <td>
-              <label>
-                Annual Interest(%):
-              </label>
-            </td>
-            <td>
-              <input type="text">
-            </td>
-          </tr>
-          <!--table row containing label and input field for Repayment Period-->
-          <tr>
-            <td>
-              <label>
-                Repayment Period(Years):
-              </label>
-            </td>
-            <td>
-              <input type="text">
-            </td>
-          </tr>
-          <!--table row containing label and input field for ZipCode Input-->
-          <tr>
-            <td>ZipCode (To find lenders):</td>
-            <td>
-              <input type="text">
-            </td>
-          </tr>
-          <!--table row containing label and input field for Approximating payment-->
-          <tr>
-            <td>
-              <label>
-                <b>Approximate Payments:</b>
-              </label>
-            </td>
-            <td>
-              <button>Calculate</button>
-            </td>
-          </tr>
-          <!--table row containing label and input field for monthly payment-->
-          <tr>
-            <td>Monthly Payment:</td>
-            <td>
-              <input disabled="" type="text">
-            </td>
-          </tr>
+            <h2>Enter Loan Data</h2>
+            <tr>
+                <td><label for="">Amout of the loan ($): </label></td>
+                <td><input type="number" name="amout" id ="amout" min="1"  max="1000000000000000"></td>
+            </tr>
 
-          <!--table row containing label and input field for total payment-->
+            <tr>
+                <td><label for="">Annual Interest (%): </label></td>
+                <td><input type="number" min="0" max="100" name="annualInterest" value="5" step=".1" id ="annualInt"></td>
+            </tr>
 
-          <tr>
-            <td>Total Payment:</td>
-            <td><input disabled="" type="text"></td>
-          </tr>
+            <tr>
+                <td><label for="">Payment Period (Years): </label></td>
+                <td><input type="number" name="repayment" min="1" max="30" value="1" step="1" id ="repayment"></td>
+             </tr>
 
-          <!--table row containing label and input field for total interest payment-->
+             <tr>
+                 <td><label for="">Zip Code (to find lenders): </label></td>
+                <td><input type="text" name="zipCode" id ="zipCode"></td>
+             </tr>
 
-          <tr>
-            <td>Total Interest:</td>
-            <td><input disabled="" type="text"></td>
-          </tr>
+             <tr>
+                <td><label for=""></label><strong>Aproximate Payment: </strong></td>
+                 <td><input type="submit" name="Payment" id ="calculate" value = "calculate"></td>
+             </tr>
+             <tr>
+                 <td><label for="">Monthly Payment: </label> <span id="monthPayment"></span></td>
+             </tr>
+             <tr>
+               <td><label for="">Total Payments: </label><span id="total_amount_payable"></span></td>
+            </tr>
+            <tr>
+                 <td><label for="">Total Interest: </label><span id="total_interest"></span></td>
+            </tr>
+
+            <tr>
+                 <td><label for=""><strong>Apply for your loan with one of these fine lenders</strong></label></td>
+            </tr>
+
+            <tr>
+                <td>
+                   <ul>
+                       <li><a href="#">Bank of javaScript </a></li>
+                       <li><a href="#">HTML Credit Union</a></li>
+                   </ul>
+                </td>
+            </tr>
         </table>
-      </form>
-    </div>
-</div>
-
-<!-- Linking an External JavaScript File -->
-<script src="js/main.js"></script>
- 
+    </form>
+    <script src="calc.js"></script>
 </body>
 </html>

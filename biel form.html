@@ -64,6 +64,12 @@
                  alert("required and must be apphabets");
                  return false;
              }
+                var mail=document.bielForm.email.value;
+             if (/\S+@\S+/.test(mail) == false){
+                 alert('Enter your Email!')
+                 document.getElementById('email').innerHTML="<b>Required. Must be a valid Email</b>";
+                 return false;
+             }
            }
         </script>
     </body>

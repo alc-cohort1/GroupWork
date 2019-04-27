@@ -9,11 +9,14 @@
 </head>
 <body>
 <!--form holding text field and name labels-->
-    
-<form POST id="myForm">
+    <center>       
+    <fieldset>
+
+     <form POST id="myForm">
 
         <table>
             <h2>Enter Loan Data</h2>
+            <hr>
             <tr>
                 <td><label for="">Amout of the loan ($): </label></td>
                 <td><input type="number" name="amout" id ="amout" min="1"  max="1000000000000000"></td>
@@ -36,7 +39,7 @@
 
              <tr>
                 <td><label for=""></label><strong>Aproximate Payment: </strong></td>
-                 <td><input type="submit" name="Payment" id ="calculate" value = "calculate"></td>
+                 <td><button>calculate</button></td>
              </tr>
              <tr>
                  <td><label for="">Monthly Payment: </label> <span id="monthPayment"></span></td>
@@ -62,6 +65,8 @@
             </tr>
         </table>
     </form>
+    </fieldset>
+</center>
     <script src="calc.js"></script>
 </body>
 </html>

@@ -6,23 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script type="text/JavaScript">
-        function add() {
-          var num1 = document.getElementById('c1').value;
-          var num2 = document.getElementById('c2').value;
-          var total = num1 + num2;
-          document.getElementById('result').innerHtml = total;
-
-        }
     </script>
 </head>
 <body>
-    <form action="">
-        <input type="text" id="c1">
-        <input type="text" id="c2">
+    <form>
+        <input type="text" id="number">
+        <input type="text" id="numbers">
         <button onclick="add()">result</button>
     </form>
-    <div id="result">
-
+    <div id="result" style="border:1px solid red; padding:5px;">
+       hello world
     </div>
+    <script type="text/JavaScript">
+       function add() {
+          var x = parseInt (document.getElementById("numbers").value);
+          var y = parseInt (document.getElementById("number").value);
+          var z = (x + y);
+
+          document.getElementById("result").innerHTML = z;
+          //return true;
+       }
+       
+     </script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+body{
+    background-color:black;
+}
+#main{
+    background-color:grey;
+    width:100%;
+    height:500px;
+    align-content: center;
+    
+}
+#photo1{
+    width:400px;
+    height:400px;
+    place-content:center;
+    display: flex;
+}
+#photo{
+    width:300px;
+    height:400px;
+    display: block;
+}
+#words{
+    
+}
+#mytext{
+align-content: center;
+}
+
+#container{
+    background-color:white;
+    color:black;
+    border:2px solid black;
+    margin:0px;
+
+}
+#webicon{
+    width:100px;
+    height:100px;
+}
+#mobileicon{
+    width:100px;
+    height:100px;
+}
+#container2{
+    
+}
+link:{
+    text-decoration: none;
+    padding:1px;
+    align-content: right;
+    text-decoration-color: brown;
+}

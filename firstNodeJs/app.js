@@ -1,31 +1,25 @@
 
+const express = require('express');
 
-var express = require('express');
-
-var app = express();
-
-app.set('view engine' , 'ejs');
+const app = express();
 
 
+app.get('/' , (req,res) =>{
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    return res.status(200).json({message:'hellow world'});
+
+   // return res.status(201).json({message:'created',user})
 });
-
-
-
-app.get('/about', function(req, res){
-    res.sendFile(__dirname + '/about.html');
-});
-
-
-
-app.get('/profile/:name ', function(req, res){
-    res.render('profile',{person: req.params.name});
-});
-
-
 app.listen(3000);
+
+ console.log('your live on port 3000')
+
+
+
+
+
+
+
 
 
 

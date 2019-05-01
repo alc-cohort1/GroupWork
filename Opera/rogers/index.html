@@ -1,128 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Loan Calculator</title>
-    <link rel="stylesheet" href="index.css">
-    
-</head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="calculator.js"></script>
+  </head>
 
-<body>
-<header class="top_header">
-  <a>
-#TeamOpera
-  </a>
-</header>
-<section class="main_section">
+  <body>
+    <header class="top_header">
+      <a>
+        #TeamOpera
+      </a>
+    </header>
+    <section class="main_section">
+      <div class="calculator">
+        <form name="loan_data" onsubmit="calculate_interest()">
+          <table id="content">
+            <!--Table row for Amount of loans-->
+            <tr>
+              <td>
+                <label>
+                  Amount of the loan($):
+                </label>
+              </td>
+              <td>
+                <input type="text" id="loan_amount" />
+              </td>
+            </tr>
+            <!--Table row for Annual Interests-->
+            <tr>
+              <td>
+                <label>
+                  Annual Interest(%):
+                </label>
+              </td>
+              <td>
+                <input type="text" id="annual_interest" />
+              </td>
+            </tr>
+            <!--Table row for Repayment Period-->
+            <tr>
+              <td>
+                <label>
+                  Repayment Period(Years):
+                </label>
+              </td>
+              <td>
+                <input type="text" id="repayment_period" />
+              </td>
+            </tr>
+            <!--Table row for ZipCode Input-->
+            <tr>
+              <td>ZipCode (To find lenders):</td>
+              <td>
+                <input type="text" id="zip_code" />
+              </td>
+            </tr>
+            <!--Table row for Approximating payment-->
+            <tr>
+              <td>
+                <label>
+                  <b>Approximate Payments:</b>
+                </label>
+              </td>
+              <td>
+                <input type="submit" id="button" value="Calculate" />
+              </td>
+            </tr>
+            <!--Table row for monthly payment-->
+            <tr>
+              <td>
+                <label>
+                  Monthly Payment:
+                </label>
+              </td>
+              <td>
+                <div type="text" id="monthly_payment" class="answer"></div>
+                <!-- <span id="monthly_payment"></span> -->
+              </td>
+            </tr>
 
+            <!--Table row for total payment-->
 
-    <div class="calculator" >
-      <form name="loan_data" onsubmit="calculate(event)">
-        <table id="content">
-          <!--Table row for Amount of loans-->
-          <tr>
-            <td>
-              <label>
-                Amount of the loan($):
-              </label>
-            </td>
-            <td>
-              <input type="text" id="loan_amount">
-            </td>
-          </tr>
-          <!--Table row for Annual Interests-->
-          <tr>
-            <td>
-              <label>
-                Annual Interest(%):
-              </label>
-            </td>
-            <td>
-              <input type="text" id="annual_interest">
-            </td>
-          </tr>
-          <!--Table row for Repayment Period-->
-          <tr>
-            <td>
-              <label>
-                Repayment Period(Years):
-              </label>
-            </td>
-            <td>
-              <input type="text" id="repayment_period">
-            </td>
-          </tr>
-          <!--Table row for ZipCode Input-->
-          <tr>
-            <td>ZipCode (To find lenders):</td>
-            <td>
-              <input type="text" id="zip_code">
-            </td>
-          </tr>
-          <!--Table row for Approximating payment-->
-          <tr>
-            <td>
-              <label>
-                <b>Approximate Payments:</b>
-              </label>
-            </td>
-            <td>
-              <input type="submit"  id="button" value="Calculate">
-            </td>
-          </tr>
-          <!--Table row for monthly payment-->
-          <tr>
-            <td> 
-              
-            <label>
-                Monthly Payment:
-            </label>
-          </td>
-            <td>
-              <input type="text" id="monthly_payment" >
-            </td>
-          </tr>
-
-          <!--Table row for total payment-->
-
-          <tr>
-            <td>
-               <label>
+            <tr>
+              <td>
+                <label>
                   Total Payment:
-               </label>
-            
-            </td>
-            <td><input type="text" id="total_payment" ></td>
-          </tr>
+                </label>
+              </td>
+              <td><div type="text" id="total_payment" class="answer"></div></td>
+            </tr>
 
-          <!--Table row for total interest payment-->
+            <!--Table row for total interest payment-->
 
-          <tr>
-            <td>
-        <label>
-            Total Interest:
-        </label>
-             
-            </td>
-            <td><input type="text" id="total_interest"></td>
-          </tr>
-        </table>
-      </form>
-    </div>
-    <!-- right side div showing th graph -->
-    <div class="graph">
-       <img src="images/graph.png" alt=""width="500" height="400">
-    </div>
-
-
-
-
-</section>
-
-
-
- 
-</body>
+            <tr>
+              <td>
+                <label>
+                  Total Interest:
+                </label>
+              </td>
+              <td>
+                <div type="text" id="total_interest" class="answer"></div>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <!-- right side div showing th graph -->
+      <div class="graph">
+        <img src="images/graph.png" alt="" width="500" height="400" />
+      </div>
+    </section>
+  </body>
 </html>

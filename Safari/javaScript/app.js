@@ -1,4 +1,4 @@
-function calculate()
+function calculate(event)
 {
     // Create variable and assign it the amount of money loaned.
     var loan_amount = document.getElementById("loan_amount").value;
@@ -29,7 +29,8 @@ function calculate()
     
     if (!isNaN(monthly) && (monthly != Number.POSITIVE_INFINITY) && (monthly != Number.NEGATIVE_INFINITY)) {
 
-      /*accessing the input values of the various input fields by using their respective ids (this input fields include; the input fields of Monthly Payment
+      /*accessing the input values of the various input fields by using their respective ids (this input fields include; 
+      the input fields of Monthly Payment
       Total Payment and Total Interest )*/
       /*
       the values are then calculated using the results obtained from the previous sections and displayed into two decimal places.
@@ -49,5 +50,8 @@ function calculate()
         document.getElementById("monthly_payment").value = "";
         document.getElementById("total_payment").value = "";
         document.getElementById("total_interest").value = "";
-    }
+ 
+     }
+     
+    event.preventDefault(); 
 }

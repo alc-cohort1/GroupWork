@@ -131,7 +131,7 @@ let clan1 = new Object();
   // new object of class Clans called clan
   clan1.name = "Ngabbi";
   clan1["totem"] = "jjerengesa";
-  clan1["motto"] = "Kiiso bwe kikulaba obulungi naawe okiraba.!";
+  clan1["motto"] = "Kalikutanda ne kakutwala mu Bengabi Abasambaganyi!";
   clan1.size(); //function call
 }
 let clan2 = new Object();
@@ -173,16 +173,16 @@ let cloud = new Object();
 let cloud1 = new Object();
 {
   // new object of class Clouds called cloud
-  cloud.name = " ‎Cumulusclouds";
-  cloud["isManMade"] = false;
-  cloud.description(); //function call
+  cloud1.name = " ‎Cumulusclouds";
+  cloud1["isManMade"] = false;
+  cloud1.description(); //function call
 }
 let cloud2 = new Object();
 {
   // new object of class Clouds called cloud
-  cloud.name = " ‎Cumulusclouds";
-  cloud["isManMade"] = false;
-  cloud.description(); //function call
+  cloud2.name = " ‎Cumulusclouds";
+  cloud2["isManMade"] = false;
+  cloud2.description(); //function call
 }
 
 class Shoes {
@@ -224,7 +224,7 @@ let shoe = new Object();
 let shoe1 = new Object();
 {
   // new object of class Shoes called shoe
-  shoe.name = " ‎plimsoms";
+  shoe.name = " ‎jungleboots";
   shoe["isAllsizes"] = true;
   shoe["isUnisex"] = true;
 
@@ -233,36 +233,9 @@ let shoe1 = new Object();
 let shoe2 = new Object();
 {
   // new object of class Shoes called shoe
-  shoe.name = " ‎plimsoms";
+  shoe.name = "stillettos";
   shoe["isAllsizes"] = true;
-  shoe["isUnisex"] = true;
+  shoe["isUnisex"] = false;
 
   shoe.description(); //function call
-}
-
-class Belts {
-  //class called Belts
-  belts(name, isUnisex, color) {
-    this.name = name;
-    this.color = color;
-    this.isUnisex = isUnisex;
-
-    //constructor function with attributes name,isUnisex and color
-  }
-
-  description() {
-    alert(
-      this.name + "is unisex" + this.isUnisex + " of color" + this.isAllsizes
-    );
-  }
-}
-
-let belt = new Object();
-{
-  // new object of class Belt called belt
-  belt.name = " ‎zara";
-  belt["color"] = "black";
-  belt["isUnisex"] = true;
-
-  belt.description(); //function call by object belt
 }

@@ -50,8 +50,13 @@ function calculate(event)
         document.getElementById("monthly_payment").value = "";
         document.getElementById("total_payment").value = "";
         document.getElementById("total_interest").value = "";
+<<<<<<< HEAD
  
      }
      
     event.preventDefault(); 
+=======
+    }
+    event.preventDefault();
+>>>>>>> a67d78e63aec54fd4e7089137c25e2ae9e6bbfbc
 }

@@ -1,0 +1,56 @@
+body, html
+{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    color: #3c3939;
+}
+
+#menu 
+{
+    background-color: #000080; 
+}
+
+#navbar-brand 
+{
+    color: #ffffff;
+}
+
+.profile-card
+{
+    width: 800px;
+    height: 700px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+}
+
+#image
+{
+    float: left;
+    width: 300px;
+    height: 350px;
+}
+
+#main
+{
+    float: right;
+    width: 250px;
+    height: 300px;
+}
+
+.title
+{
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+}
+
+#social
+{
+    color: crimson;
+}

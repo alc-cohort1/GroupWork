@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Loan Calculator</title>
+    <link rel="stylesheet" href="calc.css">
 </head>
 <body>
-    
-<form action="" POST>
+<!--form holding text field and name labels-->
+    <center>       
+    <fieldset>
+
+     <form POST id="myForm">
 
         <table>
             <h2>Enter Loan Data</h2>
+            <hr>
             <tr>
                 <td><label for="">Amout of the loan ($): </label></td>
-                <td><input type="number" name="amout" id ="amout" min="1"  max="1000000000000000" onchange="computeLoan"></td>
+                <td><input type="number" name="amout" id ="amout" min="1"  max="1000000000000000"></td>
             </tr>
 
             <tr>
                 <td><label for="">Annual Interest (%): </label></td>
-                <td><input type="number" min="0" max="100" name="annualInterest" value="5" step=".1" id ="annualInt" onchange="computeLoan"></td>
+                <td><input type="number" min="0" max="100" name="annualInterest" value="5" step=".1" id ="annualInt"></td>
             </tr>
 
             <tr>
                 <td><label for="">Payment Period (Years): </label></td>
-                <td><input type="number" name="repayment" min="1" max="30" value="1" step="1" id ="repayment" onchange="computeLoan"></td>
+                <td><input type="number" name="repayment" min="1" max="30" value="1" step="1" id ="repayment"></td>
              </tr>
 
              <tr>
@@ -34,16 +39,16 @@
 
              <tr>
                 <td><label for=""></label><strong>Aproximate Payment: </strong></td>
-                 <td><input type="submit" name="Payment" id ="calculate" value = "calculate"></td>
+                 <td><button>calculate</button></td>
              </tr>
              <tr>
-                 <td><label for="">Monthly Payment: </label></td>
+                 <td><label for="">Monthly Payment: </label> <span id="monthPayment"></span></td>
              </tr>
              <tr>
-               <td><label for=""></label>Total Payments: </td>
+               <td><label for="">Total Payments: </label><span id="total_amount_payable"></span></td>
             </tr>
             <tr>
-                 <td><label for=""></label>Total Interest: </td>
+                 <td><label for="">Total Interest: </label><span id="total_interest"></span></td>
             </tr>
 
             <tr>
@@ -58,42 +63,10 @@
                    </ul>
                 </td>
             </tr>
-            <script type="text/javaScript">
-                <!--
-                function conputeLoan(){
-
-                    //variables for capturing values
-                    var amount = document.getElementById('amount').value
-                    var annualInt = document.getElementById('annualInt').value
-                    var repayment = document.getElementById('repayment').value
-
-                    //variables for calculating loan principle
-                    var annualInt = (amount * (annualInt * .01)) / repayment;
-                    var repayment = ((amout / months ) + annualInt) .toFix(2);
-                    document.getElementById('repayment').innerHTML = "monthly payment = " + repayment;
-
-
-                }
-
-
-
-
-
-                -->
-            </script>
-
-
-
         </table>
     </form>
-
-
-    <script src="text/javaScript">
-        <!--
-
-            
-        -->
-    </script>
-
+    </fieldset>
+</center>
+    <script src="calc.js"></script>
 </body>
 </html>

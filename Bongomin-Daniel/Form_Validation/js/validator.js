@@ -1,6 +1,8 @@
 
+// function that holds Form Registartion code
 function Register_Form_Validator()
 {
+// Declaring input variables in the form
   var user_id = document.forms["RegForm"]["user_id"];
   var password = document.forms["RegForm"]["password"];
   var name = document.forms["RegForm"]["name"];
@@ -8,14 +10,22 @@ function Register_Form_Validator()
   var zip_code = document.forms["RegForm"]["zip_code"];
   var email = document.forms["RegForm"]["email"];
 
-  //   var country = document.forms["RegForm"]["country"];
-
+// if statement taht checks if the user id is null (empty)
   if (user_id.value == "") {
     window.alert("Please enter your user_id.");
     user_id.focus();
     return false;
   }
+  
+  // checking the user_id length
+  
+  if(user_id.length < 3 || user_id > 20){
+  document.getElementById("userid").innerHTML="The user id should between 3 and 20";
+  
+  }
   // Bongomin Daniel
+  
+  // if statements checking if the input fields are empty
 
   if (password.value == "") {
     window.alert("Please enter your password.");

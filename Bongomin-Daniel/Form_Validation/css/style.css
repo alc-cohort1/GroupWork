@@ -1,8 +1,10 @@
+/* global style for the body */
 *{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
 }
 
+/* styling the register_div class */
 .register_div{
 padding: 40px;
 background-color: beige;
@@ -44,6 +46,8 @@ button{
   border-radius: 8px;
 
 }
+
+/* styling the textarea  */
 textarea{
 overflow: auto;
  outline: none;

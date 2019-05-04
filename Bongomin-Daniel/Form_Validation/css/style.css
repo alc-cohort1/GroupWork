@@ -55,3 +55,8 @@ overflow: auto;
  border: 1px solid #888; 
  border-radius: 8px;
 }
+span{
+color:red;
+font-size: 15px;
+
+}

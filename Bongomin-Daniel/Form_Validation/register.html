@@ -12,13 +12,14 @@
 <center><h1 style="font-size:20px;">Registration Form</h1></center>
 <hr>
     <table width="50%" align="center">
-        <form name="RegForm" onsubmit="Register_Form_Validator()" method="post">
+        <form name="RegForm" onsubmit="return Register_Form_Validator()" method="post">
             <tr>
                 <td>
                     <label for="fist_name">USER ID:</label>
                 </td>
                 <td>
-                    <input type="text" name="user_id" placeholder="Numeric User Id" onkeypress="return isNumberKey(event)" max="12" min="7" >
+                    <input type="text" name="user_id" placeholder=" Numeric User Id" >
+                    <span id="user_id_error"></span>
                 </td>
             </tr>
             <tr>
@@ -26,7 +27,8 @@
                     <label for="password">PASSWORD:</label>
                 </td>
                 <td>
-                    <input type="password" name="password" placeholder="password" min="7" max="12">
+                    <input type="password" name="password" placeholder="password">
+                    <span id="password_error"></span>
                 </td>
             </tr>
             <tr>
@@ -34,8 +36,10 @@
                     <label for="fist_name">NAME:</label>
                 </td>
                 <td>
-                    <input type="text" name="name" placeholder="name" onkeypress="return (event.charCode > 64 && 
-	event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                    <input type="text" name="name" placeholder="name" >
+                    <span id="name"></span>
+
+	                  
                 </td>
             </tr>
             <tr>
@@ -44,6 +48,7 @@
                 </td>
                 <td>
                     <input type="text" name="address" placeholder="address">
+                    <span id="address_error"></span>
                 </td>
             </tr>
             <tr>
@@ -51,35 +56,23 @@
                     <label for="fist_name">COUNTRY:</label>
                 </td>
                 <td>
-                    <select type="text" value="" name="country_error" id="country">
+                    <select type="text" value="" name="country" id="country">
                     <option value="1" selected>Please Select a country</option>
                     <option value="Uganda">Uganda</option>
                     <option value="Kenya">Kenya</option>
                     <option value="Rwanda">Rwanda</option>
                     <option value="Burundi">Burundi</option>
                     </select>
+                    <span id="country_error"></span>
                 </td>
-                <script>
-                // Errors for not selecting a country
-    
-                    var country_error = document.getElementById("country_error");
-
-                    if (country.selectedIndex == "") {
-
-                        alert("Required. Must Select a Country");
-
-                    } else {
-
-                    }
-                
-                </script>
             </tr>
             <tr>
                 <td>
                     <label for="zip_code">Zip code:</label>
                 </td>
                 <td>
-                    <input type="text" name="zip_code" placeholder="ZIP-Code" onkeypress='validate(event)'/>
+                    <input type="text" name="zip_code" placeholder="ZIP-Code"/>
+                    <span id="zip_code_error"></span>
                 </td>
             </tr>
             <tr>
@@ -88,6 +81,7 @@
                 </td>
                 <td>
                     <input type="email" name="email" placeholder="Email">
+                    <span id="email_error"></span>
                 </td>
             </tr>
             <tr>

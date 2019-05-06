@@ -1,10 +1,12 @@
 const express = require("express");
 const parser = require("body-parser");
 const mysql = require("mysql");
+const exhbs = require("express3-handlebars");
+const path = require("path");
 
 const app = express();
 
-app.use(express.static("./templates"));
+app.use(express.static("./views"));
 
 // middleware
 app.use(parser.urlencoded({ extended: false }));
@@ -81,17 +83,31 @@ app.post("/user_register", (req, res) => {
   );
 });
 
-// // THis route gets all the user from the database
-// app.get("/users", (req, res) => {
-//   const sql = "SELECT * FROM users";
-//   getConnection.query(sql, (err, result) => {
-//     if (err) throw err;
-//     res.send(result);
-//     result.forEach(row => {
-//       console.log(`${row.username} is in ${row.location}`);
-//     });
-//   });
-// });
+// Using handlebars
+// You can also use templates as your folder name
+app.set("views", path.join(__dirname, "views"));
+app.engine("handlebars", exhbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// This route gets all the user from the database
+app.get("/users", (req, res) => {
+  const sql = "SELECT * FROM users";
+  getConnection.query(sql, (err, result) => {
+    if (err) throw err;
+    res.render("users", { result });
+  });
+});
+
+// This route gets all the user from the database
+app.get("/details", (req, res) => {
+  const sql = "SELECT * FROM regtable";
+  getConnection.query(sql, (err, result) => {
+    if (err) throw err;
+    res.render("details", { result });
+  });
+});
+
+// This route gets all the information about the registration form
 
 const PORT = process.env.PORT || 3000;
 

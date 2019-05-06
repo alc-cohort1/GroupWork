@@ -1,5 +1,5 @@
 
-/* Flexslider */
+/* Flexslider it controls the shape of the first interface with the footer */
 $(window).load(function() {
   "use strict";
 	$('.flexslider').flexslider({
@@ -15,21 +15,6 @@ $(window).load(function() {
 			});
 		}
 	});
-});
-
-/* Mixitup Portfolio */
-jQuery(document).ready(function($) {
-  "use strict";
-	$('#portfolio').mixitup({
-		targetSelector: '.item',
-		transitionSpeed: 450
-	});
-});
-
-/* Nivo - Lightbox */
-jQuery(document).ready(function($) {
-  "use strict";
-    $('.nivo-lbox').nivoLightbox({ effect: 'fade' });
 });
 
 /* Skills  loading bar*/

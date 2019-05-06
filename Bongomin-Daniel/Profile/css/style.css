@@ -241,6 +241,11 @@ div.desc {
   padding: 15px;
   text-align: center;
 }
+.gallery:hover{
+color:white;
+background: #ffd42d;
+
+}
 
 /*-------------------------------------------- 
                  5. PROFILE
@@ -545,7 +550,7 @@ div.desc {
 	transition: all .7s ease-in-out;
 }
 
-/* 7.2. Services */
+/* skills/  Services div styling */
 
 .services-info {
 	border-bottom: 1px solid #ededed;

@@ -148,9 +148,6 @@ a:hover {
 	transition: all .3s ease-in-out;
 }
 
-/*------------------------------------------------------------- 
-	                3. THEME EXTRAS
---------------------------------------------------------------- */
 
 .sep1 {
 	height: 3px;
@@ -219,6 +216,35 @@ a:hover {
 .r-content {
 	padding: 0px;
 	width: 72.3%;
+}
+
+/*--------------------------------------------
+gallary div style
+--------------------------------------------*/
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.gallery:hover{
+color:white;
+background: #ffd42d;
+
 }
 
 /*-------------------------------------------- 
@@ -524,7 +550,7 @@ a:hover {
 	transition: all .7s ease-in-out;
 }
 
-/* 7.2. Services */
+/* skills/  Services div styling */
 
 .services-info {
 	border-bottom: 1px solid #ededed;

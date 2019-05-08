@@ -29,7 +29,8 @@ function calculate(event)
     
     if (!isNaN(monthly) && (monthly != Number.POSITIVE_INFINITY) && (monthly != Number.NEGATIVE_INFINITY)) {
 
-      /*accessing the input values of the various input fields by using their respective ids (this input fields include; the input fields of Monthly Payment
+      /*accessing the input values of the various input fields by using their respective ids (this input fields include; 
+      the input fields of Monthly Payment
       Total Payment and Total Interest )*/
       /*
       the values are then calculated using the results obtained from the previous sections and displayed into two decimal places.
@@ -49,6 +50,13 @@ function calculate(event)
         document.getElementById("monthly_payment").value = "";
         document.getElementById("total_payment").value = "";
         document.getElementById("total_interest").value = "";
+<<<<<<< HEAD
+ 
+     }
+     
+    event.preventDefault(); 
+=======
     }
     event.preventDefault();
+>>>>>>> a67d78e63aec54fd4e7089137c25e2ae9e6bbfbc
 }

@@ -1,0 +1,34 @@
+body {
+	font-family: sans-serif;
+}
+nav  {
+  float: right;
+}
+
+nav a {
+	padding: 30px;
+	background; blue solid;
+	
+
+}
+
+header {
+  background-color: grey;
+  display: block;
+}
+
+footer { 
+  display: block;
+  background-color: grey;
+}
+
+#copyright {
+	align-content: center;
+}
+
+#left{
+	width: 10px;
+}
+#right{
+	width: 10px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toyota</title>
+	<link rel="stylesheet" type="text/css" href="./csstoyota.css">.
+</head>
+<body>
+<div id="tabletion"></div>
+	<table>
+
+		<tr>
+
+		<td>
+		<fieldset>
+			<!--this section will help capture the users' information-->
+			<legend>Customer Information</legend>
+			customer Id <input type="number" name="custid" value="custval">
+			name<input type="name" value="name">
+			state<input type="text" value="state" name="state">
+			<input type="checkbox" name="retail" value="retail"> retail customer<br>
+		</fieldset>
+		</td>
+
+		<td>
+			<fieldset>
+			<!--radio bations for the shiping methods-->
+			<legend>Shipping </legend>
+			<input type="radio" name="Shipping" value="ups"> ups<br>
+			<input type="radio" name="Shipping" value="us postar air"> Female<br>
+			<input type="radio" name="Shipping" value="fed ex ground"> Other
+			<input type="radio" name="Shipping" value="fed ex air"> Other
+			</fieldset>
+		</td>
+
+		</tr>
+		<tr>
+		<td>
+			<fieldset>
+			<legend>part ordered </legend>
+			partnumer <input type="number" value="partnam">
+			description<input type="text" value="disc">
+			price per part <input type="text" value="price">
+			quantity <input type="number" value="quant">
+			<input type="checkbox" name="ovcont" value="ovcont"> oversize container?<br>
+			</fieldset>
+		</td>
+		<td>
+			<fieldset>
+			<legend>output</legend>
+			cost <input type="number" value="cost">
+			sales tax <input type="number" value="tax">
+			shipping & handling <input type="number" value="shiphand">
+			total<input type="number" value="total">
+			</fieldset>
+		</td>
+		
+		</tr>
+		<tr>
+			<td colspan="2">
+				<fieldset>
+				<button>compute</button>
+				<button>new order</button>
+				<button>exit</button>
+				</fieldset>
+			</td>
+		</tr>
+		
+	</table>
+</div>
+</body>
+</html>

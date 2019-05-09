@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Toyota Uganda</title>
+    <script src="app_validation.js"></script>
+  </head>
+  <body>
+      <div class="container wrapper">
+          <!-- Form -->
+          <form name="sales_form" action="" method="POST" onsubmit="return validData()" >
+          <div class="row">
+            <!-- Section that captures Customer Information -->
+            <div class="col-sm-8">
+                <div class="fence">
+                <fieldset class="fieldset">
+                <legend class="legend"><div class="col-sm-12"><h5>Customer Information</h5></div></legend>
+                <!-- Label for customer id -->
+                <div class="row">
+                    <div class="col-sm"><label for="customer_id">Customer ID: </label></div>
+                    <div class="col-sm-9"><input type="text" name="customer_id"><span id="customer_id_error"></span></div>
+                </div>
+                <!-- Label for name -->
+                <div class="row">
+                    <div class="col-sm"><label for="name">Name: </label></div>
+                    <div class="col-sm-9"><input type="text" name="name"><span id="name_error"></span></div>
+                </div>
+                <!-- Label for town -->
+                <div class="row">
+                    <div class="col-sm"><label for="state">Town: </label></div>
+                    <div class="col-sm-6"><input type="text" name="town"><span id="town_error"</span></div>
+                    <div class="col-sm"><input type="checkbox" name="retail_customer"> &nbsp; Retail Customer</div>
+                </div>
+                </fieldset>
+                </div>
+            </div>
+
+            <!--  Section that captures Shipping Information -->
+            <div class="col-sm-4">
+            <div class="fence-right">
+            <fieldset class="fieldset-second">
+                    <legend class="legend"><div class="col-sm-12"><label for="shipping"><h5>Shipping</h5></label></div></legend>
+            <div class="row">
+                <div class="col-sm-3"><input type="radio" name="shipping">&nbsp; UPS</div>
+                <div class="col-sm-8"><input type="radio" name="shipping">&nbsp; Fed Ex Ground</div>
+            </div><br>
+            <div class="row">
+                    <div class="col-sm-5"><input type="radio" name="shipping">&nbsp; US Postal Air</div>
+                    <div class="col-sm-7"><input type="radio" name="shipping">&nbsp; Fed Ex Air</div>
+            </div>
+            </fieldset>
+            </div>  
+            </div>
+          </div><br><br>
+
+          <div class="row">
+            <!-- Section that captures Part Ordered -->
+            <div class="col-sm-8 field">
+                <div class="fence">
+                <fieldset class="fieldset">
+                    <legend class="legend"><div class="col-sm-12"><h5>Part Ordered</h5></div></legend>
+                    <!-- Part Number label -->
+                    <div class="row">
+                        <div class="col-sm-2"><label for="part">Part Number: </label></div>
+                        <div class="col-sm-9"><input type="text" name="part"><span id="part_error"></span></div>
+                    </div>
+                    <!-- Description label -->
+                    <div class="row">
+                            <div class="col-sm-2"><label for="description">Description: </label></div>
+                            <div class="col-sm-9"><input type="text" name="description"><span id="description_error"></span></div>
+                        </div>
+                    <!-- Price Per Part Label -->
+                    <div class="row">
+                            <div class="col-sm-2"><label for="price_per_part">Price Per Part: </label></div>
+                            <div class="col-sm"><input type="text" name="price_per_part"><span id="price_error"</span></div>
+                            <div class="col-sm-2"><label for="price_per_part">Quantity: </label></div>
+                            <div class="col-sm"><input type="text" name="quantity"><span id="quantity_error"></span></div>
+                    </div>
+                    <div class="row justify-content-sm-center ">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm "><input type="checkbox" name="" >&nbsp; Oversize Container</div>
+                    </div>
+                </fieldset>
+                </div>
+            </div>
+            <!-- Section that Outputs  -->
+            <div class="col-sm-4 field">
+                <div class="fence-right-last">
+                <fieldset class="fieldset-fourth">
+                        <legend class="legend"><div class="col-sm-12"><label for="output"><h5>Output</h5></label></div></legend>
+                <!-- Cost Label -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="cost">Cost: </label></div>
+                    <div class="col-sm-8"><input type="text" name="cost"></div>
+                </div>
+                <!-- Sales Tax Label -->
+                <div class="row">
+                        <div class="col-sm-4"><label for="sales-tax">Sales Tax: </label></div>
+                        <div class="col-sm-8"><input type="text" name="sales-tax"></div>
+                </div>
+                <!-- Shipping & Handling Label -->
+                <div class="row">
+                        <div class="col-sm-4"><label for="shipping-&-handling">Shipping & Handling: </label></div>
+                        <div class="col-sm-8"><input type="text" name="shipping-&-handling"></div>
+                </div>
+                <!-- Total Label -->
+                <div class="row">
+                        <div class="col-sm-4"><label for="total">Total: </label></div>
+                        <div class="col-sm-8"><input type="text" name="total"></div>
+                </div>
+                </fieldset>
+                </div>
+            </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="row">
+                <div class="col-sm-2">
+                    <button class="button-style" value="submit" type="submit">Compute</button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="button-style" type="reset">New Order</button>
+                </div>
+                <div class="col-sm-5"></div>
+                <div class="col-sm-2">
+                    <button class="button-style" type="reset">Exit</button>
+                </div>
+            </div>
+        </form>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</body>
+</html>

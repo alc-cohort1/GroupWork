@@ -1,0 +1,24 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "login",
+  "main": "login.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alc-cohort1/GroupWork/tree/master/Kintu%20Declan/nodelogin"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Kintu Declan",
+  "license": "ISC"
+}

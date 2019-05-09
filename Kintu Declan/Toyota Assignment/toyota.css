@@ -14,11 +14,11 @@
     justify-content: space-between;
 }
 
-#top div
+#top fieldset
 {
     border: 1px black solid;
     padding: 1px;
-    background-color: orange;
+    background:  rgb(228, 158, 89);
 }
 
 /*Styling for he middle div section*/
@@ -29,11 +29,11 @@
     justify-content: space-between;
 }
 
-#middle div
+#middle fieldset
 {
     border: 1px black solid;
     padding: 1px;
-    background-color: orange;
+    background: rgb(228, 158, 89);
 }
 
 /*Styling for he middle div section*/
@@ -50,9 +50,44 @@
     background-color: #FBCEB1;
 }
 
-#customer_info { flex: 1;}
-#shipping { flex: 1;}
-#order { flex: 1;}
-#output { flex: 1;}
+#customer_info 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
+#shipping 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
+#order 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
+#output 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
 #button_left { flex: 1; }
 #button_right { flex: 1; }
+#compute { background: rgb(228, 158, 89); }
+#new_order { background: rgb(228, 158, 89); }
+#exit { background: rgb(228, 158, 89); }

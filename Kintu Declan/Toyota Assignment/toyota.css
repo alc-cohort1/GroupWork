@@ -1,0 +1,58 @@
+/*Styling for the main div continer*/
+#main
+{
+    background-color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px black solid;
+}
+
+/*Styling for the top div section*/
+#top
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#top div
+{
+    border: 1px black solid;
+    padding: 1px;
+    background-color: orange;
+}
+
+/*Styling for he middle div section*/
+#middle
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#middle div
+{
+    border: 1px black solid;
+    padding: 1px;
+    background-color: orange;
+}
+
+/*Styling for he middle div section*/
+#bottom
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#bottom div
+{
+    padding: 1px;
+    background-color: bisque;
+}
+
+#customer_info { flex: 1;}
+#shipping { flex: 1;}
+#order { flex: 1;}
+#output { flex: 1;}
+#button_left { flex: 1; }
+#button_right { flex: 1; }

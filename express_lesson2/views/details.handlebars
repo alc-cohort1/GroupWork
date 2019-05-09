@@ -1,0 +1,85 @@
+<style>
+    .members {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        border: 2px solid #dddd;
+        margin: 20px 500px;
+        padding: 20px;
+    }
+
+    .members>div:nth-child(odd) {
+        justify-self: end;
+        font-weight: bold;
+    }
+
+    .members>div:nth-child(even) {
+        justify-self: start;
+        padding-left: 30px;
+    }
+</style>
+
+{{#each result}}
+<div class="members">
+    <div>
+        <label>User ID:</label>
+    </div>
+    <div>
+        {{this.userId}}
+    </div>
+    <div>
+        <label>Password:</label>
+    </div>
+    <div>
+        {{this.password}}
+    </div>
+    <div>
+        <label>Name:</label>
+    </div>
+    <div>
+        {{this.name}}
+    </div>
+    <div>
+        <label>address:</label>
+    </div>
+    <div>
+        {{this.address}}
+    </div>
+    <div>
+        <label>Country</label>
+    </div>
+    <div>
+        {{this.country}}
+    </div>
+    <div>
+        <label>Zip Code</label>
+    </div>
+    <div>
+        {{this.zipCode}}
+    </div>
+    <div>
+        <label>Email</label>
+    </div>
+    <div>
+        {{this.email}}
+    </div>
+    <div>
+        <label>Gender</label>
+    </div>
+    <div>
+        {{this.gender}}
+    </div>
+    <div>
+        <label>Language</label>
+    </div>
+    <div>
+        {{this.language}}
+    </div>
+    <div>
+        <label>About</label>
+    </div>
+    <div>
+        {{this.about}}
+    </div>
+</div>
+{{/each}}

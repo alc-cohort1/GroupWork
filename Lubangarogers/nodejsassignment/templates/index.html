@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Registration form</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<!--main section containing the two main containers-->
+	<section class="main_section">
+<!-- the div on the left-->
+		<div id="colm1">
+          <div>
+			  <h1>Signup</h1>
+			  <img src="images/me.jpg" alt="">
+			  <p>
+				  Your are just one click away to join 
+					<br>
+				  the league of world class full<br> stack developers
+			  </p>
+		  </div>
+		</div>
+<!-- the div on the right containig the form -->
+			<div id="colm2">
+					<form action="submit" method="POST">
+							
+						<h1>Take your time as you register</h1>
+						<input type="text"  placeholder="Enter your UserId" id="input1" class="textbox" name="user_id">
+						<input type="text" name="password" placeholder="password" class="textbox">
+						<input type="" name="name" placeholder="Name" class="textbox" id="input3">
+						<input type="password" name="address"  class="textbox" id="input4" placeholder="Address">
+						<label>Country</label>
+						<select id="select" name="country">
+							<option value="">kenya</option>
+							<option value="">uganda</option>
+						</select>
+						<label>Zip code</label>
+						<input type="" name="zipcode" class="textbox" id="input5">
+						<input type="" name="email" class="textbox" placeholder="Your Email Address">
+						
+						<span>
+							<label>sex:</label>
+							<label>male</label>
+							<input type="radio" id="input6" name="female" value="male" checked> Male<br>
+							<input type="radio" id="input7" name="male" value="female"> Female<br>
+							</span><br><br>
+						<span>
+									<label for="">Language</label>
+									<input type="checkbox" id="input8" name="english">
+									<label for="">English</label>
+									<input type="checkbox" checked id="input9" name="">
+									<label for="">none english</label>
+								</span><br><br>
+								<span>
+						<label for="">About You</label><br><br>
+						<textarea name="about" id="" cols="30" rows="10"></textarea>
+						</span>
+						<br><br>
+						<button>Submit</button>
+					</form>
+		 
+				</div>
+	</section>
+
+		
+			
+				
+			
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    background-color: blueviolet;
+    margin-top: 0%;
+    padding-top: 20px;
+    width: 100%;
+    height: 650px;
+}
+
+.container .upper{
+    width: 90%;
+    background-color: yellow;
+    height: 25%;
+    margin-bottom: 30px;
+    margin-left: 60px;
+}
+
+.container .left{
+    width: 60%;
+    /* background-color: brown; */
+    position: relative;
+    float: left;
+    height: 60%;
+    margin-left: 60px;
+}
+
+.container .right{
+    width: 29.5%;
+    background-color: aqua;
+    position: relative;
+    float: right;
+    height: 60%;
+    margin-right: 70px;
+}
+
+.container .left .first{
+    width: 40.5%;
+    position: relative;
+    float: left;
+    height: 95%;
+    padding-top: 15px;
+    background-color: slategrey;
+    border-radius: 10px;
+    border: none;
+}
+
+.container .left .second{
+    width: 57.5%;
+    position: relative;
+    float: right;
+    height: 100%;
+}
+
+.container .left .first .name{
+    padding-left: 10px;
+    padding-top: 3%
+}
+
+.container .left .first .email{
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+
+.container .left .first .phoneNumber{
+    padding-left: 10px;
+    padding-top: 20px;
+}
+.container .left .first .name .name_input{
+    width: 280px;
+    height: 24px;
+}
+
+.container .left .first .email .email_input{
+    width: 280px;
+    height: 24px;
+}
+
+.container .left .first .phoneNumber .phoneNumber_input{
+    width: 280px;
+    height: 24px;
+}
+.container .left .second .about{
+    padding-top: 5%;
+    width: 30%;
+} 
+
+input, textarea {
+    border-radius: 5px;
+    border: none;
+}
+
+.comment_button {
+    padding-left: 37%;
+    margin-bottom: 5px;
+}
+
+.headquaters{
+    width: 100%;
+    height: 30%;
+    background-color: aliceblue;
+    margin-bottom: 18px;
+}
+
+.working_with_us{
+    width: 100%;
+    height: 30%;
+    margin-bottom: 18px;
+    background-color: pink;
+}
+
+.organisation{
+    width: 100%;
+    height: 30%;
+    background-color: blue;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+}
+
+.phone{
+    margin-bottom: 10px;
+}
+
+.emailContact{
+    margin-bottom: 10px;
+}
+
+.feedback{
+    margin-top: 15px;
+    padding-left: 10px;
+    color: aliceblue;
+    text-decoration:underline;
+}
+
+.wayToContact{
+    padding-left: 10px
+}
+
+.phone_img {
+    display: flex;
+}
+
+.phone_img .phone_label{
+    padding-left: 5px;
+    color: aliceblue;
+    padding-top: 2px;
+}
+
+.contact_image{
+    display: flex;
+}
+
+
+.contact_image .email_label{
+    padding-left: 5px;
+    color: aliceblue;
+    padding-top: 2px;
+}
+
+.location_img{
+    display: flex;
+}
+
+
+.location_img .location_label{
+    padding-left: 5px;
+    padding-top: 2px;
+    color: aliceblue;
+}

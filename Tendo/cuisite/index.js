@@ -17,48 +17,56 @@ function validateFields(){
 
   
   //Validate Id Field input values
-   if((id.value.length < 5) && (id.value.length >12))
+  if(id.value==NaN){
+   if((id.value < 5) && (id.value >12))
     {
         alert("make sure the input is between 5-12 characters long");
-    }
+        return;
+    }}
   //Validate password Field
     if(password.value==""){
   alert("Sorry You did not Enter a password");
+  
+  document.getElementById('spn2').innerHTML="<font color=red>Sorry PassWord Field is empty";
+         return;
    }
    //Validate name Field
   if((name.value=="")|| !isNaN(name.value)){
-    document.getElementById('spn3').innerHTML="<font color=red>Sorry Field is empty";
+    document.getElementById('spn3').innerHTML="<font color=red>Sorry Name Field is empty";
     alert("Sorry Name Field is empty");
+    return;
   }
   //Validate address Field
-  if((address.value=="")|| (address.value!="")){
-    document.getElementById('spn4').innerHTML="<font color=red>This Field is Optional";
-
-  }
+ // if((address.value=="")|| (address.value!="")){
+  //  document.getElementById('spn4').innerHTML="<font color=red>This Field is Optional";
+  //  return;
+ // }
 //Validate country Field
-  if((country.value=="")|| !isNaN(country.value)){
-    document.getElementById('spn5').innerHTML="<font color=red>Sorry Field is empty";
-    alert("Sorry Name Field is empty");
+  if(country.value=="default"){
+    document.getElementById('spnC').innerHTML="<font color=red>Sorry No Country is Selected";
+    alert("Sorry No Country is Selected");
+    return;
   }
 //Validate zip Field
-  if((zip.value=="0")){
-    document.getElementById('spn5').innerHTML="<font color=red>Please Select a Zip Code";
-    alert("Sorry Name Field is empty");
+  if(zip.value<=0){
+    document.getElementById('spn5').innerHTML="<font color=red>Please Select a Number Above 0";
+    alert("Please Select a Number Above 0");
+    return;
   }
 //Validate email Field
-  if((email.value=="")|| !isNaN(email.value)){
-    document.getElementById('spn7').innerHTML="<font color=red>Sorry Field is empty";
-    alert("Sorry Name Field is empty");
+var emailTest = /@./;
+
+  if(!emailTest.test(email.value)){
+    document.getElementById('spn6').innerHTML="<font color=red>Please Enter the write Email";
+    alert("Please Enter the write Email");
+    return;
   }
   //Validate country field
   if((country.value=="def_country")){
     document.getElementById('spn9').innerHTML="<font color=red>Attention You did not select a Country";
     alert("Sorry Name Field is empty");
+    return;
   }
-//Validate Zip Field
-  if((zip.value=="")|| !isNaN(zip.value)){
-    document.getElementById('spn3').innerHTML="<font color=red>Sorry Field is empty";
-    alert("Sorry Name Field is empty");
-  }
+
 }
 //Check wether atleast one Gender is selected

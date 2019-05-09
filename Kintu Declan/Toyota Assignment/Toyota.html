@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Stylesheet used in the webpage.-->
     <link rel="stylesheet" href="toyota.css">
     <title> TOYOTA </title>
 </head>
 <body>
+    <!--Form that shall be used to capture and send data to database.-->
     <form method="POST" action="Toyota">
+        <!--Main div section that holds all the various sections.-->
         <div id="main">
+            <!--Div section used to hold the two feildsets.-->
             <div id="top">
-                <div id="customer_info">
-                    <h2><strong> Customer Information </strong></h2>
+                <!--Fieldset section that captures user information.-->
+                <fieldset id="customer_info">
+                    <legend><h2><strong> Customer Information </strong></h2></legend>
                     <table>
                         <tr>
                             <td> <label for="customer_id"> Customer ID:</label> </td>
@@ -30,10 +35,11 @@
                             <td> <input type="checkbox" name="cus_type" name="cus_type" id="cus_type" value="English"> English </td>
                         </tr>
                     </table>
-                </div>
+                </fieldset>
 
-                <div id="shipping">
-                        <h2><strong> Shipping </strong></h2>
+                <!--Fieldset section that handles shipping events.-->
+                <fieldset id="shipping">
+                        <legend><h2><strong> Shipping </strong></h2></legend>
                         <table>
                             <tr> 
                                 <td> <input type="radio" name="ups" name="ups" id="ups" value="ups"> UPS </td>
@@ -45,12 +51,14 @@
                                 <td> <input type="radio" name="fed_ex_a" name="fed_ex_a" id="fed_ex_a" value="fed_ex_a"> Fed Ex Air </td>
                             </tr>
                         </table>
-                </div>
+                </fieldset>
             </div>
             
+            <!--Div that holds the remaining feildsets.-->
             <div id="middle">
-                <div id="order">
-                    <h2><strong> Part Ordered </strong></h2>
+                <!--Fieldset section that handles the order information.-->
+                <fieldset id="order">
+                    <legend><h2><strong> Part Ordered </strong></h2></legend>
                     <table>
                         <tr>
                             <td> <label for="part_num"> Part Number:</label> </td>
@@ -74,10 +82,11 @@
                             <td> <input type="checkbox" name="container" name="container" id="container" value="English"> Oversize Container? </td>
                         </tr>
                     </table>
-                </div>
+                </fieldset>
 
-                <div id="output">
-                    <h2><strong> Output </strong></h2>
+                <!--Fieldset section that computes the total cost.-->
+                <fieldset id="output">
+                    <legend><h2><strong> Output </strong></h2></legend>
                     <table>
                         <tr>
                             <td> <label for="cost"> Cost:</label> </td>
@@ -99,9 +108,10 @@
                             <td> <input id="total" name="total" type="text"> </td>
                         </tr>
                     </table>
-                </div>
+                </fieldset>
             </div>
 
+            <!--The div section that contains all the buttons.-->
             <div id="bottom">
                 <div id="button_left">
                     <table>

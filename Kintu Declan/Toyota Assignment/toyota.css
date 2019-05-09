@@ -1,7 +1,7 @@
 /*Styling for the main div continer*/
 #main
 {
-    background-color: bisque;
+    background-color: #FBCEB1;
     font-family: 'Times New Roman', Times, serif;
     border: 1px black solid;
 }
@@ -47,7 +47,7 @@
 #bottom div
 {
     padding: 1px;
-    background-color: bisque;
+    background-color: #FBCEB1;
 }
 
 #customer_info { flex: 1;}

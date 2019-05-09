@@ -3,10 +3,11 @@
 <html>
 <head>
 	<title>toyota</title>
+	<link rel="stylesheet" type="text/css" href="./csstoyota.css">.
 </head>
 <body>
-
-	<table border="1px">
+<div id="tabletion"></div>
+	<table>
 
 		<tr>
 
@@ -22,42 +23,50 @@
 		</td>
 
 		<td>
+			<fieldset>
 			<!--radio bations for the shiping methods-->
 			<legend>Shipping </legend>
 			<input type="radio" name="Shipping" value="ups"> ups<br>
 			<input type="radio" name="Shipping" value="us postar air"> Female<br>
 			<input type="radio" name="Shipping" value="fed ex ground"> Other
 			<input type="radio" name="Shipping" value="fed ex air"> Other
+			</fieldset>
 		</td>
 
 		</tr>
 		<tr>
 		<td>
+			<fieldset>
 			<legend>part ordered </legend>
 			partnumer <input type="number" value="partnam">
 			description<input type="text" value="disc">
 			price per part <input type="text" value="price">
 			quantity <input type="number" value="quant">
 			<input type="checkbox" name="ovcont" value="ovcont"> oversize container?<br>
+			</fieldset>
 		</td>
 		<td>
+			<fieldset>
 			<legend>output</legend>
 			cost <input type="number" value="cost">
 			sales tax <input type="number" value="tax">
 			shipping & handling <input type="number" value="shiphand">
 			total<input type="number" value="total">
+			</fieldset>
 		</td>
 		
 		</tr>
 		<tr>
 			<td colspan="2">
+				<fieldset>
 				<button>compute</button>
 				<button>new order</button>
 				<button>exit</button>
+				</fieldset>
 			</td>
 		</tr>
 		
 	</table>
-
+</div>
 </body>
 </html>

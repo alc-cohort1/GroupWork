@@ -1,4 +1,4 @@
-
+/* styling the slider section with ID header */
 #header {
     background: url('../img/home-bg.jpg') 50% 0 repeat-y fixed;
     background-size: cover;
@@ -15,50 +15,42 @@
     position: relative;
     text-align: right;
   }
-
+/* styling division for the h1 heading with class home-thumb */
   .home-thumb h1{
     color: #fff;
     font-weight: 800;
     font-family: 'Muli', sans-serif;
   }
   .home-thumb p{
-      color:#fff;
+    color:#fff;
   }
-
+/* styling the skills section with class sec-tilte */
 .sec-title {
     text-align: center;
     padding: 3em 0;
 }
-
+/* styling the div section with class service-thumb */
 .service-thumb{
     text-align: center;
     background: #ffffff;
 
 }
-
 .service-thumb i{
     color: #929ad9;
 }
-
+/* styling the section for skills */
 #skills{
     background: #f9f9f9;
 }
-  .btn-info{
-    background: #000 !important;
-    font-size: 1.4em !important;
-  }
 
-  html, body {
+/* styling the body section and html */
+html, body {
     width: 100%;
     height: 100%;
     font-family: 'Muli', sans-serif;
-  }
+}
   
- 
-  /*---------------------------------------
-    Typorgraphy              
-  -----------------------------------------*/
-  
+/* styling all the headings tags in the file */
   h1,h2,h3,h4,h5,h6 {
     font-style: normal;
     font-weight: bold;
@@ -99,35 +91,26 @@
     letter-spacing: 0.2px;
   }
   
-  /*---------------------------------------
-  Contact section              
------------------------------------------*/
-
-.contact-info .fa {
-    padding-right: 5px;
+  /* styling the contact me form */
+  textarea{
+    height: 171px;
+    width: 100%;
+    padding-top: 0.5em !important;
+    margin-top: 1em;
+    border: 1px solid #8992d7;
   }
-  
-  #contact .form-control {
-    border: none;
-    border-bottom: 2px solid #f0f0f0;
-    border-radius: 0px;
-    box-shadow: none;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    -webkit-transition: all ease-in-out 0.4s;
-    transition: all ease-in-out 0.4s;
+  textarea {
+    overflow: auto;
+    resize: vertical;
+    margin-top: 0.5em;}
+  input{
+    
+    width: 100%;
+    margin-bottom: 3em;
+    margin-top: 1em;
+    border: 1px solid #8992d7;
   }
-  
-  #contact .form-control:focus {
-    border-bottom-color: #999999;
-  }
-  
-  #contact input {
-    height: 55px;
-  }
-  
-  #contact button#submit {
+  #contact-me button#submit {
     background: #2b2b2b;
     border: none;
     border-radius: 50px;
@@ -136,46 +119,24 @@
     margin-top: 24px;
   }
   
-  #contact button#submit:hover {
+  #contact-me button#submit:hover {
     background: #7682cc;
     color: #ffffff;
   }
   
-  
-  
-  /*---------------------------------------
-    Footer section              
-  -----------------------------------------*/
-  
-  
-  /* contact form */
-  textarea{
-    height: 171px;
-    width: 100%;
-    padding-top: 1em !important;
-    margin-top: 2em;
-    border: 1px solid #8992d7;
-  }
-  textarea {
-    overflow: auto;
-    resize: vertical;
-    margin-top: 3em;}
-  input{
-    
-    width: 100%;
-    margin-bottom: 3em;
-    margin-top: 1em;
-    border: 1px solid #8992d7;
-  }
   /* end contact form */
 
   /* footer */
   footer{
       background:#7682cc;
       text-align: center;
-      padding: 120px 0;
+      padding: 10px 0;
+      margin-top: 2em;
   }
+  .navbar{
+    background:#7682cc;
 
+  }
   footer p{
       padding-bottom: 16px;
       color: #f0f0f0;
@@ -188,8 +149,11 @@
       margin: 0;
       text-align: center;
   }
-
   .social-icon li{
     display: inline-block;
     list-style: none;
+    
   }
+.social-icon li a{
+  color: white;
+}

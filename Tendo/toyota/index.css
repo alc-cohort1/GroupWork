@@ -1,5 +1,24 @@
-div.div {
-    height: 200px;
-    width: 50%;
-    background-color: powderblue;
+.w3-row {
+    
+    background-color:bisque;
   }
+
+  title{
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+  }
+
+  #cst,#out{
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  #pt,#inf{
+    padding-left: 15px;
+  }
+  fieldset{
+      background-color:burlywood;
+  }
+
+  

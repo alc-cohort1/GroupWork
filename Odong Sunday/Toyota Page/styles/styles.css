@@ -6,14 +6,14 @@ body{
 .container{
     height: 590px;
     width: 1295px;
-    background-color: blue;
+    background-color: #ffff;
     padding-top: 60px;
 }
 
 .container .center{
     height: 460px;
     width: 950px;
-    background-color: yellow;
+    background-color: #FBBFCB;
     margin-left: 180px;
     padding-top: 10px;
     display: flex;
@@ -22,20 +22,20 @@ body{
 .container .center .left{
     height: 450px;
     width: 580px;
-    background-color: brown;
+    background-color: #FBBFCB;
     margin-left: 10px;
 }
 
 .container .center .right{
     height: 450px;
     width: 390px;
-    background-color: black;
+    background-color: #FBBFCB;
 }
 
 .container .center .left .customer_info{
     height: 180px;
     width: 525px;
-    background-color: green;
+    background-color: #FFBF82;
 }
 
 .container .center .left .customer_info .one{
@@ -108,13 +108,13 @@ body{
     margin-top: 10px;
     height: 190px;
     width: 530px;
-    background-color: green;
+    background-color: #FFBF82;
 }
 
 .container .center .right .shipping{
     height: 180px;
     width: 380px;
-    background-color: pink;
+    background-color: #FFBF82;;
     margin-right: 10px;
 }
 
@@ -123,7 +123,7 @@ body{
     height: 190px;
     width: 380px;
     margin-right: 10px;
-    background-color: pink;
+    background-color: #FFBF82;
 }
 
 
@@ -174,6 +174,7 @@ body{
     width: 150px;
     height: 40px;
     border-radius: 5px;
+    background-color: #FFBF82;
     border: none;
 }
 
@@ -182,6 +183,7 @@ body{
     height: 40px;
     border-radius: 5px;
     border: none;
+    background-color: #FFBF82;
     margin-left: 10px;
 }
 
@@ -193,7 +195,9 @@ body{
     border: none;
     margin-top: 10px;
     margin-left: 230px;
+    background-color: #FFBF82;
 }
+
 
 .container .center .right .shipping .fedExGround{
     margin-left: 110px;
@@ -261,4 +265,8 @@ body{
 
 .output .total .total_field input{
     height: 25px;
+}
+
+fieldset {
+    border: 1px solid white;
 }

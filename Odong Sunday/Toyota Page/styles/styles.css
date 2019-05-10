@@ -27,7 +27,7 @@ body{
 }
 
 .container .center .right{
-    height: 400px;
+    height: 450px;
     width: 390px;
     background-color: black;
 }
@@ -96,9 +96,17 @@ body{
     height: 160px;
 }
 
+.container .center .right .shipping fieldset{
+    height: 160px;
+}
+
+.container .center .right .output fieldset{
+    height: 170px;
+}
+
 .container .center .left .part_order{
     margin-top: 10px;
-    height: 19  0px;
+    height: 190px;
     width: 530px;
     background-color: green;
 }
@@ -112,7 +120,7 @@ body{
 
 .container .center .right .output{
     margin-top: 10px;
-    height: 180px;
+    height: 190px;
     width: 380px;
     margin-right: 10px;
     background-color: pink;
@@ -175,4 +183,82 @@ body{
     border-radius: 5px;
     border: none;
     margin-left: 10px;
+}
+
+
+.right .exit input{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    margin-left: 230px;
+}
+
+.container .center .right .shipping .fedExGround{
+    margin-left: 110px;
+}
+
+.container .center .right .shipping .fedExAir{
+    margin-left: 49.5px;
+}
+
+.container .center .right .shipping .one{
+    margin-top: 10px;
+}
+
+.container .center .right .shipping .two{
+    margin-top: 40px;
+}
+
+.output .cost{
+    margin-top: 10px;
+    display: flex;
+}
+
+.output .cost .input_field{
+    margin-left: 130px;
+}
+
+.output .cost .input_field input{
+    height: 25px;
+}
+
+.output .sales{
+    margin-top: 10px;
+    display: flex;
+}
+
+.output .sales .sales_field{
+    margin-left: 126px;
+}
+
+.output .sales .sales_field input{
+    height: 25px;
+}
+
+.output .Shipping{
+    display: flex;
+    margin-top: 10px;
+}
+
+.output .Shipping .shipping_field{
+    margin-left: 102px;
+}
+
+.output .Shipping .shipping_field input{
+    height: 25px;
+}
+
+.output .total{
+    margin-top: 5px;
+    display: flex;
+}
+
+.output .total .total_field{
+    margin-left: 127px;
+}
+
+.output .total .total_field input{
+    height: 25px;
 }

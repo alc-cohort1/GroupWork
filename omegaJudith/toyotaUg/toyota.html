@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docu</title>
+    <link rel="stylesheet" href="toyota.css">
+</head>
+<body>
+    <fieldset>
+        <form action="">
+            <table>
+                <tr>
+                 <td><fieldset>
+                   <legend>Customer Information</legend>
+                    <label for="Customer ID">Customer ID: </label><input type="text" id="customer"><br>
+                    <label for="name">Name: </label><input type="text" name="name" id="name"><br>
+                    <label for="State">State: </label><input type="text" name="state" id="state">
+                   <input type="checkbox" name="checkbox" id="check">
+                   <label for="checkbox">Retail Customer</label>
+                  </fieldset>
+                </tr>
+                <tr>
+                  <td><fieldset>
+                    <legend>Part Ordered</legend>
+                     <label for="part">Part Number: </label><input type="text" id="part"><br>
+                      <label for="des">Description: </label><input type="text" id="description"><br>
+                        <label for="">Price Per Part: </label><input type="text"id="price">
+                     <label for="quantity">Quantity</label><input type="text" id="quantity"><br>
+                    <input type="checkbox" id="checkbox"><label for="checkbox">Over Size Container?</label>
+                  </fieldset>
+                </tr>
+              <tr>
+                <td><fieldset class="move">
+                    <legend>Shipping</legend>
+                       <input type="radio"  id="ups"><label for="radio">UPS</label>
+                       <input type="radio"  id="postal"><label for="radio">US Postal Air</label><br>
+                       <input type="radio"  id="ground"><label for="radio">Fed Ex Ground</label>
+                       <input type="radio"  id="fedair"><label for="radio">Fed Ex Air</label>br
+                   </fieldset>
+                 </tr>
+                <tr>
+                 <td><fieldset class="move">
+                    <legend>OutPut</legend>
+                      <label for="cost">Cost: </label><input type="text" id="cost"><br>
+                        <label for="sales">Sales Tax: </label><input type="text" id="sales"><br>
+                          <label for="Ship">Shipping $ Handling:</label><input type="text" id="ship"><br>
+                          <label for="Total">Total:</label><input type="text" id="total">
+                        </fieldset>
+                     </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>

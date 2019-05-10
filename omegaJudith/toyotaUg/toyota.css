@@ -1,0 +1,85 @@
+body{
+    background-color: lightsalmon;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.move{
+
+}
+#customer{
+    width: 100px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 72px;
+}
+#name{
+width: 200px;
+padding: 5px;
+margin-bottom: 5px;
+margin-left: 118px;
+}
+#state{
+    width: 85px;
+    padding: 5px;
+    margin-left: 124px;
+}
+#part{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 70px;
+}
+#description{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 81px; 
+}
+#price{
+    width: 70px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+}
+#quantity{
+    width: 55px;
+    padding: 5px;
+}
+#checkbox{
+    margin-left: 168px;
+    margin-top: 20px;
+}
+
+#postal{
+    margin-left: 140px;
+    
+}
+#ground{
+    margin-top: 70px;
+}
+
+#fedair{
+    margin-left: 70px;
+}
+#cost{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 110px;
+}
+#sales{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 75px;
+}
+#ship{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+#total{
+    width: 200px;
+    padding: 5px;
+    margin-left: 115px;
+}

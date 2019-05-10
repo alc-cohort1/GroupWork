@@ -1,0 +1,24 @@
+1.Stop threats at the edge.
+	
+in this businesses need to eliminate all the possible threats to
+
+their networks and systems at large to close any cases of vulnerability to attacks.
+
+2. Protect users where they work
+
+in this all users physical and logical environments should be secure for
+ example at the pysical level ensure that users are well protected from any danger like roberies, fireoutbreaks etc and for the logical environments, this mainly involves their access to various forms of data, the applications they use and many more.
+
+therefore protective measures should be put in place so as to cub any threats.
+
+3.Set system guidelines.
+
+in this access to data within a network should be granted to only authorized personel and ACLs(access control lists )should be deployed to perform the task better.
+
+4.Simplify network segmentation.
+
+in this the network should be fragmented into small managable user groups for easy monitoring.
+
+5. Find and control problems fast.
+
+involves problem identification and solution so as to create a threat free environment.

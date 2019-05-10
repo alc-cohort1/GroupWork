@@ -1,0 +1,28 @@
+/* styling the main container */
+.container {
+    padding-top: 20px;
+    background-color: #fff0e6;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+/* style for the section divs */
+#field{
+    border: 1px solid #e0e0e0;
+    padding: 10px; 
+    background-color: #fdaf7b;
+}
+#fie{
+    border: 1px solid #e0e0e0;
+    padding: 10px; 
+}
+/* style for the legend */
+#leg{
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+}

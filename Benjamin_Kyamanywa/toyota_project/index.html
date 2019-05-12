@@ -9,44 +9,38 @@
     <link rel="stylesheet" href="style.css">
     <title>Toyota Uganda</title>
   </head>
-  <!-- Custom css -->
-  <style>
-  .wrapper {
-      padding: 80px 0 0 0;
-  }
-  </style>
   <body>
       <div class="container wrapper">
           <!-- Form -->
-          <form name="sales-form" action="" method="POST">
+          <form name="sales_form" action="" method="POST">
           <div class="row">
             <!-- Section that captures Customer Information -->
-            <div class="col-sm-8">
-                <div class="row">
-                    <div class="col-sm-12"><h5>Customer Information</h5></div>
-                </div>
+            <div class="col-sm-8 field">
+                <fieldset class="fieldset">
+                <legend class="legend"><div class="col-sm-12"><h5>Customer Information</h5></div></legend>
                 <!-- Label for customer id -->
                 <div class="row">
-                    <div class="col-sm-2"><label for="customer_id">Customer ID: </label></div>
+                    <div class="col-sm"><label for="customer_id">Customer ID: </label></div>
                     <div class="col-sm-9"><input type="text" name="customer_id"></div>
                 </div>
                 <!-- Label for name -->
                 <div class="row">
-                    <div class="col-sm-2"><label for="name">Name: </label></div>
+                    <div class="col-sm"><label for="name">Name: </label></div>
                     <div class="col-sm-9"><input type="text" name="name"></div>
                 </div>
                 <!-- Label for state -->
                 <div class="row">
-                    <div class="col-sm-2"><label for="state">State: </label></div>
-                    <div class="col-sm-3"><input type="text" name="state"></div>
-                    <div class="col-sm-7"><input type="checkbox" name="state"> &nbsp; Retail Customer</div>
+                    <div class="col-sm"><label for="state">State: </label></div>
+                    <div class="col-sm-6"><input type="text" name="state"></div>
+                    <div class="col-sm"><input type="checkbox" name="state"> &nbsp; Retail Customer</div>
                 </div>
+                </fieldset>
             </div>
+
             <!--  Section that captures Shipping Information -->
-            <div class="col-sm-4">
-               <div class="row">
-                   <div class="col-sm-12"><label for="shipping"><h5>Shipping</h5></label></div>
-               </div>
+            <div class="col-sm-4 field">
+            <fieldset class="fieldset">
+                    <legend class="legend"><div class="col-sm-12"><label for="shipping"><h5>Shipping</h5></label></div></legend>
             <div class="row">
                 <div class="col-sm-3"><input type="radio" name="shipping">&nbsp; UPS</div>
                 <div class="col-sm-8"><input type="radio" name="shipping">&nbsp; Fed Ex Ground</div>
@@ -54,16 +48,16 @@
             <div class="row">
                     <div class="col-sm-5"><input type="radio" name="shipping">&nbsp; US Postal Air</div>
                     <div class="col-sm-7"><input type="radio" name="shipping">&nbsp; Fed Ex Air</div>
-            </div>  
+            </div>
+            </fieldset>  
             </div>
           </div><br><br>
 
           <div class="row">
             <!-- Section that captures Part Ordered -->
-            <div class="col-sm-8">
-                    <div class="row">
-                        <div class="col-sm-12"><h5>Part Ordered</h5></div>
-                    </div>
+            <div class="col-sm-8 field">
+                <fieldset class="fieldset">
+                    <legend class="legend"><div class="col-sm-12"><h5>Part Ordered</h5></div></legend>
                     <!-- Part Number label -->
                     <div class="row">
                         <div class="col-sm-2"><label for="part_number">Part Number: </label></div>
@@ -85,45 +79,47 @@
                         <div class="col-sm-2"></div>
                         <div class="col-sm "><input type="checkbox" name="" >&nbsp; Oversize Container</div>
                     </div>
+                </fieldset>
             </div>
             <!-- Section that Outputs  -->
-            <div class="col-sm-4">
-                <div class="row">
-                        <div class="col-sm-12"><label for="output"><h5>Output</h5></label></div>
-                </div>
+            <div class="col-sm-4 field">
+                <fieldset class="fieldset">
+                        <legend class="legend"><div class="col-sm-12"><label for="output"><h5>Output</h5></label></div></legend>
                 <!-- Cost Label -->
                 <div class="row">
-                    <div class="col-sm-6"><label for="cost">Cost: </label></div>
-                    <div class="col-sm-6"><input type="text" name="cost"></div>
+                    <div class="col-sm-4"><label for="cost">Cost: </label></div>
+                    <div class="col-sm-8"><input type="text" name="cost"></div>
                 </div>
                 <!-- Sales Tax Label -->
                 <div class="row">
-                        <div class="col-sm-6"><label for="sales-tax">Sales Tax: </label></div>
-                        <div class="col-sm-6"><input type="text" name="sales-tax"></div>
+                        <div class="col-sm-4"><label for="sales-tax">Sales Tax: </label></div>
+                        <div class="col-sm-8"><input type="text" name="sales-tax"></div>
                 </div>
                 <!-- Shipping & Handling Label -->
                 <div class="row">
-                        <div class="col-sm-6"><label for="shipping-&-handling">Shipping & Handling: </label></div>
-                        <div class="col-sm-6"><input type="text" name="shipping-&-handling"></div>
+                        <div class="col-sm-4"><label for="shipping-&-handling">Shipping & Handling: </label></div>
+                        <div class="col-sm-8"><input type="text" name="shipping-&-handling"></div>
                 </div>
                 <!-- Total Label -->
                 <div class="row">
-                        <div class="col-sm-6"><label for="total">Total: </label></div>
-                        <div class="col-sm-6"><input type="text" name="total"></div>
+                        <div class="col-sm-4"><label for="total">Total: </label></div>
+                        <div class="col-sm-8"><input type="text" name="total"></div>
                 </div>
+                </fieldset>
             </div>
             </div>
 
             <!-- Buttons -->
             <div class="row">
-                <div class="col-sm">
-                    <button type="submit">Compute</button>
+                <div class="col-sm-2">
+                    <button class="button-style " type="submit">Compute</button>
                 </div>
-                <div class="col-sm-10">
-                        <button type="reset">New Order</button>
+                <div class="col-sm-3">
+                    <button class="button-style" type="reset">New Order</button>
                 </div>
-                <div class="col-sm justify-content-end">
-                        <button type="reset">Exit</button>
+                <div class="col-sm-5"></div>
+                <div class="col-sm-2">
+                    <button class="button-style" type="reset">Exit</button>
                 </div>
             </div>
         </form>

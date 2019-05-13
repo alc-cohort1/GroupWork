@@ -1,0 +1,58 @@
+/*main Div styling*/
+.main{
+    height: 400px;
+    width: 800px;
+   background-color: bisque;
+   position: relative;
+   top:150px;
+   right: 100px;        
+    left: 250px;
+}
+.CustomerInfo{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 10px;        
+    left: 20px;
+}
+/*Align Elements in Customer info */
+#id{
+   top:-15px;
+    left:-50px;
+}
+
+.order{
+    height: 100px;
+  width: 100px;
+  position: relative;
+  top: 10px;        
+  left: 20px;
+}
+
+.shipping{
+    height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 10px;        
+  right: 10px;
+}
+
+.output{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 200px;        
+    left: 350px;
+}
+
+.buttons{}
+
+/*set div Heights*/
+
+.CustomerInfo,.order,.shipping,.output{
+    height: 200px;
+}
+
+.fieldset{
+    height:200px;
+}

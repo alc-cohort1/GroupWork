@@ -1,0 +1,90 @@
+
+body {
+  background-color: #233143;
+}
+
+.login_div{
+/* background: green; */
+margin: 5px 5px 5px 5px;
+padding: 20px;
+margin-top: 50px;
+/* border: 1px solid orange; */
+border-radius: 10px;
+/* height: 400px; */
+}
+.login_div2{
+/* background: green; */
+margin: 10px 5px 5px 5px;
+padding: 20px;
+margin-top: 50px;
+/* border: 1px solid orange; */
+border-radius: 10px;
+/* height: 400px; */
+}
+#inputemail{
+border-style: solid;
+  border-color:orange;
+  background: #233143;
+  color:gray;
+  margin-top: 10px;
+  width: 100%;
+    
+    /* box-shadow: 0 0 5px rgba(207, 220, 0, 0.4); */
+}
+#inputpassword{
+border-style: solid;
+  border-color:orange;
+  background: #233143;
+  color:gray;
+  margin-top: 1px;
+  width: 100%;
+    
+    /* box-shadow: 0 0 5px rgba(207, 220, 0, 0.4); */
+}
+#usernameinput{
+border-style: solid;
+  border-color:orange;
+  background: #233143;
+  color:gray;
+  margin-top: 1px;
+  width: 100%;
+    
+    /* box-shadow: 0 0 5px rgba(207, 220, 0, 0.4); */
+}
+#confirmpasswordinput{
+border-style: solid;
+  border-color:orange;
+  background: #233143;
+  color:gray;
+  margin-top: 1px;
+  width: 100%;
+    
+    /* box-shadow: 0 0 5px rgba(207, 220, 0, 0.4); */
+}
+button{
+width: 100%;
+
+}
+
+#loginBtn{
+padding: 10px;
+margin-top: 60px;
+width: 100%;
+
+}
+#registerBtn{
+padding: 10px;
+margin-top: 10px;
+width: 100%;
+}
+
+img{
+margin: 150px 20px 10px 170px;
+
+}
+a{
+text-decoration: none;
+color:white;
+-moz-text-decoration-style: none;
+
+}

@@ -1,0 +1,1 @@
+//Function to validate the contact me section on the index HTML page

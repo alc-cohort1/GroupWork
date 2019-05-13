@@ -1,0 +1,170 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	background-color: #d3d3d3;
+	padding-top: 50px;
+}
+
+.top {
+	width: 80%;
+	margin: auto;
+	display: flex;
+}
+
+.top_left {
+	flex-grow: 1;
+	background-color: orange;
+	padding: 20px;
+	margin: 10px;
+}
+
+.top_right {
+	flex-grow: 1;
+	background-color: orange;
+	padding: 20px;
+	margin: 10px;
+}
+
+.top_left .form-group {
+	display: flex;
+	margin: 5px 0px;
+}
+
+.top_left .form-group input {
+	height: 20px;
+}
+
+.top_left .form-group .label {
+	width: 30%;
+}
+
+.top_right .form-group {
+	display: flex;
+	margin: 20px 0px;
+}
+
+
+.top_right .form-group .label {
+	width: 50%;
+}
+
+.bottom {
+	width: 80%;
+	margin: auto;
+	display: flex;
+}
+
+.bottom_left {
+	flex-grow: 1;
+	background-color: orange;
+	padding: 20px;
+	margin: 10px;
+}
+
+.bottom_left .form-group {
+	display: flex;
+	margin: 5px 0px;
+}
+
+.bottom_left .form-group input {
+	height: 20px;
+}
+
+.bottom_left .form-group .input_2 {
+	margin-left: 10px;
+}
+
+.bottom_left .form-group .label {
+	width: 30%;
+}
+
+.bottom_left .form-group #input {
+	margin-left: 77px;
+}
+
+.bottom_left .form-group #qnty {
+	width: 40%;
+}
+
+.bottom_right {
+	flex-grow: 1;
+	background-color: orange;
+	padding: 20px;
+	margin: 10px;
+}
+
+
+.bottom_right .form-group {
+	display: flex;
+	margin: 5px 0px;
+}
+
+.bottom_right .form-group .label {
+	width: 50%;
+}
+
+.top_left {
+	width: 600px;
+}
+
+.top_right {
+	width: 550px;
+}
+
+.bottom_left {
+	width: 600px;
+}
+
+.bottom_right {
+	width: 550px;
+}
+
+.bottom_right .form-group input {
+	height: 20px;
+}
+
+/*Buttons*/
+.buttons {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.left_buttons {
+	padding: 20px;
+	margin: 10px;
+	display: flex;
+}
+
+.left_buttons button {
+	padding: 10px 20px;
+	cursor: pointer;
+	border: 1px solid;
+	border-radius: 4px;
+}
+
+.left_buttons #new {
+	margin-left: 20px;
+}
+
+
+.right_buttons {
+	padding: 20px;
+	margin: 10px;
+}
+
+.right_buttons button {
+	padding: 10px 20px;
+	cursor: pointer;
+	border: 1px solid;
+	border-radius: 4px;
+}
+
+

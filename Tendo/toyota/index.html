@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link to "validate_cuisite.js"-->
+    <script type="text/javascript" src="index.js"></script>
+    
+    <!--link to External Css "w3.css and index.css"-->
+    <link type="text/css" href="index.css" rel="stylesheet" />
+      <link type="text/css" href="w3css.css" rel="stylesheet" />  
+    <title>Toyota Order Form</title></head> 
+<body>
+        <h1 id="title">Toyota - Order Form</h1>
+<form  class="w3-container" id="form">
+    
+    <div class="w3-row">
+        <div class="w3-row ">
+        <!--Customer Information Division-->    
+  <div class="w3-col " style="width:60%" id="inf">
+    <fieldset><legend><b>Customer Information</b></legend>
+                    
+        <table>
+            <tr><td><label class="w3-label "><b>Customer ID:</b></label>
+                </td>
+                <td ><input type="number" class="w3-input" id="id" name="id" placeholder="e.g 1234" required="required"/>
+            </td></tr>
+
+            <tr><td><label class="w3-label"><b>Name:</b></label>
+            </td>
+            <td colspan=4><input type="text" class="w3-input w3-border" id="name" name="name" placeholder="e.g Kato Joseph"required="required"/>
+        </td></tr>
+
+        <tr><td><label class="w3-label"><b>Town:</b></label>
+        </td>
+        <td><input type="text" class="w3-input w3-border " id="state" name="state"  placeholder="e.g Uganda"required="required"/>
+    </td>
+    <td>  <input class="w3-check" type="checkbox"  id="cust" name="cust"  checked="checked"></td>
+    <td> <label class="w3-validate">Retail Customer</label></td>
+
+</tr>
+        </table>
+    </fieldset>
+             
+            </div>
+           
+            <!--Shipping Division-->
+  <div class="w3-col " style="width:40%" id="cst">
+        <fieldset id="shipping"><legend><b>Shipping</b></legend><b></b>
+            <table>
+                    <tr><td>  <input class="w3-radio" type="radio" name="ups" value="ups" checked id="ups">
+                        <label class="w3-validate">UPS</label></td>
+                        <td> <input class="w3-radio" type="radio" name="fedexg" value="fedexg" id="fedexg">
+                            <label class="w3-validate">Fed Ex Ground</td></tr>
+                  
+                                <tr><td> <input class="w3-radio" type="radio" name="usportal" value="usportal" id="usportal">
+                                    <label class="w3-validate" id="usportall">US Portal Air</label></td><td> <input class="w3-radio" type="radio" name="fedexa" value="fedexa" id="fedexa">
+                                        <label class="w3-validate" id="fedexal">Fed Ex Air</label></td></tr>
+                                        
+                
+                                    </table>
+                            
+    </fieldset></div>
+    </div>
+    <br>
+    <div class="w3-row">
+        <!--Part Ordered Division-->
+        <div class="w3-col " style="width:60%" id="pt">
+                <fieldset><legend><b>Part Ordered</b></legend>
+                    <table>
+                            <tr><td> <label class="w3-validate">Part Number:</label></td><td><input type="number" class="w3-input w3-border "  id="part-number" name="cost" placeholder="$ 7.51"></td></tr>
+                            <tr><td><label class="w3-validate">Description</label></td><td><input type="number" class="w3-input w3-border" id="description" name="cost" placeholder="Oil Filter"></td></tr>
+                           
+                        <tr><td> <label class="w3-validate">Price Per Part:</label></td><td colspan="5"><input type="number" class="w3-input w3-border" id="cost" name="cost" placeholder="$15.02">
+                        </td><td>Quantity:</td><td><input type="number" class="w3-input w3-border " id="price-per-part" name="cost" placeholder="2"></td></tr>
+                   
+                        <tr><td><input class="w3-check" type="checkbox">Oversize Container ?</td>
+                   </tr>
+                    </table>
+    </fieldset>
+    <br>
+<!--Part Buttons Div-->
+<div class="w3-row">
+    
+        &nbsp &nbsp<button class="compute">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order">New Order</button>
+       
+    </div>
+</div>
+        <!-- Output Division-->
+        <div class="w3-col " style="width:40%" id="out">
+                <fieldset><legend><b>Output</b></legend>
+           <table>   
+            <tr><td> <label class="w3-validate">Cost:</label></td><td><input type="number" class="w3-input w3-border " id="cost" name="cost" placeholder=""></td></tr>
+            
+            <tr><td> <label class="w3-validate">Sales Tax:</label></td><td><input type="number" class="w3-input w3-border " id="tax" placeholder=""></td></tr>
+            
+            <tr><td> <label class="w3-validate">Shipping Handling:</label></td><td><input type="number" class="w3-input w3-border " id="shipping" name="shipping" placeholder=""></td></tr>
+            
+            <tr><td> <label class="w3-validate">Total</label></td><td><input type="number" class="w3-input w3-border " id="total" name="total" placeholder="$30.52"></td></tr>
+        </table>  
+    </fieldset>
+<!--Buttons Div-->
+<br>
+<div class="w3-row">
+        <button class="exit">Exit</button>
+</div>
+</div>
+</div>
+
+</form>
+    
+</body>
+</html>

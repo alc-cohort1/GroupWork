@@ -1,15 +1,24 @@
 /* Styling container div */
-.container {
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
   padding: 20px;
   margin: 50px 100px;
   background: #f5cef2;
 }
 
-/* The form is displayed as grid */
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2em;
+.box {
+  background: #c98954;
+  padding: 0px;
+  height: 200px;
+  width: 545px;
+}
+
+fieldset {
+  border: 4px solid #fff;
+  height: 180px;
+  margin: 0px;
 }
 
 /* Customer Information Section */
@@ -19,11 +28,16 @@ form {
   grid-gap: 0.8em;
   background: #c98954;
   padding: 10px;
+  margin-top: 20px;
 }
 
-.customerInfo div:first-child {
-  grid-column: 1/3;
-  justify-self: stretch;
+.customerInfo .long {
+  grid-column: 2/3;
+  justify-self: start;
+}
+
+.long input {
+  width: 150px;
 }
 
 /* Shipping Section  */
@@ -33,11 +47,7 @@ form {
   grid-gap: 0.8em;
   background: #c98954;
   padding: 10px;
-}
-
-.shipping div:first-child {
-  grid-column: 1/3;
-  justify-self: stretch;
+  margin-top: 20px;
 }
 
 /* Part Ordered Section */
@@ -49,19 +59,15 @@ form {
   padding: 10px;
 }
 
-.partOrdered div:first-child {
-  grid-column: 1/3;
-  justify-self: stretch;
-}
-
 .partOrdered div:last-child {
   grid-column: 1/3;
   justify-self: center;
 }
 
 .partOrdered .pricePerPart {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
 }
 
 /* Output Section */
@@ -73,14 +79,11 @@ form {
   padding: 10px;
 }
 
-.output > div:nth-child(odd) {
+.output > div:nth-child(even) {
   background: #fff;
-}
-
-.output > div:first-child {
-  grid-column: 1/3;
-  justify-self: stretch;
-  background: #c98954;
+  margin: 0px;
+  text-align: right;
+  padding: 5px;
 }
 
 /* Bottom Section */
@@ -89,8 +92,13 @@ form {
   grid-template-columns: 1fr 1fr 3fr 1fr;
   grid-column: 1/3;
   grid-gap: 0.2em;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 
+.bottom div:last-child {
+  justify-self: end;
+}
 /* styling all the input fields of button and reset */
 input[type="button"],
 input[type="reset"],
@@ -111,4 +119,20 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
   border: dotted #094fac 2px;
+}
+
+/* Styling the error messages */
+
+#customerId,
+#name,
+#town,
+#partNumber,
+#description,
+#pricePerPart,
+#quantity,
+#space {
+  color: #0914ac;
+  font-weight: bold;
+  font-style: italic;
+  margin: 0px;
 }

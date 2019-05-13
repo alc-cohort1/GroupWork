@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Total Uganda</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Toyota Uganda</title>
   </head>
   <!-- Custom css -->
   <style>
@@ -16,8 +17,10 @@
   </style>
   <body>
       <div class="container wrapper">
+          <!-- Form -->
+          <form name="sales-form" action="" method="POST">
           <div class="row">
-            <!-- Customer Information -->
+            <!-- Section that captures Customer Information -->
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-12"><h5>Customer Information</h5></div>
@@ -39,7 +42,7 @@
                     <div class="col-sm-7"><input type="checkbox" name="state"> &nbsp; Retail Customer</div>
                 </div>
             </div>
-            <!-- Shipping -->
+            <!--  Section that captures Shipping Information -->
             <div class="col-sm-4">
                <div class="row">
                    <div class="col-sm-12"><label for="shipping"><h5>Shipping</h5></label></div>
@@ -56,7 +59,7 @@
           </div><br><br>
 
           <div class="row">
-            <!-- Part Ordered -->
+            <!-- Section that captures Part Ordered -->
             <div class="col-sm-8">
                     <div class="row">
                         <div class="col-sm-12"><h5>Part Ordered</h5></div>
@@ -74,12 +77,56 @@
                     <!-- Price Per Part Label -->
                     <div class="row">
                             <div class="col-sm-2"><label for="price_per_part">Price Per Part: </label></div>
-                            <div class="col-sm-9"><input type="text" name="price_per_part"></div>
+                            <div class="col-sm"><input type="text" name="price_per_part"></div>
                             <div class="col-sm-2"><label for="price_per_part">Quantity: </label></div>
-                        </div>
+                            <div class="col-sm"><input type="text" name="quantity"></div>
+                    </div>
+                    <div class="row justify-content-sm-center ">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm "><input type="checkbox" name="" >&nbsp; Oversize Container</div>
+                    </div>
+            </div>
+            <!-- Section that Outputs  -->
+            <div class="col-sm-4">
+                <div class="row">
+                        <div class="col-sm-12"><label for="output"><h5>Output</h5></label></div>
+                </div>
+                <!-- Cost Label -->
+                <div class="row">
+                    <div class="col-sm-6"><label for="cost">Cost: </label></div>
+                    <div class="col-sm-6"><input type="text" name="cost"></div>
+                </div>
+                <!-- Sales Tax Label -->
+                <div class="row">
+                        <div class="col-sm-6"><label for="sales-tax">Sales Tax: </label></div>
+                        <div class="col-sm-6"><input type="text" name="sales-tax"></div>
+                </div>
+                <!-- Shipping & Handling Label -->
+                <div class="row">
+                        <div class="col-sm-6"><label for="shipping-&-handling">Shipping & Handling: </label></div>
+                        <div class="col-sm-6"><input type="text" name="shipping-&-handling"></div>
+                </div>
+                <!-- Total Label -->
+                <div class="row">
+                        <div class="col-sm-6"><label for="total">Total: </label></div>
+                        <div class="col-sm-6"><input type="text" name="total"></div>
+                </div>
+            </div>
+            </div>
 
-          </div>
-      </div>
+            <!-- Buttons -->
+            <div class="row">
+                <div class="col-sm">
+                    <button type="submit">Compute</button>
+                </div>
+                <div class="col-sm-10">
+                        <button type="reset">New Order</button>
+                </div>
+                <div class="col-sm justify-content-end">
+                        <button type="reset">Exit</button>
+                </div>
+            </div>
+        </form>
     
     
 

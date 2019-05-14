@@ -3,6 +3,7 @@ const express = require('express');
 const parser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
+const crypto = require('crypto');
 
 //Basic route
 app.use(express.static('./templates')) 
@@ -26,11 +27,12 @@ app.post('/user_login', (req, res)=>{
     const name = req.body.username
     const location = req.body.location
     const password = req.body.password
+    hash = crypto.createHash('md5').update(password).digest('hex');
 
     const querystring = "INSERT INTO student_details (name, location, password) VALUES (?,?,?)";
 
     connection.query(
-        querystring, [name, location, password], (err, results, field)=>{
+        querystring, [name, location, hash], (err, results, field)=>{
             if (err) {
                 console.log('An error occured' + err)
                 res.status(500)
@@ -41,7 +43,7 @@ app.post('/user_login', (req, res)=>{
 })
 
 //Binding to a port
-app.listen(3000, ()=>{
-    console.log('Express server started at port 3000');
+app.listen(5000, ()=>{
+    console.log('Express server started at port 5000');
 });
 

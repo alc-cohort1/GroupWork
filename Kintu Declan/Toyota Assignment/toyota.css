@@ -16,7 +16,7 @@
 
 #top fieldset
 {
-    border: 1px black solid;
+    border: 1px white solid;
     padding: 1px;
     background:  rgb(228, 158, 89);
 }
@@ -31,7 +31,7 @@
 
 #middle fieldset
 {
-    border: 1px black solid;
+    border: 1px white solid;
     padding: 1px;
     background: rgb(228, 158, 89);
 }
@@ -58,6 +58,7 @@
     padding-top: 0.5em;
     margin-top: 1em;
 }
+
 
 #shipping 
 { 

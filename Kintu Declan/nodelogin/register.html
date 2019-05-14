@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Node Register </title>
+
+    <style>
+		.register-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.register-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.register-form input[type="password"],
+		.register-form input[type="text"],
+        .register-form input[type="email"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+        .register-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+
+</head>
+<body>
+    <div class="register-form">
+        <h1>Register Form</h1>
+        <form action="auth" method="POST">
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

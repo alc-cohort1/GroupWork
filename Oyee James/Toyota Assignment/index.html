@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Toyota Uganda</title>
+        <!--liking html file to external css file-->
+        <link rel="stylesheet" href="CSS/index.css">
+    </head>
+    <body>     
+        <form action="" method="post" name="toyotaForm" onsubmit="return validateData()">       
+            <div class="wrapper">   
+                <div class="leftSection">  
+                    <!--customer information div-->
+                    <div class="customerInfo">            
+                        <fieldset>
+                            <legend>Customer Information</legend>
+                            <div class="customerInfoInput">
+                                <div>
+                                    <div>
+                                        <label for="Customer ID"><p>Customer ID:</p></label>
+                                    </div>
+                                    <div>
+                                        <label for="Name"><p>Name:</p></label>
+                                    </div>
+                                    <div>
+                                        <label for="Town"><p>Town:</p></label>
+                                    </div>                                    
+                                </div>
+                                <div class="customerInputField">
+                                    <div>
+                                        <input type="" name="customerId"  placeholder="123-45-6789" class="mediumInput" id="customerId">
+                                    </div>
+                                    <div>
+                                        <input type="text" name="name" id="name" placeholder="Tom Thumb" class="longInput">
+                                    </div>
+                                    <div>                                        
+                                        <input type="text" name="town" id="" placeholder="CA" class="shortInput">
+                                        <input type="checkbox" checked name="" id="" class="retailerCheck">Retail Customer
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--part ordered div-->
+                    <div class="partOrdered">
+                        <fieldset>
+                            <legend>Part Ordered</legend>
+                            <div class="partOrderedInput">
+                                <div>
+                                    <div>
+                                        <p>Part Number:</p>
+                                    </div>
+                                    <div>
+                                        <p>Description:</p>
+                                    </div>
+                                    <div>
+                                        <p>Price per part:</p>
+                                    </div>
+                                </div>
+                                <div class="partOrderedInputField">
+                                    <div>
+                                        <input type="" name="" id="partNumber" placeholder="10152" class="longInput"> 
+                                    </div>
+                                    <div>
+                                        <input type="text" name="" id="" placeholder="Oil Filter" class="longInput">
+                                    </div>
+                                    <div>
+                                        <input type="" name="" id="" class="mediumInput" placeholder="$7.51">
+                                        <label for="Quantity" class="quantity">Quantity:</label>
+                                        <input type="" name="" id="" class="shortInput" placeholder="2"><br>
+                                        <input type="checkbox" name="" id="">Oversize Container?
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--compute and new order button-->
+                    <button type="submit" class="compute">Compute</button>
+                    <button type="reset" class="newOrder">New Order</button>
+                </div>
+                <div class="rightSection">
+                    <!--customer shipping div-->
+                    <div class="shipping">            
+                        <fieldset>
+                            <legend>Shipping</legend>
+                            <div class="shippingInput">
+                                <div class="shippingOne">
+                                    <div>
+                                        <input type="radio" checked name="shipping" id="" class="ups"> UPS
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="shipping" id=""> US Portal Air
+                                    </div>
+                                </div>
+                                <div class="shippingTwo">
+                                    <div>
+                                        <input type="radio" name="shipping" id="" class="fedExG"> Fed Ex Ground
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="shipping" id=""> Fed Ex Air
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--customer output div-->
+                    <div class="output">
+                        <fieldset>
+                            <legend>Output</legend>
+                            <div class="outputInput">
+                                <div>
+                                    <div>
+                                        <label for="Cost"><p>Cost:</p></label>
+                                    </div>
+                                    <div>
+                                        <label for="Sales Tax"><p>Sales Tax:</p></label>
+                                    </div>
+                                    <div>
+                                        <label for="Shipping & Handling"><p>Shipping & Handling:</p></label>
+                                    </div>
+                                    <div>
+                                        <label for="Total"><p>Total:</p></label>
+                                    </div>
+                                </div>
+                                <div class="outputInputField">
+                                    <div>
+                                        <input type="" name="" id="cost" class="mediumInput" placeholder="$15.02">
+                                    </div>
+                                    <div>
+                                        <input type="" name="" id="" class="mediumInput" placeholder="1.5">
+                                    </div>
+                                    <div>
+                                        <input type="" name="" id="" class="mediumInput" placeholder="14">
+                                    </div>
+                                    <div>
+                                        <input type="" name="" id="" class="mediumInput" placeholder="$30.52">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--exit button-->
+                    <button class="exit">Exit</button>
+                </div>
+            </div>
+        </form>    
+        <!--linking html file to external js file-->
+        <script src="JS/index.js"></script>
+    </body>
+</html>

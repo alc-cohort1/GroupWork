@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="Sample">
+    <div class="container">
+            <div class="center" style="width:50%; padding-left: 30%;padding-top: 40px">
+                <h1>Registration Form</h1>
+           <table>
+               <tr style="height: 35px;">
+                   <td style="text-align: right">
+                    <label id="user_id" min="5" max="7">
+                        User ID:
+                    </label></td>
+                   <td style="padding-left: 10px" >
+                       <input type="text" style="width: 200px " name="user_id" id="user_id">
+                   </td>
+                   <td>
+                       <span id="id_error"></span>
+                   </td>
+               </tr>
+               <tr style="height: 35px;">
+                <td style="text-align: right">
+                    <label min="5" max="7">
+                        Password:
+                    </label></td>
+                <td style="padding-left: 10px" >
+                    <input type="text" style="width: 200px" name="password" id="password">
+                </td>
+                <td>
+                    <span id="password_error"></span>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td style="text-align: right">
+                    <label id="name" min="5" max="7">
+                        Name:
+                    </label></td>
+                <td style="padding-left: 10px">
+                    <input type="text" style="width: 200px" name="name" id="name">
+                </td>
+                <td>
+                    <span id="name_error"></span>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td style="text-align: right">
+                    <label min="5" max="7">
+                    Address:
+                    </label></td>
+                <td style="padding-left: 10px">
+                    <input type="text" style="width: 200px" name="address" id="address">
+                </td>
+                <td>
+                    <span id="address_error"></span>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td style="text-align: right">
+                    <label id="">
+                        Country:
+                    </label>
+                </td>
+                <td style="padding-left: 10px">
+                    <select name="conutry" name="country" id="country">
+                        <option value="">(Please Select Country)</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Tanzania">Tanzania</option>
+                    </select>
+                </td>
+                <td>
+                    <span id="country_error"></span>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td style="text-align: right">
+                    <label id="zip" min="5" max="7">
+                    Zip Code:
+                    </label></td>
+                <td style="padding-left: 10px">
+                    <input type="text" style="width: 200px" name="zip" id="zip">
+                </td>
+                <td>
+                    <span id="zip_error"></span>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td style="text-align: right">
+                    <label id="address" min="5" max="7">
+                    Email:
+                    </label></td>
+                <td style="padding-left: 10px;">
+                    <input type="email" style="width: 200px" name="email" id="email">
+                </td>
+                <td>
+                    <span id="email_error"></span>
+                </td>
+            </tr>
+            <tr style="height: 35px;">
+                <td style="text-align: right">Sex:</td>
+                <td style="padding-left: 10px">
+                    <input type="radio" name="gender" name="sex" id="sex" value="Male">Male
+                    <input type="radio" name="gender" name="sex" id="sex" value="Female">Female
+                </td>
+                <td >
+                    <label for="">
+                        <span id="required_sex"></span>
+                    </label>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height: 35px;">
+                    <td style="text-align: right">Language:</td>
+                    <td style="padding-left: 10px">
+                        <input type="checkbox" name="lang" name="lang" id="lang" value="English">English
+                        <input type="checkbox" name="lang" name="lang" id="lang" value="Non English">Non English
+                    </td>
+                    <td style="padding-right: 40px">
+                        <label>
+                            <span id="ling"></span>
+                        </label>
+                    </td>
+                    <td></td>
+                </tr>
+               
+                <tr style="height: 35px;">
+                    <td style="text-align: right">About:</td>
+                    <td style="padding-left: 10px" rowspan="8" colspan="3">
+                        <input type="text" style="height: 150px;width: 350px" name="about" id="about">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+           </table>
+        </div>
+        <div style="padding-left: 47%; padding-top: 10px">
+            <input type="submit" value="submit" style="width: 80px; height: 30px; font-size:large" >
+        </div>
+    </div>
+</form>
+    <script>
+
+   function validation(event){
+    var user_id = document.getElementById("one").value;
+    var password_val = document.getElementById("two").value;
+    var name= document.getElementById("three").value;
+    var address = document.getElementById("four").value
+    var zip_code = document.getElementById("five").value;
+    var email = document.getElementById("six").value;
+
+    // var txt = user_id.target.value;
+
+    if((user_id=="") || !(user_id.length <= 10 && user_id.length >= 5)){
+       document.getElementById("id_error").innerHTML="Required and the value btn 5 and 12";
+
+    }
+    else{
+        document.getElementById("id_error").innerHTML="";
+    }
+
+    if((password_val=="") || !(password_val.length <=10 && password_val.length >=5)){
+        document.getElementById("password_error").innerHTML="Required and the value btn 5 and 12";
+    }
+    else{
+        document.getElementById("password_error").innerHTML="";
+    }
+
+    if((name=="") || !(name.length <=10 && name.length >=5)){
+        document.getElementById("name_error").innerHTML="Required and the value btn 5 and 12";
+    }
+    else{
+        document.getElementById("name_error").innerHTML="";
+    }
+
+    if((zip_code=="") || !(zip_code.length <= 10 && zip_code.length >=5)){
+        document.getElementById("zip_error").innerHTML="Required and the value btn 5 and 12";
+    }
+    else{
+        document.getElementById("zip_error").innerHTML="";
+    }
+
+     if((address=="") || !(address.length <= 10 && address.length >=5)){
+        document.getElementById("address_error").innerHTML="Required and the value btn 5 and 12";
+    }
+    else{
+        document.getElementById("address_error").innerHTML="";
+    }
+
+    if((email=="") || !(email.length <= 18 && email.length >=10)){
+        document.getElementById("email_error").innerHTML="Required and the value btn 10 and 18";
+    }
+    else{
+        document.getElementById("email_error").innerHTML="";
+    }
+
+
+    if(country.selectedIndex == ""){
+          
+          country_error.innerHTML = "Required. Must Select a Country";
+
+        }else{
+
+          country_error.innerHTML = "";
+
+        }
+  
+    event.preventDefault();
+   }
+
+     //    // country validation
+        
+
+        if(country.selectedIndex == ""){
+          
+          country_error.innerHTML = "Required. Must Select a Country";
+
+        }else{
+
+          country_error.innerHTML = "";
+
+        }
+
+     //    // checking whether sex is checked or not
+     //    if (!(sex[0].checked || sex[1].checked)) {
+     //      document.getElementById("required_sex").innerHTML = "<b>Required</b>";
+     //    }else{
+     //      document.getElementById("required_sex").innerHTML = "";
+     //    }
+
+
+     //     // Language
+
+     //    if (!(language.checked || language_non.checked)) {
+     //      document.getElementById("ling").innerHTML = "Required";
+     //    }else{
+     //      document.getElementById("ling").innerHTML = "";
+     //    }
+
+     //    // Email validation with regular expression
+     //    const address_regex = /\S+@\S+/;
+     //    if (!address_regex.test(address.value) || address.value.length == "") {
+     //      document.getElementById("address").innerHTML = "Required. Must be a valid email";
+     //    }else{
+     //      document.getElementById("address").innerHTML = "";
+     //    }
+     // event.preventDefault();
+     //  });
+
+    </script>
+</body>
+</html>

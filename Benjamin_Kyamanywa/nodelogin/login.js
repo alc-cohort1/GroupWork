@@ -5,7 +5,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
-var crypto = require('crypto');
+
 
 // Connecting to the database
 var connection = mysql.createConnection({
@@ -46,22 +46,18 @@ app.post('/register', function(request, response) {
     var password = request.body.password;
     var email = request.body.email;
 
-    
-	if (username && password && email) {
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
-				request.session.loggedin = true;
-				request.session.username = username;
-				response.redirect('/home');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
+    const querystring = "INSERT INTO accounts (username, password, email) VALUES (?,?,?)";
+
+    connection.query(querystring, [username, password, email], (err, results, field)=>{
+        if (err) {
+            console.log('an error occured' + err)
+            res.status(500)
+            return
+        }else {
+            response.redirect('/');
+        }
+        response.end();
+    })
 });
 
 // Checking MySql accounts to see whether details are correct

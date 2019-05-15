@@ -3,7 +3,7 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
-// var crypto = require('crypto');
+var crypto = require('crypto');
 // Connecting to the database
 var connection = mysql.createConnection({
 	host     : 'localhost',
@@ -34,12 +34,12 @@ app.post('/reg', function(request, response) {
 	var username = request.body.username;
     var password = request.body.password;
     var email = request.body.email;
-    // hash = crypto.createHash('md5').update(password).digest('hex');
+    hash = crypto.createHash('md5').update(password).digest('hex');
 
     const querystring = "INSERT INTO accounts (username, password, email) VALUES (?,?,?)";
 
     connection.query(
-        querystring, [username, password, email], (err, results, field)=>{
+        querystring, [username, hash, email], (err, results, field)=>{
             if (err) {
                 console.log('An error occured' + err)
                 res.status(500)
@@ -56,8 +56,9 @@ app.post('/reg', function(request, response) {
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
-	if (username && password) {
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+	hash = crypto.createHash('md5').update(password).digest('hex');
+	if (username && hash) {
+		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, hash], function(error, results, fields) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;

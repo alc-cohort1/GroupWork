@@ -1,62 +1,61 @@
 /* global style for the body */
-*{
+* {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
 }
 
 /* styling the register_div class */
-.register_div{
-padding: 40px;
-background-color: beige;
-margin: 60px;
-width: 50%;
-margin-left:250px; 
-position: absolute;
--webkit-box-shadow: 0 7px 4px #777;
--moz-box-shadow: 0 7px 4px #777;
-box-shadow: 0 7px 4px #777;
-border-radius: 10px;
-}
-table{
-padding: 7px;
-cellspacing:10;
-}
-input{
-width: 100%;
-padding: 8px;
-border-radius: 8px;
-border-style: inherit;
+.register_div {
+  width: 60%;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 100px;
+  padding: 20px;
+  border-bottom: 0 none;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
 
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
 }
-select{
-width: 100%;
-padding: 8px;
-border-radius: 10px;
-
+table {
+  width: 100%;
+  padding: 7px;
 }
-button{
-  background-color: #4CAF50;
-  border: none;
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dac0a8;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+button {
+  width: 30%;
+  padding: 10px;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-  border-radius: 8px;
-  https://www.abccapitalbank.co.ug/wp-content/uploads/2018/05/ABC_financials-3.pdf_published.pdf
-
+  background: green;
+  border: 1px solid #ebf0ea;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 /* styling the textarea  */
-textarea{
-overflow: auto;
- outline: none;
- border: 1px solid #888; 
- border-radius: 8px;
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
-span{
-color:red;
-font-size: 15px;
-
+span {
+  color: red;
+  font-size: 15px;
 }

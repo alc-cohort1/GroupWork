@@ -7,17 +7,74 @@
     <script type="text/javascript" src="index.js"></script>
     
     <!--link to External Css "w3.css and index.css"-->
-    <link type="text/css" href="index.css" rel="stylesheet" />
+    <link type="text/css" href="toyota.css" rel="stylesheet" />
     <title>Toyota Order Form</title></head> 
 </head>
 <body>
-
+<!--Main Body Division Container"-->
+    
     <div class="main">
-<div class=""></div>
-<div></div>
-<div></div>
-<div></div>
+        <!--Customer Information Division-->
+<div class="CustomerInfo"><fieldset><legend>Customer Information</legend>
+    <label class="w3-label ">Customer ID:</label>
+    <input type="number" class="w3-input" id="id" name="id" placeholder="e.g 1234" required="required"/>
 
-    </div>>
+
+<label class="w3-label">Name:</label>
+<input type="text" class="w3-input w3-border" id="name" name="name" placeholder="e.g Kato Joseph"required="required"/>
+
+
+<label class="w3-label">Town:</label>
+<input type="text" class="w3-input w3-border " id="state" name="state"  placeholder="e.g Uganda"required="required"/>
+
+ <input class="w3-check" type="checkbox"  id="cust" name="cust"  checked="checked">
+ <label class="w3-validate">Retail Customer</label>
+</fieldset>
+</div>
+
+<!--Shipping Division-->
+<div class="shipping"><fieldset><legend>Shipping</legend>
+      <input class="w3-radio" type="radio" name="ups" value="ups" checked id="ups">
+        <label class="w3-validate">UPS</label>
+         <input class="w3-radio" type="radio" name="fedexg" value="fedexg" id="fedexg">
+            <label class="w3-validate">Fed Ex Ground</label>
+  
+                 <input class="w3-radio" type="radio" name="usportal" value="usportal" id="usportal">
+                    <label class="w3-validate">US Portal Air</label></td><td> <input class="w3-radio" type="radio" name="fedexa" value="fedexa" id="fedexa">
+                        <label class="w3-validate">Fed Ex Air</label>
+                    </fieldset>     
+
+</div>
+
+<div class="order"><fieldset><legend>Part Ordered</legend>
+    <label class="w3-validate">Part Number:</label><input type="number" class="w3-input w3-border " id="cost" name="cost" placeholder="$ 7.51">
+    <label class="w3-validate">Description</label><input type="number" class="w3-input w3-border" id="cost" name="cost" placeholder="Oil Filter">
+   
+ <label class="w3-validate">Price Per Part:</label><input type="number" class="w3-input w3-border" id="cost" name="cost" placeholder="$15.02">
+Quantity:<input type="number" class="w3-input w3-border " id="cost" name="cost" placeholder="2">
+
+<input class="w3-check" type="checkbox">Oversize Container ?
+</fieldset>
+   </div>
+
+
+<!--Output Division-->
+<div class="output"><fieldset><legend>Output</legend>
+    <label class="w3-validate">Cost:</label></td><td><input type="number" class="w3-input w3-border " id="cost" name="cost" placeholder="">
+            
+    <label class="w3-validate">Sales Tax:</label></td><td><input type="number" class="w3-input w3-border " id="tax" placeholder="">
+    
+    <label class="w3-validate">Shipping Handling:</label></td><td><input type="number" class="w3-input w3-border " id="shipping" name="shipping" placeholder="">
+    
+    <label class="w3-validate">Total</label></td><td><input type="number" class="w3-input w3-border " id="total" name="total" placeholder="$30.52">
+    </fieldset>
+</div>
+
+<!--Buttons Div-->   
+<div class="buttons">
+    &nbsp &nbsp<button class="compute">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order">New Order</button>
+     
+</div>
+    </div>
 </body>
 </html>

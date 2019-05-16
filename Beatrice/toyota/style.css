@@ -1,0 +1,55 @@
+/*    */
+.container {
+    padding-top: 8px;
+    background-color: #fff0e6;
+    margin-top: 13px;
+    padding-bottom: 10px;
+   
+}
+.content {
+    padding-top: 8px;
+    background-color: #fff0e6;
+    margin-top: 13px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-bottom: 10px;
+   
+}
+/* style for the section divs */
+#field{
+    border: 1px solid #e0e0e0;
+    padding: 2px; 
+    background-color: #fdaf7b;
+    
+}
+#field2{
+    border: 1px solid #e0e0e0;
+    padding: 2px; 
+    background-color: #fdaf7b;
+    width: 400px;
+    
+}
+#fie{
+    border: 1px solid #e0e0e0;
+    padding: 10px; 
+    height: 270px;
+}
+/* style for the legend */
+#leg{
+    border-style: none;
+    font-size: 12px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 10px;
+}
+button {
+    background-color: #fdaf7b;
+}
+#btn {
+    background-color: #fdaf7b;
+}
+#exit {
+    width: 80px;
+}

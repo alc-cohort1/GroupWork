@@ -1,5 +1,94 @@
-div.div {
-    height: 200px;
-    width: 50%;
-    background-color: powderblue;
+/*Add Background color to*/
+.w3-row {
+    background-color:bisque;
   }
+  /*color the Divs*/
+  /* .w3-col{
+background-color:coral;
+
+  } */
+
+/*add padding to Divisions*/
+  #cst,#out{
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+/*add padding to Divisions*/
+  #pt,#inf{
+    padding-left: 15px;
+  }
+  /*Add styling to field set and buttons*/
+  fieldset ,#shipping{
+    border:1px solid white;
+     
+      height:200px;
+      
+  }
+
+  /*Add styling to exit button*/
+  button.exit{
+    float: right;
+    background-color:burlywood;
+    border-color:gray;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-radius: 4px;
+    border-inline-end-color:green;
+}
+
+/*Add styling to compute and new order buttons*/
+button.compute,button.order{
+  float: left;
+  background-color:burlywood;
+  border-color:gray;
+  border-radius: 4px;
+}
+/*add padding to left compute button*/
+button.compute{
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 5px;
+}
+/*add padding to left order button*/
+button.order{
+  margin-right: 15px;
+  padding-right: 20px;
+    padding-left: 20px;
+    margin: 5px;
+}
+
+  /*add padding to form*/
+
+  #form{
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+/*Add styling to title */
+  #title{
+    position:center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  #out{
+    padding-bottom: 5px;
+  }
+
+  /*add styling to name text field*/
+
+  /* #nameb{
+    padding-right: 40px;
+  } */
+
+  #cust{
+    float:right;
+  }
+
+  /*Position labes , UsPortal and Fedex Air Radio Buttons*/
+  #usportal,#fedexa,#usportall,#fedexal{
+    position: relative;
+    top:60px;
+  }
+
+  
+
+  

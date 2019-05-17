@@ -11,7 +11,7 @@ body{
 }
 
 .container .center{
-    height: 460px;
+    height: 470px;
     width: 950px;
     background-color: #FBBFCB;
     margin-left: 180px;
@@ -33,9 +33,13 @@ body{
 }
 
 .container .center .left .customer_info{
-    height: 180px;
+    height: 190px;
     width: 525px;
     background-color: #FFBF82;
+}
+
+.container .center .left .customer_info .customer_id{
+    width: 89px;
 }
 
 .container .center .left .customer_info .one{
@@ -93,26 +97,26 @@ body{
 }
 
 .container .center .left .customer_info fieldset{
-    height: 160px;
+    height: 170px;
 }
 
 .container .center .right .shipping fieldset{
-    height: 160px;
+    height: 170px;
 }
 
 .container .center .right .output fieldset{
-    height: 170px;
+    height: 190px;
 }
 
 .container .center .left .part_order{
     margin-top: 10px;
-    height: 190px;
-    width: 530px;
+    height: 210px;
+    width: 524px;
     background-color: #FFBF82;
 }
 
 .container .center .right .shipping{
-    height: 180px;
+    height: 190px;
     width: 380px;
     background-color: #FFBF82;;
     margin-right: 10px;
@@ -120,7 +124,7 @@ body{
 
 .container .center .right .output{
     margin-top: 10px;
-    height: 190px;
+    height: 210px;
     width: 380px;
     margin-right: 10px;
     background-color: #FFBF82;
@@ -176,6 +180,12 @@ body{
     border-radius: 5px;
     background-color: #FFBF82;
     border: none;
+    border: 1px solid white;
+
+}
+
+.lower .computer input:hover{
+    color: white
 }
 
 .lower .new_order input{
@@ -185,6 +195,11 @@ body{
     border: none;
     background-color: #FFBF82;
     margin-left: 10px;
+    border: 1px solid white;
+}
+
+.lower .new_order input:hover{
+    color: white;
 }
 
 
@@ -196,6 +211,13 @@ body{
     margin-top: 10px;
     margin-left: 230px;
     background-color: #FFBF82;
+    border: 1px solid white;
+
+}
+
+
+.right .exit input:hover{
+    color: white;
 }
 
 
@@ -246,8 +268,12 @@ body{
     margin-top: 10px;
 }
 
+.output .Shipping .label{
+    width: 152px;
+}
+
 .output .Shipping .shipping_field{
-    margin-left: 102px;
+    margin-left: 12px;
 }
 
 .output .Shipping .shipping_field input{
@@ -269,4 +295,62 @@ body{
 
 fieldset {
     border: 1px solid white;
+}
+
+.customerSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 180px;
+}
+
+.nameSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 65px;
+    width: 180px;
+}
+
+.stateSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 103px;
+    width: 180px;
+}
+
+.numberSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 280px;
+}
+
+.descriptionSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    width: 280px;
+}
+
+.generalSpan{
+    display: flex;
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+    width: 385px;
+}
+
+.generalSpan .priceSpan{
+    width: 280px;
+    height: 5px;
+}
+
+.generalSpan .quantitySpan{
+    width: 110px;
+    height: 5px;
+}
+
+span{
+    color: red;
+    font-size: medium;
 }

@@ -1,8 +1,5 @@
-table {
-    background-color: coral
-    
-}
-.tabletion{
-    width: 50;
-    align-content: center;
-}
+#tabletion{
+	width: 50%;
+	margin: auto;
+	background-color: #f49542;
+} 

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Customer form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./validation.js"></script>
     <!-- links to Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -14,11 +15,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="content">
            <!-- sales form -->
-            <form action="">
+            <form action="" method="POST" name="form" onsubmit="return validData()">
                 <div class="row">
-                    <div class="col-sm-7" id="main">
+                    <div class="col-sm-8">
                         <div id="field">
                             <fieldset id="fie">
                                 <!-- Section that captures Customer's information  -->
@@ -28,7 +29,7 @@
                                                 Customer ID: 
                                             </div>
                                             <div class="col-sm-10">
-                                                <input type="text">
+                                                <input type="text" name="customer_id"><span id="customer_id"></span>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -36,51 +37,51 @@
                                                 Name: 
                                             </div>
                                             <div class="col-sm-10">
-                                               <input type="text">
+                                               <input type="text" id="customer_name"><span id="name"></span>
                                             </div>
                                         </div> <br> 
                                         <div class="row">
                                                 <div class="col-sm-2">
-                                                    State: 
+                                                    Town: 
                                                 </div>
                                                 <div class="col-sm-4">
-                                                   <input type="text">
+                                                   <input type="text" name="state"><span id="twn"></span>
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <input type="checkbox" name=""> &nbsp; Retail Customer
+                                                    <input type="checkbox" name="retailcustomer"> &nbsp; Retail Customer
                                                 </div>
                                         </div><br>
                             </fieldset>
                                                       
                         </div>
                     </div>
-                    <div class="col-sm-5">
-                        <div id="field">
+                    <div class="col-sm-4">
+                        <div id="field2">
                         <!-- Section that captures shipping information  -->
                         <fieldset id="fie">
                             <legend id="leg"><h3>Shipping</h3></legend>
                             <div class="row">
-                                <div class="col-sm-4">
-                                    <input type="radio"> &nbsp;UPS
+                                <div class="col-sm-6">
+                                    <input type="radio" name="shipping"> &nbsp;UPS
                                 </div>
-                                <div class="col-sm-4">
-                                    <input type="radio"> &nbsp;Fed Ex Ground
+                                <div class="col-sm-6">
+                                    <input type="radio" name="shipping"> &nbsp;Fed Ex Ground
                                 </div>
                             </div><br>
                             <div class="row">
-                                    <div class="col-sm-4">
-                                        <input type="radio"> &nbsp;US Postal Air
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="shipping"> &nbsp;US Postal Air
                                     </div>
-                                    <div class="col-sm-4">
-                                        <input type="radio"> &nbsp;Fed Ex Air
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="shipping"> &nbsp;Fed Ex Air
                                     </div>
-                                </div><br><br><br><br>                           
+                                </div>                        
                         </fieldset>
                     </div>
                 </div>
                 </div><br>
                 <div class="row">
-                        <div class="col-sm-7"  id="main">
+                        <div class="col-sm-8">
                             <div id="field">
                                 <!-- Section that captures ordered parts information  -->
                             <fieldset id="fie">
@@ -89,72 +90,76 @@
                                     <div class="col-sm-2">
                                         Part Number: 
                                     </div>
-                                    <div class="col-sm-10">
-                                        <input type="text">
+                                    <div class="col-sm-5">
+                                        <input type="text" name="partno"><span id="part_no"></span>
                                     </div>
                                 </div><br>
                                 <div class="row">
                                     <div class="col-sm-2">
                                         Description: 
                                     </div>
-                                    <div class="col-sm-10">
-                                       <input type="text">
-                                    </div>
-                                </div> <br> 
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        Price per part:
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <input type="text" >
+                                    <div class="col-sm-5">
+                                       <input type="text" name="description"><span id="descripn"></span>
                                     </div>
                                 </div> <br>
                                 <div class="row">
                                     <div class="col-sm-2">
+                                        Price per part:
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="text" name="price"><span id="ppp"></span>
+                                    </div>
+                                    <div class="col-sm-1">
                                         Quantity
                                     </div>
-                                    <div class="col-sm-2">
-                                        <input type="text">
+                                    <div class="col-sm-4">
+                                        <input type="text" name="quantity"><span id="qty"></span>
                                     </div>
-                                </div>                                                     
+                                </div><br> 
+                                <div class="row " >
+                                    <div class="col-sm-2"></div>
+                                   <div class="col-sm-6">
+                                        <input type="checkbox" name="oversizecontainer"> &nbsp; Oversize Container?
+                                   </div> 
+                                </div>                                                 
                             </fieldset>
                         </div>
                         </div>
-                        <div class="col-sm-5"  id="main">
-                            <div id="field">
+                        <div class="col-sm-4"  id="main">
+                            <div id="field2">
                             <fieldset id="fie">
-                                <!-- Section that outputs costs information  -->
+                                <!-- Section that outputs costs  information  -->
                                 <legend id="leg"><h3>Output</h3></legend>
                                 <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-6">
                                             Cost:
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="text">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="cost">
                                         </div> 
                                 </div>  <br>
                                 <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-6">
                                             Sales Tax:
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="text">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="salestax">
                                         </div> 
                                 </div> <br>   
                                 <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-6">
                                             Shipping & handling:
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="text">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="shipping&handling">
                                         </div> 
                                 </div>   
                                 <div class="row"><br>   
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-6">
                                             Total:
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="text">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="total">
                                         </div> 
                                 </div><br>                                                                                                                                                      
                             </fieldset>
@@ -163,14 +168,14 @@
                     </div><br>
                     <div class="row">
                         <div class="col-sm-3">
-                            <button type="submit">Compute</button>
+                            <input type="submit" value="Compute" id="btn">
                         </div>
                         <div class="col-sm-2">
                                 <button type="reset">New Order</button>
                             </div> 
                             <div class="col-sm-4"></div>
                             <div class="col-sm-3">
-                                    <button type="">Exit</button>
+                                    <button type="" id="exit">Exit</button>
                                 </div>                       
                     </div>     
          

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login | Page</title>
+    <style>
+      .formdiv {
+        width: 500px;
+        margin: 0 auto;
+        font-family: Tahoma, Geneva, sans-serif;
+        margin-top: 100px;
+        padding: 20px;
+        border-bottom: 0 none;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 20px;
+      }
+      .formdiv h1{
+        text-align: center;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #d6d31c;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: white;
+		}
+    a{
+      text-decoration: none;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="formdiv">
+      <h1>LOGIN</h1>
+      <form action="/login" method="POST">
+        <div class="loginForm">
+          <div>
+            <input type="text" name="firstName" placeholder="First Name" required />
+          </div>
+    
+          <div>
+            <input type="text" name="lastName" placeholder="Last Name" required />
+          </div>
+          <div>
+            <input type="text" name="password" placeholder="Password" required />
+          </div>
+        </div>
+        <div class="submit">
+          <input type="submit" value="Login" />
+         
+        </div>
+      </form>
+      <div class="small">
+          <small> <a href=""> Forgot password ?</a> &nbsp &nbsp <a href="registration.html">Do not Have an Account Register !</a></small>
+        </div>
+
+    </div>
+  </body>
+</html>

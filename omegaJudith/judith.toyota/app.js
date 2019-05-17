@@ -98,4 +98,4 @@ function validateQuantity(){
         document.getElementById("qtn_span").innerHTML = "";
     }
 };
-/*end of this form validation*/
+/*end of this form validation */

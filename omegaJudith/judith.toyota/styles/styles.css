@@ -6,14 +6,14 @@ body{
 .container{
     height: 590px;
     width: 1295px;
-    background-color:white;
+    background-color: #ffff;
     padding-top: 60px;
 }
 
 .container .center{
-    height: 460px;
+    height: 470px;
     width: 950px;
-    background-color: pink;
+    background-color: #FBBFCB;
     margin-left: 180px;
     padding-top: 10px;
     display: flex;
@@ -22,20 +22,24 @@ body{
 .container .center .left{
     height: 450px;
     width: 580px;
-    background-color: pink;
+    background-color: #FBBFCB;
     margin-left: 10px;
 }
 
 .container .center .right{
     height: 450px;
     width: 390px;
-    background-color: pink;
+    background-color: #FBBFCB;
 }
 
 .container .center .left .customer_info{
-    height: 180px;
+    height: 190px;
     width: 525px;
-    background-color: lightsalmon;
+    background-color: #FFBF82;
+}
+
+.container .center .left .customer_info .customer_id{
+    width: 89px;
 }
 
 .container .center .left .customer_info .one{
@@ -93,37 +97,37 @@ body{
 }
 
 .container .center .left .customer_info fieldset{
-    height: 160px;
+    height: 170px;
 }
 
 .container .center .right .shipping fieldset{
-    height: 160px;
+    height: 170px;
 }
 
 .container .center .right .output fieldset{
-    height: 170px;
+    height: 190px;
 }
 
 .container .center .left .part_order{
     margin-top: 10px;
-    height: 190px;
-    width: 530px;
-    background-color: lightsalmon;
+    height: 210px;
+    width: 524px;
+    background-color: #FFBF82;
 }
 
 .container .center .right .shipping{
-    height: 180px;
+    height: 190px;
     width: 380px;
-    background-color: lightsalmon;
+    background-color: #FFBF82;;
     margin-right: 10px;
 }
 
 .container .center .right .output{
     margin-top: 10px;
-    height: 190px;
+    height: 210px;
     width: 380px;
     margin-right: 10px;
-    background-color: lightsalmon;
+    background-color: #FFBF82;
 }
 
 
@@ -169,33 +173,53 @@ body{
     display: flex;
     margin-top: 10px;
 }
-/* styling buttons: first button*/
+
 .lower .computer input{
     width: 150px;
     height: 40px;
-    background-color: lightsalmon;
     border-radius: 5px;
-    border: 2px solid rgb(3, 165, 173);
+    background-color: #FFBF82;
+    border: none;
+    border: 1px solid white;
+
 }
-/* styling buttons: second button*/
+
+.lower .computer input:hover{
+    color: white
+}
+
 .lower .new_order input{
     width: 150px;
     height: 40px;
-    background-color: lightsalmon;
     border-radius: 5px;
-    border: 2px solid grey;
+    border: none;
+    background-color: #FFBF82;
     margin-left: 10px;
+    border: 1px solid white;
 }
-/* styling buttons: third button*/
+
+.lower .new_order input:hover{
+    color: white;
+}
+
+
 .right .exit input{
     width: 150px;
     height: 40px;
     border-radius: 5px;
-    background-color: lightsalmon;
-    border: 2px solid grey;
+    border: none;
     margin-top: 10px;
     margin-left: 230px;
+    background-color: #FFBF82;
+    border: 1px solid white;
+
 }
+
+
+.right .exit input:hover{
+    color: white;
+}
+
 
 .container .center .right .shipping .fedExGround{
     margin-left: 110px;
@@ -244,8 +268,12 @@ body{
     margin-top: 10px;
 }
 
+.output .Shipping .label{
+    width: 152px;
+}
+
 .output .Shipping .shipping_field{
-    margin-left: 102px;
+    margin-left: 12px;
 }
 
 .output .Shipping .shipping_field input{
@@ -263,4 +291,66 @@ body{
 
 .output .total .total_field input{
     height: 25px;
+}
+
+fieldset {
+    border: 1px solid white;
+}
+
+.customerSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 180px;
+}
+
+.nameSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 65px;
+    width: 180px;
+}
+
+.stateSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 103px;
+    width: 180px;
+}
+
+.numberSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 280px;
+}
+
+.descriptionSpan{
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    width: 280px;
+}
+
+.generalSpan{
+    display: flex;
+    height: 5px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+    width: 385px;
+}
+
+.generalSpan .priceSpan{
+    width: 280px;
+    height: 5px;
+}
+
+.generalSpan .quantitySpan{
+    width: 110px;
+    height: 5px;
+}
+
+span{
+    color: red;
+    font-size: medium;
 }

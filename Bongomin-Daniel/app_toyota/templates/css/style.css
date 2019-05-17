@@ -3,16 +3,24 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
 }
+body{
+   
+
+}
 .main_wrapper {
     margin-top: 60px;
 
-    background: #FFBF82;
+    /* background: #FFBF82;
+     */
+     background: rgb(236, 158, 13);
     padding: 6px;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
+            
+
 }
 fieldset {
     height: 250px;
@@ -49,4 +57,7 @@ legend{
     background: #FFBF82;
     text-decoration: none;
     border-style: none;
+}
+span{
+    color: red;
 }

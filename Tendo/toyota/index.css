@@ -1,8 +1,12 @@
 /*Add Background color to*/
 .w3-row {
-    
     background-color:bisque;
   }
+  /*color the Divs*/
+  /* .w3-col{
+background-color:coral;
+
+  } */
 
 /*add padding to Divisions*/
   #cst,#out{
@@ -14,10 +18,11 @@
     padding-left: 15px;
   }
   /*Add styling to field set and buttons*/
-  fieldset {
-      background-color:burlywood;
+  fieldset ,#shipping{
+    border:1px solid white;
+     
+      height:200px;
       
-   
   }
 
   /*Add styling to exit button*/
@@ -70,8 +75,18 @@ button.order{
 
   /*add styling to name text field*/
 
-  #nameb{
+  /* #nameb{
     padding-right: 40px;
+  } */
+
+  #cust{
+    float:right;
+  }
+
+  /*Position labes , UsPortal and Fedex Air Radio Buttons*/
+  #usportal,#fedexa,#usportall,#fedexal{
+    position: relative;
+    top:60px;
   }
 
   

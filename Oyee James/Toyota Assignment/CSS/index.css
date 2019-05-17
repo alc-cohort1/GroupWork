@@ -1,0 +1,108 @@
+/* Styling for wrapper div*/
+.wrapper{
+    width: 935px;
+    margin-left: 175px;
+    background-color: #FBCEB1;
+    padding: 20px;
+    margin-top: 50px;
+}
+/* Styling for left section div*/
+.leftSection{
+    width: 530px;
+    margin-right: 29px;
+}
+/* Styling for right div*/
+.rightSection{
+    width: 395px;
+}
+/* Styling for customer info and shipping*/
+.customerInfo, .shipping{
+    background-color: #F79862;
+    margin-bottom: 10px;
+    height: 175px;
+}
+/* Styling for Part ordered and output*/
+.partOrdered, .output{
+    background-color: #F79862;
+    margin-bottom: 10px;
+    height: 200px;
+}
+/* Styling for all html elements displayed in a row*/
+.wrapper, .customerInfoInput, .shippingInput, .outputInput, .partOrderedInput, .customerInfo, .partOrdered, .shipping, .output{
+    display: flex;
+}
+/* Styling for input fields*/
+.shortInput{
+    width: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.mediumInput{
+    width: 170px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.longInput{
+    width: 355px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.customerInputField{
+    margin-left: 20px;
+}
+.retailerCheck{
+    margin-left: 110px;
+}
+.shippingOne, .shippingTwo{
+    padding: 9px;
+    margin-right:30px; 
+}
+.shippingOne{
+    margin-right: 50px;
+}
+.ups, .fedExG{
+    margin-bottom: 40px;
+}
+p{
+    margin: 10px;
+}
+.quantity{
+    margin-left: 74px;
+}
+.partOrderedInputField{
+    margin-left:15px;
+}
+.outputInputField{
+    padding-left: 15px;
+}
+#quantity, #pricePerPart, #cost, #salesTax, #shippingHandling, #total{
+    text-align:right;
+}
+/* Styling for exit, compute and new order buttons*/
+.exit{
+    float:right;
+    background-color: #F79862;
+    border: 1px solid white;
+    padding: 10px 65px 10px 65px;
+    color: black;
+    outline: 1px solid blue;
+    -moz-outline-radius: 5px;
+}
+.compute{
+    margin-right: 10px;
+}
+.compute, .newOrder{
+    color: black;
+    border-color:1px solid white;
+    background-color: #F79862;
+    padding: 10px 45px 10px 45px;
+    outline: 1px solid blue;
+    -moz-outline-radius: 5px;
+}
+.compute:hover, .newOrder:hover, .exit:hover{
+    border: 2px dotted blue;
+}
+/*Styling for error messages*/
+span{
+    color:red;
+}

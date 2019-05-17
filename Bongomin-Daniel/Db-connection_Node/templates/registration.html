@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration | Form</title>
+    <style>
+      .registrationdiv {
+        width: 700px;
+        margin: 0 auto;
+        font-family: Tahoma, Geneva, sans-serif;
+        margin-top: 100px;
+        padding: 20px;
+        border-bottom: 0 none;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 15px;
+      }
+      .registrationdiv h1 {
+        text-align: center;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      input[type="email"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      input[type="checkbox"] {
+        width: 50%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #d6d31c;
+        border: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+      }
+      select {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #dddddd;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="registrationdiv">
+      <h3>Register</h3>
+      <form action="registration" method="POST">
+        <table>
+          <!-- User ID field -->
+          <tr>
+            <input name="userId" type="text" placeholder="User Id" />
+            <span id="error1"></span>
+          </tr>
+
+          <!-- Password Field -->
+          <tr>
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+            <span id="error2"></span>
+          </tr>
+
+          <!-- Name Field -->
+          <tr>
+            <input name="name" type="text" placeholder="Name" required />
+            <span id="error3"></span>
+          </tr>
+
+          <!-- Address field -->
+          <tr>
+            <input type="text" name="address" placeholder="Address" />
+          </tr>
+
+          <!-- Country Field -->
+          <tr>
+            <select name="country" aria-placeholder=" Country">
+              <option value="">(Please seelct a country)</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Uganda">Uganda</option>
+            </select>
+            <span id="error4"></span>
+          </tr>
+
+          <!-- Zip Code Field -->
+          <tr>
+            <input name="zipCode" type="text" placeholder="Zip Code" />
+            <span id="error5"></span>
+          </tr>
+
+          <!-- Email Field -->
+          <tr>
+            <input name="email" type="email" />
+            <span id="error6"></span>
+          </tr>
+
+          <!-- Sex Field -->
+          <tr>
+            <input type="text" name="gender" placeholder="Gender" />
+            <!-- <input type="radio" name="gender" value="Female">Female -->
+            <span id="error7"></span>
+          </tr>
+
+          <!-- Language Field -->
+          <tr>
+            <label>Language:</label>
+
+            <input
+              type="checkbox"
+              name="language"
+              value="English"
+              checked
+            />English
+            <!-- <input type="checkbox" name="checkbox2" value="Non English">Non English -->
+            <span id="error8"></span>
+          </tr>
+
+          <!-- About Field -->
+          <tr>
+            <textarea
+              cols="30"
+              rows="10"
+              name="about"
+              placeholder="About"
+            ></textarea>
+          </tr>
+
+          <!-- The submit Button Field-->
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Register" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

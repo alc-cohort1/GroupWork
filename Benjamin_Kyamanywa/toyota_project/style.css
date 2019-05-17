@@ -1,0 +1,50 @@
+
+/* Styling for the main wrapper */
+.wrapper {  
+    padding: 150px 0 0 0;
+}
+
+.container {
+    position: relative;
+    padding: 20px 40px 10px 40px;
+    background-color: #fff0e6;
+    margin-top: 30px;
+}
+
+/* Styles for the sections */
+
+.field {
+    border: 1px solid #e0e0e0;
+    padding: 10px 20px 0px 0px; 
+    background-color: #fdaf7b;
+    
+}
+
+.fieldset {
+    border: 1px solid #fff; 
+    padding: 10px;
+}
+
+.legend {
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 1px;
+    
+}
+
+.state {
+    padding-right: 10px;
+}
+
+.button-style {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #FFBF82;
+    border: none;
+    margin: 4px 0 0 0;
+}

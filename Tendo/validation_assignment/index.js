@@ -17,10 +17,12 @@ function validateFields(){
 
   
   //Validate Id Field input values
-  if(id.value==NaN){
-   if((id.value < 5) && (id.value >12))
+  if(id.value==""||(id.value < 5) || (id.value >12)){
+   //if((id.value < 5) || (id.value >12))
     {
         alert("make sure the input is between 5-12 characters long");
+        document.getElementById('spn1').innerHTML="<font color=red>The Field is either empty ,or you entered a wrong value (Id must be between 5-12)";
+ 
         return;
     }}
   //Validate password Field
@@ -57,8 +59,8 @@ function validateFields(){
 var emailTest = /@./;
 
   if(!emailTest.test(email.value)){
-    document.getElementById('spn6').innerHTML="<font color=red>Please Enter the write Email";
-    alert("Please Enter the write Email");
+    document.getElementById('spn6').innerHTML="<font color=red>Please Enter the Right Email Syntax";
+    alert("Please Enter the Right Email");
     return;
   }
   //Validate country field
@@ -68,5 +70,19 @@ var emailTest = /@./;
     return;
   }
 
+  //Select only one  option
+  // if(male){
+  //   fmale=false
+  //   else 
+  //     fmale=true
+  // }
+
+  //Make sure text area has some contents
+
+  if(tarea.value==""){
+    document.getElementById('spn10').innerHTML="<font color=red>Please Write some comments Here";
+    alert("You left the text area empty");
+    return;
+  }
 }
 //Check wether atleast one Gender is selected

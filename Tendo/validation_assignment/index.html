@@ -25,7 +25,7 @@
 <!--Create Table Body and It's Contents-->
         <tbody>
             <!--Create  Id Label and Textfield-->
-            <tr><td><label>User Id   &nbsp</label></td><td> <input type="text"  size="12" id="id">&nbsp &nbsp<span id="spn1"></span></input></td></tr>
+            <tr><td><label>User Id   &nbsp</label></td><td> <input type="number"  size="12" id="id">&nbsp &nbsp<span id="spn1"></span></input></td></tr>
             <!--Create  Pasword Label and Textfield-->
             <tr><td><label>Password   &nbsp</label></td><td><input type="password" size="12" id="password"/>&nbsp &nbsp<span id="spn2"></span></td></tr>
             <!--Create  Name Label and Textfield-->    
@@ -50,12 +50,12 @@
             <!--Create Email Label and Textfield Element-->
                         <tr><td><label>Email :&nbsp</label></td><td><input type="email"  size="40" id="email"/>&nbsp &nbsp<span id="spn6"></span></td></tr>
             <!--Create Gender Label and Select Element-->
-                        <tr><td><label>Gender :&nbsp</label></td><td><input type="radio"  id="male"/><label>Male :&nbsp</label>&nbsp &nbsp<span id="spn7"></span></td><td>
+                        <tr><td><label>Gender :&nbsp</label></td><td><input type="radio"  id="male" checked/><label>Male :&nbsp</label>&nbsp &nbsp<span id="spn7"></span></td><td>
                <input type="radio"  id="female"/><label>Female :&nbsp</label>&nbsp &nbsp<span id="spn8"></span>
             </td></tr>
             
             <!--Create Language Label and Select Element-->
-            <tr><td><label>Language :&nbsp</label></td><td><input type="checkbox"  id="lang_en" /><label>English</label></td>
+            <tr><td><label>Language :&nbsp</label></td><td><input type="checkbox"  id="lang_en" checked/><label>English</label></td>
                 <td><input type="checkbox" id="non_en"/><label>Non-English</label>&nbsp &nbsp<span id="spn9"></span></td></tr>
             <!--Create About Label and Textarea Element-->
             <tr><td><label>About :&nbsp</label></td><td><textarea rows="5" cols="50" id="txtarea"></textarea></td>&nbsp &nbsp<span id="spn10"></span></tr>
@@ -64,9 +64,6 @@
             <!--Create Division and include a Button --> 
     <div><input type="button" class="button" value="Submit" name="textboxSubmit" onclick="validateFields()"/></div>
    
-   <!--
-    <div><button  onclick="validateFields()"></button></div>
--->
 </form>
 
 </div></fieldset>

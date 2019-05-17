@@ -22,17 +22,17 @@
         <table>
             <tr><td><label class="w3-label "><b>Customer ID:</b></label>
                 </td>
-                <td ><input type="number" class="w3-input" id="id" name="id" placeholder="e.g 1234" required="required"/>
+                <td ><input type="text" class="w3-input" id="id" name="id" placeholder="e.g 1234"/>
             </td></tr>
 
             <tr><td><label class="w3-label"><b>Name:</b></label>
             </td>
-            <td colspan=4><input type="text" class="w3-input w3-border" id="name" name="name" placeholder="e.g Kato Joseph"required="required"/>
+            <td colspan=4><input type="text" class="w3-input w3-border" id="name" name="name" placeholder="e.g Kato Joseph"/>
         </td></tr>
 
         <tr><td><label class="w3-label"><b>Town:</b></label>
         </td>
-        <td><input type="text" class="w3-input w3-border " id="state" name="state"  placeholder="e.g Uganda"required="required"/>
+        <td><input type="text" class="w3-input w3-border " id="state" name="state"  placeholder="e.g Uganda"/>
     </td>
     <td>  <input class="w3-check" type="checkbox"  id="cust" name="cust"  checked="checked"></td>
     <td> <label class="w3-validate">Retail Customer</label></td>
@@ -81,7 +81,7 @@
 <!--Part Buttons Div-->
 <div class="w3-row">
     
-        &nbsp &nbsp<button class="compute">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order">New Order</button>
+        &nbsp &nbsp<button class="compute"  onclick="ValidData()">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order">New Order</button>
        
     </div>
 </div>

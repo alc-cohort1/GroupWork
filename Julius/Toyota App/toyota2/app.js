@@ -26,6 +26,10 @@ getConnection.connect(err => {
   console.log("Connected to the database");
 });
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 // This routes post sales to the database
 app.post("/createSale", (req, res) => {
   const customerId = req.body.customerId;
@@ -60,15 +64,17 @@ app.post("/createSale", (req, res) => {
         console.log("an error has occured " + err);
         res.status(500);
       }
+      res.end();
       // res.send("You information is saved to the database");
-      res.send(
-        `<h1 style="text-align: center; color: green; padding-top: 50px;">Your information is successfully recorded</h1>`
-      );
+      // res.send(
+      //   `<h1 style="text-align: center; color: green; padding-top: 50px;">Your information is successfully recorded</h1>`
+      // );
+      // res.redirect("/");
     }
   );
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 // Binding to a port
 app.listen(PORT, () => {

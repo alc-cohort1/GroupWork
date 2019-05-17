@@ -40,6 +40,8 @@ function sales() {
       return false;
     } else if (pattern2.test(quantity) || quantity <= 0) {
       document.getElementById("quantity").innerHTML = "Invalid quantity";
+    } else {
+      return salesTax(cost);
     }
   }
 
@@ -65,6 +67,8 @@ function sales() {
     this.getTax = function() {
       return tax;
     };
+
+    return shippingHandling();
   }
 
   // Function to compute cost of shipping and handling
@@ -97,24 +101,20 @@ function sales() {
     this.getShippingCost = function() {
       return totalShippingCost;
     };
-  }
 
-  var handlers = new shippingHandling().getShippingCost();
-  var totalTax = new salesTax().getTax();
+    return totalCost();
+  }
 
   // Function to calculate the total cost
   function totalCost() {
-    // var total = cost + totalTax + handlers;
-    var total = (parseFloat(cost) + parseFloat(handlers) + window.tax).toFixed(
-      2
-    );
+    // Total cost = cost + tax + shipping cost
+    var total =
+      parseFloat(cost) +
+      parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
 
     document.getElementById("total").innerHTML = `$ ${total}`;
   }
 
   validData();
-  salesTax(cost);
-  shippingHandling();
-  totalCost();
   return false;
 }

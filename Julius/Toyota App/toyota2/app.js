@@ -12,6 +12,7 @@ app.use(express.static("./"));
 // middleware
 app.use(parser.urlencoded({ extended: false }));
 
+// Connecting to the database
 const getConnection = mysql.createConnection({
   host: "localhost",
   user: "julius",
@@ -19,6 +20,7 @@ const getConnection = mysql.createConnection({
   password: "123456"
 });
 
+// performing our query through a connection to the database
 getConnection.connect(err => {
   if (err) {
     throw err;
@@ -42,11 +44,9 @@ app.post("/createSale", (req, res) => {
   const pricePerPart = req.body.pricePerPart;
   const quantity = req.body.quantity;
   const oversize = req.body.oversize;
-
-  const queryString =
-    "INSERT INTO `sales` (`customerId`, `name`, `town`, `retailCustomer`, `shipping`, `partNumber`, `description`, `pricePerPart`, `quantity`, `oversize`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  // sql commands to post the sales to the database
   getConnection.query(
-    queryString,
+    "INSERT INTO `sales` (`customerId`, `name`, `town`, `retailCustomer`, `shipping`, `partNumber`, `description`, `pricePerPart`, `quantity`, `oversize`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
     [
       customerId,
       name,
@@ -64,16 +64,18 @@ app.post("/createSale", (req, res) => {
         console.log("an error has occured " + err);
         res.status(500);
       }
-      res.end();
+      // res.end();
       // res.send("You information is saved to the database");
       // res.send(
       //   `<h1 style="text-align: center; color: green; padding-top: 50px;">Your information is successfully recorded</h1>`
       // );
-      // res.redirect("/");
+      res.redirect("/");
+      res.end();
     }
   );
 });
 
+// Port variable
 const PORT = process.env.PORT || 3000;
 
 // Binding to a port

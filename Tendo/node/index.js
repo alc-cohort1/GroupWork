@@ -20,39 +20,45 @@ connection.connect(function(err){
     }
     })
 
-connection.query('SELECT * from register', function(err, rows, fields) {
-  if (!err)
-    console.log('The solution is: ', rows);
-  else
-    console.log('Error while performing Query.');
+// connection.query('SELECT * from register', function(err, rows, fields) {
+//   if (!err)
+//     console.log('The solution is: ', rows);
+//   else
+//     console.log('Error while performing Query.');
+// });
+
+//return index form
+app.get('/',function(req,res){
+res.sendFile('/Users/Roger/GroupWork/Tendo/node/index.html');
 });
 
 //post Data to Database
 app.post('/',function(req,res){
    // res.sendFile('/Users/Roger/GroupWork/Tendo/node/index.html');
 
-    var username=req.body.name;
-    var username=req.body.name;
-    var username=req.body.name;
-    var username=req.body.name;
-    var username=req.body.name;
-    connection.query("INSERT INTO `names` (name) VALUES (?)", username.toString(), function(err, result){
-        
-      if(err) throw err;
-            console.log("1 record inserted");
-        });
-    res.send(username);
+   
+    let id=req.body.id;
+    let password=req.body.password;
+    let name=req.body.name;
+    let address=req.body.address;
+    let country=req.body.country;
+    let zip=req.body.zip;
+    let email=req.body.email;
+    let gender=req.body.gender;
+    let language=req.body.language;
+    let txtarea=req.body.txtarea;
+
+    connection.query = "INSERT INTO `register` (id, password, name, address, country, zip, email,gender,language,txtarea)
+      VALUES ('" +id + "', '" + password + "', '" + name + "', '" + address + "', '" + country + "', '" + zip + "', '" +email+ "', '" +gender+ "', '" + "', '" +language+ "', '" +txtarea)";
+
+      connection.query(query, (err, result) => {
+    if (err) {
+        return res.status(500).send(err);
+    }
+    res.redirect('/');
 });
-//make request
-// app.get("/",function(req,res){
-//     connection.query('SELECT * from user LIMIT 2', function(err, rows, fields) {
-//     connection.end();
-//       if (!err)
-//         console.log('The solution is: ', rows);
-//       else
-//         console.log('Error while performing Query.');
-//       });
-//     });
-    
+});
+  
+
     app.listen(3000);
 connection.end();

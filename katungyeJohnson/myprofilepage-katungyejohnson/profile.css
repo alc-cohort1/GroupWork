@@ -1,0 +1,55 @@
+#container{
+    width: 800px;
+    height: 600px;
+    padding: 10px;
+    background-color: chocolate;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+#navigator{
+ float: right;
+ font-family: Arial,Helvetica,sans-serif;
+}
+
+#navigator a{
+    background-color: blue;
+    color: azure;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+#navigator a:hover{
+    background-color: black;
+}
+#leftside{
+    background-color: ghostwhite;
+    width: 350px;
+    height: 550px;
+    float: left;
+    border-radius: 10px;
+    
+}
+#rightside {
+    background-color: deepskyblue;
+    width: 450px;
+    height: 550px;
+    float: right;
+    border-radius: 10px;
+
+}
+#socialmed img {
+    width: 30px;
+    height: 30px;
+    
+}
+#profilepic img{
+    width: 200px;
+    height: 200px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 50%; 
+}
+#socialmed {
+    display: flex;
+     padding: 10px 0px 0px 30px;
+}

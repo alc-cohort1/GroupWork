@@ -33,6 +33,9 @@
 			font-weight: bold;
 			color: #ffffff;
 		}
+		a {
+			color: #4d4d4d;
+		}
 		</style>
 	</head>
 	<body>
@@ -41,8 +44,12 @@
 			<form action="auth" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
 				<input type="password" name="password" placeholder="Password" required>
-                <input type="submit"><br><br>
-                <a href="./register">Register</a>
+				<input type="submit" value="Login"><br>
+				<center>
+					<p>Or</p>
+					<a href="./register">Register</a>
+				</center>
+				
 			</form>
 		</div>
 	</body>

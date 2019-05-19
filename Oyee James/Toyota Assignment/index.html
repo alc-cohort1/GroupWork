@@ -1,158 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Toyota Uganda</title>
-        <!--liking html file to external css file-->
-        <link rel="stylesheet" href="CSS/index.css">
-    </head>
-    <body>     
-        <form action="" method="post" name="toyotaForm" onsubmit="return validData()">       
-            <div class="wrapper">   
-                <div class="leftSection">  
-                    <!--customer information div-->
-                    <div class="customerInfo">            
-                        <fieldset>
-                            <legend>Customer Information</legend>
-                            <div class="customerInfoInput">
-                                <div>
-                                    <div>
-                                        <label for="Customer ID"><p>Customer ID:</p></label>
-                                    </div>
-                                    <div>
-                                        <label for="Name"><p>Name:</p></label>
-                                    </div>
-                                    <div>
-                                        <label for="Town"><p>Town:</p></label>
-                                    </div>                                    
-                                </div>
-                                <div class="customerInputField">
-                                    <div>
-                                        <input type="text" name="customerId"  placeholder="123-45-6789" class="mediumInput"><br>
-                                        <span id="customerId"></span>
-                                    </div>
-                                    <div>
-                                        <input type="text" name="name" placeholder="Tom Thumb" class="longInput"><br>
-                                        <span id="name"></span>
-                                    </div>
-                                    <div>                                        
-                                        <input type="text" name="town" placeholder="CA" class="shortInput">
-                                        <input type="checkbox" checked name="" class="retailerCheck">Retail Customer<br>
-                                        <span id="town"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <!--part ordered div-->
-                    <div class="partOrdered">
-                        <fieldset>
-                            <legend>Part Ordered</legend>
-                            <div class="partOrderedInput">
-                                <div>
-                                    <div>
-                                        <p>Part Number:</p>
-                                    </div>
-                                    <div>
-                                        <p>Description:</p>
-                                    </div>
-                                    <div>
-                                        <p>Price per part:</p>
-                                    </div>
-                                </div>
-                                <div class="partOrderedInputField">
-                                    <div>
-                                        <input type="number" name="partNumber" placeholder="10152" class="longInput"><br> 
-                                        <span id="partNumber"></span>
-                                    </div>
-                                    <div>
-                                        <input type="text" name="description" placeholder="Oil Filter" class="longInput"><br>
-                                        <span id="description"></span>
-                                    </div>
-                                    <div>
-                                        <input type="" name="pricePerPart" class="mediumInput" placeholder="$7.51">
-                                        <label for="Quantity" class="quantity" id="">Quantity:</label>
-                                        <input type="" name="quantity"  class="shortInput" placeholder="2"><br>
-                                        <span id="pricePerPart"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="quantity"></span><br>
-                                        <input type="checkbox" name="" id="">Oversize Container?
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <!--compute and new order button-->
-                    <button type="submit" class="compute">Compute</button>
-                    <button type="reset" class="newOrder">New Order</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Linking to external CSS file -->
+    <link rel="stylesheet" href="CSS/index.css" />
+    <title>Toyota Form</title>
+    <!-- This is used to exit the page on clicking exit button -->
+    <script>
+      function getConfirmation() {
+        var returnVal = confirm("Do you want to really exit ?");
+        if (returnVal === true) {
+          document.getElementById("body").style.display = "none";
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="toyotaForm" onsubmit="return sales()">
+      <div class="wrapper">
+        <div class="leftSection">
+            <!-- Dv for customer information -->
+            <div class="customerInfo">
+            <fieldset>
+              <legend>Customer Information</legend>  
+              <div class="customerInfoInput">  
+                <div>          
+                  <div>
+                    <label for="Customer ID"><p>Customer ID:</p></label>
+                  </div>
+                  <div>
+                    <label for="Name"><p>Name:</p></label>
+                  </div>
+                  <div>
+                    <label for="Town"><p>Town:</p></label>
+                  </div>
+                </div>  
+                <div class="customerInputField">           
+                  <div>        
+                    <input type="text" name="customerId" placeholder="123-45-6789" class="mediumInput"><br>
+                    <span id="customerId"></span>
+                  </div>                
+                  <div>
+                    <input type="text" name="name" class="longInput" placeholder="Tom Thumb"><br>
+                    <span id="name"></span>
+                  </div>
+                  <div>
+                    <input type="text" name="town" class="shortInput" placeholder="CIA" oninput="this.value=this.value.toUpperCase()" maxlength="3">
+                    <input type="checkbox" checked name="retail Customer" value="Retail Customer" class="retailerCheck">Retail Customer<br>
+                    <span id="town"></span>
                 </div>
-                <div class="rightSection">
-                    <!--customer shipping div-->
-                    <div class="shipping">            
-                        <fieldset>
-                            <legend>Shipping</legend>
-                            <div class="shippingInput">
-                                <div class="shippingOne">
-                                    <div>
-                                        <input type="radio" checked name="shipping" id="" class="ups"> UPS
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="shipping" id=""> US Portal Air
-                                    </div>
-                                </div>
-                                <div class="shippingTwo">
-                                    <div>
-                                        <input type="radio" name="shipping" id="" class="fedExG"> Fed Ex Ground
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="shipping" id=""> Fed Ex Air
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <!--customer output div-->
-                    <div class="output">
-                        <fieldset>
-                            <legend>Output</legend>
-                            <div class="outputInput">
-                                <div>
-                                    <div>
-                                        <label for="Cost"><p>Cost:</p></label>
-                                    </div>
-                                    <div>
-                                        <label for="Sales Tax"><p>Sales Tax:</p></label>
-                                    </div>
-                                    <div>
-                                        <label for="Shipping & Handling"><p>Shipping & Handling:</p></label>
-                                    </div>
-                                    <div>
-                                        <label for="Total"><p>Total:</p></label>
-                                    </div>
-                                </div>
-                                <div class="outputInputField">
-                                    <div>
-                                        <input type="" name="" id="cost" class="mediumInput" placeholder="$15.02">
-                                    </div>
-                                    <div>
-                                        <input type="" name="" id="salesTax" class="mediumInput" placeholder="1.5">
-                                    </div>
-                                    <div>
-                                        <input type="" name="" id="shippingHandling" class="mediumInput" placeholder="14">
-                                    </div>
-                                    <div>
-                                        <input type="" name="" id="total" class="mediumInput" placeholder="$30.52">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <!--exit button-->
-                    <button class="exit">Exit</button>
+              </div>
+            </fieldset>
+          </div>
+          <!-- Div for parts ordered -->
+          <div class="partOrdered">
+            <fieldset>
+              <legend>Part Ordered</legend>
+              <div class="partOrderedInput">
+                <div>
+                  <div>
+                    <p>Part Number:</p>
+                  </div>
+                  <div>
+                    <p>Description:</p> 
+                  </div>
+                  <div>
+                    <p>Price per part:</p> 
+                  </div>
                 </div>
+                <div class="partOrderedInputField">
+                  <div>
+                    <input type="text" name="partNumber" class="longInput" placeholder="10152">
+                    <span id="partNumber"></span>
+                  </div>
+                  <div>
+                    <input type="text" name="description" class="longInput" placeholder="Oil Filter">
+                    <span id="description"></span>
+                  </div>                  
+                  <div class="pricePerPart">
+                    <input type="text" name="pricePerPart" class="mediumInput" placeholder="7.51" id="price">
+                    <label for="Quantity" class="quantity">Quantity:</label>
+                    <input type="text" name="quantity" class="shortInput" placeholder="2" id="price"> 
+                    <span id="pricePerPart"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="quantity"></span><br>
+                    <input type="checkbox" name="oversize" value="Oversize Container">Oversize Container?
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <!-- Div for Compute and New Order buttons -->
+          <div>
+            <input type="submit" value="Compute" name="compute" class="compute">
+            <input type="reset" value="New Order" name="newOrder" class="newOrder">
+          </div>
+        </div>
+        <div class="rightSection">
+            <!-- Div for shipping -->
+            <div class="shipping">
+                <fieldset>
+                  <legend>Shipping</legend>
+                  <div class="shippingInput">
+                    <div class="shippingOne">
+                      <div>
+                        <input type="radio" name="shipping" value="UPS" checked class="ups">UPS
+                      </div>
+                      <div>
+                        <input type="radio" name="shipping" value="Fed Ex Ground">Fed Ex Ground
+                      </div>
+                    </div>
+                    <div class="shippingTwo">
+                      <div>
+                        <input type="radio" name="shipping" value="US Portal Air" class="usp">US Portal Air
+                      </div>
+                      <div>
+                        <input type="radio" name="shipping" value="Fed Ex Air">Fed Ex Air
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="output">
+                <fieldset>
+                  <legend>Output</legend>
+                  <!-- Div for output -->
+                  <div class="outputInput">
+                    <div>
+                      <div>
+                        <label for="cost"><p>Cost:</p></label>
+                      </div>
+                      <div>
+                        <label for="Sales Tax"><p>Sales Tax:</p></label>
+                      </div>
+                      <div>
+                        <label for="Shipping & Handling"><p>Shipping & Handling:</p></label>
+                      </div>
+                      <div>
+                        <label for="Total"><p>Total:</p></label>
+                      </div>
+                    </div>
+                    <div class="outputInputField">
+                      <div id="cost" class="one"></div>
+                      <div id="salesTax" class="one"></div>
+                      <div id="handling" class="one"></div>
+                      <div id="total" class="one"></div>
+                    </div>
+                  </div>
+                </div>  
+              </fieldset>
             </div>
-        </form>    
-        <!--linking html file to external js file-->
-        <script src="JS/index.js"></script>
-    </body>
+            <!-- Input for exit button -->
+            <input type="button" class="exit" value="exit" name="exit" onclick="getConfirmation()">
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- linking to external JS file -->
+    <Script src="JS/index.js"></Script>
+  </body>
 </html>

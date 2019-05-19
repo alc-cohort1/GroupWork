@@ -1,9 +1,11 @@
 
-//This function validates the customer form
+/*
+This function validates the customer form to check if the user input is correct
+*/
     function validData(){
         //Checking if customer id input is not left empty and has no blank spaces
         var customerId = document.form.customer_id.value.length;
-        if (customerId.match(/^ *$/) !== null){
+        if (!customerId || customerID.match(keyCode == 32)){
             document.getElementById("customer_id").innerHTML="<b>Required and cannot contain blank spaces</b>";
             return false;
         }
@@ -49,11 +51,15 @@
         {
             document.getElementById("qty").innerHTML="<b>Price must be a number that is greater than zero</b>";
             return false;
-        }         
+        }  
 
         else{
             return true;
         }
+        // //Calculating the cost
+        // var Cost = price_per_part * quantity;
+       
+        //     document.getElementsByName("cost").innerHTML= Cost;
         
     }
   

@@ -1,0 +1,31 @@
+/* Styling the entire form */
+form{
+    background-color: #FBCEB1;
+    padding: 0px;
+}
+/* Styling the tables in the form */
+table{
+    background-color: #f79862;
+    padding: 0px;
+}
+/* Positioning this section */
+.output{
+    position:absolute;
+    right: 160px;
+    top:220px;
+}
+ Positioning each section
+.shipping{
+    float:left;
+}
+.output{
+    position: absolute;
+    right:300px;
+    top: 250px;
+} 
+.wrapper .topSection{
+    display: flex;
+}
+.wrapper .bottomSection{
+    display: flex;
+}

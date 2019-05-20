@@ -11,10 +11,10 @@ var path = require('path');
 var app = express();
 // making  express no that am going to use some its package
 app.use(express.static("./templates"));
-app.use(express.static("./templates/css"));
-app.use(express.static("./templates/fonts"));
-app.use(express.static("./templates/images"));
-app.use(express.static("./templates/js"));
+app.use('css',express.static("/templates/css"));
+app.use('fonts',express.static("/templates/fonts"));
+app.use('images',express.static("/templates/images"));
+app.use('js',express.static("./templates/js"));
 
 // middleware
 app.use(parser.urlencoded({ extended: false }));
@@ -23,7 +23,7 @@ app.use(parser.urlencoded({ extended: false }));
 var getConnection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  database: "profile",
+  database: "portfolio",
   password: ""
   
 });
@@ -48,11 +48,12 @@ app.get('/', (req, res) => {
 
 // End point that posts contact  data to the database /// ROUTE
 app.post("/contact", (req, res) => {
-  var contactid = req.body.contactid;
+  var senderName = req.body.senderName;
   var senderEmail = req.body.senderEmail;
   var subject = req.body.subject;
-  var queryString = "INSERT INTO contact(senderName,senderEmail, subject) VALUES (?, ?, ?)";
-  getConnection.query(queryString, [senderName, senderEmail, subject],
+  var message = req.body.message;
+  var queryString = "INSERT INTO contact(senderName,senderEmail, subject,message) VALUES (?, ?, ?,?)";
+  getConnection.query(queryString, [senderName, senderEmail, subject,message],
     (err, result, field) => {
       if (err) {
         console.log("an error has occured " + err);

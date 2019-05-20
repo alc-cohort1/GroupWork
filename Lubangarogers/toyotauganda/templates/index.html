@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../basicjs/index.js" type="text/JavaScript"></script>
+</head>
+<body>
+    <!-- section containing all the elements -->
+    <section>
+        <!-- form containing all the fields -->
+        <form action="save" onsubmit="return systemValidations()">
+            <!-- div containing the top first two form divisions -->
+            <div class="fields_container">
+               <div>
+                  
+                   <fieldset>
+                        <legend>
+                                customer information
+                            </legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label>Customer_ID:</label>
+                        </td>
+                        <td>
+                            <input type="" placeholder="123-45-6789" id="customer_ID"><span id="cusID_err"></span>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Name:</label>
+                        </td>
+                        <td>
+                           <input type=""placeholder="tom thumb" id="Name"><span id="name_err"></span>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>State:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="state"><span id="state_err"></span>
+                        </td>
+                        <td>
+                            <input type="checkbox" value="clickme" id="retail_customer">
+                        </td>
+                        <td>
+                            <label for="">Retail customer</label>
+                        </td>
+                        
+                    </tr>
+                </table>
+                </fieldset>
+               </div>
+               <div>
+                   <fieldset id="top_right_fieldset">
+                       <legend>
+                           Shipping
+                       </legend>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="radio">
+                            <label>UPS</label>
+                        </td>
+                        <td>
+                                <td>
+                                        <input type="radio">
+                                        <label>Fedex Ground</label>
+                                    </td>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <input type="radio">
+                                    <label>US Post Air</label>
+                                </td>
+                                <td>
+                                        <td>
+                                                <input type="radio">
+                                                <label>Fed Ex Air</label>
+                                            </td>
+                                </td>
+                    </tr>
+                </table>
+                </fieldset>
+               </div>
+            </div>
+      <!-- div containing the 2 bottom field containers -->
+            <div class="fields_container">
+                <div>
+                    <fieldset>
+                        <legend>Part Ordered</legend>
+                        <table>
+                            <tr>
+                                <td>
+                                  <label for="">Part Number:</label>  
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="10152" id="partNum"><span id="prtNo_err"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Description:</label>
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="Oil filter" id="description"><span id="desc_err"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <lable>Price per part:</lable>
+                                    <input type="text" placeholder="$7.51" id="price"><span id="price_err"></span>
+                                </td>
+                                <td>
+                                    <lable>Quantity:</lable>
+                                    <input type="text" placeholder="$7.51" id="quantity"><span id="quantity_err"></span>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Output</legend>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>Cost:</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="cost"><span id="cost_err"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Sales Tax</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="sales_tax"><span id="salestax_err"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Shipping and handling</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="" id="Shipping"><span id="Shipping_err"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Total</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="" id="total"><span id="total_x"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+             </div>
+             <!-- div containing the buttons -->
+             <div class="bottom_buttons">
+                 <ul>
+                     <li>
+                      <button type="submit" value="compute" onsubmit="return systemValidations()">compute</button>
+                     </li>
+                     <li>
+                         <button>New order</button>
+                     </li>
+                     <li id="right_button">
+                         <button>Exit</button>
+                     </li>
+                 </ul>
+                </div>
+        </form>
+    </section>
+</body>
+</html>

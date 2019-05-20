@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Order Sales Processing App</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="./js/main.js"></script>
+    <style>
+      fieldset {
+        border: none;
+        border-top: 2px solid #fff;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sales Form Field -->
+      <form name="salesForm" onsubmit="return validData()">
+        <!-- Customer information field -->
+        <div class="customerInfo">
+          <div>
+            <fieldset><legend>Customer Information</legend></fieldset>
+          </div>
+          <div>
+            <label>Customer ID:</label>
+          </div>
+          <div>
+            <input type="text" name="customerId" />
+          </div>
+          <div>
+            <label>Name:</label>
+          </div>
+          <div>
+            <input type="text" name="name" />
+          </div>
+          <div>
+            <label>State</label>
+          </div>
+          <div>
+            <input type="text" name="state" />
+            <input
+              type="checkbox"
+              checked
+              name="retailCustomer"
+              value="Retail Customer"
+            /><span>Retail Customer</span>
+          </div>
+        </div>
+        <!-- Shippin information field -->
+        <div class="shipping">
+          <div>
+            <fieldset><legend>Shipping</legend></fieldset>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="UPS" />
+            <span>UPS</span>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="Fed Ex Ground" />
+            <span>Fed Ex Ground</span>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="US Portal Air" />
+            <span>US Portal Air</span>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="Fed Ex Air" />
+            <span>Fed Ex Air</span>
+          </div>
+        </div>
+        <!-- Part Ordered field -->
+        <div class="partOrdered">
+          <div>
+            <fieldset><legend>Part Ordered</legend></fieldset>
+          </div>
+          <div>Part Number:</div>
+          <div>
+            <input type="text" name="partNumber" />
+          </div>
+          <div>Description:</div>
+          <div>
+            <input type="text" name="decription" />
+          </div>
+          <div>Price per part:</div>
+          <div class="pricePerPart">
+            <!-- <label>Price per part</label> -->
+            <input type="text" name="unitPrice" />
+            <label>Quantity:</label>
+            <input type="text" name="quantity" />
+          </div>
+          <div>
+            <input type="checkbox" name="oversize" value="Oversize Container" />
+            <span>Oversize Container?</span>
+          </div>
+        </div>
+        <!-- Calculation output is here -->
+        <div class="output">
+          <div>
+            <fieldset><legend>Output</legend></fieldset>
+          </div>
+          <div>Cost:</div>
+          <div id="cost"></div>
+          <div>Sales Tax:</div>
+          <div id="salesTax"></div>
+          <div>Shipping and Handling:</div>
+          <div id="handling"></div>
+          <div>Total:</div>
+          <div id="total"></div>
+        </div>
+        <!-- The bottom of the page contain compute, new order and exit button -->
+        <div class="bottom">
+          <div>
+            <input type="submit" value="Compute" name="compute" />
+          </div>
+          <div>
+            <input type="reset" value="New Order" name="newOrder" />
+          </div>
+          <div></div>
+          <div>
+            <input type="button" value="exit" name="exit" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

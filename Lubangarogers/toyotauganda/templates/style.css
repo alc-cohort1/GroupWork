@@ -1,0 +1,59 @@
+/* rules applying to all html elements within the body */
+html,body{
+    height: 100%;
+    width:100%;
+    margin:0px;
+    padding: 0px;
+     background: rgba(255, 177, 141, 0.747);;
+    font-family: calibri;
+}
+/* calling the a class in css */
+.fields_container{
+    /* using the flexible box model to come up with
+     the block box orientation layout
+     */
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+}
+.fields_container div{
+    margin: 10px;
+    width: 400px;
+    padding: 5px;
+    background: rgb(255, 189, 65);
+ 
+}
+.bottom_buttons ul{
+    margin-left: 200px;
+}
+/* applying rules to lists */
+li{
+    list-style: none;
+    display: inline-block;
+}
+/* calling an ID in css */
+#right_button{
+    float: right;
+
+}
+/* styling all buttons */
+button{
+    width: 100px;
+    background: rgb(255, 189, 65);
+    padding: 4px;
+    border-radius: 4px;
+    outline: none;
+}
+#right_button button{
+    margin-right: 220px;
+    width: 100px;
+    background: rgb(255, 189, 65);
+}
+#top_right_fieldset{
+height: 110px;
+}
+/* styling a fieldset */
+fieldset{
+    border-radius: 5px;
+  border:1px solid white;
+}

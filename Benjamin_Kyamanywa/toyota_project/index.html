@@ -16,7 +16,8 @@
           <form name="sales_form" action="" method="POST" onsubmit="return validData()" >
           <div class="row">
             <!-- Section that captures Customer Information -->
-            <div class="col-sm-8 field">
+            <div class="col-sm-8">
+                <div class="fence">
                 <fieldset class="fieldset">
                 <legend class="legend"><div class="col-sm-12"><h5>Customer Information</h5></div></legend>
                 <!-- Label for customer id -->
@@ -36,11 +37,13 @@
                     <div class="col-sm"><input type="checkbox" name="retail_customer"> &nbsp; Retail Customer</div>
                 </div>
                 </fieldset>
+                </div>
             </div>
 
             <!--  Section that captures Shipping Information -->
-            <div class="col-sm-4 field">
-            <fieldset class="fieldset">
+            <div class="col-sm-4">
+            <div class="fence-right">
+            <fieldset class="fieldset-second">
                     <legend class="legend"><div class="col-sm-12"><label for="shipping"><h5>Shipping</h5></label></div></legend>
             <div class="row">
                 <div class="col-sm-3"><input type="radio" name="shipping">&nbsp; UPS</div>
@@ -50,13 +53,15 @@
                     <div class="col-sm-5"><input type="radio" name="shipping">&nbsp; US Postal Air</div>
                     <div class="col-sm-7"><input type="radio" name="shipping">&nbsp; Fed Ex Air</div>
             </div>
-            </fieldset>  
+            </fieldset>
+            </div>  
             </div>
           </div><br><br>
 
           <div class="row">
             <!-- Section that captures Part Ordered -->
             <div class="col-sm-8 field">
+                <div class="fence">
                 <fieldset class="fieldset">
                     <legend class="legend"><div class="col-sm-12"><h5>Part Ordered</h5></div></legend>
                     <!-- Part Number label -->
@@ -81,10 +86,12 @@
                         <div class="col-sm "><input type="checkbox" name="" >&nbsp; Oversize Container</div>
                     </div>
                 </fieldset>
+                </div>
             </div>
             <!-- Section that Outputs  -->
             <div class="col-sm-4 field">
-                <fieldset class="fieldset">
+                <div class="fence-right-last">
+                <fieldset class="fieldset-fourth">
                         <legend class="legend"><div class="col-sm-12"><label for="output"><h5>Output</h5></label></div></legend>
                 <!-- Cost Label -->
                 <div class="row">
@@ -107,6 +114,7 @@
                         <div class="col-sm-8"><input type="text" name="total"></div>
                 </div>
                 </fieldset>
+                </div>
             </div>
             </div>
 

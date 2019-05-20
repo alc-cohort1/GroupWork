@@ -17,7 +17,7 @@
 <body>
     <div class="content">
            <!-- sales form -->
-            <form action="" method="POST" name="form" onsubmit="return validData()">
+            <form action="order" method="POST" name="form" onsubmit="return output()">
                 <div class="row">
                     <div class="col-sm-8">
                         <div id="field">
@@ -37,7 +37,7 @@
                                                 Name: 
                                             </div>
                                             <div class="col-sm-10">
-                                               <input type="text" id="customer_name"><span id="name"></span>
+                                               <input type="text" name="customer_name"><span id="name"></span>
                                             </div>
                                         </div> <br> 
                                         <div class="row">
@@ -135,7 +135,7 @@
                                             Cost:
                                         </div>
                                         <div class="col-sm-6">
-                                            <input type="text" name="cost">
+                                            <input type="text"  id="cost">
                                         </div> 
                                 </div>  <br>
                                 <div class="row">

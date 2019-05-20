@@ -6,7 +6,7 @@
   /* .w3-col{
 background-color:coral;
 
-  }  */
+  } */
 
 /*add padding to Divisions*/
   #cst,#out{
@@ -20,7 +20,8 @@ background-color:coral;
   /*Add styling to field set and buttons*/
   fieldset ,#shipping{
     border:1px solid white;
-      height:230px;
+     
+      height:200px;
       
   }
 
@@ -87,25 +88,6 @@ button.order{
     position: relative;
     top:60px;
   }
-/*cell heights*/
-  #cost,#tax,#shipping,#total{
-    height:37px;
-  }
-
-  /*cell lengths */
-  #part-number,#description{
-    width:300px;
-  }
-
-  /*cell lengths */
-  #price-per-part{
-    width:130px;
-  }
-
-    /* #quantity{
-    width:70px;
-    
-  }   */
 
   
 

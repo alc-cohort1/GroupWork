@@ -12,7 +12,7 @@ var app = express();
 // making  express no that am going to use some its package
 app.use(express.static("./templates"));
 
-// middleware
+// middleware allows input from input fields
 app.use(parser.urlencoded({ extended: false }));
 
 //  creating database connection

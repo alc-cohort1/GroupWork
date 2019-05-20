@@ -62,6 +62,7 @@ app.post('/auth',function(req,res){
     }
 });
 
+// route that caters for the session
 app.get('/home',function(req,res){
     if(req.session.loggedin){
         res.send('welcome back ',+ req.session.username + '!');

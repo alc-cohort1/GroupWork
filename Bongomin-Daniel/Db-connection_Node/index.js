@@ -40,7 +40,7 @@ getConnection.connect(err => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/templates/login.html'))
 });
-
+// route for registration
 app.get('/registration', (req, res) => {
   res.sendFile(path.join(__dirname + '/templates/registration.html'))
 });

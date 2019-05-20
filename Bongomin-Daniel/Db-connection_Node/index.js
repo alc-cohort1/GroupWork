@@ -5,6 +5,7 @@
 var express = require("express");
 var parser = require("body-parser");
 var mysql = require("mysql");
+var path = require('path');
 
 // initializing the app
 var app = express();
@@ -17,9 +18,9 @@ app.use(parser.urlencoded({ extended: false }));
 //  creating database connection
 var getConnection = mysql.createConnection({
   host: "localhost",
-  user: "danny",
+  user: "root",
   database: "db1",
-  password: "danny123"
+  password: ""
   
 });
 
@@ -33,8 +34,18 @@ getConnection.connect(err => {
   console.log("Connected to the database");
 });
 
-// End point that posts users data to the database /// ROUTE
 
+// Routes and Views for showing endpoints
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/templates/login.html'))
+});
+
+app.get('/registration', (req, res) => {
+  res.sendFile(path.join(__dirname + '/templates/registration.html'))
+});
+
+// End point that posts users data to the database /// ROUTE
 app.post("/login", (req, res) => {
   var firstName = req.body.firstName;
   var lastName = req.body.lastName;
@@ -50,9 +61,8 @@ app.post("/login", (req, res) => {
     }
   );
 });
-
 // // This routes Posts registration Data  to the database
-app.post("/registration", (req, res) => {
+app.post("/registration_form", (req, res) => {
   var userId = req.body.userId;
   var password = req.body.password;
   var name = req.body.name;
@@ -63,7 +73,7 @@ app.post("/registration", (req, res) => {
   var gender = req.body.gender;
   var language = req.body.language;
   var about = req.body.about;
-  var queryString ="INSERT INTO `regform` (`userId`, `password`, `name`, `address`, `country`, `zipCode`, `email`, `gender`, `language`, `about`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  var queryString ="INSERT INTO `registration_form` (`userId`, `password`, `name`, `address`, `country`, `zipCode`, `email`, `gender`, `language`, `about`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
   getConnection.query(
     queryString,[userId,password,name,address,country,zipCode,email,gender,language,about],
     (err, result, field) => {

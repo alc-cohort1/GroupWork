@@ -1,63 +1,106 @@
 * {
-    font-size: 14px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-decoration: none;
+  font-size: 15px;
+  font-family: Montserrat;
+  text-decoration: none;
+  font-display: bold;
 }
-body{
-   
 
-}
 .main_wrapper {
-    margin-top: 60px;
-
-    /* background: #FFBF82;
-     */
-     background: rgb(236, 158, 13);
-    padding: 6px;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-            
+  margin-top: 0px;
+  background: rgba(10, 9, 9, 0.685);
+  color: white;
+  padding: 6px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(202, 7, 7, 0.877);
 
 }
 fieldset {
-    height: 250px;
-    width: 100%;
-
+  height: 250px;
+  width: 100%;
 }
-legend{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+legend {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 #cutomerFieldSet {
-    height: 200px;
-    width: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
-
+  height: 210px;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 #shippingfieldSet {
-    height: 200px;
-    width: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
-
-
+  height: 210px;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .buttondiv {
-    padding: 5px;
-    background: #FFE0C1;
+  margin: 5px 0 5px 0;
+  padding: 5px;
+  /* background: rgba(121, 2, 2, 0.658); */
+  background:rgba(202, 7, 7, 0.877);
+
+  
 }
-#computeBtn,#newOrderBtn,#exit{
-    background: #FFBF82;
-    text-decoration: none;
+#computeBtn,
+#newOrderBtn,
+#exit {
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-style: none;
+}
+span {
+  color: red;
+}
+.pull-right {
+  margin-left: 400px;
+}
+
+/* stying the login page */
+
+.logindiv{
+    width: 50%;
+    background: rgba(10, 9, 9, 0.685);
+    margin: 150px 0 0 300px;
+    border-bottom: 0 none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+    padding: 20px;
+    color:white;
+    margin: 0 auto;
+    border: 2px solid rgba(202, 7, 7, 0.877);
+}
+#loginbtn,#registerbtn{
+    padding: 10px;
+    width: 100px;
+    background:rgba(202, 7, 7, 0.877);
     border-style: none;
+    
+    
+
 }
-span{
-    color: red;
+
+
+/* styling the register form */
+
+.registerdiv{
+    width: 50%;
+    margin: 150px 0 0 300px;
+    border-bottom: 0 none;
+    border: 2px solid rgba(202, 7, 7, 0.877);
+    color: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+    padding: 20px;
+    margin: 0 auto;
+    background: rgba(10, 9, 9, 0.685);
+
+    border: 1px solid rgba(202, 7, 7, 0.877);
 }

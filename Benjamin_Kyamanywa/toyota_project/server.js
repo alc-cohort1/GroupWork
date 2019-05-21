@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
 	password : '',
-	database : 'nodelogin'
+	database : 'toyota'
 });
 
 // Letting Express know that we are using some of its packages
@@ -38,6 +38,11 @@ app.get('/', function(request, response) {
 // Displaying registration page to client
 app.get('/register', function(request, response) {
 	response.sendFile(path.join(__dirname + '/register.html'));
+});
+
+// Displaying toyota sales page to client
+app.get('/sales', function(request, response) {
+	response.sendFile(path.join(__dirname + '/sales.html'));
 });
 
 // Posting data to the database
@@ -71,7 +76,7 @@ app.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('/home');
+				response.redirect('/sales');
 			} else {
 				response.send('Incorrect Username and/or Password!');
 			}			
@@ -94,6 +99,6 @@ app.get('/home', function(request, response) {
 });
 
 // Setting a port
-app.listen(8000, ()=>{
-    console.log('Express server started at port 8000');
+app.listen(5000, ()=>{
+    console.log('Express server started at port 5000');
 });

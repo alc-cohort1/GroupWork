@@ -26,14 +26,9 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
 
-
-app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/templates'));
+app.get('/home', function(request, response) {
+	response.sendFile(path.join(__dirname + '/index.html'));
 });
-
-// app.get('/css', function(request, response) {
-// 	response.sendFile(path.join(__dirname + '/Nakiyemba'));
-// });
 
 app.get('/register', function(request, response) {
 	response.sendFile(path.join(__dirname + '/register.html'));
@@ -92,7 +87,7 @@ app.post('/auth', function(request, response) {
 // A function that will redirect to my homepage
 app.get('/home', function(request, response) {
 	if (request.session.loggedin) {
-			response.sendFile(path.join(__dirname + '/templates'));
+			response.sendFile(path.join(__dirname + '/index.html'));
 	} else {
 		response.send('Please login to view this page!');
 	}
@@ -100,6 +95,6 @@ app.get('/home', function(request, response) {
 });
 
 // The alert that will show in my console when the server starts at a particular port
-app.listen(3004,() => {
-	console.log('Express at server 3003!');
+app.listen(3009,() => {
+	console.log('Express at server 3002!');
 });

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toyota Uganda Limited</title>
+    <link rel="stylesheet" href="toyota.css"/>
+    <h1>Toyota Mail Order</h1>
+</head>
+<body>
+<!-- Creating a form to collect details -->
+<form>
+    <div class="wrapper">
+        <div class="topSection">
+            <div>
+                <fieldset>
+                    <!-- Heading for this section -->
+                    <legend>Customer Information</legend>
+                    <table>
+                        <tr>
+                            <td>Customer ID</td>
+                            <td><input type="text" name="customer"/></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" name="name"/></td>      
+                        </tr>
+                        <tr>
+                            <td>State</td>
+                            <td><input type="text" name="state"/></td>
+                            <td><input type="checkbox"/></td>
+                            <td>Retail Customer</td>
+                        </tr>
+                    </table> 
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <!-- Title for thise section -->
+                    <legend class="shipping">Shipping</legend>
+                    <table>
+                    <!-- Fields for this section -->
+                        <tr>
+                            <td><input type="radio"/></td>
+                            <td>UPS</td>
+                            <td><input type="radio"/></td>
+                            <td>FedEx Ground</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio"/></td>
+                            <td>US Postal Air</td>
+                            <td><input type="radio"/></td>
+                            <td>FedEx Air</td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+        <div class="bottomSection">
+            <div>
+                <fieldset>
+                    <!-- Heading for this section -->
+                    <legend>Part Ordered</legend>
+                        <table>
+                        <tr>
+                            <!-- Input fields for this section -->
+                            <td>Part Number</td>
+                            <td><input type="text" name="part"/></td>    
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td><input type="text" name="description"/></td>    
+                        </tr>
+                        <tr>
+                            <td>Price per part</td>
+                            <td><input type="text" name="price" style="width:30%;"/></td>  
+                        </tr>
+                        <tr>
+                            <td>Quantity</td>
+                            <td><input type="text" name="quantity" style="width:10%;"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td>Oversize Container?</td>  
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+            </div>    
+                <fieldset>
+                    <legend>Output</legend>
+                    <table>
+                        <!-- Fields in this section -->
+                        <tr>
+                            <td>Cost</td>
+                            <td><input type="text" name="cost"/></td>  
+                        </tr>
+                        <tr>
+                            <td>Sales Tax</td>
+                            <td><input type="text" name="price"/></td>  
+                        </tr>
+                        <tr>
+                            <td>Shipping & Handling</td>
+                            <td><input type="text" name="handling"/></td>  
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td><input type="text" name="total"/></td>  
+                        </t>
+                    </table>
+                </fieldset> 
+            </div>
+        </div>
+        <!-- Buttons -->
+        <!-- <div class="compute">
+            <button>Compute</button>
+        </div>
+        <div class="newOrder">
+            <button type="reset">New Order</button>
+        </div>
+        <div class="exit">
+            <button>EXIT</button>
+        </div> -->
+          
+    </form>
+    </div> 
+</body>
+</html>

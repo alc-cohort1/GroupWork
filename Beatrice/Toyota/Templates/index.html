@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer form</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- <script src="../validation.js"></script> -->
+    <!-- links to Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+            /*    */
+        .container {
+            padding-top: 8px;
+            background-color: #fff0e6;
+            margin-top: 13px;
+            padding-bottom: 10px;
+        
+        }
+        .content {
+            padding-top: 8px;
+            background-color: #fff0e6;
+            margin-top: 13px;
+            margin-left: 50px;
+            margin-right: 50px;
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom: 10px;
+        
+        }
+        /* style for the section divs */
+        #field{
+            border: 1px solid #e0e0e0;
+            padding: 2px; 
+            background-color: #fdaf7b;
+            
+        }
+        #field2{
+            border: 1px solid #e0e0e0;
+            padding: 2px; 
+            background-color: #fdaf7b;
+            width: 400px;
+            
+        }
+        #fie{
+            border: 1px solid #e0e0e0;
+            padding: 10px; 
+            height: 270px;
+        }
+        /* style for the legend */
+        #leg{
+            border-style: none;
+            font-size: 12px;
+            margin-bottom: 0;
+            width: auto;
+            padding: 0 10px;
+        }
+        button {
+            background-color: #fdaf7b;
+        }
+        #btn {
+            background-color: #fdaf7b;
+        }
+        #exit {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+           <!-- sales form -->
+            <form action="order" method="POST" name="form" onsubmit="return validData()">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div id="field">
+                            <fieldset id="fie">
+                                <!-- Section that captures Customer's information  -->
+                                    <legend id="leg"><h3>Customer Information</h3></legend>
+                                    <div class="row">
+                                            <div class="col-sm-2">
+                                                Customer ID: 
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="customer_id"><span id="customer_id"></span>
+                                            </div>
+                                        </div><br>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                Name: 
+                                            </div>
+                                            <div class="col-sm-10">
+                                               <input type="text" name="customer_name"><span id="name"></span>
+                                            </div>
+                                        </div> <br> 
+                                        <div class="row">
+                                                <div class="col-sm-2">
+                                                    Town: 
+                                                </div>
+                                                <div class="col-sm-4">
+                                                   <input type="text" name="state"><span id="twn"></span>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="checkbox" name="retailcustomer"> &nbsp; Retail Customer
+                                                </div>
+                                        </div><br>
+                            </fieldset>
+                                                      
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="field2">
+                        <!-- Section that captures shipping information  -->
+                        <fieldset id="fie">
+                            <legend id="leg"><h3>Shipping</h3></legend>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="radio" name="shipping"> &nbsp;UPS
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="radio" name="shipping"> &nbsp;Fed Ex Ground
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="shipping"> &nbsp;US Postal Air
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="radio" name="shipping"> &nbsp;Fed Ex Air
+                                    </div>
+                                </div>                        
+                        </fieldset>
+                    </div>
+                </div>
+                </div><br>
+                <div class="row">
+                        <div class="col-sm-8">
+                            <div id="field">
+                                <!-- Section that captures ordered parts information  -->
+                            <fieldset id="fie">
+                                <legend id="leg"><h3>Part Ordered</h3></legend>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        Part Number: 
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="text" name="partno"><span id="part_no"></span>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        Description: 
+                                    </div>
+                                    <div class="col-sm-5">
+                                       <input type="text" name="description"><span id="descripn"></span>
+                                    </div>
+                                </div> <br>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        Price per part:
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="text" name="price"><span id="ppp"></span>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        Quantity
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="quantity"><span id="qty"></span>
+                                    </div>
+                                </div><br> 
+                                <div class="row " >
+                                    <div class="col-sm-2"></div>
+                                   <div class="col-sm-6">
+                                        <input type="checkbox" name="oversizecontainer"> &nbsp; Oversize Container?
+                                   </div> 
+                                </div>                                                 
+                            </fieldset>
+                        </div>
+                        </div>
+                        <div class="col-sm-4"  id="main">
+                            <div id="field2">
+                            <fieldset id="fie">
+                                <!-- Section that outputs costs  information  -->
+                                <legend id="leg"><h3>Output</h3></legend>
+                                <div class="row">
+                                        <div class="col-sm-6">
+                                            Cost:
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="cost" ><span id="Cost"></span>
+                                        </div> 
+                                </div>  <br>
+                                <div class="row">
+                                        <div class="col-sm-6">
+                                            Sales Tax:
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="salestax">
+                                        </div> 
+                                </div> <br>   
+                                <div class="row">
+                                        <div class="col-sm-6">
+                                            Shipping & handling:
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="shipping&handling">
+                                        </div> 
+                                </div>   
+                                <div class="row"><br>   
+                                        <div class="col-sm-6">
+                                            Total:
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="total">
+                                        </div> 
+                                </div><br>                                                                                                                                                      
+                            </fieldset>
+                        </div>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input type="submit" value="Compute" id="btn">
+                        </div>
+                        <div class="col-sm-2">
+                                <button type="reset">New Order</button>
+                            </div> 
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-3">
+                                    <button type="" id="exit">Exit</button>
+                                </div>                       
+                    </div>     
+         
+            </form>
+        
+    </div>
+    <script>
+            
+    /*
+    This function validates the customer form to check if the user input is correct
+    */
+        function validData(){
+            //Checking if customer id input is not left empty and has no blank spaces
+            var customerId = document.form.customer_id.value.length;
+            if (!customerId  ){
+                document.getElementById("customer_id").innerHTML="<b>Required and cannot contain blank spaces</b>";
+                return false;
+            }
+
+            //Checking if customer_name input is not left empty
+            var name = document.form.customer_name.value.length;
+            if (name == "" )
+            {
+                document.getElementById("name").innerHTML="<b>Required</b>";
+                return false;
+            }
+            //Checking if town input is of three characters
+            var town = document.form.state.value.length;
+            if (town == "" || town != 3)
+            {
+                document.getElementById("twn").innerHTML="<b>Town must be of three characters</b>";
+                return false;
+            }
+            //Checking if part number input is not left empty
+            var partno = document.form.partno.value.length;
+            if (partno == "" )
+            {
+                document.getElementById("part_no").innerHTML="<b>Required</b>";
+                return false;
+            } 
+            //Checking if Description input is not left empty
+            var description = document.form.description.value.length;
+            if (description == "" )
+            {
+                document.getElementById("descripn").innerHTML="<b>Required</b>";
+                return false;
+            }         
+            //Checking if price is a number greater than zero
+            var price_per_part = document.form.price.value.length;
+            if (isNaN(price_per_part) || price_per_part == ""  || price_per_part <= 0)
+            {
+                document.getElementById("ppp").innerHTML="<b>Price must be a number that is greater than zero</b>";
+                return false;
+            } 
+            //Checking if quantity is a number greater than zero
+            var quantity = document.form.quantity.value.length;
+            if (isNaN(quantity) || quantity == ""  || quantity <= 0)
+            {
+                document.getElementById("qty").innerHTML="<b>Price must be a number that is greater than zero</b>";
+                return false;
+            }         
+
+            else{
+                return true;
+            }
+            
+        }
+    
+    </script>
+</body>
+</html>

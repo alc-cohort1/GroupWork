@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+    
+    /* rules to make the body and all the elements fixed to a given height and width */
+html,body{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+/* changing the display of the input */
+input{
+	display: block;
+	margin: 10px;
+}
+
+input{
+	width: 400px;
+	padding: 15px;
+	margin: 30px;
+	border: 0px;
+	outline: none;
+	border-bottom: 2px solid rgb(230, 227, 227);
+
+
+
+}
+
+li{
+	list-style: none;
+	display: inline-block;
+}
+button{
+	background: rgb(2, 2, 29);
+	width: 400px;
+	padding: 15px;
+	border: 0px;
+	border-radius: 4px;
+	color: white;
+}
+.main_section{
+	display:-webkit-box;
+	-webkit-box-orient: horizontal;
+
+}
+#colm1{
+	width:50%;
+	background:black;
+	text-align: center;
+}
+#colm1 h1{
+	font-size: 28px;
+	color: white;
+}
+#colm1 p{
+	font-size: 20px;
+	color: white;
+}
+img{
+	border-radius: 100%;
+	border:2px solid white;
+	width: 150px;
+	height: 150px;
+}
+
+#colm2 form{
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
+
+    </style>
+    
+</head>
+<body>
+    <center>
+            <form action="auth" method="POST">
+                    <h1>
+                        Login form
+                    </h1>
+                   
+                    <br>
+                    <input type="text" name="user_name" placeholder="user_name">
+                    <input name="password" placeholder="password">
+                    <button type="submit">login</button>
+                </form>
+    </center>
+   
+</body>
+</html>

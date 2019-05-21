@@ -5,11 +5,9 @@ const path = require('path')
 
 const app = express();
 
-app.use(express.static("./templates/css"));
-app.use(express.static("./templates/js"));
-
 // middleware
-app.use(express.static(__dirname + '/public'));
+app.use('/css', express.static(__dirname + '/templates/css'));
+app.use('/js', express.static(__dirname + '/templates/js'));
 app.use(parser.urlencoded({ extended: false }));
 
 const getConnection = mysql.createConnection({

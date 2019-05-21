@@ -1,0 +1,24 @@
+/* Styling the entire form */
+form{
+    background-color: #FBCEB1;
+    padding: 10px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-bottom:100px;
+}
+/* Styling the tables in the form */
+table{
+    background-color: #f79862;
+    padding-left:100px;
+    padding-right:100px;
+}
+/* Sizing the container */
+#container{
+    padding-bottom:100px;
+}  
+legend{
+    color: #FBCEB1;
+}
+fieldset{
+    border:1px solid white;
+}

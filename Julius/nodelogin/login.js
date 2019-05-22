@@ -5,14 +5,13 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const path = require("path");
 const crypto = require("crypto");
-const exhbs = require("express3-handlebars");
 
 // express app
 const app = express();
 app.use(express.static("./views/toyota.html"));
 
 // this help set our routes
-app.use("/css", express.static("./views/signup.html"));
+// app.use("/css", express.static("./views/signup.html"));
 
 // Connecting to the database
 var connection = mysql.createConnection({
@@ -118,4 +117,4 @@ app.get("/toyota", function(req, res) {
   }
 });
 
-app.listen(5000);
+app.listen(8000);

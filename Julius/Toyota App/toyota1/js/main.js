@@ -108,9 +108,15 @@ function sales() {
   // Function to calculate the total cost
   function totalCost() {
     // Total cost = cost + tax + shipping cost
-    var total =
+    // var total =
+    //   parseFloat(cost) +
+    //   parseFloat(window.tax) +
+    //   parseFloat(window.totalShippingCost);
+    var total = (
       parseFloat(cost) +
-      parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
+      parseFloat(window.totalShippingCost) +
+      parseFloat(window.tax)
+    ).toFixed(2);
 
     document.getElementById("total").innerHTML = `$ ${total}`;
   }

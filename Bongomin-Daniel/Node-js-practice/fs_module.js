@@ -1,3 +1,5 @@
+// importing modules
+
 var fs = require('fs');
 
 // reading from a file async

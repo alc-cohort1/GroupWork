@@ -1,0 +1,102 @@
+/* rules to make the body and all the elements fixed to a given height and width */
+html,body{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+/* changing the display of the listed elements */
+.textbox, textarea, button,label,select{
+	display: block;
+	margin: 10px;
+}
+/* calling the textbox class and assigning it rules */
+.textbox{
+	width: 400px;
+	padding: 15px;
+	margin: 30px;
+	border: 0px;
+	outline: none;
+	border-bottom: 2px solid rgb(230, 227, 227);
+
+
+
+}
+/* pushing labels and select elements slightly to the right */
+label,select{
+	margin-left: 25px;
+}
+::placeholder{
+	color:  rgb(2, 2, 29);
+}
+select{
+	padding: 10px;
+	width: 410px;
+	border: 0px;
+	outline: none;
+	border-bottom: 2px solid rgb(230, 227, 227);
+
+
+}
+textarea{
+	width: 400px;
+	border-radius: 10px;
+	outline: none;
+}
+li{
+	list-style: none;
+	display: inline-block;
+}
+button{
+	background: rgb(2, 2, 29);
+	width: 400px;
+	padding: 15px;
+	border: 0px;
+	border-radius: 4px;
+	color: white;
+}
+.main_section{
+	display:-webkit-box;
+	-webkit-box-orient: horizontal;
+
+}
+#colm1{
+	width:50%;
+	background:black;
+	text-align: center;
+}
+#colm1 h1{
+	font-size: 28px;
+	color: white;
+}
+#colm1 p{
+	font-size: 20px;
+	color: white;
+}
+img{
+	border-radius: 100%;
+	border:2px solid white;
+	width: 150px;
+	height: 150px;
+}
+
+#colm2 form{
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
+@media(max-width:360px){
+	.main_section{
+		display:-webkit-box;
+		-webkit-box-orient: vertical;
+		
+	
+	}
+	#colm2{
+		background: red;
+		vertical-align: -webkit-baseline-middle;
+	}
+}

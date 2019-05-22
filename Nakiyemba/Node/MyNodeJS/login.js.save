@@ -1,0 +1,53 @@
+
+//server.js
+const express = require('express')
+const app   = express()
+const parser = require('body-parser')
+
+app.use(express.static('./Templates'))
+
+
+app.post('/user_create', (req, res)=>{
+    app.use(body-parser.urlencoded({extended: false}))
+   console.log('You are posting some form data') 
+  
+
+
+    
+})
+
+app.listen(3000,()=>{
+    console.log('Express server started at port 3000');
+});
+
+// a package called body-parser is required to screen out elements in hmtl
+// line 7 is a middleware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

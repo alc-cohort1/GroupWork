@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css?family=Tangerine"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- Bootstrap CSS -->
     <link
@@ -20,17 +21,37 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+    body{
+    background-image: url("img/bg.jpg");
+    background-position: center;
+    background:rgb(rgba(194, 180, 180, 0.884), rgb(242, 248, 242), rgb(238, 238, 241));
+
+}
+    </style>
     <title>TOYOTA | APP</title>
   </head>
   <body>
     <div class="container">
+      <div class="heading">
+           
+         <div class="row">
+           <div class="col-md-2">
+           <img src="img/logo.png"class="img-responsive"width="100%" alt="">
+         </div>
+         <div class="col-md-10">
+           <h1 style="margin:40px 0  0 230px; ">Application</h1>
+          </div>
+         </div>
+      </div>
       <div class="main_wrapper">
         <form
-          action=""
           name="toyotaForm"
+          action="/toyota_app"
           method="POST"
-          onsubmit="return validation()"
+          onsubmit="return validate()"
         >
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -79,7 +100,7 @@
                               class="form-control"
                               id="state"
                               name="state"
-                              placeholder="CA"
+                              placeholder="CA /KLA /MBRA"
                               type="text"
                             />
                             <span id="state_err"></span>
@@ -117,7 +138,7 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
-                          name="ups"
+                          name="shipping"
                           type="radio"
                         />
                         UPS
@@ -130,7 +151,7 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
-                          name="fixedExGround"
+                          name="shipping"
                           type="radio"
                         />
                         Fixed EX Ground
@@ -145,7 +166,7 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input checkbox"
-                          name="usPostalAir"
+                          name="shipping"
                           type="radio"
                         />
                         US Postal Air
@@ -158,7 +179,7 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
-                          name="fedExAir"
+                          name="shipping"
                           type="radio"
                         />
                         Fed Ex Air
@@ -189,7 +210,7 @@
                       class="form-control"
                       name="partNumber"
                       id="partNumber"
-                      placeholder="10152"
+                      placeholder="insert the value here....."
                       type="text"
                     />
                     <span id="partNumber_err"></span>
@@ -204,7 +225,7 @@
                       class="form-control"
                       id="description"
                       name="description"
-                      placeholder="ie Oil Filter"
+                      placeholder="write description....."
                       type="text"
                     />
                     <span id="description_err"></span>
@@ -311,7 +332,7 @@
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label" for="salesAndHanding"
-                    >Shipping & Handing</label
+                    >Ship & Handing</label
                   >
                   <div class="col-sm-9">
                     <input
@@ -353,18 +374,22 @@
                   class="btn btn-lg btn-default"
                   id="computeBtn"
                 >
-                  Compute
+                <i class="fa fa-bars"></i>
+                  compute
+                  
                 </button>
                 
                 &nbsp &nbsp
 
-                <button type="" class="btn btn-lg btn-default" id="newOrderBtn">
-                  New Order
-                </button>
+                <button type="reset" class="btn btn-lg btn-default" id="newOrderBtn">
+                    <i class="fas fa-redo"></i>
+                  new Order
+                
               </div>
               <div class="col-sm-6 col-md-6">
-                <div class="pull-left">
-                  <button type="" class="btn btn-lg btn-default" id="exit">
+                <div class="pull-right">
+                  <button type="button" class="btn btn-lg btn-default " id="exit">
+                      <i class="fa fa-power-off"  style="color: red;"></i>
                     Exit
                   </button>
                 </div>
@@ -376,7 +401,7 @@
     </div>
 
     <!-- validation javascript -->
-    <script src="js/validation.js"></script>
+    <script src="js/validate2.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       crossorigin="anonymous"

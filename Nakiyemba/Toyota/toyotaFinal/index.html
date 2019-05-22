@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toyota Uganda Limited</title>
+    <link rel="stylesheet" href="toyota.css"/>
+    <h1>Toyota Mail Order</h1>
+</head>
+<body>
+    <!-- The field for capturing customer information -->
+    <div class="container">
+        <div class="inner">
+            <div class="top">
+                <div class="topLeft">
+                    <fieldset>
+                        <legend>
+                            Customer Information
+                        </legend>
+                        <div class="one">
+                            <div class="customerLabel">
+                                <label>
+                                    Customer ID:
+                                </label>
+                            </div>
+                            <div class="customerInput">
+                                <input type="text" name="customer"id=""placeholder="123-45-6789"> <span id="customer"></span>
+                            </div>
+                        </div>
+                        <div class="two">
+                            <div class="nameLabel">
+                                <label>
+                                    Name:
+                                </label>
+                            </div>
+                            <div class="nameInput">
+                                <input type="text" name="name" id="" placeholder="Awesome Naki">
+                            </div>
+                        </div>
+                        <div class="three">
+                            <div class="townLabel">
+                                <label>
+                                    Town:
+                                </label>
+                            </div>
+                            <div class="stateInput">
+                                <input type="text" name="town" placeholder="EBB" id="town" oninput="this.value=this.value.toUpperCase('')>
+                            </div>
+                            <div class="retailCustomer">
+                                <input type="checkbox" name="retail" id="">Retail Customer
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+<!-- the field for capturing the shipping details -->
+                <div class="topRight">
+                    <fieldset>
+                        <legend>
+                            Shipping
+                        </legend>
+                        <div class="topShip">
+                            <div class="ups">
+                                <input type="radio">UPS
+                            </div>
+                            <div class="fedG">
+                                <input type="radio">FedEx Ground
+                            </div>
+                        </div>
+                        <div class="bottomShip">
+                            <div class="upsA">
+                                <input type="radio">US Postal Air
+                            </div>
+                            <div class="fedA">
+                                <input type="radio">FedEx Air
+                            </div>
+                        </div>  
+                    </fieldset>
+                </div>
+            </div>
+
+<!-- The information about the part ordered -->
+            <div class="middle">
+                <div class="middleLeft">
+                    <fieldset>
+                        <legend>
+                            Part Ordered
+                        </legend>
+                        <div class="partOrd">
+                            <div class="partNum">
+                                <div class="partLabel">
+                                    <label class="num">
+                                        Part Number:
+                                    </label>
+                                </div>
+                                <div class="numInput">
+                                    <input type="text" placeholder="10152">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <div class="descripLabel">
+                                    <label>
+                                        Description
+                                    </label>
+                                </div>
+                                <div class="descripInput">
+                                    <input type="text" placeholder="Oil Filter">
+                                </div>
+                            </div>
+                            <div class="price">
+                                <div class="priceLabel">
+                                    <label>
+                                        Price per Part:
+                                    </label>
+                                </div>
+                                <div class="priceInput">
+                                    <input type="text" placeholder="$7.51">
+                                </div>
+                                <div class="quantityLabel">
+                                    <label>
+                                        Quantity
+                                    </label>
+                                </div>
+                                <div class="quantityInput">
+                                    <input type="text" placeholder="2">
+                                </div>
+                            </div>
+                            <div class="overSize">
+                                <input type="checkbox" name="retail" id="">Oversize Container?
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+<!-- The section to capture out/cost of the order -->
+                <div class="middleRight">
+                    <fieldset>
+                        <legend>
+                            Output
+                        </legend>
+                        <div class="output">
+                            <div class="cost">
+                                <div class="costLabel">
+                                    <label>
+                                        Cost:
+                                    </label>
+                                    <div class="costInput">
+                                        <input type="text" placeholder="$15.02">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tax">
+                                <div class="taxLabel">
+                                    <label>
+                                        Sales Tax:
+                                    </label>
+                                </div>
+                                <div class="taxInput">
+                                    <input type="text" placeholder="1.50">
+                                </div>
+                            </div>
+                            <div class="handling">
+                                <div class="handlingLabel">
+                                    <label>
+                                        Shipping & Handling:
+                                    </label>
+                                </div>
+                                <div class="handlingInput">
+                                    <input type="text" placeholder="14.00">
+                                </div>
+                            </div>
+                            <div class="total">
+                                <div class="totalLabel">
+                                    <label>
+                                        Total:
+                                    </label>
+                                </div>
+                                <div class="totalInput">
+                                    <input type="text" placeholder="$30.52">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+<!-- The section for the buttons -->
+            <div class="bottom">
+                <div class="bottomOne">
+                    <input type="submit" value="Compute" id="compute">
+                </div>
+                <div class="bottomTwo">
+                    <input type="submit" value="New Order" id="newOder">
+                </div>
+                <div class="bottomThree">
+                    <input type="submit" value="Exit" id="exit">
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

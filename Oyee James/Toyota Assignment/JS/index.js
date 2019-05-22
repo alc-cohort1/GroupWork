@@ -121,11 +121,9 @@ function sales() {
     return totalCost();
   }
 
-  // Function to calculate the total cost
-  function totalCost() {
-    var total =
-      parseFloat(cost) +
-      parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
+   // Function to calculate the total cost
+   function totalCost() {
+    var total = (parseFloat(cost) + parseFloat(window.totalShippingCost) + parseFloat(window.tax)).toFixed(2);
     document.getElementById("total").innerHTML = `$ ${total}`;
   }
   

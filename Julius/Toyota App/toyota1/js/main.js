@@ -107,11 +107,6 @@ function sales() {
 
   // Function to calculate the total cost
   function totalCost() {
-    // Total cost = cost + tax + shipping cost
-    // var total =
-    //   parseFloat(cost) +
-    //   parseFloat(window.tax) +
-    //   parseFloat(window.totalShippingCost);
     var total = (
       parseFloat(cost) +
       parseFloat(window.totalShippingCost) +

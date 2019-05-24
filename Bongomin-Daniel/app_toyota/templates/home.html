@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <!-- for responsiveness -->
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link
+      crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+    body{
+    background-image: url("img/bg.jpg");
+    background-position: center;
+    background:rgb(rgba(194, 180, 180, 0.884), rgb(242, 248, 242), rgb(238, 238, 241));
+
+}
+    </style>
+    <title>TOYOTA | APP</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+           
+         <div class="row">
+           <div class="col-md-2">
+           <img src="img/logo.png"class="img-responsive"width="100%" alt="">
+         </div>
+         <div class="col-md-10">
+           <h1 style="margin:40px 0  0 230px; ">Application</h1>
+          </div>
+         </div>
+      </div>
+      <div class="main_wrapper">
+        <form
+          name="toyotaForm"
+          action="/toyota_app"
+          method="POST"
+          onsubmit="return validate()"
+        >
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <!-- fieldset for customer information -->
+              <fieldset class="border p-2" id="cutomerFieldSet">
+                <legend class="w-auto">Customer Information</legend>
+                <!-- <form> -->
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="customerId"
+                    >Customer Id</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="customerId"
+                      name="customerId"
+                      placeholder="Customer Id"
+                      type="text"
+                    />
+                    <span id="customerId_err"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="name">Name</label>
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      type="text"
+                    />
+                    <span id="name_err"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for=""
+                    >state :</label
+                  >
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <div class="col-sm-9">
+                            <input
+                              class="form-control"
+                              id="state"
+                              name="state"
+                              placeholder="CA /KLA /MBRA"
+                              type="text"
+                            />
+                            <span id="state_err"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              id="retailCustomer"
+                              name="retailCustomer"
+                              type="checkbox"
+                              value="retailCustomer"
+                            />
+                            <span id="retailCustomer_err"></span>
+                            Retail Customer
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- </form> -->
+              </fieldset>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <!-- fieldset for shipping -->
+              <fieldset class="border p-2" id="shippingfieldSet">
+                <legend class="w-auto">Shipping</legend>
+                <div class="row p-3">
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          name="shipping"
+                          type="radio"
+                        />
+                        UPS
+                        <span id="ups_err"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          name="shipping"
+                          type="radio"
+                        />
+                        Fixed EX Ground
+                        <span id="fixedExGround_err"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row p-3">
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input checkbox"
+                          name="shipping"
+                          type="radio"
+                        />
+                        US Postal Air
+                        <span id="usPostalAir_err"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          name="shipping"
+                          type="radio"
+                        />
+                        Fed Ex Air
+                        <span id="fedExAir_err"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <col-sm-6></col-sm-6>
+                  <col-sm-6></col-sm-6>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <!-- part order fieldset -->
+              <fieldset class="border p-2">
+                <legend class="w-auto">Part Order</legend>
+                <!-- <form> -->
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="partNumber"
+                    >Part Number</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      name="partNumber"
+                      id="partNumber"
+                      placeholder="insert the value here....."
+                      type="text"
+                    />
+                    <span id="partNumber_err"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="description"
+                    >Description</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      placeholder="write description....."
+                      type="text"
+                    />
+                    <span id="description_err"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="partNumber"
+                    >Price Per Part</label
+                  >
+                  <div class="col-sm-9">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <div class="col-sm-9">
+                            <input
+                              class="form-control"
+                              name="price"
+                              id="price"
+                              placeholder="Price Per Part"
+                              type="text"
+                            />
+                            <span id="price_err"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" for="quantity">
+                            Quantity: </label
+                          >&nbsp &nbsp
+                          <div class="col-sm-8">
+                            <input
+                              class="form-control"
+                              name="quantity"
+                              id="quantity"
+                              placeholder="Quantity"
+                              type="text"
+                            />
+                            <span id="quantity_err"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label
+                    class="col-sm-3 col-form-label"
+                    for="partNumber"
+                  ></label>
+                  <div class="col-sm-9">
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          name="sizeContainer_check_box"
+                          id="sizeContainer_check_box"
+                        />
+                        Over Size Container ?
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- </form> -->
+              </fieldset>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <!-- output Fieldset -->
+              <fieldset class="border p-2">
+                <legend class="w-auto">Out Put</legend>
+                <!-- <form> -->
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="cost"
+                    >Cost
+                  </label>
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="cost"
+                      name="cost"
+                      placeholder="Cost"
+                      type="text"
+                      onclick="return cost_calculation()"
+                    />
+                    <span id="cost_err"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="salesTax"
+                    >Sales Tax</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="salesTax"
+                      name="salesTax"
+                      placeholder="Sales Tax"
+                      type="text"
+                    />
+                    <span id="salesTax"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="salesAndHanding"
+                    >Ship & Handing</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="salesAndHanding"
+                      name="salesAndHanding"
+                      placeholder="sales And Handing"
+                      type="text"
+                    />
+                    <span id="salesAndHanding_err"></span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="total"
+                    >Total</label
+                  >
+                  <div class="col-sm-9">
+                    <input
+                      class="form-control"
+                      id="total"
+                      name="total"
+                      placeholder="Total"
+                      type="text"
+                    />
+                    <span id="total_err"></span>
+                  </div>
+                </div>
+
+                <!-- </form> -->
+              </fieldset>
+            </div>
+          </div>
+          <!-- button div -->
+          <div class="buttondiv">
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-default"
+                  id="computeBtn"
+                >
+                <i class="fa fa-bars"></i>
+                  compute
+                  
+                </button>
+                
+                &nbsp &nbsp
+
+                <button type="reset" class="btn btn-lg btn-default" id="newOrderBtn">
+                    <i class="fas fa-redo"></i>
+                  new Order
+                
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="pull-right">
+                  <button type="button" class="btn btn-lg btn-default " id="exit">
+                      <i class="fa fa-power-off"  style="color: red;"></i>
+                    Exit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- validation javascript -->
+    <script src="js/validate2.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    ></script>
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+  </body>
+</html>

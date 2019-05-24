@@ -60,4 +60,16 @@ return;
     alert('Quantity must be Greater than 0');
     return;
      }
+
+     let cost = (price * quantity);
+alert('The Cost is '+cost.toFixed(0));
+
+
+}
+
+//Make Form Computations
+function compute(){
+let cost = (price * quantity);
+//cost.toFixed(0);
+//alert('The Cost is'+cost.toFixed(0));
 }

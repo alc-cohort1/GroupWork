@@ -20,7 +20,8 @@ let connection = mysql.createConnection({
 
 //initialize express and configure some of it's packages
 let app = express();
-app.use('/css',express.static(__dirname+'login.css'))
+app.use('/',express.static(__dirname+'index.css'))
+app.use('/',express.static(__dirname+'index.js'))
 app.use(session({
 	secret: 'secret',
 	resave: true,

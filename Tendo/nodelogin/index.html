@@ -11,7 +11,7 @@
     <title>Toyota Order Form</title></head> 
 <body>
         <h1 id="title">Toyota - Order Form</h1>
-<form  class="w3-container" id="form">
+<form  class="w3-container" action="submitForm" id="form" method="POST">
     
     <div class="w3-row">
         <div class="w3-row ">
@@ -20,11 +20,10 @@
     <fieldset><legend><b>Customer Information</b></legend>
                     
         <table>
-            <tr><td><label class="w3-label "><b>Customer ID:</b></label><h5></h5>
+            <tr><td><label class="w3-label "><b>Customer ID:</b></label>
                 </td>
                 <td ><input type="text" class="w3-input" id="id" name="id" placeholder="e.g 1234"/>
-            </td>
-        </tr>
+            </td></tr>
 
             <tr><td><label class="w3-label"><b>Name:</b></label>
             </td>
@@ -68,13 +67,13 @@
         <div class="w3-col " style="width:60%" id="pt">
                 <fieldset><legend><b>Part Ordered</b></legend>
                     <table>
-                            <tr><td> <label >Part Number:</label></td><td><input type="text" class="w3-input w3-border "  id="part-number" name="num" placeholder="$ 7.51"></td><h4></h4></tr>
-                            <tr><td><label>Description</label></td><td><input type="text" class="w3-input w3-border" id="description" name="cost" placeholder="Oil Filter"></td></tr>
+                            <tr><td> <label class="w3-validate">Part Number:</label></td><td><input type="number" class="w3-input w3-border "  id="part-number" name="cost" placeholder="$ 7.51"></td></tr>
+                            <tr><td><label class="w3-validate">Description</label></td><td><input type="number" class="w3-input w3-border" id="description" name="cost" placeholder="Oil Filter"></td></tr>
                            
-                        <tr><td> <label>Price Per Part:</label></td><td colspan="5"><input type="number" class="w3-input w3-border" id="price-per-part" name="cost" placeholder="$15.02">
-                        </td><td> <label>Quantity:</label></td><td><input type="number" class="w3-input w3-border " id="quantity" name="cost" placeholder="2"></td></tr>
+                        <tr><td> <label class="w3-validate">Price Per Part:</label></td><td colspan="5"><input type="number" class="w3-input w3-border" id="cost" name="cost" placeholder="$15.02">
+                        </td><td>Quantity:</td><td><input type="number" class="w3-input w3-border " id="price-per-part" name="cost" placeholder="2"></td></tr>
                    
-                        <tr><td><input class="w3-check" type="checkbox"></td><td><label>Oversize Container ?</label></td>
+                        <tr><td><input class="w3-check" type="checkbox">Oversize Container ?</td>
                    </tr>
                     </table>
     </fieldset>

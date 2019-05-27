@@ -16,8 +16,8 @@ app.use("/css", express.static("./views/signup.html"));
 //This is used for connecting to the database
 var connection = mysql.createConnection({
   host: "localhost",
-  user: "james",
-  password: "789",
+  user: "root",
+  password: "",
   database: "nodelogin"
 });
 
@@ -114,8 +114,35 @@ app.get("/toyota", function(req, res) {
   }
 });
 
+//This route is for posting sales to the database
+app.post("/createSale", (req, res) => {
+  const customerId = req.body.customerId;
+  const name = req.body.name;
+  const town = req.body.town;
+  const retailCustomer = req.body.retailCustomer;
+  const shipping = req.body.shipping;
+  const partNumber = req.body.partNumber;
+  const description = req.body.description;
+  const pricePerPart = req.body.pricePerPart;
+  const quantity = req.body.quantity;
+  const oversize = req.body.oversize;
+  
+  //SQL commands for posting sales to the database
+  connection.query(
+    "INSERT INTO `sales` (`customerId`, `name`, `town`, `retailCustomer`, `shipping`, `partNumber`, `description`, `pricePerPart`, `quantity`, `oversize`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [customerId, name, town, retailCustomer, shipping, partNumber, description, pricePerPart, quantity, oversize],
+    (err, result, field) => {
+      if (err) {
+        console.log("an error has occured " + err);
+        res.status(500);
+        return;
+      }
+    }
+  );
+});
+
 // This is for the port to be used
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
   console.log(`Express server started at port ${PORT}`);
 });

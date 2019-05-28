@@ -3,35 +3,34 @@
 <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--link to "validate_cuisite.js"-->
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     
     <!--link to External Css "w3.css and index.css"-->
-    <link type="text/css" href="index.css" rel="stylesheet" />
-      <link type="text/css" href="w3css.css" rel="stylesheet" />  
+    <link type="text/css" href="/css/index.css" rel="stylesheet" />
+      <link type="text/css" href="/css/w3css.css" rel="stylesheet" />  
     <title>Toyota Order Form</title></head> 
 <body>
         <h1 id="title">Toyota - Order Form</h1>
-<form  class="w3-container" id="form">
+<form  class="w3-container" style="width:110%" action="submitForm" id="form" method="POST">
     
     <div class="w3-row">
         <div class="w3-row ">
         <!--Customer Information Division-->    
   <div class="w3-col " style="width:60%" id="inf">
-    <fieldset><legend><b>Customer Information</b></legend>
+    <fieldset id="customr"><legend>Customer Information</legend>
                     
         <table>
-            <tr><td><label class="w3-label "><b>Customer ID:</b></label><h5></h5>
+            <tr><td><label class="w3-label ">Customer ID:</label>
                 </td>
                 <td ><input type="text" class="w3-input" id="id" name="id" placeholder="e.g 1234"/>
-            </td>
-        </tr>
+            </td></tr>
 
-            <tr><td><label class="w3-label"><b>Name:</b></label>
+            <tr><td><label class="w3-label">Name:</label>
             </td>
             <td colspan=4><input type="text" class="w3-input w3-border" id="name" name="name" placeholder="e.g Kato Joseph"/>
         </td></tr>
 
-        <tr><td><label class="w3-label"><b>Town:</b></label>
+        <tr><td><label class="w3-label">Town:</label>
         </td>
         <td><input type="text" class="w3-input w3-border " id="state" name="state"  placeholder="e.g Uganda"/>
     </td>
@@ -46,36 +45,40 @@
            
             <!--Shipping Division-->
   <div class="w3-col " style="width:40%" id="cst">
-        <fieldset id="shipping" ><legend><b>Shipping345</b></legend><b></b>
+        <fieldset style=" border:2px solid white;
+        height:230px;background-color:#fac695;"><legend><b>Shipping</b></legend>
             <table>
-                    <tr><td>  <input class="w3-radio" type="radio" name="ups" value="ups" checked id="ups">
+                    <tr><td>  <input class="w3-radio" type="radio" name="ups" value="ups" id="ups" checked="checked">
+                        <span class="checkmark"></span>
                         <label class="w3-validate">UPS</label></td>
                         <td> <input class="w3-radio" type="radio" name="fedexg" value="fedexg" id="fedexg">
+                            <span class="checkmark"></span>
                             <label class="w3-validate">Fed Ex Ground</td></tr>
-                  
+        
                                 <tr><td> <input class="w3-radio" type="radio" name="usportal" value="usportal" id="usportal">
+                                    <span class="checkmark"></span>
                                     <label class="w3-validate" id="usportall">US Portal Air</label></td><td> <input class="w3-radio" type="radio" name="fedexa" value="fedexa" id="fedexa">
+                                        <span class="checkmark"></span>
                                         <label class="w3-validate" id="fedexal">Fed Ex Air</label></td></tr>
-                                        
-                
-                                    </table>
+                                    </table></fieldset>
                             
-    </fieldset></div>
+   </div>
     </div>
     <br>
     <div class="w3-row">
         <!--Part Ordered Division-->
         <div class="w3-col " style="width:60%" id="pt">
-                <fieldset><legend><b>Part Ordered</b></legend>
+                <fieldset id="ordered"><legend><b>Part Ordered</b></legend>
                     <table>
-                            <tr><td> <label >Part Number:</label></td><td><input type="text" class="w3-input w3-border "  id="part-number" name="num" placeholder="$ 7.51"></td><h4></h4></tr>
-                            <tr><td><label>Description</label></td><td><input type="text" class="w3-input w3-border" id="description" name="cost" placeholder="Oil Filter"></td></tr>
+                            <tr><td> <label class="w3-validate">Part Number:</label></td><td><input type="text" class="w3-input w3-border "  id="part-number" name="cost" placeholder="$"></td></tr>
+                            <tr><td><label class="w3-validate">Description</label></td><td><input type="text" class="w3-input w3-border" id="description" name="cost" placeholder="Oil Filter"></td></tr>
                            
-                        <tr><td> <label>Price Per Part:</label></td><td colspan="5"><input type="number" class="w3-input w3-border" id="price-per-part" name="cost" placeholder="$15.02">
-                        </td><td> <label>Quantity:</label></td><td><input type="number" class="w3-input w3-border " id="quantity" name="cost" placeholder="2"></td></tr>
+                        <tr><td> <label class="w3-validate">Price Per Part:</label></td><td colspan="5"><input type="number" class="w3-input w3-border" id="cost" name="cost" placeholder="$">
+                        </td><td>Quantity:</td><td><input type="number" class="w3-input w3-border " id="price-per-part" name="cost" placeholder="2"></td></tr>
                    
-                        <tr><td><input class="w3-check" type="checkbox"></td><td><label>Oversize Container ?</label></td>
-                   </tr>
+                        <tr><td><input class="w3-check" type="checkbox"></td>
+                   <td>Oversize Container ?</td>
+                        </tr>
                     </table>
     </fieldset>
     <br>
@@ -88,7 +91,7 @@
 </div>
         <!-- Output Division-->
         <div class="w3-col " style="width:40%" id="out">
-                <fieldset><legend><b>Output</b></legend>
+                <fieldset id="output"><legend><b>Output</b></legend>
            <table>   
             <tr><td> <label class="w3-validate">Cost:</label></td><td><input type="number" class="w3-input w3-border " id="cost" name="cost" placeholder=""></td></tr>
             
@@ -96,13 +99,14 @@
             
             <tr><td> <label class="w3-validate">Shipping Handling:</label></td><td><input type="number" class="w3-input w3-border " id="shipping" name="shipping" placeholder=""></td></tr>
             
-            <tr><td> <label class="w3-validate">Total</label></td><td><input type="number" class="w3-input w3-border " id="total" name="total" placeholder="$30.52"></td></tr>
+            <tr><td> <label class="w3-validate">Total</label></td><td><input type="number" class="w3-input w3-border " id="total" name="total" placeholder="$"></td></tr>
         </table>  
     </fieldset>
 <!--Buttons Div-->
 <br>
 <div class="w3-row">
         <button class="exit">Exit</button>
+        <!-- <input type="button"  class="exit" value="Exit1">  -->
 </div>
 </div>
 </div>

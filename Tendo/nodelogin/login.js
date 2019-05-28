@@ -9,6 +9,9 @@ var path = require('path');
 var crypto = require('crypto');
 
 
+//set port
+const port = 4000;
+
 //create databases  connection profile
 let connection = mysql.createConnection({
     host     : 'localhost',
@@ -18,10 +21,19 @@ let connection = mysql.createConnection({
 
 });
 
+// connect to database
+connection.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
+});
+global.db = connection;
+
 //initialize express and configure some of it's packages
 let app = express();
-app.use('/',express.static(__dirname+'index.css'))
-app.use('/',express.static(__dirname+'index.js'))
+//app.use('/',express.static(__dirname+'index.css'))
+//app.use('/',express.static(__dirname+'index.js'))
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -29,23 +41,38 @@ app.use(session({
 }));
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
-//serve static pages using middleware
-app.use( express.static(path.join(__dirname, 'nodelogin')))
+
+// configure middleware
+app.use(express.static(path.join(__dirname, 'static')));
+app.set('port', process.env.port || port); // set express to use this port
+app.set('views', __dirname + '/views'); // set express to look in this folder to render toyota form
+//app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
+//app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
+app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
+
+//app.set('view engine', 'html'); // configure template engine
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // parse form data client
+
+
 //create routes to access pages and other resources
 
+//login form route
 app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/login.html'));
+	response.sendFile(path.join(__dirname + '/views/login.html'));
 });
 
+//registration form route
  app.get('/register', function(request, response) {
-	response.sendFile(path.join(__dirname + '/register.html'));
+	response.sendFile(path.join(__dirname + '/views/register.html'));
  });
 
 //Toyota form route
  app.get('/index', function(request, response) {
-	response.sendFile(path.join(__dirname + '/index.html'));
+	response.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
+//create new user
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
@@ -54,12 +81,15 @@ app.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
+				request.session.password = password;
 				//response.redirect('/index.html');
 				//response.sendFile(path.join(__dirname +'/register'));
 				response.redirect('/index');
+	
 				//response.sendFile(path.join(__dirname + '/index.html'));
 			} else {
-				response.send('<html><font color=red>Incorrect Username and/or Password !');
+				response.send('<html><font color=green>You Successfully Registered A New User');
+				//response.send('<html><font color=red>Incorrect Username and/or Password !');
 			}			
 			response.end();
 		});
@@ -103,6 +133,7 @@ app.get('/index1', function(request, response) {
 	response.end();
 });
 
-app.listen(4000,()=>{
-	console.log('Running on Port '+{});
+app.listen(port,()=>{
+	//console.log('Running on Port : ${port}'+${port});
+	console.log(`Server running on port: ${port}`);
 });

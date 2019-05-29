@@ -151,7 +151,7 @@
 }
 
 .container .inner .middle .middleLeft .partOrd .partNum .numInput{
-    margin-left: 200px;
+    margin-left: 20px;
     
 }
 
@@ -160,24 +160,30 @@
 }
 
 .container .inner .middle .middleLeft .partOrd .description .descripInput{
-    margin-left: 215px;
+    margin-left: 35px;
 }
 
 
 .container .inner .middle .middleLeft .partOrd .price{
     display: flex;
-  
-}
+    width: 300px;
+  }
+
 .container .inner .middle .middleLeft .partOrd .price .priceInput{
-    width: 80%;  
+    width: 100px; 
     height: 37px;
-    margin-left: 265px;
+    margin-left: 8px;
 }
 .container .inner .middle .middleLeft .partOrd .price{
-    width: 0px;
-    margin-right: 600px;
-    
+    width: 400px;
+    margin-right: 600px;    
 }
+
+.price .priceLabel {
+    width: 120px;
+    height: 25px;
+}
+
 .quantity{
     display: flex;
 }
@@ -193,20 +199,20 @@
 }
 
 .container .inner .middle .middleRight .output .costInput{
-    margin-left: 255px;
+    margin-left: 140px;
     padding-bottom: 0px;
     padding-top: 0px;
     
 }
 
 .container .inner .middle .middleRight .output .handlingInput{
-    margin-left: 130px;
+    margin-left: 10px;
     position: relative;
     bottom: 15px;
 }
 
 .container .inner .middle .middleRight .output .taxInput{
-    margin-left: 300px;
+    margin-left: 180px;
     position: relative;
     top: -15px;
 }
@@ -223,7 +229,7 @@
 }
 
 .container .inner .middle .middleRight output .handling .handlingInput{
-    margin-left: 150px;
+    margin-left: 158px;
 }
 
 .container .inner .middle .middleRight .output .total{
@@ -232,7 +238,7 @@
 
 }
 .container .inner .middle .middleRight .output .total .totalInput{
-    margin-left: 250px;
+    margin-left: 138px;
 }
 
 #totalInput{
@@ -261,4 +267,13 @@
 
 fieldset{
     height: 180px;
+}
+
+
+
+
+#name, #partNum, #describe {
+    width: 200px;
+    margin-left:0px;
+    padding-left: 0px;
 }

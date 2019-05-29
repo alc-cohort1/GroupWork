@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Node Login Form Tuts</title>
+
+<!-- inline styling for the login forms inputs -->
+		<style>
+		#wrap{
+		background-color: #f3f3f3;
+		margin-left: 5em;
+		margin-right: 5em;
+		padding-bottom: 5em;
+		padding-top: 5em;
+		}
+		.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		p{
+			text-align: center;
+			color: #4d4d4d;
+			font-weight: bold;
+			
+		}
+
+		#not_member a{
+			text-decoration: none;
+		}
+		button{
+			display: block;
+			margin-bottom: 5px;
+			margin-left: 40px;
+			
+			width: 400px;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		button a{
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 20px;
+			color: white;
+		}
+		 #login{
+			
+			margin-top: 50px;
+		}
+		</style>
+<!-- linking the external CSS file -->
+	<link rel="stylesheet" href="login.css">
+	</head>
+	<body>
+		
+	<section id="wrap" style="display: flex;">
+		<div class="login-form">
+			<h1>Please Login here!</h1>
+			<form action="auth" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit" value="Login">
+			</form>
+		<div id="not_member">
+			<!-- <p>Not a member? <a href="/register">Register</a></p> -->
+
+		</div>
+		</div>
+		<div style="background-color: #ffff; margin-left: -8em; margin-right: 10em;">
+			<p style="font-size: 25px; line-height: 2em; margin-left: 0.5em; margin-right: 0.5em;">See what’s happening in my world right now</p>
+			<p style="font-size: 15px;">To view my profile, please Login or Register to access the content</p>
+			<!-- <button id="login"><a href="/login">Login</a></button> -->
+			<button id="login"><a href="/register">Register</a></button>
+		</div>
+
+	</section>
+	</body>
+</html>

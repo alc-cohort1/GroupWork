@@ -28,6 +28,12 @@ return;
     alert("Please Enter Customer Name");
     return;
   }
+  else{
+     
+let koko = document.getElementById("submitForm").addEventListener("submit", capture);
+alert('Hey it is '+koko);
+return;
+  }
 
   if(state.toString().length==3){
     // document.getElementById('spn3').innerHTML="<font color=red>Sorry Name Field is empty";
@@ -70,4 +76,16 @@ function compute(){
 let cost = (price * quantity);
 //cost.toFixed(0);
 //alert('The Cost is'+cost.toFixed(0));
+
+
+//capture form values
+document.getElementById("submitForm").addEventListener("submit", capture);
+document.getElementById("submitForm").addEventListener("submit", capture);
+document.getElementById("submitForm").addEventListener("submit", capture);
+document.getElementById("submitForm").addEventListener("submit", capture);
+
+}
+
+function capture(){
+   alert('Form Values Captured');
 }

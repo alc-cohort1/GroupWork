@@ -14,10 +14,10 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/imagehover.min.css">
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
@@ -26,8 +26,8 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
+  <a class="menu-toggle rounded" href="#" style="background-color: #155d74">
+    Menu
   </a>
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -47,7 +47,7 @@
         <a class="js-scroll-trigger" href="#callout">Experience</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        <a class="js-scroll-trigger" href="#projects">Projects</a>
       </li>
       <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#skills">Skills</a>
@@ -60,10 +60,10 @@
 
   <!-- Header -->
   <header class="masthead d-flex">
-    <div class="container text-center my-auto">
+    <div class="container text-center my-auto bg-transparent">
       <h1 class="mb-1">Olive Nakiyemba</h1>
       <h3 class="mb-5">
-        <em>I can now write code in addition to all the other epic stuff I do i.e. creative writing, audio production & generally being awesome. I've an eye for beautiful things! Ask my Mom.</em>
+        <em>I can now write code in addition to all the other epic stuff I do i.e. creative writing, audio production & generally being awesome. Just ask my Mom.</em>
       </h3>
       <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">More about yours truly...</a>
     </div>
@@ -106,9 +106,9 @@
   </div>
 
   <!-- Callout -->
-  <section class="callout" id="callout">
+  <section class="callout" id="callout" style="margin-top: 30px">
     <div class="container text-center">
-      <h2 class="mx-auto mb-5">Experience</h2>
+      <h3 class="mx-auto mb-5">Experience</h3>
       <table>
         <!-- Various fields for the table: tr = table_row, th = table_heading -->
                    <tr>
@@ -127,14 +127,6 @@
                            through writings that evoke wanderlust so readers can visit Uganda.
                        </th>
                    </tr>
-                   <tr>
-                           <th>01/2013 - 01/2019</th>
-                           <th>Radio One FM90</th>
-                           <th>Kampala, UG</th>
-                           <th>Producer</th>
-                           <th>I was in charge of the content and the 'sound' of what went on air.<br>
-                               I wrote scripts and developed commercials, mentions, classifieds and station promos. I made sure that the great songs that the listeners enjoy were available in the database and in good quality. </th>
-                       </tr>
                        <tr>
                                <th>01/2017 - 01/2017</th>
                                <th>BBC Africa</th>
@@ -150,53 +142,49 @@
                                    <th>Writer</th>
                                    <th>I wrote Ugandan stories about food, culture, travel and everything Ugandan for The Africa Channel audience in the diaspora and on the continent.</th>
                                </tr>
-                               <tr>
-                                       <th>11/2012 - 12/2014</th>
-                                       <th>Monitor Publications LTD</th>
-                                       <th>Kampala, UG</th>
-                                       <th>Writer</th>
-                                       <th>I ran a column in the weekly Full Woman Magazine called My Knight where I got
-                                           to interview the city's "knights" about their lifestyles, work, relationships.
-                                           I occassionally wrote feature stories depending on what was hot at the time.</th>
-                                   </tr>
-                                   
+                                      <tr>
+                                        <th>01/2013 - 01/2019</th>
+                                        <th>Radio One FM90</th>
+                                        <th>Kampala, UG</th>
+                                        <th>Producer</th>
+                                        <th>I was in charge of the content and the 'sound' of what went on air.<br>
+                                            I wrote scripts and developed commercials, mentions, classifieds and station promos. I made sure that the great songs that the listeners enjoy were available in the database and in good quality. </th>
+                                      </tr>
                </table>
        <!-- End of table -->
-      <br><br><a class="btn btn-primary btn-xl js-scroll-trigger" href="#portfolio">Some of the code I've written</a>
+      <br><br><a class="btn btn-primary btn-xl js-scroll-trigger" href="#projects">Some of the code I've written</a>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="content-section" id="portfolio">
+  <!-- Projects -->
+  <section class="content-section" id="projects">
     <div class="container">
       <div class="content-section-heading text-center">
-        <h3 class="text-secondary mb-0">Portfolio</h3>
+        <h3 class="text-secondary mb-0">Projects</h3>
         <h2 class="mb-5">Recent Projects</h2>
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>A website</h2>
-                <p class="mb-0">The task here was to create a responsive personal portfolio website.</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="images/portfolio4.png" alt="">
+          <a class="portfolio-item" href="#" target="blank">
+            <figure class="imghvr-fade">
+              <img src="images/portfolio4.png">
+              <figcaption class="text-center" style="padding-top: 120px">
+                  The task here was to create a responsive portfolio website that showcases my skill and personality.
+              </figcaption>
+          </figure>
           </a>
         </div>
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>An application</h2>
-                <p class="mb-0">Created an application for Toyota that would capture and track mail orders for spare parts..</p>
-              </span>
-            </span>
-            <img class="img-fluid" src="images/portfolio2.png" alt="">
+          <a class="portfolio-item" href="#" target="blank">
+            <figure class="imghvr-fade">
+              <img src="images/portfolio2.png">
+              <figcaption class="text-center" style="padding-top: 140px">
+                  This Toyota app is to capture details of customer and spare parts of mail order sales.
+              </figcaption>
+          </figure>
           </a>
         </div>
-        <div><br><br>&nbsp;&nbsp;<a class="btn btn-dark btn-xl js-scroll-trigger" href="#social">My rich internet social life</a></div>
+        <div><br><br>&nbsp;&nbsp;<a class="btn btn-dark btn-xl btn-center  js-scroll-trigger" href="#social">My rich internet social life</a></div>
       </div>
     </div>
   </section>
@@ -205,16 +193,16 @@
   <section class="content-section bg-primary text-white" id="social">
     <div class="container text-center">
       <h2 class="mb-4" style="color:black;">I'm sort of a big deal on the socials...</h2>
-      <a href="https://twitter.com/oleebranch" class="btn btn-xl btn-light mr-4" target="blank" style="background:#1D809F;" style="color:white">I tweet</a>
+      <a href="https://twitter.com/oleebranch" class="btn btn-xl btn-light mr-4 btn-primary" target="blank">I tweet</a>
       <a href="https://www.instagram.com/oleebranch/" class="btn btn-xl btn-dark" target="blank">Instagram</a> &nbsp; &nbsp; &nbsp; &nbsp;
-      <a href="https://oleebranch.com/" class="btn btn-xl btn-light mr-4" target="blank" style="background:#1D809F;" >and blog.</a>
+      <a href="https://oleebranch.com/" class="btn btn-xl btn-primary mr-4" target="blank">and blog.</a>
     </div>
   </section>
     <!-- Skills -->
     <section class="content-section bg-light" id="skills">
       <div class="container text-center">
-        <h2>Skills</h2>
-        <div class="row">
+        <h3>Skills</h3>
+        <div class="row bg-primary text-white p-5">
           <div class="col-lg-10 mx-auto">
             <div class='resume-block'>
               <div class='section-label--right'></div>
@@ -254,6 +242,25 @@
                       <div class='graph-header'></div>
                       <label>MySQL</label>
                     </div>
+                    <div class='bar'>
+                      <div class='beginner'></div>
+                      <div class='graph-header'></div>
+                      <label>Node JS</label>
+                    </div>
+                    <div class='programming'>
+                      <p>
+                        <h3>Soft Skills</h3>
+                      </p>
+                      <div class='bar'>
+                        <div class='beginner'></div>
+                        <div class='graph-header'></div>
+                        <label>Scrum</label>
+                      </div>
+                      <div class='bar'>
+                        <div class='beginner'></div>
+                        <div class='graph-header'></div>
+                        <label>Agile/Kanban</label>
+                      </div>
                   </div>
                 </figure>
               </div>
@@ -268,7 +275,7 @@
     <div class="container">
       <div style="text-align:center">
         <h2>Contact</h2>
-        <p>Let's meet for a cup tea or coffee or leave a message:</p>
+        <p>Let's meet for a cup tea or a coffee or leave a message:</p>
       </div>
       <div class="row">
         <div class="column">
@@ -280,10 +287,10 @@
             <input type="text" id="fname" name="firstname" placeholder="Your name...">
             <label for="lname">Last Name</label>
             <input type="text" id="lname" name="lastname" placeholder="Your last name...">
-            <label for="country">Country</label>
-            <input type="text" id="country" name="country" placeholder="Your country...">
+            <label for="website">Wesbite</label>
+            <input type="text" id="country" name="country" placeholder="Your website...">
             <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:120px"></textarea>
             <input type="submit" value="Submit">
           </form>
         </div>

@@ -142,7 +142,7 @@ app.post("/createSale", (req, res) => {
 });
 
 // This is for the port to be used
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Express server started at port ${PORT}`);
 });

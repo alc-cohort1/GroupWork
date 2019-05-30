@@ -59,10 +59,9 @@ app.post("/auth", function(req, res) {
     connection.query(
       "SELECT * FROM accounts WHERE username = ? AND password = ?",
       [username, password],
-      function(err, results, fields) {
+      function(err, results) {
         if (err) {
           console.log("an error has occured " + err);
-          res.status(500);
           res.end();
         }
         if (results.length > 0) {
@@ -98,16 +97,15 @@ app.post("/register", (req, res) => {
   connection.query(
     "INSERT INTO `accounts` (`username`, `email`, `password`) VALUES (?, ?, ?)",
     [username, email, password],
-    (err, result, field) => {
+    (err, result) => {
       if (err) {
         console.log("an error has occured " + err);
-        res.status(500);
         res.end();
       } else {
         req.session.loggedin = true;
-        req.session.username = username;
+        // req.session.username = username;
         res.redirect("/toyota");
-        res.end();
+        // res.end();
       }
     }
   );
@@ -118,7 +116,7 @@ app.get("/toyota", function(req, res) {
   if (req.session.loggedin) {
     res.sendFile(path.join(__dirname, "/views/toyota.html"));
   } else {
-    res.send("Please login to view this page!");
+    res.send("Please login to view this toyota application");
   }
 });
 

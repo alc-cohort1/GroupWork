@@ -133,4 +133,5 @@ function sales() {
   }
 
   return validData();
+  return false;
 }

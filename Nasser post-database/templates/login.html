@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login Page</title>
+  </head>
+  <style>
+    form {
+      margin-left: 100px;
+      margin: 120px 200px 20px 200px;
+      padding: 20px;
+    }
+    .loginForm {
+      text-align: center;
+    }
+
+    .submit {
+      text-align: center;
+    }
+  </style>
+  <body>
+
+    <!--this form is for login-->
+    <form action="/user_create" method="POST">
+      <div class="loginForm">
+
+            <!--requires to input name-->
+        <div>
+          <label>First Name</label>
+        </div>
+        <div>
+          <input type="text" name="firstName" />
+        </div><p></p>
+        <div>
+          <label>Last Name</label>
+        </div>
+        <div>
+          <input type="text" name="lastName" />
+        </div><p></p>
+
+             <!--requires to Enter password-->
+        <div>
+          <label>Password</label>
+        </div>
+        <div>
+          <input type="password" name="password" />
+        </div><p></p>
+      </div>
+      <div class="submit">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>

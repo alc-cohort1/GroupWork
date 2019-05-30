@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="toyota.css " />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Bhai:400,700,300|Open+Sans:400,600,700,300"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script>
       //function that will be called on form submit
       
@@ -179,8 +184,10 @@ oversize container is choosen or not*/
     <title>TOYOTA APP</title>
     <style>
       /* CSS code block */
-      .top {
-  font-family: Baloo Bhai;
+      * {
+        font-family: Baloo Bhai;
+        
+ 
 }
 
 fieldset {
@@ -191,6 +198,10 @@ fieldset {
   /* background-color: bisque; */
   border: 1px black solid;
   background-image: url(pic.jpg);
+ 
+  
+  
+  
 }
 
 .main-container {
@@ -250,7 +261,7 @@ fieldset {
 button {
   background: transparent;
   border: 1px solid black;
-  background-color:transparent;
+  background-color:white;
   border-radius: 5%;
 }
 .main-container3 {
@@ -269,7 +280,7 @@ button {
   background-color: bisque;
 }
 .table td{
-color: white;
+color:white;
 }
 .ship{
   color:white;
@@ -284,17 +295,34 @@ color: white;
   text-decoration:none;
 }
 
+a{
+  color: black;
+}
+.btn2 .btn3{
+  text-emphasis-color: white;
+
+}
+.main.heading{
+  min-height: 5px;
+  padding-top: 5px;
+}
+.error{
+  color:red;
+}
+
+
+
+
+
     </style>
    
   </head>
 
   <body>
-    <p>
-
-    </p>
+    
+    
     <br/>
-    <br/>
-    <div>
+    <div class="main">
       <h1 class="heading"><strong>Toyota Uganda Ordering App</strong></h1>
     </div>
     <header class="top">
@@ -302,7 +330,12 @@ color: white;
       <form onsubmit=" return validData()" action="/login" method="POST" >
         <!-- <form 
            > -->
+           <!-- <video autoplay muted loop id="myVideo">
+              <source src="all.mp4" type="video/mp4"> -->
+           
+            
         <div class="main-container">
+          
           <div class="customer">
             <fieldset>
               <legend>
@@ -320,17 +353,11 @@ color: white;
                   <td><input type="text"  id="name" name="name" placeholder="Tom Thumb"/></td>
                 </tr>
                 <tr>
-                  <td>Town</td>
-                  <td>
-                    <input
-                   
-                      type="text"
-                      id="state"
-                      name="townCode"
-                      oninput="this.value=this.value.toUpperCase()"
-                    />
-                  </td>
-                  <td>
+                    <tr>
+                        <td>Town:</td>
+      
+                        <td><input type="text"  id="name" name="tn" placeholder="KLA" oninput="this.value=this.value.toUpperCase()"/></td>
+                      <td>
                     <input
                       type="checkbox"
                       id="customerR"
@@ -338,6 +365,8 @@ color: white;
                       checked
                     />Retail Customer
                   </td>
+                      </tr>
+                  
                 </tr>
               </table>
             </fieldset>
@@ -347,21 +376,23 @@ color: white;
               <legend>
                 <h2><strong>Shipping</strong></h2>
               </legend>
-              <br />
+             
               
               <div class="ship">
                 <div>
                   <input type="radio" id="ups" name="shipMethod" checked  />UPS
-                  &nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                   <input type="radio" id="fedex"name="shipMethod" />Fed Ex Ground
                 </div>
+                
                 <br />
-                <br />
+                <br/>
+                <br/>
 
                 <div>
                   <input type="radio" id="postal" name="shipMethod"/>US Posta Air
-                  &nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                   <input type="radio" id="fedair" name="shipMethod" />Fed Ex Air
                 </div>
@@ -386,8 +417,8 @@ color: white;
                 </tr>
                 <tr>
                   <td>Price per part:</td>
-                  <td><input type="text"placeholder="$7.51" id="per" name="price"/></td>
-                  <td>Quantity:<input type="text"placeholder="2" id="quantity" name="quantity" /></td>
+                  <td><input type="text"placeholder="$" id="per" name="price"/></td>
+                  <td>Quantity:<input type="text"placeholder="" id="quantity" name="quantity" /></td>
                 </tr>
                 <td></td>
                 <td>
@@ -412,21 +443,21 @@ color: white;
                 <tr>
                   <td>Cost:</td>
                  
-                  <td><input type="text"placeholder="$15.02" id="Cost" name="thecost" ></td>
+                  <td><input type="text"placeholder="$" id="Cost" name="thecost" ></td>
                 </tr>
                 <tr>
                   <td>Sales Tax:</td>
                   <td>
-                    <input type="text" placeholder="1.50" id="tax" name="thetax" />
+                    <input type="text" placeholder="$" id="tax" name="thetax" />
                   </td>
                 </tr>
                 <tr>
                   <td>Shipping and Handling</td>
-                  <td><input type="text" id="handling"placeholder="14.00"  name="thehandling"/></td>
+                  <td><input type="text" id="handling"placeholder="$"  name="thehandling"/></td>
                 </tr>
                 <tr>
                   <td>Total</td>
-                  <td><input type="text" placeholder="$30.52" id="Total" name="thetotal"  /></td>
+                  <td><input type="text" placeholder="$" id="Total" name="thetotal"  /></td>
                 </tr>
               </table>
             </fieldset>
@@ -438,13 +469,13 @@ color: white;
         btn3 will send you to login page -->
         <div class="main-container3">
           <div class="one">
-            <button class="btn2">Compute</button>
-            <button class="btn2"type="reset">New Order</button>
+            <button class="btn2"><strong>Compute</strong></button>
+            <button class="btn2"type="reset"><strong>New Order</strong></button>
           </div>
 
           <div class="three">
             <!-- <button class="btn3" ><a href=""></a>Exit</button> -->
-            <button class="btn3"><a href="/">Exit</a></button>
+            <button class="btn3"><a href="/"><strong>Exit</strong></a></button>
           </div>
         </div>
         
@@ -453,22 +484,24 @@ color: white;
         <span id ="error1" name="errorMessage">
                 
           </span><br/>
-          <span id ="error2"name="errorMessage">
+          <span id ="error2" class="error"name="errorMessage">
                 
           </span><br/>
-          <span id ="error3"name="errorMessage">
+          <span id ="error3"name="errorMessage"class="error">
                 
           </span><br/>
-          <span id ="error4"name="errorMessage">
+          <span id ="error4"name="errorMessage"class="error">
                 
           </span><br/>
-          <span id ="error5"name="errorMessage">
+          <span id ="error5"name="errorMessage"class="error">
                 
           </span><br/>
-          <span id ="error6"name="errorMessage">
+          <span id ="error6"name="errorMessage"class="error">
+            
               
 
       </form>
+      <!-- </video> -->
      
     </header>
     

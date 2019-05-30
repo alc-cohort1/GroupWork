@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> Toyota Login Form</title>
+    <style>
+        body {
+          background-color: black;
+          padding-left: 400px;
+        }
+        .header {
+          position: center;
+          color: black;
+          align-self: center;
+        }
+        .form {
+          width: 400px;
+          margin: 10px;
+          font-family: 'Times New Roman', Times, serif;
+          padding: 50px;
+          border: 1px solid #dddddd;
+          align-items: center;
+        }
+        .form h1 {
+          text-align: center;
+          color: white;
+          font-size: 24px;
+          padding: 20px 0 20px 0;
+          font-family: 'Times New Roman', Times, serif;
+        }
+        .form input[type="password"],
+        .form input[type="email"],
+        .form input[type="text"] {
+          width: 100%;
+          padding: 15px;
+          border: 1px solid #dddddd;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+          border-radius: 5px;
+        }
+  
+        */ a {
+          /* color: #4d4d4d; */
+        }
+        p {
+          color: black;
+        }
+        button {
+          width: 100%;
+          padding: 15px;
+          background-color: transparent;
+          border-radius: 5px;
+  
+          box-sizing: border-box;
+          cursor: pointer;
+          font-weight: bold;
+          border: 5px solid #dddddd;
+        }
+        button a {
+          color: black;
+          text-decoration: none;
+        }
+        .heading {
+          text-align: center;
+        }
+      </style>
+  </head>
+  <body>
+    <div>
+      <h1>Toyota Motors</h1>
+    </div>
+    <div class="main">
+      <div class="form">
+        <h1 class="heading ">Mail Order Purchase Login</h1>
+        <form action="auth" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit" value="Login">Submit</button><br />
+        </form>
+        <center>
+          <p>Don't Have an Account?</p>
+          <button><a href="toyotaReg.html">Register</a></button>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>

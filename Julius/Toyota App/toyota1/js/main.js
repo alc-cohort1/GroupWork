@@ -10,6 +10,7 @@ function sales() {
   var quantity = record.quantity.value;
   var shipping = document.salesForm.shipping.value;
   var oversize = document.salesForm.oversize;
+  var retailCustomer = document.salesForm.retailCustomer;
   var cost = (pricePerPart * quantity).toFixed(2);
 
   // This function validate the input fields
@@ -40,6 +41,7 @@ function sales() {
       return false;
     } else if (pattern2.test(quantity) || quantity <= 0) {
       document.getElementById("quantity").innerHTML = "Invalid quantity";
+      return false;
     } else {
       return salesTax(cost);
     }
@@ -52,9 +54,11 @@ function sales() {
 
     this.cost = amount;
     // Calculating the sales tax for Kampala, Mbarara, Entebbe and other towns
-    if (town === "KLA") {
+    if (town === "KLA" && retailCustomer.checked) {
       tax = this.cost * 0.1;
-    } else if (town === "EBB" || town === "MBR") {
+    } else if (town === "EBB" && retailCustomer.checked) {
+      tax = this.cost * 0.05;
+    } else if (town === "MBR" && retailCustomer.checked) {
       tax = this.cost * 0.05;
     } else {
       tax = 0.0;
@@ -107,14 +111,15 @@ function sales() {
 
   // Function to calculate the total cost
   function totalCost() {
-    // Total cost = cost + tax + shipping cost
-    var total =
+    var total = (
       parseFloat(cost) +
-      parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
+      parseFloat(window.totalShippingCost) +
+      parseFloat(window.tax)
+    ).toFixed(2);
 
     document.getElementById("total").innerHTML = `$ ${total}`;
   }
 
-  validData();
-  return false;
+  return validData();
+  // return false;
 }

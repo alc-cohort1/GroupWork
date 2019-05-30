@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,197 +8,504 @@
     <title>Toyota Uganda Limited</title>
     <link rel="stylesheet" href="toyota.css"/>
     <h1>Toyota Mail Order</h1>
+    <!-- This is to confirm if the user wants to leave the application page and to eventually leave the application -->
+    <script>
+        function getConfirmation() {
+            var returnVal = confirm("Do you want to leave this page?");
+            if (returnVal === true) {
+                document.getElementById("body").style.display = "none";
+            } else {
+                return false;
+            }
+        }
+    </script>
+<style>
+.container{
+    width: 1520px;
+    height: 650px;
+    padding-top: 20px;
+}
+
+.container .inner {
+    width: 1200px;
+    height: 550px;
+    background-color: pink;
+    margin-left: 150px;
+}
+
+.container .inner .top{
+    height:220px;
+    background-color: #FBCEB1   ;
+    padding-top: 10px;
+    display: flex;
+}
+
+.container .inner .top .topLeft{
+    height: 200px;
+    margin-left: 10px;
+    background-color: #F79862;
+    width: 600px;
+}
+
+.container .inner .top .topLeft .one{
+    height: 50px;
+    margin-left: 10px;
+    display: flex;
+}
+
+.container .inner .top .topLeft .one .customerInput input{
+    height: 37px;
+    margin-left: 20px;
+}
+
+.container .inner .top .topLeft .two .nameInput  input{
+    height: 37px;
+    margin-left: 74px;
+    width: 400px;
+}
+
+.container .inner .top .topLeft .three .townInput input{
+    height: 37px;
+    margin-left: 80px;
+    width: 80px;
+}
+
+.container .inner .top .topLeft .three .retailCustomer input{
+    margin-left: 60px;
+}
+
+.container .inner .top .topLeft .two{
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: flex;
+}
+
+.container .inner .top .topLeft .three{
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: flex;
+}
+
+.container .inner .top .topRight{
+    height: 200px;
+    margin-left: 20px;
+    background-color:#F79862;
+    width: 560px;
+}
+
+.container .inner .middle .middleLeft{
+    height: 200px;
+    margin-left: 10px;
+    background-color: #F79862;
+    width: 600px;
+}
+
+.container .inner .middle .middleRight{
+    height: 200px;
+    margin-left: 20px;
+    background-color:#F79862;
+    width: 560px;
+}
+
+.container .inner .middle{
+    height:220px;
+    background-color:#FBCEB1;
+    padding-top: 10px;
+    display: flex;
+  
+}
+
+.container .inner .bottom{
+    height:80px;
+    background-color: #FBCEB1;
+    padding-top: 10px;
+    display: flex;
+}
+
+.container .inner .bottom .bottomOne{
+    width: 200px;
+    height: 50px;
+    background-color:#F79862;
+    margin-left: 10px;
+}
+
+.container .inner .bottom .bottomOne .compute{
+    background-color:#F79862;
+}
+
+
+.container .inner .bottom .bottomTwo{
+    width: 200px;
+    height: 50px;
+    background-color: #F79862;
+    margin-left: 20px;
+}
+
+.container .inner .bottom .bottomThree{
+    width: 200px;
+    height: 50px;
+    background-color:#F79862;
+    margin-left: 560px;
+}
+
+.container .inner .top .topRight .topShip{
+    display: flex;
+    padding-top: 20px;
+}
+
+.container .inner .top .topRight .bottomShip{
+    display: flex;
+    padding-top: 50px;
+}
+
+.container .inner .top .topRight .fedG{
+    margin-left: 120px;
+}
+
+.container .inner .top .topRight .bottomShip .fedA{
+    margin-left: 50px;
+}
+
+.container .inner .middle .middleLeft .partOrd .partNum{
+    display: flex;
+}
+
+.container .inner .middle .middleLeft .partOrd .partNum .numInput{
+    margin-left: 20px;
+    
+}
+
+.container .inner .middle .middleLeft .partOrd .description{
+    display: flex;
+}
+
+.container .inner .middle .middleLeft .partOrd .description .descripInput{
+    margin-left: 35px;
+}
+
+
+.container .inner .middle .middleLeft .partOrd .price{
+    display: flex;
+    width: 300px;
+  }
+
+.container .inner .middle .middleLeft .partOrd .price .priceInput{
+    width: 100px; 
+    height: 37px;
+    margin-left: 8px;
+}
+.container .inner .middle .middleLeft .partOrd .price{
+    width: 400px;
+    margin-right: 600px;    
+}
+
+.price .priceLabel {
+    width: 120px;
+    height: 25px;
+}
+
+.quantity{
+    display: flex;
+}
+
+
+.container .inner .middle .middleLeft .partOrd .price .quantityLabel{
+    margin-left: 10px;
+  
+}
+.container .inner .middle .middleRight .output .costLabel{
+    display: flex;
+    padding-bottom: 2px;
+}
+
+.container .inner .middle .middleRight .output .costInput{
+    margin-left: 140px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    
+}
+
+.container .inner .middle .middleRight .output .handlingInput{
+    margin-left: 10px;
+    position: relative;
+    bottom: 15px;
+}
+
+.container .inner .middle .middleRight .output .taxInput{
+    margin-left: 180px;
+    position: relative;
+    top: -15px;
+}
+
+
+.container .inner .middle .middleRight .output .tax{
+  
+    padding-bottom: 5px;
+}
+.container .inner .middle .middleRight .output .handling{
+    display: flex;
+    padding-bottom: 15px;
+
+}
+
+.container .inner .middle .middleRight output .handling .handlingInput{
+    margin-left: 158px;
+}
+
+.container .inner .middle .middleRight .output .total{
+    display: flex;
+    padding-top: 0px;
+
+}
+.container .inner .middle .middleRight .output .total .totalInput{
+    margin-left: 138px;
+}
+
+#totalInput{
+    height: 20px;
+    position: relative;
+    top: 0px;
+}
+
+/* styling buttons */
+#compute{
+    height: 50px;
+    width: 200px;
+    background-color:#F79862;
+}
+#newOrder{
+    height: 50px;
+    width: 200px;
+    background-color:#F79862;
+}
+#exit{
+    height: 50px;
+    width: 200px;
+    background-color:#F79862;
+}
+
+
+fieldset{
+    height: 180px;
+}
+
+#name, #partNum, #describe {
+    width: 200px;
+    margin-left:0px;
+    padding-left: 0px;
+}
+</style>
 </head>
 <body>
+    <Script src="./index.js"></Script>
     <!-- The field for capturing customer information -->
-    <div class="container">
-        <div class="inner">
-            <div class="top">
-                <div class="topLeft">
-                    <fieldset>
-                        <legend>
-                            Customer Information
-                        </legend>
-                        <div class="one">
-                            <div class="customerLabel">
-                                <label>
-                                    Customer ID:
-                                </label>
+    <form name="toyataUganda" onsubmit="return validData()">
+        <div class="container">
+            <div class="inner">
+                <div class="top">
+                    <div class="topLeft">
+                        <fieldset>
+                            <legend>
+                                Customer Information
+                            </legend>
+                            <div class="one">
+                                <div class="customerLabel">
+                                    <label>
+                                        Customer ID:
+                                    </label>
+                                </div>
+                                <div class="customerInput">
+                                    <input type="text" name="customerId" id="customerId" placeholder="123-45-6789" style="width: 50%;">
+                                    <span id="customerId_error"></span>
+                                </div>
                             </div>
-                            <div class="customerInput">
-                                <input type="text" name="customer"id=""placeholder="123-45-6789"> <span id="customer"></span>
+                            <div class="two">
+                                <div class="nameLabel">
+                                    <label>
+                                        Name:
+                                    </label>
+                                </div>
+                                <div class="nameInput">
+                                    <input type="text" name="name" id="name" placeholder="Awesome Naki" style="width: 180px";>
+                                    <span id="name_error" style="width: 200px;"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="two">
-                            <div class="nameLabel">
-                                <label>
-                                    Name:
-                                </label>
+                            <div class="three">
+                                <div class="townLabel">
+                                    <label>
+                                        Town:
+                                    </label>
+                                </div>
+                                <div class="stateInput">
+                                    <input type="text" name="town" placeholder="EBB" id="town"
+                                        oninput="this.value=this.value.toUpperCase('')" style="width:50px;">
+                                    <span id="town_error"></span>
+                                </div>
+                                <div class="retailCustomer">
+                                    <input type="checkbox" name="retail" checked name="Retail Customer" id="retail">Retail
+                                    Customer
+                                </div>
                             </div>
-                            <div class="nameInput">
-                                <input type="text" name="name" id="" placeholder="Awesome Naki">
+                        </fieldset>
+                    </div>
+
+                    <!-- the field for capturing the shipping details -->
+                    <div class="topRight" class="shipping">
+                        <fieldset>
+                            <legend>
+                                Shipping
+                            </legend>
+                            <div class="topShip">
+                                <div class="ups">
+                                    <input type="radio" name="shipping" checked class="ups">UPS
+                                </div>
+                                <div class="fedG">
+                                    <input type="radio" name="shipping">FedEx Ground
+                                </div>
                             </div>
-                        </div>
-                        <div class="three">
-                            <div class="townLabel">
-                                <label>
-                                    Town:
-                                </label>
+                            <div class="bottomShip">
+                                <div class="upsA">
+                                    <input type="radio" name="shipping">US Postal Air
+                                </div>
+                                <div class="fedA">
+                                    <input type="radio" name="shipping">FedEx Air
+                                </div>
                             </div>
-                            <div class="stateInput">
-                                <input type="text" name="town" placeholder="EBB" id="town" oninput="this.value=this.value.toUpperCase('')>
-                            </div>
-                            <div class="retailCustomer">
-                                <input type="checkbox" name="retail" id="">Retail Customer
-                            </div>
-                        </div>
-                    </fieldset>
+                        </fieldset>
+                    </div>
                 </div>
 
-<!-- the field for capturing the shipping details -->
-                <div class="topRight">
-                    <fieldset>
-                        <legend>
-                            Shipping
-                        </legend>
-                        <div class="topShip">
-                            <div class="ups">
-                                <input type="radio">UPS
-                            </div>
-                            <div class="fedG">
-                                <input type="radio">FedEx Ground
-                            </div>
-                        </div>
-                        <div class="bottomShip">
-                            <div class="upsA">
-                                <input type="radio">US Postal Air
-                            </div>
-                            <div class="fedA">
-                                <input type="radio">FedEx Air
-                            </div>
-                        </div>  
-                    </fieldset>
-                </div>
-            </div>
-
-<!-- The information about the part ordered -->
-            <div class="middle">
-                <div class="middleLeft">
-                    <fieldset>
-                        <legend>
-                            Part Ordered
-                        </legend>
-                        <div class="partOrd">
-                            <div class="partNum">
-                                <div class="partLabel">
-                                    <label class="num">
-                                        Part Number:
-                                    </label>
+                <!-- The information about the part ordered -->
+                <div class="middle" class="partOrdered">
+                    <div class="middleLeft">
+                        <fieldset>
+                            <legend>
+                                Part Ordered
+                            </legend>
+                            <div class="partOrd">
+                                <div class="partNum">
+                                    <div class="partLabel">
+                                        <label class="num">
+                                            Part Number:
+                                        </label>
+                                    </div>
+                                    <div class="numInput">
+                                        <input type="text" placeholder="10152" id="partNumber">
+                                        <span id="partNumber_error"></span>
+                                    </div>
                                 </div>
-                                <div class="numInput">
-                                    <input type="text" placeholder="10152">
+                                <div class="description">
+                                    <div class="descripLabel">
+                                        <label>
+                                            Description
+                                        </label>
+                                    </div>
+                                    <div class="descripInput">
+                                        <input type="text" id="describe" placeholder="Oil Filter">
+                                        <span id="describe_error"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="description">
-                                <div class="descripLabel">
-                                    <label>
-                                        Description
-                                    </label>
+                                <div class="price">
+                                    <div class="priceLabel">
+                                        <label>
+                                            Price per Part:
+                                        </label>
+                                    </div>
+                                    <div class="priceInput">
+                                        <input type="text" placeholder="$7.51" id= "price" style="width:50px;">
+                                        <span id="price_error"></span>
+                                    </div>
                                 </div>
-                                <div class="descripInput">
-                                    <input type="text" placeholder="Oil Filter">
-                                </div>
-                            </div>
-                            <div class="price">
-                                <div class="priceLabel">
-                                    <label>
-                                        Price per Part:
-                                    </label>
-                                </div>
-                                <div class="priceInput">
-                                    <input type="text" placeholder="$7.51">
-                                </div>
-                                <div class="quantityLabel">
-                                    <label>
-                                        Quantity
-                                    </label>
-                                </div>
-                                <div class="quantityInput">
-                                    <input type="text" placeholder="2">
-                                </div>
-                            </div>
-                            <div class="overSize">
-                                <input type="checkbox" name="retail" id="">Oversize Container?
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-
-<!-- The section to capture out/cost of the order -->
-                <div class="middleRight">
-                    <fieldset>
-                        <legend>
-                            Output
-                        </legend>
-                        <div class="output">
-                            <div class="cost">
-                                <div class="costLabel">
-                                    <label>
-                                        Cost:
-                                    </label>
-                                    <div class="costInput">
-                                        <input type="text" placeholder="$15.02">
+                                <div class="quantity">
+                                    <div class="quantityLabel">
+                                        <label>
+                                            Quantity
+                                        </label>
+                                    </div>
+                                    <div class="quantityInput">
+                                        <input type="text" placeholder="2" style="width:50px;" id="quantity">
+                                        <span id="quantity_error"></span>
+                                    </div>
+                                    <div class="overSize">
+                                        <input type="checkbox" name="retail" id="">Oversize Container?
                                     </div>
                                 </div>
                             </div>
-                            <div class="tax">
-                                <div class="taxLabel">
-                                    <label>
-                                        Sales Tax:
-                                    </label>
-                                </div>
-                                <div class="taxInput">
-                                    <input type="text" placeholder="1.50">
-                                </div>
-                            </div>
-                            <div class="handling">
-                                <div class="handlingLabel">
-                                    <label>
-                                        Shipping & Handling:
-                                    </label>
-                                </div>
-                                <div class="handlingInput">
-                                    <input type="text" placeholder="14.00">
-                                </div>
-                            </div>
-                            <div class="total">
-                                <div class="totalLabel">
-                                    <label>
-                                        Total:
-                                    </label>
-                                </div>
-                                <div class="totalInput">
-                                    <input type="text" placeholder="$30.52">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
+                        </fieldset>
+                    </div>
 
-<!-- The section for the buttons -->
-            <div class="bottom">
-                <div class="bottomOne">
-                    <input type="submit" value="Compute" id="compute">
+                    <!-- The section to capture out/cost of the order -->
+                    <div class="middleRight">
+                        <fieldset>
+                            <legend>
+                                Output
+                            </legend>
+                            <div class="output">
+                                <div class="cost">
+                                    <div class="costLabel">
+                                        <label>
+                                            Cost:
+                                        </label>
+                                        <div class="costInput">
+                                            <input type="text" placeholder="">
+                                            <span id="cost"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tax">
+                                    <div class="taxLabel">
+                                        <label>
+                                            Sales Tax:
+                                        </label>
+                                    </div>
+                                    <div class="taxInput">
+                                        <input type="text" placeholder="">
+                                        <span id="salesTax"></span>
+                                    </div>
+                                </div>
+                                <div class="handling">
+                                    <div class="handlingLabel">
+                                        <label>
+                                            Shipping & Handling:
+                                        </label>
+                                    </div>
+                                    <div class="handlingInput">
+                                        <input type="text" placeholder="">
+                                        <span id="handling"></span>
+                                    </div>
+                                </div>
+                                <div class="total">
+                                    <div class="totalLabel">
+                                        <label>
+                                            Total:
+                                        </label>
+                                    </div>
+                                    <div class="totalInput">
+                                        <input type="text" placeholder="" id="totalInput">
+                                        <span id="total"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
                 </div>
-                <div class="bottomTwo">
-                    <input type="submit" value="New Order" id="newOder">
-                </div>
-                <div class="bottomThree">
-                    <input type="submit" value="Exit" id="exit">
+
+                <!-- The section for the buttons -->
+                <div class="bottom">
+                    <div class="bottomOne">
+                        <input type="submit" value="Compute" id="compute" class="compute">
+                    </div>
+                    <div class="bottomTwo">
+                        <input type="reset" value="New Order" id="newOrder">
+                    </div>
+                    <div class="bottomThree">
+                        <input type="button" class="exit" value="Exit" id="exit" onsubmit="getConfirmation()">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>  
+    </form>
 </body>
 </html>

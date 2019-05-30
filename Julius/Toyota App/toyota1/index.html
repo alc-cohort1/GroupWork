@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <title>Sales Form</title>
     <script>
+      // the exit button
       function getConfirmation() {
         var returnVal = confirm("Do you want to really exit ?");
         if (returnVal === true) {
@@ -19,8 +20,15 @@
     </script>
   </head>
   <body id="body">
-    <form name="salesForm" onsubmit="return sales()">
+    <!-- The toyota sales form -->
+    <form
+      name="salesForm"
+      onsubmit="return sales()"
+      action="/sales"
+      method="POST"
+    >
       <div class="box">
+        <!-- The customer information field set -->
         <fieldset>
           <legend>Customer Information</legend>
           <div class="customerInfo">
@@ -61,6 +69,7 @@
         </fieldset>
       </div>
       <div class="box">
+        <!-- The shipping section fieldset -->
         <fieldset>
           <legend>Shipping</legend>
           <div class="shipping">
@@ -84,6 +93,7 @@
         </fieldset>
       </div>
       <div class="box">
+        <!-- The part ordered section field set -->
         <fieldset>
           <legend>Part Ordered</legend>
           <div class="partOrdered">
@@ -118,6 +128,7 @@
         </fieldset>
       </div>
       <div class="box">
+        <!-- The field set for the output -->
         <fieldset>
           <legend>Output</legend>
           <div class="output">
@@ -132,14 +143,18 @@
           </div>
         </fieldset>
       </div>
+      <!-- The bottom section -->
       <div class="bottom">
+        <!-- The submit button for computation -->
         <div>
           <input type="submit" value="Compute" name="compute" />
         </div>
+        <!-- The reset button for the new order -->
         <div>
           <input type="reset" value="New Order" name="newOrder" />
         </div>
         <div></div>
+        <!-- The exit button -->
         <div>
           <input
             type="button"

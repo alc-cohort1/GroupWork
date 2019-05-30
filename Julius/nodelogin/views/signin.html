@@ -4,14 +4,26 @@
     <meta charset="utf-8" />
     <title>Login Form Tutorial</title>
     <style>
+      body {
+        background-image: url("../images/toyota2.jpg");
+        background-size: 100%;
+      }
+
+      .container {
+        width: 500px;
+        height: 400px;
+        color: #fff;
+        margin: 20px;
+      }
+
       .login-form {
-        width: 300px;
-        margin: 0 auto;
+        width: 500px;
+        margin: 0 20px;
         font-family: Tahoma, Geneva, sans-serif;
       }
       .login-form h1 {
         text-align: center;
-        color: #4d4d4d;
+        color: #ddd;
         font-size: 24px;
         padding: 20px 0 20px 0;
       }
@@ -22,6 +34,8 @@
         border: 1px solid #dddddd;
         margin-bottom: 15px;
         box-sizing: border-box;
+        text-align: center;
+        font-size: 18px;
       }
       .login-form input[type="submit"] {
         width: 100%;
@@ -33,21 +47,46 @@
         font-weight: bold;
         color: #ffffff;
       }
+
+      /* Styling the register page link */
+      .register {
+        text-align: center;
+        padding: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #190233;
+      }
+
+      .register a {
+        text-decoration: none;
+        font-size: 20px;
+        color: #81118b;
+      }
+
+      .register a:hover {
+        font-size: 25px;
+      }
     </style>
   </head>
   <body>
-    <div class="login-form">
-      <h1>Login Form</h1>
-      <form action="auth" method="POST">
-        <input type="text" name="username" placeholder="Username" required />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <input type="submit" />
-      </form>
+    <div class="container">
+      <div class="login-form">
+        <h1>Please log in</h1>
+        <form action="auth" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input type="submit" />
+        </form>
+      </div>
+      <div class="register">
+        <p>If you don't have an account...</p>
+        <a href="/signup">Register here</a>
+      </div>
     </div>
   </body>
 </html>

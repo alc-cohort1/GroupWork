@@ -1,3 +1,13 @@
+// the exit button
+function getConfirmation() {
+  var returnVal = confirm("Do you want to really exit ?");
+  if (returnVal === true) {
+    document.getElementById("body").style.display = "none";
+  } else {
+    return false;
+  }
+}
+
 function sales() {
   // Variables for keeping the form values
   var record = document.salesForm;
@@ -19,14 +29,15 @@ function sales() {
     var pattern2 = /[^0-9]/;
 
     if (!customerId || customerId.match(pattern1)) {
-      document.getElementById("customerId").innerHTML = " Invalid Customer ID";
+      document.getElementById("customerId").innerHTML =
+        " Enter a Correct customer ID";
       return false;
     } else if (!name) {
-      document.getElementById("name").innerHTML = " Invalid Customer name";
+      document.getElementById("name").innerHTML = " Enter a correct name";
       return false;
     } else if (town.length != 3) {
       document.getElementById("town").innerHTML =
-        " Town code must be 3 characters";
+        " Town code must be 3 letters";
       return false;
     } else if (!partNumber) {
       document.getElementById("partNumber").innerHTML =
@@ -118,8 +129,8 @@ function sales() {
     ).toFixed(2);
 
     document.getElementById("total").innerHTML = `$ ${total}`;
+    return true;
   }
 
   return validData();
-  // return false;
 }

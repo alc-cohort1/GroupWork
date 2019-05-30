@@ -147,10 +147,10 @@
     }
     /* Styling for the footer */
     .footer{
-       height: 19px;
+       height: 9px;
        width: 100%;
        margin-bottom:0px;
-       padding-top: 5px;
+       padding-top: 15px;
        padding-bottom: 39px;
        background-color: #F79862
      }
@@ -281,18 +281,17 @@
 
         // Function to calculate the total cost
         function totalCost() {
-          var total = parseFloat(cost) + parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
+          var total = (parseFloat(cost) + parseFloat(window.totalShippingCost) + parseFloat(window.tax)).toFixed(2);
           document.getElementById("total").innerHTML = `$ ${total}`;
         }
         
         validData();
-        return false;
       }
     </script>
   </head>
   <body>
     <div class="head">          
-      <center><p><strong>TOYOTA UGANDA LIMITED</strong></p></center> 
+      <center><p><strong>TOYOTA MAIL ORDER SYSTTEM</strong></p></center> 
     </div>
     <form name="toyotaForm" onsubmit="return sales()" method="POST" action="createSale">
       <div class="wrapper">
@@ -324,7 +323,7 @@
                   </div>
                   <div>
                     <input type="text" name="town" class="shortInput" placeholder="CIA" oninput="this.value=this.value.toUpperCase()" maxlength="3">
-                    <input type="checkbox" checked name="retail Customer" value="Retail Customer" class="retailerCheck" id="customer">Retail Customer<br>
+                    <input type="checkbox" checked name="retailCustomer" value="Retail Customer" class="retailerCheck" id="customer">Retail Customer<br>
                     <span id="town"></span>
                 </div>
               </div>
@@ -432,6 +431,6 @@
         </div>
       </div>
     </form>    
-    <div class="footer"><center><p><strong>Design by Oyee James</strong</p></center></div> 
+    <div class="footer"><center><p><strong>&copy Copyright 2019 | Designed by Oyee James</strong</p></center></div> 
   </body>
 </html>

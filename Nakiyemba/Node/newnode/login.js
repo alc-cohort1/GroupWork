@@ -95,6 +95,6 @@ app.get('/home', function(request, response) {
 });
 
 // The alert that will show in my console when the server starts at a particular port
-app.listen(3009,() => {
-	console.log('Express at server 3002!');
+app.listen(3000,() => {
+	console.log('Express at server 3000!');
 });

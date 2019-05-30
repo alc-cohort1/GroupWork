@@ -2,6 +2,7 @@
 
 function ValidateData()
 {   
+    //Variable input from the Toyota HTML page are declared here.
     const customerID = document.getElementById("customer_id");
     const re_customerID = /^[(A-Z)(0-9)-]{2,15}$/;
     
@@ -34,6 +35,7 @@ function ValidateData()
     var us_postal = document.getElementById('us_postal')
     var fed_ex_a = document.getElementById('fed_ex_a')
 
+    //Validation of the input fields within the Toyota HTML page.
     if(!re_customerID.test(customerID.value)){
         document.getElementById("customer_span").innerHTML="Please Enter a Valid ID";
         return false;
@@ -94,8 +96,7 @@ function ValidateData()
         return false;
     }
 
-   
-
+    //This block of code perform the the calculations of the tax and the total amount to be paid.
     else{
 
         if(retail.checked){

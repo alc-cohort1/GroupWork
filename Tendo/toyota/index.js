@@ -63,8 +63,6 @@ return;
 
      let cost = (price * quantity);
 alert('The Cost is '+cost.toFixed(0));
-
-
 }
 
 //Make Form Computations

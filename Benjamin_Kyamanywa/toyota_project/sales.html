@@ -7,8 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Toyota Uganda</title>
-    <script src="app_validation.js"></script>
-    <script src="server.js"></script>
     <style>
         /* Styling for the main wrapper */
         .wrapper {  
@@ -81,13 +79,43 @@
             border: none;
             margin: 4px 0 0 0;
         }
+
+        .button-style:hover {
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: rgb(255, 182, 113);
+            border: none;
+            margin: 4px 0 0 0;
+        }
+
+        .output-display {  
+            height: 22px;
+            text-align: right;
+            background-color: #fff;
+        }
     </style>
   </head>
+  <script>
+        function exit() {
+          var returnVal = confirm("Do you want to really exit ?");
+          if (returnVal === true) {
+            document.getElementById("body").style.display = "none";
+          } else {
+            return false;
+          }
+        }
+      </script>
   <body>
-
+        <!-- Header -->
+        <div class="container">
+        <div>
+            <h2 class="text-center">TOYOTA ORDER SALES</h2>
+        </div>
+        </div>
       <div class="container wrapper">
           <!-- Form -->
-          <form name="sales_form" action="order_form" method="POST" onsubmit="return orderForm()">
+          <form name="sales_form" onsubmit="return order()">
           <div class="row">
             <!-- Section that captures Customer Information -->
             <div class="col-sm-8">
@@ -97,18 +125,18 @@
                 <!-- Label for customer id -->
                 <div class="row">
                     <div class="col-sm"><label for="customer_id">Customer ID: </label></div>
-                    <div class="col-sm-9"><input type="text" name="customer_id"><span id="customer_id_error"></span></div>
+                    <div class="col-sm-9"><input type="text" name="customer_id" placeholder="88-88-88" ><span id="customer_id_error"></span></div>
                 </div>
                 <!-- Label for name -->
                 <div class="row">
                     <div class="col-sm"><label for="name">Name: </label></div>
-                    <div class="col-sm-9"><input type="text" name="name"><span id="name_error"></span></div>
+                    <div class="col-sm-9"><input type="text" name="name" placeholder="John Doe"><span id="name_error"></span></div>
                 </div>
                 <!-- Label for town -->
                 <div class="row">
                     <div class="col-sm"><label for="state">Town: </label></div>
-                    <div class="col-sm-6"><input type="text" name="town" oninput="this.value=this.value.toUpperCase()" maxlength="3"><span id="town_error"></span></div>
-                    <div class="col-sm"><input type="checkbox"  name="retail_customer" value="Retail Customer" checked> &nbsp; Retail Customer</div>
+                    <div class="col-sm-6"><input type="text" name="town" placeholder="KLA" oninput="this.value=this.value.toUpperCase()" maxlength="3"><span id="town_error"></span></div>
+                    <div class="col-sm"><input type="checkbox"  name="retail_customer"  value="Retail Customer" checked> &nbsp; Retail Customer</div>
                 </div>
                 </fieldset>
                 </div>
@@ -141,19 +169,19 @@
                     <!-- Part Number label -->
                     <div class="row">
                         <div class="col-sm-2"><label for="part">Part Number: </label></div>
-                        <div class="col-sm-9"><input type="text" name="part"><span id="part_error"></span></div>
+                        <div class="col-sm-9"><input type="text" name="part" placeholder="12345"><span id="part_error"></span></div>
                     </div>
                     <!-- Description label -->
                     <div class="row">
                             <div class="col-sm-2"><label for="description">Description: </label></div>
-                            <div class="col-sm-9"><input type="text" name="description"><span id="description_error"></span></div>
+                            <div class="col-sm-9"><input type="text" name="description" placeholder="eg Tyres"><span id="description_error"></span></div>
                         </div>
                     <!-- Price Per Part Label -->
                     <div class="row">
                             <div class="col-sm-2"><label for="price_per_part">Price Per Part: </label></div>
-                            <div class="col-sm"><input type="text" name="price_per_part"><span id="price_error"></span></div>
-                            <div class="col-sm-2"><label for="price_per_part">Quantity: </label></div>
-                            <div class="col-sm"><input type="text" name="quantity"><span id="quantity_error"></span></div>
+                            <div class="col-sm"><input type="text" name="price_per_part" placeholder="eg $40"><span id="price_error"></span></div>
+                            <div class="col-sm-2"><label for="Quantity">Quantity: </label></div>
+                            <div class="col-sm"><input type="text" name="quantity" placeholder="eg 5"><span id="quantity_error"></span></div>
                     </div>
                     <div class="row justify-content-sm-center ">
                         <div class="col-sm-2"></div>
@@ -170,22 +198,26 @@
                 <!-- Cost Label -->
                 <div class="row">
                     <div class="col-sm-4"><label for="cost">Cost: </label></div>
-                    <div class="col-sm-8"><span id="cost"></span></div>
+                    <div class="col-sm-6 output-display"><span id="cost"></span></div>
+                    <div class="col-sm-2"></div>
                 </div>
                 <!-- Sales Tax Label -->
                 <div class="row">
                         <div class="col-sm-4"><label for="sales-tax">Sales Tax: </label></div>
-                        <div class="col-sm-8"><span id="salestax"></span></div>
+                        <div class="col-sm-6 output-display"><span id="salestax"></span></div>
+                        <div class="col-sm-2"></div>
                 </div>
                 <!-- Shipping & Handling Label -->
                 <div class="row">
                         <div class="col-sm-4"><label for="shipping-&-handling">Shipping & Handling: </label></div>
-                        <div class="col-sm-8"><span id="shipping"></span></div>
+                        <div class="col-sm-6 output-display"><span id="shipping"></span></div>
+                        <div class="col-sm-2"></div>
                 </div>
                 <!-- Total Label -->
                 <div class="row">
                         <div class="col-sm-4"><label for="total">Total: </label></div>
-                        <div class="col-sm-8"><span id="total"></span></div>
+                        <div class="col-sm-6 output-display"><span id="total"></span></div>
+                        <div class="col-sm-2"></div>
                 </div>
                 </fieldset>
                 </div>
@@ -195,30 +227,31 @@
             <!-- Buttons -->
             <div class="row">
                 <div class="col-sm-2">
-                    <button class="button-style" value="submit" type="submit">Compute</button>
+                    <input class="button-style" type="button" value="Compute" name="compute">  
                 </div>
-                <div class="col-sm-3">
-                    <button class="button-style" type="reset">New Order</button>
+                <div class="col-sm-3">   
+                    <input class="button-style" type="reset" value="New Order">
                 </div>
                 <div class="col-sm-5"></div>
                 <div class="col-sm-2">
-                    <button class="button-style" type="reset">Exit</button>
+                    <input class="button-style" type="button" value="Exit" onclick="exit()">
                 </div>
             </div>
         </form>
-        <script> 
-        
+          </div>
+        <script>
+        <!--
         // Function that is called when an order is submitted
-        function orderForm(){
+        function order(){
         // Variables that keep values from the form inputs
         var customerId = document.sales_form.customer_id.value;
         var name = document.sales_form.name.value;
         var town = document.sales_form.town.value;
         var part = document.sales_form.part.value;
         var description = document.sales_form.description.value;
-        var pricePerPart = document.sales_form.sales_per_part.value;
+        var pricePerPart = document.sales_form.price_per_part.value;
         var quantity = document.sales_form.quantity.value;
-        var cost = (price_per_part * quantity).toFixed(2);//to two decimal places
+        var cost = (pricePerPart * quantity).toFixed(2);//to two decimal places
 
         function validData() {
         var noSpace = /\s/;
@@ -308,13 +341,12 @@
                //displaying total
                document.getElementById("total").innerHTML = `$ ${total}`;
            }   
-        validData();
         
-    }
-        
+           validData();  
+    }    
+        -->
         </script>
-    
-
+        
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

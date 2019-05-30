@@ -10,14 +10,14 @@ var crypto = require('crypto');
 
 
 //set port
-const port = 4000;
+const port = 5000;
 
 //create databases  connection profile
 let connection = mysql.createConnection({
     host     : 'localhost',
 	user     : 'root',
 	password : 'tendo',
-	database : 'toyotalogin'
+	database : 'profile'
 
 });
 
@@ -32,8 +32,6 @@ global.db = connection;
 
 //initialize express and configure some of it's packages
 let app = express();
-//app.use('/',express.static(__dirname+'index.css'))
-//app.use('/',express.static(__dirname+'index.js'))
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -46,11 +44,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'static')));
 app.set('port', process.env.port || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render toyota form
-//app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
-//app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
-app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
-
-//app.set('view engine', 'html'); // configure template engine
+app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
+app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
+app.set('views', __dirname + '/views'); // set express to look in this folder to render  views
+app.set('img', __dirname + '/img'); // set express to look in this folder to render images
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // parse form data client
 
@@ -59,13 +56,10 @@ app.use(bodyParser.json()); // parse form data client
 
 //login form route
 app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/views/login.html'));
+	response.sendFile(path.join(__dirname + '/index.html'));
 });
 
-//registration form route
- app.get('/register', function(request, response) {
-	response.sendFile(path.join(__dirname + '/views/register.html'));
- });
+
 
 //Toyota form route
  app.get('/index', function(request, response) {
@@ -129,16 +123,7 @@ connection.query(querystring,[username,hash,email], (err, results, field)=>{
 
 
 
-//return main page
-app.get('/index1', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
-		response.sendFile(path.join(__dirname +'/index.html'));
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
+
 
 app.listen(port,()=>{
 	//console.log('Running on Port : ${port}'+${port});

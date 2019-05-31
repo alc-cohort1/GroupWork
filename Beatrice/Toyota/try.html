@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-image: url("../img/car.jpg");
+    }
+  </style>
+</head>
+<body>
+div.met
+
+<a href="#" id="close-window">Close this window tab</a>
+<p id="exit">Exit</p>
+<input type="button" value="Close this window" onclick="self.close()">
+<input type="button" value="Close this window" onclick="windowClose();">
+<div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+<script type="text/javascript">
+  document.getElementById("close-window").addEventListener("click", function(){ 
+       window.close();
+   });
+   document.getElementById("exit").addEventListener("click", function(){ 
+       window.close();
+   });
+   
+   function windowClose() {
+window.open('','_parent','');
+window.close();
+}
+
+</script>
+
+</body>
+</html>

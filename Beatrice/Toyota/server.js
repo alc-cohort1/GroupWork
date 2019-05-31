@@ -12,8 +12,9 @@ var connection = mysql.createConnection({
 	password : '123@#Beat',
 	database : 'toyota'
 });
+//Accessing files in the public folder
+app.use(express.static(path.join(__dirname, 'public')));
 // creatiing express function that stores a session
-
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -84,15 +85,15 @@ app.post('/auth', function(request, response) {
 	}
 });
 //function that loads the index page
-app.get('/home', function(request, response) {
-	if (request.session.loggedin) {
-        // response.send('Welcome back, ' + request.session.username + '!');
-        response.send()
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
+// app.get('/home', function(request, response) {
+// 	if (request.session.loggedin) {
+//         response.send('Welcome back, ' + request.session.username + '!');
+//         // response.send()
+// 	} else {
+// 		response.send('Please login to view this page!');
+// 	}
+// 	response.end();
+// });
 /*
 Function that captures data from the customer form and posts it to the database 
 */
@@ -117,7 +118,8 @@ app.post('/order', function(request, response) {
                 console.log('An error occured' + err)
                 response.status(500)
                 return
-            } else {
+            } 
+            else {
                 response.redirect('/home');
             }
             response.end();
@@ -127,7 +129,15 @@ app.post('/order', function(request, response) {
     }
     response.end();
 });
+app.get('/logout', function(request, response){
+request.session.loggedin = false;
+if (!request.session.loggedin){
+    // request.redirect('/');
+    response.redirect('/register');
+}    
+});
 
-//creating port nmber
-app.listen(5056);
+
+//creating port number
+app.listen(5001);
 

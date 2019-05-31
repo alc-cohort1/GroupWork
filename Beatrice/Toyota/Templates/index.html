@@ -13,44 +13,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- <script> 
+            var Window; 
+
+            // function that Closes the open Window 
+            function windowClose() { 
+                Window.close(); 
+            } 
+        </script> -->
     <style>
-            /*    */
+            /*  style for the container  */
         .container {
             padding-top: 8px;
-            background-color: #fff0e6;
+            background-color: #efeffd;
             margin-top: 13px;
             padding-bottom: 10px;
+            background-image: url("../img/tyota.jpg");
         
         }
         .content {
             padding-top: 8px;
-            background-color: #fff0e6;
+            background-color: #eeeefc;
             margin-top: 13px;
             margin-left: 50px;
             margin-right: 50px;
             padding-left:50px;
             padding-right:50px;
             padding-bottom: 10px;
+            max-height: 557px;
+            max-width: 1500px;
         
         }
         /* style for the section divs */
         #field{
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e6e6ff;
             padding: 2px; 
-            background-color: #fdaf7b;
+            background-color: #ccccff;
             
         }
         #field2{
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e6e6ff;
             padding: 2px; 
-            background-color: #fdaf7b;
+            background-color: #ccccff;
             width: 400px;
             
         }
         #fie{
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e6e6ff;
             padding: 10px; 
-            height: 270px;
+            height: 235px;
+            
         }
         /* style for the legend */
         #leg{
@@ -61,22 +73,33 @@
             padding: 0 10px;
         }
         button {
-            background-color: #fdaf7b;
+            background-color: #ccccff;
         }
         #btn {
-            background-color: #fdaf7b;
+            background-color: #ccccff;
         }
         #exit {
             width: 80px;
         }
         #output {
-            background-color: #faf0e8;
+            background-color: white;
             width: 150px;
-            height: 30px;
+            height: 25px;
         }
     </style>
 </head>
-<body>
+<body >
+        <nav class="navbar ">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Toyota</a>
+                  </div>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                  </ul>
+                </div>
+              </nav>
     <div class="content">
            <!-- sales form -->
             <form action="order" method="POST" name="form" onsubmit="return orders()">
@@ -124,7 +147,7 @@
                             <legend id="leg"><h3>Shipping</h3></legend>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input type="radio" name="shipping"> &nbsp;UPS
+                                    <input type="radio" name="shipping" checked> &nbsp;UPS
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="radio" name="shipping"> &nbsp;Fed Ex Ground
@@ -237,12 +260,14 @@
                             </div> 
                             <div class="col-sm-4"></div>
                             <div class="col-sm-3">
-                                    <button type="" id="exit">Exit</button>
+                            
+                                    <!-- <button type="button" id="exit" onclick="windowClose()"> Exit</button> -->
+                                   <!-- <button type="exit" onclick="windowClose()">Close </button>  -->
                                 </div>                       
                     </div>     
          
             </form>
-        
+            
     </div>
     <script>
     function orders() {
@@ -257,6 +282,7 @@
         var shipping = document.form.shipping.value;
         var oversize = document.form.oversizecontainer.value;
         var cost = (price_per_part * quantity).toFixed(2);//to two decimal places
+
 
             /*
             This function validates the customer form to check if the user input is correct
@@ -343,7 +369,7 @@
                 }
                 //Calculating total shipping & handling cost
                 totalShippingCost = (quantity * (shippingCost + handlingCost)).toFixed(2);
-                //displaying total shipping cost
+                //displaying total shipping and handling cost
                 document.getElementById("shipping").innerHTML = `$ ${totalShippingCost}`;
 
                 this.getshippingCost = function() {
@@ -357,12 +383,20 @@
                var total = parseFloat(cost) + parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
                //displaying total
                document.getElementById("total").innerHTML = `$ ${total}`;
-           }   
+
+               return closeMe();
+           }  
+           //Function that closes the window
+        //    function closeMe(){
+        //         document.getElementById("exit").addEventListener("click", function(){ 
+        //             window.close();
+        //         });
+        //    } 
         validData();
-        // return false;
+        return false;
         
     }  
-        
+  
    
     </script>
 </body>

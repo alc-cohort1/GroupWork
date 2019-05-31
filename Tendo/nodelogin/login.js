@@ -69,7 +69,14 @@ app.get('/', function(request, response) {
 
 //Toyota form route
  app.get('/index', function(request, response) {
-	response.sendFile(path.join(__dirname + '/views/index.html'));
+	 if(request.session.loggedin ==true){
+		response.sendFile(path.join(__dirname + '/views/index.html'));
+	 }
+	else{
+		response.sendFile(path.join(__dirname + '/views/login.html'));
+		//response.send( document.getElementsByTagName('h3').innerHTML="<font color=red>");
+		response.send('<html><font color=red>Please Login First to Access The Application <a style="text-decoration:none" href="/">Login</a> ');
+	}
 });
 
 //create new user

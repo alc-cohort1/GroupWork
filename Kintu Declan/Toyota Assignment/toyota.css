@@ -80,11 +80,12 @@
 
 #output 
 { 
-    flex: 1;
+    flex: 1; 
     padding-bottom: 1em;
     padding-left: 2em;
     padding-top: 0.5em;
     margin-top: 1em;
+    display: flex;
 }
 
 #button_left { flex: 1; }

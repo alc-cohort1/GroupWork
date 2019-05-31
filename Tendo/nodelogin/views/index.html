@@ -17,7 +17,7 @@
         <div class="w3-row ">
         <!--Customer Information Division-->    
   <div class="w3-col " style="width:60%" id="inf">
-    <fieldset id="customr"><legend>Customer Information</legend>
+    <fieldset id="customr"><legend><b>Customer Information</b></legend>
                     
         <table>
             <tr><td><label class="w3-label ">Customer ID:</label>
@@ -74,7 +74,7 @@
                             <tr><td><label class="w3-validate">Description</label></td><td><input type="text" class="w3-input w3-border" id="description" name="cost" placeholder="Oil Filter"></td></tr>
                            
                         <tr><td> <label class="w3-validate">Price Per Part:</label></td><td colspan="5"><input type="number" class="w3-input w3-border" id="cost" name="cost" placeholder="$">
-                        </td><td>Quantity:</td><td><input type="number" class="w3-input w3-border " id="price-per-part" name="cost" placeholder="2"></td></tr>
+                        </td><td>Quantity:</td><td><input type="number" class="w3-input w3-border " id="price-per-part" name="cost" placeholder=""></td></tr>
                    
                         <tr><td><input class="w3-check" type="checkbox"></td>
                    <td>Oversize Container ?</td>
@@ -85,7 +85,7 @@
 <!--Part Buttons Div-->
 <div class="w3-row">
     
-        &nbsp &nbsp<button class="compute"  onclick="ValidData()">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order">New Order</button>
+        &nbsp &nbsp<button class="compute"  onclick="ValidData()">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order" onclick="clear()">New Order</button>
        
     </div>
 </div>
@@ -105,13 +105,17 @@
 <!--Buttons Div-->
 <br>
 <div class="w3-row">
-        <button class="exit">Exit</button>
+        <button class="exit" onclick="closeWin()">Exit</button>
         <!-- <input type="button"  class="exit" value="Exit1">  -->
 </div>
 </div>
 </div>
 
 </form>
+<!-- <div class="w3-row">
     
+    &nbsp &nbsp<button class="compute"  onclick="ValidData()">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order1" onclick="clear()">New Order</button>
+   <input type="button"  value="fggfg" class="order" onclick="alert('    gas ')" >
+</div> -->
 </body>
 </html>

@@ -1,0 +1,200 @@
+<html>
+	<head>
+		  <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/myjs.js"></script>
+  <style type="text/css">
+  	label{
+
+  font-weight:bold;
+  	}
+
+  	fieldset{
+  padding:2px 10px;
+  border:2px solid white;
+  background-color:#F79862;
+  border-radius: 2px;
+  	}
+  	legend{
+  		 font-weight:bold;
+  		 /*background-color:#FFA62F;*/
+  		 font-size: 16px;
+  		 width: 70px; 
+  		 font-family:verdana;
+  	}
+.butn{
+background-color:#FFA62F;
+width:120px;
+height:40px;
+font-weight:bold;
+border-radius:5px;
+/*border:1px solid black;*/
+}
+.butn:focus {
+ border:3px dotted blue;
+}
+
+  	
+  </style>
+	</head>
+	<body>
+
+		<div class="container" style="background-color: #FBCEB1; margin-top: 15px;padding: 15px;">
+			<!--error div-->
+					  <div class="alert alert-danger" style="background-color: red;color: white; display: none;" id="ErrorDiv">
+    <img src="alert.png" height="20px;"><strong><span id="error"></span></strong>
+  </div>
+			<form class="form-horizontal" name="formToyota" onsubmit="return ValidData()" method="post" action="toyota_post">
+			<div class="row">
+				<div class="col-6">
+<div style="background-color:#F79862;">
+					<fieldset >
+						<legend style="width: 210px">Customer Information</legend>
+						<div class="row">
+							
+							<div class="col-4"><label>Customer Id</label> </div>
+							<div class="col-4" ><div class="form-group"><input type="text" name="customerId" id="customerId" class="form-control" placeholder="123-45-6789" autocomplete="off" pattern="[0-9a-zA-Z_.-]*" title="Username should only contain lowercase letters. e.g. john" autofocus></div></div>
+							<div class="col-4"></div>
+
+						</div>
+						<div class="row">
+							<div class="col-4"><label>Name</label> </div>
+							<div class="col-8"><div class="form-group"><input type="text" name="customerName" id="customerName" class="form-control" placeholder="Tom Thumb"></div></div>
+						</div>
+							<div class="row">
+							<div class="col-4"><label>Town</label> </div>
+							<div class="col-4"><div class="form-group">
+</select><input type="text" name="town" id="town" class="form-control" placeholder="CA" pattern="[A-Za-z]{3}" title="Three letter Town code" maxlength="3" oninput="this.value=this.value.toUpperCase()"  ></div></div>
+							<div class="col-4"><label><div class="checkbox">
+  <label><input type="checkbox" value="" name="customer" id="customer" checked >Retail Customer</label>
+</div></div>
+						</div>
+						
+						
+					</fieldset>
+</div>
+				</div>
+				<div class="col-6">
+<div style="background-color:#F79862;">
+					<fieldset>
+						<legend>Shiping</legend>
+						<br>
+						<div class="row">
+							<div class="col-6"><input type="radio" name="shipping" id="ups" checked><label>UPS </label> </div>
+							<div class="col-6"><input type="radio" name="shipping" id="fedGround"><label>Fed Ex Ground </label> </div>
+						</div>
+						
+							<div class="row">
+							<div class="col-6"><input type="radio" name="shipping" id="usPostal"><label>US Postal Air</label> </div>
+							<div class="col-6"><input type="radio" name="shipping" id="fedAir"><label>Fed Ex Air</label> </div>
+						</div>
+						<br><br><br>
+					</fieldset>
+					</div>
+				</div>
+				
+			</div>
+
+
+			<div class="row">
+				<div class="col-6">
+<div style="background-color:#F79862; margin-top:20px;">
+					<fieldset style="padding-top: 5px">
+						<legend style="width: 180px">Part Ordered</legend>
+						<div class="row">
+							<div class="col-4"> <label>Part Number</label></div>
+							<div class="col-8"><div class="form-group"><input type="text" name="partNo" id="partNo" class="form-control" placeholder="10152"></div></div>
+							
+						</div>
+						<div class="row">
+							<div class="col-4"> <label>Description</label></div>
+							<div class="col-8"><div class="form-group"><input type="text" name="desc" id="desc" class="form-control" placeholder="Oil Filter"></div></div>
+							
+						</div>
+						<div class="row">
+							<div class="col-4"> <label>Price Per Part</label></div>
+							<div class="col-3"><div class="form-group"><input type="text" name="price" id="price" class="form-control" placeholder="$7.51" style="text-align: right;"></div></div>
+							<div class="col-3"><label> Quantity</label></div>
+							<div class="col-2"><div class="form-group"><input type="text" name="quantity" id="quantity"class="form-control" placeholder="2" style="text-align: right;"></div></div>
+						</div>
+												<div class="row">
+							<div class="col-4"></div>
+							<div class="col-8"><div class="form-group"><label><div class="checkbox"><label><input type="checkbox" value="" name="oversize" id="oversize" >Oversize Container</label></div>
+                        </div></div>
+							
+						</div>
+					
+					</fieldset>
+</div>
+				</div>
+				<div class="col-6">
+<div style="background-color:#F79862 ; margin-top:20px;">
+					<fieldset style="padding-top: 5px">
+						<legend>Output</legend>
+						<div class="row">
+							<div class="col-6"><label>Cost</label>  </div>
+							<div class="col-6"><div class="form-group"><b><input type="text" name="cost" class="form-control" placeholder="" style="text-align: right;" readonly></b> </div>
+						</div></div>
+							<div class="row">
+							<div class="col-6"><label>Sales Tax  </label></div>
+							<div class="col-6"><div class="form-group"><b><input type="text" name="sales" placeholder="" class="form-control" style="text-align: right;" readonly></b> </div>
+						</div></div>
+						<div class="row" >
+							<div class="col-6"><label>Shipping & Handling</label></div>
+							<div class="col-6"><div class="form-group"><b><input type="text" name="shipper" placeholder="" class="form-control" style="text-align: right;" readonly></b> </div></div>
+						</div>
+							<div class="row" class="form-group">
+							<div class="col-6"><label>Total</label></div>
+							<div class="col-6"><div class="form-group"><b><input type="text" name="total" placeholder="" class="form-control" style="text-align: right; font-weight: 700;color: blue" readonly></b> </div></div>
+						</div>
+					</fieldset>
+</div>
+					
+				</div>
+				
+			</div>
+		
+		<div class="row">
+				<div class="col-6">
+					
+						
+						<div class="row">
+							<div class="col-4"><button class="butn"style="margin-top: 10px">Compute</button></div>
+							<div class="col-4"><input type="reset" value="New Order" class="butn"style="margin-top: 10px"></div>
+							<div class="col-4"></div>
+						</div>
+
+						
+						</div>
+					
+				
+				<div class="col-6">
+					
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-4"></div>
+							<div class="col-4"><button class="butn" style="margin-top: 10px;" onclick="windowClose();">Exit</button></div>
+						</div>
+
+						
+						</div>
+				</div>
+				
+			</div>
+			
+		</form>
+		</div>
+	</body>
+</html>
+<script>
+	<!--
+
+
+
+function windowClose() {
+window.open('','_parent','');
+window.close();
+}
+-->
+</script>

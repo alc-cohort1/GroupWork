@@ -1,9 +1,4 @@
-/*!
- * Start Bootstrap - Stylish Portfolio v5.0.4 (https://startbootstrap.com/template-overviews/stylish-portfolio)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/blob/master/LICENSE)
- */
-
+/* styling for the body */
 body,
 html {
   width: 100%;
@@ -45,10 +40,6 @@ h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Map */
-.map {
-  height: 30rem;
-}
 
 @media (max-width: 992px) {
   .map {
@@ -191,7 +182,7 @@ h6 {
   height: 50px;
   text-align: center;
   color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+  background: rgba(238, 2, 2, 0.5);
   line-height: 50px;
   z-index: 999;
 }
@@ -203,6 +194,7 @@ h6 {
 .menu-toggle:hover {
   background: #343a40;
 }
+
 
 .service-icon {
   background-color: #fff;
@@ -374,4 +366,6 @@ a:hover, a:focus, a:active {
 
 .text-secondary {
   color: #ecb807 !important;
+  
 }
+

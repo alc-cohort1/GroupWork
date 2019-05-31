@@ -284,9 +284,9 @@
                 
                         }
                         /*
-                        This function compues the sales tax*/
+                        This function computes the sales tax*/
                         function salesTax(amount){
-                            //displaying cost
+                            //Displaying cost
                             document.getElementById("cost").innerHTML = `$ ${cost}`;
                                 
                             this.cost = amount;
@@ -301,7 +301,7 @@
                             //Displaying the sales tax
                             document.getElementById("salestax").innerHTML = `$ ${tax.toFixed(2)}`;
             
-                            // getter for the total tax
+                            // Getter for the total tax
                             this.getTax = function() {
                             return tax;
                             };
@@ -321,7 +321,7 @@
                             } else {
                             shippingCost = 12.0;
                             }
-                            //oversize container
+                            //Oversize container
                             if (oversize.checked) {
                             handlingCost = 5.0;
                             } else {
@@ -341,7 +341,7 @@
                        // Function to calculate the total cost
                        function totalCost(){
                            var total = parseFloat(cost) + parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
-                           //displaying total
+                           //Displaying total
                            document.getElementById("total").innerHTML = `$ ${total}`;
                        }   
                        

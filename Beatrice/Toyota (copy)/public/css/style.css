@@ -1,0 +1,64 @@
+           /*  style for the container  */
+           .container {
+            padding-top: 8px;
+            background-color: red;
+            margin-top: 13px;
+            padding-bottom: 10px;
+            background-image: url("../img/tyota.jpg");
+        
+        }
+        .content {
+            padding-top: 8px;
+            background-color: #eeeefc;
+            margin-top: 13px;
+            margin-left: 50px;
+            margin-right: 50px;
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom: 10px;
+            max-height: 557px;
+            max-width: 1500px;
+        
+        }
+        /* style for the section divs */
+        #field{
+            border: 1px solid #e6e6ff;
+            padding: 2px; 
+            background-color: #ccccff;
+            
+        }
+        #field2{
+            border: 1px solid #e6e6ff;
+            padding: 2px; 
+            background-color: #ccccff;
+            width: 400px;
+            
+        }
+        #fie{
+            border: 1px solid #e6e6ff;
+            padding: 10px; 
+            height: 235px;
+            
+        }
+        /* style for the legend */
+        #leg{
+            border-style: none;
+            font-size: 12px;
+            margin-bottom: 0;
+            width: auto;
+            padding: 0 10px;
+        }
+        button {
+            background-color: #ccccff;
+        }
+        #btn {
+            background-color: #ccccff;
+        }
+        #exit {
+            width: 80px;
+        }
+        #output {
+            background-color: white;
+            width: 150px;
+            height: 25px;
+        }

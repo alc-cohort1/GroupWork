@@ -46,9 +46,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'static')));
 app.set('port', process.env.port || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render toyota form
-//app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
-//app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
-app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
+app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
+app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
+app.set('views', __dirname + '/img'); //render images using express
 
 //app.set('view engine', 'html'); // configure template engine
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -69,7 +69,14 @@ app.get('/', function(request, response) {
 
 //Toyota form route
  app.get('/index', function(request, response) {
-	response.sendFile(path.join(__dirname + '/views/index.html'));
+	 if(request.session.loggedin ==true){
+		response.sendFile(path.join(__dirname + '/views/index.html'));
+	 }
+	else{
+		response.sendFile(path.join(__dirname + '/views/login.html'));
+		//response.send( document.getElementsByTagName('h3').innerHTML="<font color=red>");
+		response.send('<html><font color=red>Please Login First to Access The Application <a style="text-decoration:none" href="/">Login</a> ');
+	}
 });
 
 //create new user

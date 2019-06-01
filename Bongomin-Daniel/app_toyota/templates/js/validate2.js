@@ -1,21 +1,10 @@
+/*--------------------------------------------------------------- 
+
+Validate Function that handles Validation,Declaration of Vraiables
+
+------------------------------------------------------------------*/
 function validate() {
-
-    // var customerId = document.forms["toyotaForm"]["customerId"];
-    // var name = document.forms["toyotaForm"]["name"];
-    // var state = document.forms["toyotaForm"]["state"];
-    // var retailCustomer = document.forms["toyotaForm"]["retailCustomer"];
-    // var partNumber = document.forms["toyotaForm"]["partNumber"];
-    // var description = document.forms["toyotaForm"]["description"];
-    // var price = document.forms["toyotaForm"]["price"];
-    // var quantity = document.forms["toyotaForm"]["quantity"];
-    // var cost = document.forms["toyotaForm"]["cost"];
-    // cost = (price.value * quantity.value).toFixed(2);
-    // var salesTax = document.forms["toyotaForm"]["salesTax"];
-    // var salesAndHanding = document.forms["toyotaForm"]["salesAndHanding"];
-    // var total = document.forms["toyotaForm"]["total"];
-    // var shipping = document.toyotaForm.shipping.value;
-
-    //second declaration
+  // variables declaration
   var record = document.toyotaForm;
   var customerId = record.customerId.value;
   var name = record.name.value;
@@ -29,8 +18,11 @@ function validate() {
   var retailCustomer = document.toyotaForm.retailCustomer;
   var cost = (price * quantity).toFixed(2);
 
+/*-----------------------------------------------------------------------
 
-  // This function validate the input fields
+validateData Function Handles Validation of input fields of the application
+
+--------------------------------------------------------------------------*/
   function validData() {
     var pattern1 = /\s/;
     var pattern2 = /[^0-9]/;
@@ -63,13 +55,18 @@ function validate() {
     }
   }
 
-  // Function to compute the amount of the sales tax
+  /*---------------------------------------------------------------------------------
+  SalesTax Function Calculates the Amount of Sales Tax by taking tax,cost,town/state
+  -----------------------------------------------------------------------------------*/
+
   function salesTax(amount) {
-    // This sends the cost to browser
     document.getElementById("cost").innerHTML = `$ ${cost}`;
 
     this.cost = amount;
-    // Calculating the sales tax for Kampala, Mbarara, Entebbe and other towns
+  /*--------------------------------------------------------------------
+  Calculating the sales tax for Kampala, Mbarara, Entebbe and other towns
+  ----------------------------------------------------------------------*/
+
     if (state === "KLA" && retailCustomer.checked) {
       tax = this.cost * 0.1;
     } else if (state === "EBB" && retailCustomer.checked) {
@@ -80,7 +77,7 @@ function validate() {
       tax = 0.0;
     }
 
-    // This send the Sales Tax to the browser
+   
     document.getElementById("salesTax").innerHTML = `$ ${tax.toFixed(2)}`;
 
     // getter for the total tax
@@ -90,8 +87,10 @@ function validate() {
 
     return shippingHandling();
   }
+/*----------------------------------------------------------------
+  function shippingHandling computes cost of shipping and handling
+  ----------------------------------------------------------------*/
 
-  // Function to compute cost of shipping and handling
   function shippingHandling() {
     // Calculating the shipping cost
     if (shipping === "UPS") {
@@ -125,7 +124,9 @@ function validate() {
     return totalCost();
   }
 
-  // Function to calculate the total cost
+  /*------------------------------------------
+  totalCost Function computes the total cost
+  --------------------------------------------*/
   function totalCost() {
     var total = (
       parseFloat(cost) +

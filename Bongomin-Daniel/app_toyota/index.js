@@ -84,8 +84,8 @@ app.post('/toyota_app', (req, res) => {
         console.log("an error has occured " + err);
         res.status(500);
       }
-      res.redirect("/");
-      res.end();
+      //res.redirect("/home");
+      //res.end();
     });
 });
 

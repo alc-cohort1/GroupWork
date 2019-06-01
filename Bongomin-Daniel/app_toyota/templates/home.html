@@ -49,9 +49,10 @@
       <div class="main_wrapper">
         <form
           name="toyotaForm"
+          onsubmit="return validate();"
           action="/toyota_app"
           method="POST"
-          onsubmit="return validate()"
+         
         >
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -68,7 +69,7 @@
                       class="form-control"
                       id="customerId"
                       name="customerId"
-                      placeholder="Customer Id"
+                      placeholder="2323-45-6789"
                       type="text"
                     />
                     <span id="customerId_err"></span>
@@ -100,7 +101,9 @@
                               class="form-control"
                               id="state"
                               name="state"
-                              placeholder="CA /KLA /MBRA"
+                              oninput="this.value=this.value.toUpperCase()"
+                             maxlength="3"
+                              placeholder="Town / State"
                               type="text"
                             />
                             <span id="state_err"></span>
@@ -112,10 +115,10 @@
                           <label class="form-check-label">
                             <input
                               class="form-check-input"
-                              id="retailCustomer"
-                              name="retailCustomer"
                               type="checkbox"
-                              value="retailCustomer"
+                              checked
+                              name="retailCustomer"
+                              value="Retail Customer"
                             />
                             <span id="retailCustomer_err"></span>
                             Retail Customer
@@ -138,7 +141,8 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
-                          name="shipping"
+                          name="shipping" 
+                          value="UPS" checked
                           type="radio"
                         />
                         UPS
@@ -151,7 +155,8 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
-                          name="shipping"
+                          name="shipping" 
+                          value="Fed Ex Ground"
                           type="radio"
                         />
                         Fixed EX Ground
@@ -167,6 +172,7 @@
                         <input
                           class="form-check-input checkbox"
                           name="shipping"
+                           value="US Portal Air"
                           type="radio"
                         />
                         US Postal Air
@@ -179,7 +185,8 @@
                       <label class="form-check-label">
                         <input
                           class="form-check-input"
-                          name="shipping"
+                          name="shipping" 
+                          value="Fed Ex Air" 
                           type="radio"
                         />
                         Fed Ex Air
@@ -282,9 +289,8 @@
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
-                          name="sizeContainer_check_box"
-                          id="sizeContainer_check_box"
+                          name="oversize"
+                          value="Oversize Container"
                         />
                         Over Size Container ?
                       </label>
@@ -299,68 +305,45 @@
               <fieldset class="border p-2">
                 <legend class="w-auto">Out Put</legend>
                 <!-- <form> -->
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label" for="cost"
-                    >Cost
-                  </label>
-                  <div class="col-sm-9">
-                    <input
-                      class="form-control"
-                      id="cost"
-                      name="cost"
-                      placeholder="Cost"
-                      type="text"
-                      onclick="return cost_calculation()"
-                    />
-                    <span id="cost_err"></span>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label" for="salesTax"
-                    >Sales Tax</label
-                  >
-                  <div class="col-sm-9">
-                    <input
-                      class="form-control"
-                      id="salesTax"
-                      name="salesTax"
-                      placeholder="Sales Tax"
-                      type="text"
-                    />
-                    <span id="salesTax"></span>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label" for="salesAndHanding"
-                    >Ship & Handing</label
-                  >
-                  <div class="col-sm-9">
-                    <input
-                      class="form-control"
-                      id="salesAndHanding"
-                      name="salesAndHanding"
-                      placeholder="sales And Handing"
-                      type="text"
-                    />
-                    <span id="salesAndHanding_err"></span>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-sm-3 col-form-label" for="total"
-                    >Total</label
-                  >
-                  <div class="col-sm-9">
-                    <input
-                      class="form-control"
-                      id="total"
-                      name="total"
-                      placeholder="Total"
-                      type="text"
-                    />
-                    <span id="total_err"></span>
-                  </div>
-                </div>
-
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" for="cost"
+                          >Cost
+                        </label>
+                        <div class="col-sm-9">
+                            <div id="cost"></div>
+                          
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" for="salesTax"
+                          >Sales Tax</label
+                        >
+                        <div class="col-sm-9">
+                            <div id="salesTax"></div>
+          
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" for="salesAndHanding"
+                          >Ship & Handing</label
+                        >
+                        <div class="col-sm-9">
+                          
+                          <div id="handling"></div>
+                          
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" for="total"
+                          >Total</label
+                        >
+                        <div class="col-sm-9">
+                      
+                          <div id="total"></div>
+          
+                        </div>
+                      </div>
+                  
                 <!-- </form> -->
               </fieldset>
             </div>
@@ -381,7 +364,7 @@
                 
                 &nbsp &nbsp
 
-                <button type="reset" class="btn btn-lg btn-default" id="newOrderBtn">
+                <button type="reset" value="New Order" name="newOrder" class="btn btn-lg btn-default" id="newOrderBtn">
                     <i class="fas fa-redo"></i>
                   new Order
                 

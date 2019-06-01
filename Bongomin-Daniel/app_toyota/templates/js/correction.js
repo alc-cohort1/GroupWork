@@ -1,34 +1,18 @@
-function validate() {
 
-    // var customerId = document.forms["toyotaForm"]["customerId"];
-    // var name = document.forms["toyotaForm"]["name"];
-    // var state = document.forms["toyotaForm"]["state"];
-    // var retailCustomer = document.forms["toyotaForm"]["retailCustomer"];
-    // var partNumber = document.forms["toyotaForm"]["partNumber"];
-    // var description = document.forms["toyotaForm"]["description"];
-    // var price = document.forms["toyotaForm"]["price"];
-    // var quantity = document.forms["toyotaForm"]["quantity"];
-    // var cost = document.forms["toyotaForm"]["cost"];
-    // cost = (price.value * quantity.value).toFixed(2);
-    // var salesTax = document.forms["toyotaForm"]["salesTax"];
-    // var salesAndHanding = document.forms["toyotaForm"]["salesAndHanding"];
-    // var total = document.forms["toyotaForm"]["total"];
-    // var shipping = document.toyotaForm.shipping.value;
-
-    //second declaration
+function sales() {
+  // Variables for keeping the form values
   var record = document.toyotaForm;
   var customerId = record.customerId.value;
   var name = record.name.value;
-  var state = record.state.value;
+  var town = record.town.value;
   var partNumber = record.partNumber.value;
   var description = record.description.value;
-  var price = record.price.value;
+  var pricePerPart = record.pricePerPart.value;
   var quantity = record.quantity.value;
-  var shipping = document.toyotaForm.shipping.value;
-  var oversize = document.toyotaForm.oversize;
-  var retailCustomer = document.toyotaForm.retailCustomer;
-  var cost = (price * quantity).toFixed(2);
-
+  var shipping = document.salesForm.shipping.value;
+  var oversize = document.salesForm.oversize;
+  var retailCustomer = document.salesForm.retailCustomer;
+  var cost = (pricePerPart * quantity).toFixed(2);
 
   // This function validate the input fields
   function validData() {
@@ -36,28 +20,30 @@ function validate() {
     var pattern2 = /[^0-9]/;
 
     if (!customerId || customerId.match(pattern1)) {
-      document.getElementById("customerId_err").innerHTML = " Invalid Customer ID";
+      document.getElementById("customerId").innerHTML =
+        " Enter a Correct customer ID";
       return false;
     } else if (!name) {
-      document.getElementById("name_err").innerHTML = "  Customer name is missing";
+      document.getElementById("name").innerHTML = " Enter a correct name";
       return false;
-    } else if (state == "" || state.length < 3) {
-      document.getElementById("state_err").innerHTML =
-        " state code must be 3 characters";
+    } else if (town.length != 3) {
+      document.getElementById("town").innerHTML =
+        " Town code must be 3 letters";
       return false;
     } else if (!partNumber) {
-      document.getElementById("partNumber_err").innerHTML =
+      document.getElementById("partNumber").innerHTML =
         " Part Number cannot be missing";
       return false;
     } else if (!description) {
-      document.getElementById("description_err").innerHTML =
+      document.getElementById("description").innerHTML =
         " Description cannot be missing";
       return false;
-    } else if (isNaN(price) || price <= 0) {
-      document.getElementById("price_err").innerHTML = "Invalid price";
+    } else if (isNaN(pricePerPart) || pricePerPart <= 0) {
+      document.getElementById("pricePerPart").innerHTML = "Invalid price";
       return false;
     } else if (pattern2.test(quantity) || quantity <= 0) {
-      document.getElementById("quantity_err").innerHTML = "Invalid quantity";
+      document.getElementById("quantity").innerHTML = "Invalid quantity";
+      return false;
     } else {
       return salesTax(cost);
     }
@@ -70,11 +56,11 @@ function validate() {
 
     this.cost = amount;
     // Calculating the sales tax for Kampala, Mbarara, Entebbe and other towns
-    if (state === "KLA" && retailCustomer.checked) {
+    if (town === "KLA" && retailCustomer.checked) {
       tax = this.cost * 0.1;
-    } else if (state === "EBB" && retailCustomer.checked) {
+    } else if (town === "EBB" && retailCustomer.checked) {
       tax = this.cost * 0.05;
-    } else if (state === "MBR" && retailCustomer.checked) {
+    } else if (town === "MBR" && retailCustomer.checked) {
       tax = this.cost * 0.05;
     } else {
       tax = 0.0;

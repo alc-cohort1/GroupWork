@@ -19,6 +19,13 @@ app.use('/css', express.static('/templates/css'));
 app.use('/js', express.static('/templates/js'));
 app.use(parser.urlencoded({ extended: false }));
 
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+
 // creating database connection
 
 var dbConnection = mysql.createConnection({
@@ -38,13 +45,15 @@ dbConnection.connect(err => {
   console.log('connection to the database succeded')
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/templates/index.html"));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/templates/index.html'))
 });
 
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname + '/templates/login.html'))
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "/templates/home.html"));
 });
+
+
 
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname + '/templates/register.html'))
@@ -75,8 +84,8 @@ app.post('/toyota_app', (req, res) => {
         console.log("an error has occured " + err);
         res.status(500);
       }
-      res.redirect("/");
-      res.end();
+      //res.redirect("/home");
+      //res.end();
     });
 });
 
@@ -97,40 +106,52 @@ app.post("/register", (req, res) => {
         res.status(500);
         return
       }
-   
+
+      res.redirect('/');
+
     }
-  );
+  );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 });
 
 // handling post request from the login form
 
-app.post('/login',function(req,res){
+app.post('/login', function (req, res) {
   // creating two variable that hold username and password
   var email = req.body.email;
   var password = req.body.password;
   // checking if the username and password exists
-  if(email && password){
-      var sql ='SELECT * FROM users WHERE email = ? AND password = ?';
-      dbConnection.query(sql,[email,password],function(error,results,fields){
-          // checking if the two data are available in the database table accounts
-          if(results.length > 0){
-              req.session.loggedin = true;
-              req.email.session = email;
-              res.redirect('/');
-          }else{
-              res.send('incorrect Credentials try again');
-          }
-          res.end();
-
-      });
-  }else{
-      res.send('please enter email and password');
+  if (email && password) {
+    var sql = 'SELECT * FROM users WHERE email = ? AND password = ?';
+    dbConnection.query(sql, [email, password], function (error, results, fields) {
+      // checking if the two data are available in the database table accounts
+      if (results.length > 0) {
+        req.session.loggedin = true;
+        req.session.email = email;
+        res.redirect('/home');
+      } else {
+        res.send('incorrect Credentials try again');
+      }
       res.end();
+
+    });
+  } else {
+    res.send('please enter email and password');
+    res.end();
   }
 });
 
+app.get('/', (req,res)=>{
+  if(req.session.loggedin){
+    res.sendFile(path.join(__dirname, '/templates/login.html'))
+  }
+  else{
+    console.log('please log in')
+  }
+  res.end();
+})
+
 // declaring a port on which to run the app
-var PORT = process.env.PORT || 8002;
+var PORT = process.env.PORT || 8000;
 
 // Binding to the Port
 app.listen(PORT, () => {

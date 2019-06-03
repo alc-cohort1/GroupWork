@@ -3,6 +3,8 @@
 //Sets Default settings on startup
 function start(){
   document.getElementById('id').focus();
+  document.getElementById("cust").checked=true;
+  document.getElementById('oversize-container').checked=false;
 }
 
 function ValidData(){
@@ -66,10 +68,60 @@ function ValidData(){
        return true;
   }
 
-  //this function maintains only one shipping option selected
+  //COST : computes purchases
+  function calcCost(){
+    let price = document.getElementById('Price').value;
+    let quantity=document.getElementById('price-per-part').value;
+    let cst = (price*quantity);
+     
+    alert('The Value is'+cst+' and the Rounded  to'+cst.toFixed(0));
+     return cst.toFixed(0);
+  }
+  //COST : computes purchases
+  function cost(){
+    // let price = document.getElementById('cost').value;
+    // let quantity=document.getElementById('price-per-part').value;
+    // let cst = (price*quantity);
+     
+       alert('The Cost is '+cst.toFixed(0));
+            return cst.toFixed(0);
+      }
+
+       //SALES TAX :computes sales taxes
+
+     
+  function salesTax(){
+    let validate = ValidData();
+    let town=document.getElementById('state').value.toUpperCase();
+    let towncode= ["KLA","EBB","MBR"];
+  let customerType=document.getElementById("cust").checked;
+  if(validate==true){
+    if(town==towncode[0] && customerType==true){
+      alert('Client Has to Pay '+calcCost()+'Including a Tax of '+(calcCost()*(10/100)));
+      return (calcCost()*(10/100));
+    }
+    if((town==towncode[1] || town==towncode[2]) && customerType==true ){
+      alert('EBB or MBR Tax is '+(calcCost()*(5/100))+'%');
+      return (calcCost()*(5/100));
+    }
+
+    if((town!=towncode[0] || town!=towncode[1] || town!=towncode[2])  && customerType==true){
+      alert('This Customer Has to pay '+calcCost()+" With No Tax");
+      return;
+    }
+    else if(customerType==false){
+      alert(calcCost);
+    }
+    else 
+    return;
+  }
+      
+    }
+
+  //CLEAR: this function maintains only one shipping option selected
 function select(){
   
-  let ups= document.getElementById('ups').ckecked=true;
+  let ups= document.getElementById('ups').checked=true;
   let fedexg=document.getElementById('fedexg').checked=false;
 let usportal=document.getElementById('usportal').checked=false;
 let fedexa=document.getElementById('fedexa').checked=false;
@@ -87,13 +139,13 @@ else{}
 }
   //This clears Text fields back to their defaults
   function clear(){
-
     document.getElementById('id').value='';
   document.getElementById('name').value='';
   document.getElementById('state').value="";
   document.getElementById('part-number').value="";
   document.getElementById('description').value="";
   document.getElementById('price-per-part').value="";
+  document.getElementById('Price').value="";
   document.getElementById('quantity').value="";
   document.getElementById('cost').value="";
   document.getElementById('tax').value="";
@@ -102,57 +154,32 @@ else{}
   return;
   }
   
-  //computes sales taxes
-  function salesTax(){
-  let town=document.getElementById('state').value.toUpperCase();
-let customerType=document.getElementById("cust").value;
-    let towncode= ["KLA","EBB","MBR"];
-    if(town==towncode[0] && customerType==true){
-      alert('Kampala Tax is  '+(cost()*(10/100))+'%');
-      return (cost()*(10/100));
-    }
-    if((town==towncode[1] || town==towncode[2]) && customerType==true ){
-      alert('EBB or MBR Tax is '+(cost()*(5/100))+'%');
-      return (cost()*(5/100));
-    }
-    else if((town!=towncode[0] || town!=towncode[1] || town!=towncode[2]) && customerType==false   ){
-      alert('This Customer Has to pay '+cost()+" With No Tax");
-      return;
-    }
-  }
-  //computes purchases
-  function cost(){
-  let cost =document.getElementById('cost').value;
-  let quantity=document.getElementById('price-per-part').value;
-  cst = (cost*quantity);
-   
-     alert('The Cost is ');
-          return cst.toFixed(0);
-    }
+ 
+  
 
     //This Computes Shipping and Handling Cost
     function shippingCost(){
      
       var charge;
-     let shippingCharge = [7.00,8.50,9.25,12.00];
-     let ups= document.getElementById('ups').checked=true;
-      let fedexg=document.getElementById('fedexg').checked=false;
+    let shippingCharge = [7.00,8.50,9.25,12.00];
+    let ups= document.getElementById('ups').checked;
+    let fedexg=document.getElementById('fedexg').checked=false;
     let usportal=document.getElementById('usportal').checked=false;
     let fedexa=document.getElementById('fedexa').checked=false;
-    let oversizeContainer = document.getElementById('oversize-container').checked=true;
-    select();
-   alert('Shippin is '+oversizeContainer);
-   if(fedexg){
+    let oversizeContainer = document.getElementById('oversize-container').checked;
+  
+   alert('Shipping is '+oversizeContainer);
+   if(fedexg==true){
 charge=shippingCharge[2];
 alert('The Charge is '+charge);
 return charge;
    }
-   if(fedexa){
+   if(fedexa==true){
     charge=shippingCharge[3];
     alert('The Charge is '+charge);
     return charge;
    }
-   if(usportal){
+   if(usportal==true){
     charge=shippingCharge[1];
     alert('The Charge is '+charge);
     return charge ;
@@ -167,17 +194,23 @@ return charge;
 
     //This computes Total Cost
     function totalCost(){
-         let total = cost() + salesTax() +shippingCost();
+         let total = calcCost() + salesTax() +shippingCost();
+         
+         let total1 = calcCost() + salesTax();
          alert('The Total is '+total);
          return total;
     }
   
   //displays Purchase results to Display Panel
   function display(){
-    document.getElementById('cost')=salesTax();
-    document.getElementById('tax')=totalCost();
-    document.getElementById('shipping')=shippingCost()
-    document.getElementById('total')=totalCost();
+
+    document.getElementById('cost').value=salesTax();
+    document.getElementById('tax').value=totalCost();
+    document.getElementById('shipping').value=shippingCost()
+    document.getElementById('total').value=totalCost();
+
+
+    return;
   }
 
   //Reset Radio Buttons Back to defaults
@@ -195,8 +228,8 @@ return;
   //Makes a New Order resets all elements to default
   function newOrder(){
     clear();
-// document.getElementById("cust").checked=true;
-// document.getElementById("oversize-container").checked=false;
+ document.getElementById("cust").checked=true;
+document.getElementById("oversize-container").checked=false;
 resetRadioButtons();
 document.getElementById('id').focus();
 return;
@@ -219,3 +252,5 @@ return;
        return false;
     }
   }
+
+  

@@ -74,8 +74,8 @@
                             <tr><td> <label class="w3-validate">Part Number:</label></td><td><input type="text" class="w3-input w3-border "  id="part-number" name="partnumber" placeholder="$"></td></tr>
                             <tr><td><label class="w3-validate">Description</label></td><td><input type="text" class="w3-input w3-border" id="description" name="description" placeholder="Oil Filter"></td></tr>
                            
-                        <tr><td> <label class="w3-validate">Price Per Part:</label></td><td colspan="5"><input type="text" class="w3-input w3-border" id="cost" name="priceperpart" placeholder="$">
-                        </td><td>Quantity:</td><td><input type="text" class="w3-input w3-border " id="price-per-part" name="cost" ></td></tr>
+                        <tr><td> <label class="w3-validate">Price Per Part:</label></td><td colspan="5"><input type="text" class="w3-input w3-border" id="Price" name="Price" placeholder="$">
+                        </td><td>Quantity:</td><td><input type="text" class="w3-input w3-border " id="price-per-part" name="priceperpart" ></td></tr>
                    
                         <tr><td><input class="w3-check" type="checkbox" id="oversize-container"></td>
                    <td>Oversize Container ?</td>
@@ -86,30 +86,30 @@
 <!--Part Buttons Div-->
 <div class="w3-row">
     
-        &nbsp &nbsp<button class="compute"  onclick="ValidData()">Compute</button>&nbsp &nbsp &nbsp &nbsp<button class="order" onclick="cost()">New Order</button> 
-        <!-- <input type="button" class="order" onclick="newOrder()" value="New Order"/>
-        -->
+        &nbsp &nbsp<input type="button" class="compute" onclick="ValidData()" value="Compute"/>&nbsp &nbsp &nbsp &nbsp <input type="button" class="order" onclick="display()" value="New Order"/>
+        
+       
     </div>
 </div>
         <!-- Output Division-->
         <div class="w3-col " style="width:40%" id="out">
                 <fieldset id="output"><legend><b>Output</b></legend>
            <table>   
-            <tr><td> <label class="w3-validate">Cost:</label></td><td><input type="number" class="w3-input w3-border " id="cost" name="cost" readonly ></td></tr>
+            <tr><td> <label class="w3-validate">Cost:</label></td><td><input type="text" class="w3-input w3-border " id="cost" name="cost" readonly ></td></tr>
             
-            <tr><td> <label class="w3-validate">Sales Tax:</label></td><td><input type="number" class="w3-input w3-border " id="tax" readonly></td></tr>
+            <tr><td> <label class="w3-validate">Sales Tax:</label></td><td><input type="text" class="w3-input w3-border " id="tax" readonly></td></tr>
             
-            <tr><td> <label class="w3-validate">Shipping Handling:</label></td><td><input type="number" class="w3-input w3-border " id="shipping" name="shipping" readonly></td></tr>
+            <tr><td> <label class="w3-validate">Shipping Handling:</label></td><td><input type="text" class="w3-input w3-border " id="shipping" name="shipping" readonly></td></tr>
             
-            <tr><td> <label class="w3-validate">Total</label></td><td><input type="number" class="w3-input w3-border " id="total" name="total" placeholder="$" readonly></td></tr>
+            <tr><td> <label class="w3-validate">Total</label></td><td><input type="text" class="w3-input w3-border " id="total" name="total" placeholder="$" ></td></tr>
         </table>  
     </fieldset>
 <!--Buttons Div-->
 <br>
 <div class="w3-row">
-        <output name="x" for="a b"></output>
-        <button class="exit" onclick="clear()">Exit</button>
-        <!-- <input type="button"  class="exit" value="Exit1">  -->
+        <!-- <button class="exit" onclick="clear()">Exit</button> -->
+        <input type="button"  class="exit"  onclick="closeWin()" value="Exit"> 
+        <p id="demo"></p>
 </div>
 </div>
 </div>

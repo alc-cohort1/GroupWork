@@ -77,19 +77,9 @@ function ValidData(){
     alert('The Value is'+cst+' and the Rounded  to'+cst.toFixed(0));
      return cst.toFixed(0);
   }
-  //COST : computes purchases
-  function cost(){
-    // let price = document.getElementById('cost').value;
-    // let quantity=document.getElementById('price-per-part').value;
-    // let cst = (price*quantity);
-     
-       alert('The Cost is '+cst.toFixed(0));
-            return cst.toFixed(0);
-      }
+ 
 
        //SALES TAX :computes sales taxes
-
-     
   function salesTax(){
     let validate = ValidData();
     let town=document.getElementById('state').value.toUpperCase();
@@ -120,22 +110,35 @@ function ValidData(){
 
   //CLEAR: this function maintains only one shipping option selected
 function select(){
-  
+  let shippingCharge = [7.00,8.50,9.25,12.00];
   let ups= document.getElementById('ups').checked=true;
   let fedexg=document.getElementById('fedexg').checked=false;
 let usportal=document.getElementById('usportal').checked=false;
 let fedexa=document.getElementById('fedexa').checked=false;
 
 if(fedexa==true){
-  fedexg=usportal=ups=false;
+  document.getElementById('ups').checked=false;
+  document.getElementById('fedexg').checked=false;
+document.getElementById('usportal').checked=false;
 }
 if(fedexg==true){
-  ups=usportal=fedexa=false;
+  document.getElementById('ups').checked=false;
+document.getElementById('usportal').checked=false;
+document.getElementById('fedexa').checked=false;
 }
 if(usportal==true){
-  ups=fedexa=fedexg=true;
+ 
+  document.getElementById('ups').checked=false;
+ document.getElementById('fedexg').checked=false;
+document.getElementById('fedexa').checked=false;
 }
-else{}
+else if(ups==true){
+ document.getElementById('fedexg').checked=false;
+  document.getElementById('usportal').checked=false;
+  document.getElementById('fedexa').checked=false;
+}
+else 
+return;
 }
   //This clears Text fields back to their defaults
   function clear(){
@@ -235,6 +238,15 @@ document.getElementById('id').focus();
 return;
   }
 
+  //toggles Password Visibility
+  function togglePassword() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  } 
   //Window Close Function
   var myWindow;
   let option=false;

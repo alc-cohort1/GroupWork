@@ -22,18 +22,37 @@
             } 
         </script> -->
     <style>
+        /* styling the body */
+        body {
+            background-image: url("../img/tyota.jpg");
+        }
+        /* styling navigation bar */
+        .navbar-brand {
+            color: white;
+            font-size: 30px;
+        }
+        .navbar-brand :hover {
+            color: #C8C8C8;
+        }
+        #out a {
+            color: white;
+            font-size: 18px;
+        }
+        #out :hover {
+            color: gray;
+            
+        }
             /*  style for the container  */
         .container {
             padding-top: 8px;
             background-color: #efeffd;
             margin-top: 13px;
             padding-bottom: 10px;
-            background-image: url("../img/tyota.jpg");
         
         }
         .content {
             padding-top: 8px;
-            background-color: #eeeefc;
+            background-color: rgb(153, 151, 151);
             margin-top: 13px;
             margin-left: 50px;
             margin-right: 50px;
@@ -42,19 +61,20 @@
             padding-bottom: 10px;
             max-height: 557px;
             max-width: 1500px;
+            opacity: 0.9;
         
         }
         /* style for the section divs */
         #field{
             border: 1px solid #e6e6ff;
             padding: 2px; 
-            background-color: #ccccff;
+            background-color: rgb(185, 184, 184);
             
         }
         #field2{
-            border: 1px solid #e6e6ff;
+            border: 1px solid #cccccf;
             padding: 2px; 
-            background-color: #ccccff;
+            background-color: rgb(185, 184, 184);
             width: 400px;
             
         }
@@ -73,10 +93,10 @@
             padding: 0 10px;
         }
         button {
-            background-color: #ccccff;
+            background-color: #D8D8D8;
         }
         #btn {
-            background-color: #ccccff;
+            background-color: #D8D8D8;
         }
         #exit {
             width: 80px;
@@ -89,14 +109,14 @@
     </style>
 </head>
 <body >
-        <nav class="navbar ">
+        <nav class="navbar">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Toyota</a>
+                    <a class="navbar-brand" href="#"> <strong>Toyota Uganda</strong> </a>
                   </div>
 
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                  <ul class="nav navbar-nav navbar-right" id="out">
+                    <li><a href="./logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                   </ul>
                 </div>
               </nav>
@@ -261,7 +281,7 @@
                             <div class="col-sm-4"></div>
                             <div class="col-sm-3">
                             
-                                    <!-- <button type="button" id="exit" onclick="windowClose()"> Exit</button> -->
+                                    <a href="./logout"> <button type="button" id="exit" > Exit</button></a>
                                    <!-- <button type="exit" onclick="windowClose()">Close </button>  -->
                                 </div>                       
                     </div>     

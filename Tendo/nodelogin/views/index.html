@@ -48,23 +48,23 @@
   <div class="w3-col " style="width:40%" id="cst">
         <fieldset style=" border:2px solid white;
         height:230px;background-color:#fac695;"><legend><b>Shipping</b></legend>
-            <!-- <table>
-                    <tr><td>  <input class="w3-radio" type="radio" name="ups" value="ups" id="ups">
+            <table>
+                    <tr><td>  <input class="w3-radio" type="radio" name="ups" value="ups" onchange="return select(1)" id="ups" checked>
                         <span class="checkmark"></span>
                         <label class="w3-validate">UPS</label></td>
-                        <td> <input class="w3-radio" type="radio" name="fedexg" value="fedexg" id="fedexg">
+                        <td> <input class="w3-radio" type="radio" name="fedexg" value="fedexg"  onclick="return select(2)" id="fedexg">
                             <span class="checkmark"></span>
                             <label class="w3-validate">Fed Ex Ground</td></tr>
         
-                                <tr><td> <input class="w3-radio" type="radio" name="usportal" value="usportal" id="usportal">
+                                <tr><td> <input class="w3-radio" type="radio" name="usportal" value="usportal" onclick="return select(3)" id="usportal">
                                     <span class="checkmark"></span>
-                                    <label class="w3-validate" id="usportall">US Portal Air</label></td><td> <input class="w3-radio" type="radio" name="fedexa" value="fedexa" id="fedexa">
+                                    <label class="w3-validate" id="usportall">US Portal Air</label></td><td> <input class="w3-radio" type="radio" name="fedexa" value="fedexa"  onclick="return select(4)" id="fedexa">
                                         <span class="checkmark"></span>
                                         <label class="w3-validate" id="fedexal">Fed Ex Air</label></td></tr>
                                     </table>
-                                 -->
                                 
-                                 <input class="w3-radio" type="radio" name="ups" value="ups" id="ups" checked>
+                                
+                                 <!-- <input class="w3-radio" type="radio" name="ups" value="ups" id="ups" checked>
                                  <label class="w3-validate">UPS</label>
 
                                  
@@ -76,7 +76,7 @@
                            <label class="w3-validate" id="usportall">US Portal Air</label>
 
         <input class="w3-radio" type="radio" name="fedexa" value="fedexa" id="fedexa">
-        <label class="w3-validate" id="usportall">US Portal Air</label> 
+        <label class="w3-validate" id="usportall">US Portal Air</label>  -->
                                    
                                 </fieldset>
                             
@@ -103,7 +103,7 @@
 <!--Part Buttons Div-->
 <div class="w3-row">
     
-        &nbsp &nbsp<input type="button" class="compute" onclick="ValidData()" value="Compute"/>&nbsp &nbsp &nbsp &nbsp <input type="button" class="order" onclick="display()" value="New Order"/>
+        &nbsp &nbsp<input type="button" class="compute" onclick="compute()" value="Compute"/>&nbsp &nbsp &nbsp &nbsp <input type="button" class="order" onclick="display()" value="New Order"/>
         
        
     </div>

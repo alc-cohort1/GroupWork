@@ -20,7 +20,7 @@ function ValidData(){
   //ensure field is not empty and has no white space characters
   if(id.value==""  || isNaN(id.value)){
   alert('Field is Either Empty or Value Is Not a Number ');
-  document.getElementsByTagName('<h5>').innerHTML="<font color=red>Field is Either Empty or Value Is Not a Number ";
+  document.getElementsByTagName('<h5>').value="<font color=red>Field is Either Empty or Value Is Not a Number ";
       
   return;
   }
@@ -78,29 +78,29 @@ function ValidData(){
      return cst.toFixed(0);
   }
  
-
+let cost = calcCost();
        //SALES TAX :computes sales taxes
-  function salesTax(){
+  function salesTax(cost){
     let validate = ValidData();
     let town=document.getElementById('state').value.toUpperCase();
     let towncode= ["KLA","EBB","MBR"];
   let customerType=document.getElementById("cust").checked;
   if(validate==true){
     if(town==towncode[0] && customerType==true){
-      alert('Client Has to Pay '+calcCost()+'Including a Tax of '+(calcCost()*(10/100)));
-      return (calcCost()*(10/100));
+      alert('Client Has to Pay '+cost+'Including a Tax of '+(cost*(10/100)));
+      return (cost*(10/100));
     }
     if((town==towncode[1] || town==towncode[2]) && customerType==true ){
-      alert('EBB or MBR Tax is '+(calcCost()*(5/100))+'%');
-      return (calcCost()*(5/100));
+      alert('EBB or MBR Tax is '+(cost*(5/100))+'%');
+      return (cost*(5/100));
     }
 
     if((town!=towncode[0] || town!=towncode[1] || town!=towncode[2])  && customerType==true){
-      alert('This Customer Has to pay '+calcCost()+" With No Tax");
+      alert('This Customer Has to pay '+cost+" With No Tax");
       return;
     }
     else if(customerType==false){
-      alert(calcCost);
+      alert(cost);
     }
     else 
     return;
@@ -109,30 +109,74 @@ function ValidData(){
     }
 
   //CLEAR: this function maintains only one shipping option selected
-function select(){
+  
+function select(radio){
+  // let handling = radio;
+  // let shippingCharge = [7.00,8.50,9.25,12.00];
+  // var charge;
+  
+  // alert('You Selected a Radio Button');
+  // switch(handling) {
+  //   case 1:
+  //     document.getElementById('ups').checked=true;
+  //     document.getElementById('fedexg').checked=false;
+  //     document.getElementById('usportal').checked=false;
+  //     document.getElementById('fedexa').checked=false;
+  //     charge = shippingCharge[0];
+  //     alert('You Selected UPS and The Charge is  '+charge);
+  //     break;
+  //   case 2:
+  //       document.getElementById('ups').checked=false;
+  //       document.getElementById('fedexg').checked=true;
+  //       document.getElementById('usportal').checked=false;
+  //       document.getElementById('fedexa').checked=false;
+  //     charge = shippingCharge[2];
+  //     alert('You Selected Fedex Ground and The Charge is  '+charge);
+  //     break;
+  //   case 3:
+  //       document.getElementById('ups').checked=false;
+  //       document.getElementById('fedexg').checked=false;
+  //       document.getElementById('usportal').checked=true;
+  //       document.getElementById('fedexa').checked=false;
+  //     charge=shippingCharge[1];
+  //     alert('You Selected US Air Portal and The Charge is  '+charge);
+  //     break;
+  //     case 4:
+  //         document.getElementById('ups').checked=false;
+  //         document.getElementById('fedexg').checked=false;
+  //         document.getElementById('usportal').checked=false;
+  //         document.getElementById('fedexa').checked=true;
+  //         charge=shippingCharge[3];
+  //         alert('You Selected Fedex Air and The Charge is  '+charge);
+  //       break;
+  //   default:
+  //       document.getElementById('ups').checked=false;
+  //       charge = shippingCharge[0];
+  // }
+
   let shippingCharge = [7.00,8.50,9.25,12.00];
   let ups= document.getElementById('ups').checked=true;
   let fedexg=document.getElementById('fedexg').checked=false;
 let usportal=document.getElementById('usportal').checked=false;
 let fedexa=document.getElementById('fedexa').checked=false;
 
-if(fedexa==true){
+if(radio===4){
   document.getElementById('ups').checked=false;
   document.getElementById('fedexg').checked=false;
 document.getElementById('usportal').checked=false;
 }
-if(fedexg==true){
+if(radio==2){
   document.getElementById('ups').checked=false;
 document.getElementById('usportal').checked=false;
 document.getElementById('fedexa').checked=false;
 }
-if(usportal==true){
+if(radio===3){
  
   document.getElementById('ups').checked=false;
  document.getElementById('fedexg').checked=false;
 document.getElementById('fedexa').checked=false;
 }
-else if(ups==true){
+else if(radio==1){
  document.getElementById('fedexg').checked=false;
   document.getElementById('usportal').checked=false;
   document.getElementById('fedexa').checked=false;
@@ -161,7 +205,7 @@ return;
   
 
     //This Computes Shipping and Handling Cost
-    function shippingCost(){
+    function ShippingHandling(){
      
       var charge;
     let shippingCharge = [7.00,8.50,9.25,12.00];
@@ -170,37 +214,51 @@ return;
     let usportal=document.getElementById('usportal').checked=false;
     let fedexa=document.getElementById('fedexa').checked=false;
     let oversizeContainer = document.getElementById('oversize-container').checked;
+    let extraHandlingCharge=5.00;
   
    alert('Shipping is '+oversizeContainer);
    if(fedexg==true){
 charge=shippingCharge[2];
-alert('The Charge is '+charge);
+//alert('The Charge is '+charge);
 return charge;
    }
+   else if(fedexg==true && oversizeContainer==true){
+     return (charge+extraHandlingCharge);
+   }
+
    if(fedexa==true){
     charge=shippingCharge[3];
-    alert('The Charge is '+charge);
+  //  alert('The Charge is '+charge);
     return charge;
    }
+   else if(fedexa==true && oversizeContainer==true){
+    return (charge+extraHandlingCharge);
+  }
    if(usportal==true){
     charge=shippingCharge[1];
-    alert('The Charge is '+charge);
+    //alert('The Charge is '+charge);
     return charge ;
    }
-   else{
+   else if(usportal==true && oversizeContainer==true){
+    return (charge+extraHandlingCharge);
+  }
+
+  if(ups==true){
     charge=shippingCharge[0];
-    alert('The Charge is '+charge);
-    return charge;
+    //alert('The Charge is '+charge);
+    return charge ;
    }
+   else if(ups==true && oversizeContainer==true){
+    return (charge+extraHandlingCharge);
+  }
   
+  return;
   }
 
     //This computes Total Cost
     function totalCost(){
-         let total = calcCost() + salesTax() +shippingCost();
-         
-         let total1 = calcCost() + salesTax();
-         alert('The Total is '+total);
+         let total = cost + salesTax() +ShippingHandling();
+        alert('The Total is '+total);
          return total;
     }
   
@@ -209,13 +267,24 @@ return charge;
 
     document.getElementById('cost').value=salesTax();
     document.getElementById('tax').value=totalCost();
-    document.getElementById('shipping').value=shippingCost()
+    document.getElementById('shipping').value=ShippingHandling()
     document.getElementById('total').value=totalCost();
 
 
     return;
   }
 
+  //This is called by The Compute Button 
+  function compute(){
+  if(ValidData==true){
+    salesTax();
+    ShippingHandling();
+    display();
+  }
+  else 
+  alert('Some thing Went Wrong');
+  return ;
+  }
   //Reset Radio Buttons Back to defaults
   function resetRadioButtons(){
 document.getElementById('ups').checked=true;
@@ -248,16 +317,18 @@ return;
     }
   } 
   //Window Close Function
-  var myWindow;
-  let option=false;
+  // var myWindow;
+  // let option=false;
   
   function closeWin() {
+    var myWindow;
+    let option=false;
     var retVal = confirm("Do you want to Close Program ?");
     if( retVal == true ) {
      // alert(''+retVal)
       myWindow.close();
       // document.write ("User wants to continue!");
-       //return true;
+       return true;
     }
     else {
       // document.write ("User does not want to continue!");

@@ -31,7 +31,7 @@ background-color:coral;
 } */
 
 /*Add styling to exit button*/
-button.exit{
+input.exit{
   float: right;
   background-color:#fac695;
   border-color:gray;
@@ -42,20 +42,20 @@ button.exit{
 }
 
 /*Add styling to compute and new order buttons*/
-button.compute,button.order{
+input.compute,input.order{
 float: left;
 background-color:#fac695;
 border-color:gray;
 border-radius: 4px;
 }
 /*add padding to left compute button*/
-button.compute{
+input.compute{
 padding-right: 20px;
 padding-left: 20px;
 margin: 5px;
 }
 /*add padding to left order button*/
-button.order{
+input.order{
 margin-right: 15px;
 padding-right: 20px;
   padding-left: 20px;
@@ -91,6 +91,7 @@ padding-right: 20px;
 }
 /*cell heights*/
 #cost,#tax,#shipping,#total{
+  text-align: right; 
   height:37px;
 }
 
@@ -101,11 +102,13 @@ padding-right: 20px;
 
 /*cell lengths */
 #price-per-part{
+  text-align: right;
   width:130px;
 }
 
-  #quantity{
-  width:70px;
+  #Price{
+    text-align: right;
+  width:170px;
   
 }  
 

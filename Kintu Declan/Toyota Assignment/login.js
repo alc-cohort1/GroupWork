@@ -25,18 +25,18 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
 app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/login.html'));
+	response.sendFile(path.join(__dirname + '/templates/login.html'));
 });
 
 //app.use(express.static(path.join(__dirname , '/public')));
 
 app.get('/register', function(request, response) {
-	response.sendFile(path.join(__dirname + '/register.html'));
+	response.sendFile(path.join(__dirname + '/templates/register.html'));
 });
 
 
 app.get('/toyota', function(request, response) {
-	response.sendFile(path.join(__dirname + '/toyota.html'));
+	response.sendFile(path.join(__dirname + '/templates/toyota.html'));
 });
 
 
@@ -57,9 +57,10 @@ app.post("/register", (req, res) => {
 		  console.log("an error has occured " + err);
 		  res.status(500);
 		  return;
+		  
 		}
 		else { 
-			res.redirect("/")
+			res.redirect("/toyota");
 		}
 	  }
 	);
@@ -73,26 +74,25 @@ app.post('/auth', function(request, response) {
 		connection.query('SELECT * FROM users WHERE Usernames = ? AND Password = ?', 
 		[username, password], function(error, results, fields) {
 			if (results.length > 0) {
-				response.redirect('/toyota.html');
+				response.redirect('/toyota');
 			} else {
 				response.send('Incorrect Username and/or Password!');
-			}			
+			}
+						
 			response.end();
 		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
 	}
 });
 
-app.get('/root', function(request, response) {
-	if (request.session.loggedin) {
-		response.sendFile(path.join(__dirname + '/toyota.html'));
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
+// app.get('/auth', function(request, response) {
+// 	if (request.session.loggedin) {
+// 		response.redirect('/toyota');
+// 		response.sendFile(path.join(__dirname + '/toyota.html'));
+// 	} else {
+// 		response.send('Please login to view this page!');
+// 	}
+// 	response.end();
+// });
 
 
 // app.post("/Toyota", (req, res) => {

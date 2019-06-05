@@ -46,9 +46,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'static')));
 app.set('port', process.env.port || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render toyota form
-//app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
-//app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
-app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
+app.set('css', __dirname + '/css'); // set express to look in this folder to render css files
+app.set('js', __dirname + '/js'); // set express to look in this folder to render js files
+app.set('views', __dirname + '/img'); //render images using express
 
 //app.set('view engine', 'html'); // configure template engine
 app.use(bodyParser.urlencoded({ extended: false }));

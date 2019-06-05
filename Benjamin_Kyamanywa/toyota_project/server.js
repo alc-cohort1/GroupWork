@@ -120,7 +120,7 @@ app.post('/order_form', function(request, response) {
                 response.status(500)
                 return
             } else {
-                response.redirect('/order_form');
+                response.redirect('/sales');
             }
             response.end();
     })

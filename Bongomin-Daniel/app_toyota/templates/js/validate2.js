@@ -140,3 +140,9 @@ function validate() {
   return validData();
   return false;
 }
+
+// exit button
+
+$("#exit").click(function(){
+  window.location.href="index.html";
+});

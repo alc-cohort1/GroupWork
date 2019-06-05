@@ -141,3 +141,9 @@ validateData Function Handles Validation of input fields of the application
   return validData();
   return false;
 }
+
+// exit button
+
+$("#exit").click(function(){
+  window.location.href="index.html";
+});

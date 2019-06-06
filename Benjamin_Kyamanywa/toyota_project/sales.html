@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Toyota Uganda</title>
+    <title>Toyota Mail Order Sales</title>
     <style>
+        /* Body styling for background */
+        body {
+			background: linear-gradient(-90deg, #c850c0, #4158d0);
+		}
         /* Styling for the main wrapper */
         .wrapper {  
             padding: 150px 0 0 0;
@@ -16,25 +20,24 @@
         .container {
             position: relative;
             padding: 20px 40px 10px 40px;
-            background-color: #fff0e6;
+            border-radius: 5px;
+            background-color: #fff;
             margin-top: 30px;
         }
 
         /* Styles for the sections */
 
         .fence{
-            padding: 10px 20px 0px 0px; 
-            background-color: #fdaf7b;
+            padding: 10px 20px 0px 0px;   
         }
 
         .fence-right{
             padding:   0px 0px 0px 0px; 
-            background-color: #fdaf7b; 
+     
         }
 
         .fence-right-last{
-            padding:   0px 0px 0px 0px; 
-            background-color: #fdaf7b; 
+            padding:   0px 0px 0px 0px;  
         }
 
         .fence {
@@ -42,18 +45,21 @@
         }
 
         .fieldset {
-            border: 1px solid #fff; 
+            border: 1px solid #4158d0; 
             padding: 10px 0px 3px 7px;
+            border-radius: 5px;
         }
 
         .fieldset-second {
-            border: 1px solid #fff; 
+            border: 1px solid #4158d0; 
             padding: 10px 0px 17px 7px;
+            border-radius: 5px;
         }
 
         .fieldset-fourth {
-            border: 1px solid #fff; 
+            border: 1px solid #4158d0; 
             padding: 10px 0px 8px 7px;
+            border-radius: 5px;
         }
 
         .legend {
@@ -75,7 +81,8 @@
             width: 150px;
             height: 40px;
             border-radius: 5px;
-            background-color: #FFBF82;
+            color: #fff;
+            background-color: #4158d0;
             border: none;
             margin: 4px 0 0 0;
         }
@@ -84,16 +91,27 @@
             width: 150px;
             height: 40px;
             border-radius: 5px;
-            background-color: rgb(255, 182, 113);
+            color: #fff;
+            background-color: #4c68f3;
             border: none;
             margin: 4px 0 0 0;
         }
 
+
         .output-display {  
             height: 22px;
             text-align: right;
-            background-color: #fff;
+            background-color: rgb(238, 238, 238);
+            border-radius: 5px;
         }
+
+        
+
+        h2, label, h5 {
+            color: #363b41;   
+        }
+
+        
     </style>
   </head>
   
@@ -101,7 +119,7 @@
         <!-- Header -->
         <div class="container">
         <div>
-            <h2 class="text-center">TOYOTA ORDER SALES</h2>
+            <h2 class="text-center">TOYOTA MAIL ORDER SALES</h2>
         </div>
         </div>
       <div class="container wrapper">
@@ -116,17 +134,17 @@
                 <!-- Label for customer id -->
                 <div class="row">
                     <div class="col-sm"><label for="customer_id">Customer ID: </label></div>
-                    <div class="col-sm-9"><input type="text" name="customer_id" placeholder="88-88-88" ><span id="customer_id_error"></span></div>
+                    <div class="col-sm-9 form-group"><input class="form-control-sm" type="text" name="customer_id" placeholder=" 88-88-88" ><span id="customer_id_error"></span></div>
                 </div>
                 <!-- Label for name -->
                 <div class="row">
                     <div class="col-sm"><label for="name">Name: </label></div>
-                    <div class="col-sm-9"><input type="text" name="name" placeholder="John Doe"><span id="name_error"></span></div>
+                    <div class="col-sm-9"><input class="form-control-sm" type="text" name="name" placeholder=" John Doe"><span id="name_error"></span></div>
                 </div>
                 <!-- Label for town -->
                 <div class="row">
                     <div class="col-sm"><label for="state">Town: </label></div>
-                    <div class="col-sm-6"><input type="text" name="town" placeholder="KLA" oninput="this.value=this.value.toUpperCase()" maxlength="3"><span id="town_error"></span></div>
+                    <div class="col-sm-6"><input class="form-control-sm" type="text" name="town" placeholder=" KLA / EBB / MBR" oninput="this.value=this.value.toUpperCase()" maxlength="3"><span id="town_error"></span></div>
                     <div class="col-sm"><input type="checkbox"  name="retail_customer"  value="Retail Customer" checked> &nbsp; Retail Customer</div>
                 </div>
                 </fieldset>
@@ -149,7 +167,7 @@
             </fieldset>
             </div>  
             </div>
-          </div><br><br>
+          </div><br>
 
           <div class="row">
             <!-- Section that captures Part Ordered -->
@@ -160,19 +178,19 @@
                     <!-- Part Number label -->
                     <div class="row">
                         <div class="col-sm-2"><label for="part">Part Number: </label></div>
-                        <div class="col-sm-9"><input type="text" name="part" placeholder="12345"><span id="part_error"></span></div>
+                        <div class="col-sm-9"><input class="form-control-sm" type="text" name="part" placeholder=" 12345"><span id="part_error"></span></div>
                     </div>
                     <!-- Description label -->
                     <div class="row">
                             <div class="col-sm-2"><label for="description">Description: </label></div>
-                            <div class="col-sm-9"><input type="text" name="description" placeholder="eg Tyres"><span id="description_error"></span></div>
+                            <div class="col-sm-9"><input class="form-control-sm" type="text" name="description" placeholder=" eg Tyres"><span id="description_error"></span></div>
                         </div>
                     <!-- Price Per Part Label -->
                     <div class="row">
                             <div class="col-sm-2"><label for="price_per_part">Price Per Part: </label></div>
-                            <div class="col-sm"><input type="text" name="price_per_part" placeholder="eg $40"><span id="price_error"></span></div>
+                            <div class="col-sm"><input class="form-control-sm" type="text" name="price_per_part" placeholder=" eg $40"><span id="price_error"></span></div>
                             <div class="col-sm-2"><label for="Quantity">Quantity: </label></div>
-                            <div class="col-sm"><input type="text" name="quantity" placeholder="eg 5"><span id="quantity_error"></span></div>
+                            <div class="col-sm"><input class="form-control-sm" type="text" name="quantity" placeholder=" eg 5"><span id="quantity_error"></span></div>
                     </div>
                     <div class="row justify-content-sm-center ">
                         <div class="col-sm-2"></div>
@@ -213,7 +231,7 @@
                 </fieldset>
                 </div>
             </div>
-            </div>
+            </div><br>
 
             <!-- Buttons -->
             <div class="row">
@@ -221,7 +239,7 @@
                     <input class="button-style" type="submit" value="Compute" name="compute">  
                 </div>
                 <div class="col-sm-3">   
-                    <input class="button-style" type="reset" value="New Order">
+                    <input class="button-style" type="reset"  onclick="window.location.reload();" value="New Order">
                 </div>
                 <div class="col-sm-5"></div>
                 <div class="col-sm-2">
@@ -346,7 +364,7 @@
                        }   
                        
                     validData();
-                    return false;
+                    
                 }
                 </script>
         

@@ -98,7 +98,7 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-// Capturing data from the sales form and posting it to the database
+// Capturing data from the order sales form and posting it to the database
 app.post('/order_form', function(request, response) {
 	var customerId = request.body.customer_id;
     var customerName = request.body.name;
@@ -119,10 +119,7 @@ app.post('/order_form', function(request, response) {
                 console.log('An error occured' + err)
                 response.status(500)
                 return
-            } else {
-                response.redirect('/sales');
-            }
-            response.end();
+			} 
     })
 });
 

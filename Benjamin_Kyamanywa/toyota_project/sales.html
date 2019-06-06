@@ -207,7 +207,7 @@
                 <!-- Cost Label -->
                 <div class="row">
                     <div class="col-sm-4"><label for="cost">Cost: </label></div>
-                    <div class="col-sm-6 output-display"><span  id="cost"></span></div>
+                    <div class="col-sm-6 output-display"><span id="cost"></span></div>
                     <div class="col-sm-2"></div>
                 </div>
                 <!-- Sales Tax Label -->
@@ -246,9 +246,14 @@
                     <a href="/"><input class="button-style" type="button" value="Exit"></a>
                 </div>
             </div>
-        </form>
+            </form>
           </div>
           <script>
+          <!--
+                /*
+                Orders function that contains all other functions for validData that checks validation, salesTax calculation, shippingHandling calculation 
+                and totalCost calculation
+                */
                 function orders() {
                     //Variables that keep values from the form inputs
                     var customerId = document.sales_form.customer_id.value;
@@ -260,10 +265,10 @@
                     var quantity = document.sales_form.quantity.value;
                     var shipping = document.sales_form.shipping.value;
                     var oversize = document.sales_form.oversize_container.value;
-                    var cost = (price_per_part * quantity).toFixed(2);//to two decimal places
+                    var cost = (price_per_part * quantity).toFixed(2); //To two decimal places
             
                         /*
-                        This function validates the customer form to check if the user input is correct
+                        This function validates the mail order sales form to check if the user inputs are correct
                         */
                         function validData(){
                             var noSpace = /\s/;
@@ -301,10 +306,12 @@
                             }
                 
                         }
+
                         /*
-                        This function computes the sales tax*/
+                        This function computes the sales tax
+                        */
                         function salesTax(amount){
-                            //Displaying cost
+                            // Displaying cost
                             document.getElementById("cost").innerHTML = `$ ${cost}`;
                                 
                             this.cost = amount;
@@ -325,11 +332,12 @@
                             };
                             return shippingHandling();
                         }
+
                         /*
                         This function computes the cost of shipping and handling
                         */
                        function shippingHandling(){
-                            // Calculating the shipping cost
+                            // Calculating the shipping cost for the different shipping companies
                             if (shipping === "UPS") {
                             shippingCost = 7.0;
                             } else if (shipping === "Fed Ex Ground") {
@@ -347,7 +355,7 @@
                             }
                             //Calculating total shipping & handling cost
                             totalShippingCost = (quantity * (shippingCost + handlingCost)).toFixed(2);
-                            //displaying total shipping cost
+                            //Displaying total shipping cost
                             document.getElementById("shipping").innerHTML = `$ ${totalShippingCost}`;
             
                             this.getshippingCost = function() {
@@ -356,7 +364,9 @@
                             return totalCost();
             
                        }
-                       // Function to calculate the total cost
+                       /*
+                       This function calculates the total cost
+                       */
                        function totalCost(){
                            var total = parseFloat(cost) + parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
                            //Displaying total
@@ -366,6 +376,7 @@
                     validData();
                     
                 }
+                -->
                 </script>
         
     <!-- Optional JavaScript -->

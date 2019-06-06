@@ -1,4 +1,3 @@
-
 //Variable input from the Toyota HTML page are declared here.
 const customerID = document.getElementById("customer_id");
 const re_customerID = /^[(A-Z)(0-9)-]{2,15}$/;
@@ -72,14 +71,12 @@ function validateData()
         document.getElementById("description_span").innerHTML = ""
     }
 
-    if(!re_price.test(price.value)){
-        //document.getElementById("price_span").innerHTML = "Enter Valid Price"
-        alert("Enter Price");
-        return false;
-    }
+    // if(!re_price.test(price.value)){
+    //     alert("Enter Price");
+    //     return false;
+    // }
 
     if(!re_quantity.test(quantity.value)){
-        //document.getElementById("qtn_span").innerHTML = "Enter Valid Quantity"
         alert("Enter Quantity");
         return false;
     }
@@ -125,9 +122,9 @@ function compute(){
     else if(shipping[3].checked){
         spng = (quantity.value) * 12.00;
     }
-    document.getElementById('handling_output').value = '$' + spng.toFixed(2);
 
     document.getElementById('cost_output').value = '$'+ (cost).toFixed(2);
+    document.getElementById('handling_output').value = '$' + spng.toFixed(2);
     document.getElementById('total_output').value = '$' + (container + cost + tax + spng).toFixed(2);
 }
 

@@ -21,14 +21,16 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.urlencoded({extended : false}));
+// let urlparser = bodyParser.urlencoded({extended : false});
 app.use(bodyParser.json());
+app.use('/Stylesheets', express.static('Stylesheets'));
+app.use('/JavaScript', express.static('JavaScript'));
 
+//This code fetches the individual HTML pages.
 app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/templates/login.html'));
 });
-
-//app.use(express.static(path.join(__dirname , '/public')));
 
 app.get('/register', function(request, response) {
 	response.sendFile(path.join(__dirname + '/templates/register.html'));
@@ -39,8 +41,7 @@ app.get('/toyota', function(request, response) {
 	response.sendFile(path.join(__dirname + '/templates/toyota.html'));
 });
 
-
-
+//Code that registers a new user to the database.
 app.post("/register", (req, res) => {
 	const username = req.body.username;
 	const hash = req.body.password;
@@ -66,7 +67,8 @@ app.post("/register", (req, res) => {
 	);
   });
   
-app.post('/auth', function(request, response) {
+//Code that will log an existing user into the database.
+  app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var passwordData = request.body.password;
 	var password = crypto.createHash('md5').update(passwordData).digest('hex');
@@ -84,43 +86,32 @@ app.post('/auth', function(request, response) {
 	}
 });
 
-// app.get('/auth', function(request, response) {
-// 	if (request.session.loggedin) {
-// 		response.redirect('/toyota');
-// 		response.sendFile(path.join(__dirname + '/toyota.html'));
-// 	} else {
-// 		response.send('Please login to view this page!');
-// 	}
-// 	response.end();
-// });
-
-
-// app.post("/Toyota", (req, res) => {
-// 	const customerID = req.body.cutomer_id;
-// 	const name = req.body.name;
-// 	const state = req.body.state;
-// 	const retail = req.body.retail;
-// 	const part = req.body.part_num;
-// 	const description = req.body.description;
-// 	const price = req.body.price;
-// 	const quantity = req.body.quantity;
-// 	const oversize = req.body.container;
-// 	const shipping = req.body.shipping;
-  
-// 	const queryString =
-// 	  "INSERT INTO `toyota` (`customerID`, `name`, `state`, `retail`, `part`, `description`, `price`, `quantity`, `container`, `shipping`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-// 	  connection.query(
-// 	  queryString,
-// 	  [customerID, name, state, retail, part, description, price, quantity, conatiner, shipping],
-// 	  (err, result, field) => {
-// 		if (err) {
-// 		  console.log("an error has occured " + err);
-// 		  res.status(500);
-// 		  return;
-// 		}
-// 	  }
-// 	);
-//   });
+//Code that sends data about the car part to the database.
+app.post("/toyota", (req, res) => {
+	const customerID = req.body.customer_id;
+	const name = req.body.name;
+	const state = req.body.state;
+	const part = req.body.part_num;
+	const description = req.body.description;
+	const price = req.body.price;
+	const quantity = req.body.quantity;
+	// const cost = req.body.cost_output;
+	// const tax = req.body.tax_output;
+	// const handling = req.body.handling_output;
+	// const total = req.body.total_output;
+	const queryString =
+	  "INSERT INTO `user_data` (`customer_id`, `customer_name`, `state`, `part_number`, `description`, `unit_price`, `quantity`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	  connection.query(queryString,
+	  [customerID, name, state, part, description, price, quantity],
+	  (err, result, field) => {
+		if (err) {
+		  console.log("an error has occured " + err);
+		  res.status(500);
+		  return;
+		}
+	  }
+	);
+  });
 
 app.listen(3000, () => {
 	console.log('Server running on port 3000');

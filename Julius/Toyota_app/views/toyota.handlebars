@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../public/css/main.css" />
+  <title>Sales Form</title>
+</head>
+
+<body id="body">
+
+  <header>
+    <div>
+      <img src="../public/images/toyota3.png" alt="toyota logo" width="150px" height="100px" />
+    </div>
+    <h1> {{#if messages.message}} Hello {{messages.message}}, Welcome to {{/if}} Toyota Sales Application </h1>
+  </header>
+
+  <!-- The toyota sales form -->
+  <form name="salesForm" onsubmit="return sales()" enctype="multipart/form-data">
+    <div class="box">
+      <!-- The customer information field set -->
+      <fieldset>
+        <legend>Customer Information</legend>
+        <div class="customerInfo">
+          <div>
+            <label>Customer ID:</label>
+          </div>
+          <div>
+            <input type="text" name="customerId" placeholder="123-45-6789" />
+            <span id="customerId"></span>
+          </div>
+          <div>
+            <label>Name:</label>
+          </div>
+          <div class="long">
+            <input type="text" name="name" />
+            <span id="name"></span>
+          </div>
+          <div>
+            <label>Town</label>
+          </div>
+          <div>
+            <input type="text" name="town" oninput="this.value=this.value.toUpperCase()" maxlength="3" />
+            <input type="checkbox" checked name="retailCustomer" value="Retail Customer" />
+            <span>Retail Customer</span>
+            <p id="town"></p>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="box">
+      <!-- The shipping section fieldset -->
+      <fieldset>
+        <legend>Shipping</legend>
+        <div class="shipping">
+          <div>
+            <input type="radio" name="shipping" value="UPS" checked />
+            <span>UPS</span>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="Fed Ex Ground" />
+            <span>Fed Ex Ground</span>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="US Portal Air" />
+            <span>US Portal Air</span>
+          </div>
+          <div>
+            <input type="radio" name="shipping" value="Fed Ex Air" />
+            <span>Fed Ex Air</span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="box">
+      <!-- The part ordered section field set -->
+      <fieldset>
+        <legend>Part Ordered</legend>
+        <div class="partOrdered">
+          <div>Part Number:</div>
+          <div>
+            <input type="text" name="partNumber" />
+            <span id="partNumber"></span>
+          </div>
+          <div>Description:</div>
+          <div>
+            <input type="text" name="description" />
+            <span id="description"></span>
+          </div>
+          <div>Price per part $:</div>
+          <div class="pricePerPart">
+            <input type="text" name="pricePerPart" />
+            <label>Quantity:</label>
+            <input type="text" name="quantity" />
+            <p id="pricePerPart"></p>
+            <p id="space"></p>
+            <p id="quantity"></p>
+          </div>
+          <div>
+            <input type="checkbox" name="oversize" value="Oversize Container" />
+            <span>Oversize Container?</span>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="box">
+      <!-- The field set for the output -->
+      <fieldset>
+        <legend>Output</legend>
+        <div class="output">
+          <div>Cost:</div>
+          <div id="cost"></div>
+          <div>Sales Tax:</div>
+          <div id="salesTax"></div>
+          <div>Shipping and Handling:</div>
+          <div id="handling"></div>
+          <div>Total:</div>
+          <div id="total"></div>
+        </div>
+      </fieldset>
+    </div>
+    <!-- The bottom section -->
+    <div class="bottom">
+      <!-- The submit button for computation -->
+      <div>
+        <input type="submit" value="Compute" name="compute" />
+      </div>
+      <!-- The reset button for the new order -->
+      <div>
+        <input type="reset" value="New Order" name="newOrder" />
+      </div>
+      <div></div>
+      <!-- The exit button -->
+      <div>
+        <a href="/logout"> <input type="button" value="exit" name="exit" /></a>
+      </div>
+    </div>
+  </form>
+  <script src="../public/js/main.js"></script>
+</body>
+
+</html>

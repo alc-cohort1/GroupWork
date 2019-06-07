@@ -2,7 +2,7 @@
 function getConfirmation() {
   var returnVal = confirm("Do you want to really exit ?");
   if (returnVal === true) {
-    document.getElementById("body").style.display = "none";
+    window.location = "/logout";
   } else {
     return false;
   }

@@ -177,8 +177,8 @@ app.post("/toyota", upload.single("sale"), (req, res) => {
   );
 });
 
-// Set the production port to 3000
-const PORT = process.env.PORT || 3000;
+// Set the production port to 8000
+const PORT = process.env.PORT || 8000;
 
 // listen at port 8000
 app.listen(PORT, () => {

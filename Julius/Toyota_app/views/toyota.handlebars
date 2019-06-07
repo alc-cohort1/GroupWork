@@ -135,7 +135,8 @@
       <div></div>
       <!-- The exit button -->
       <div>
-        <a href="/logout"> <input type="button" value="exit" name="exit" /></a>
+        {{!-- <a href="/logout"> <input type="button" value="exit" name="exit" /></a> --}}
+        <input type="button" value="exit" name="exit" onclick="return getConfirmation()" />
       </div>
     </div>
   </form>

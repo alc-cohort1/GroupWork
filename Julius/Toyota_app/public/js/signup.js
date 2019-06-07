@@ -6,7 +6,7 @@ function validSignUpForm() {
   let password = document.signUpForm.password.value;
   let confirmedPassword = document.signUpForm.confirmedPassword.value;
 
-  // // Function to validate the registration form
+  // Checking that the form input values are provided and valid as well
   if (!username.match(/^[a-zA-Z]+$/)) {
     document.getElementById("username").innerHTML = "Enter a correct user name";
     return false;

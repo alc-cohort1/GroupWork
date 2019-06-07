@@ -1,0 +1,26 @@
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+/* Navbar Section */
+.navbar {
+	background-color: #8b2418 !important;
+}
+
+/* Overwriting Bootstrap Button */
+.btn {
+	background-color: #8b2418 !important;
+	border-color: #8b2418 !important;
+}
+
+/*  Styling the Links */
+a {
+	color: #8b2418;
+}
+
+a:hover {
+	color: #8b2418;
+}
+

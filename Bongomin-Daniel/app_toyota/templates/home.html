@@ -43,7 +43,7 @@
            <img src="img/logo.png"class="img-responsive"width="100%" alt="">
          </div>
          <div class="col-md-10">
-           <h1 style="margin:40px 0  0 230px; ">Application</h1>
+           <h2 style="margin:40px 0  0 230px; ">TOYOTA ORDERING APPLICATION</h2>
           </div>
          </div>
       </div>
@@ -70,7 +70,7 @@
                       class="form-control"
                       id="customerId"
                       name="customerId"
-                      placeholder="2323-45-6789"
+                      placeholder="100-000-0089"
                       type="text"
                     />
                     <span id="customerId_err"></span>
@@ -104,7 +104,7 @@
                               name="state"
                               oninput="this.value=this.value.toUpperCase()"
                              maxlength="3"
-                              placeholder="Town / State"
+                              placeholder="KLA / MBR / EBB"
                               type="text"
                             />
                             <span id="state_err"></span>
@@ -356,7 +356,7 @@
                 <button
                   type="submit"
                   class="btn btn-lg btn-default"
-                  id="computeBtn"
+                  id="computeBtn" 
                 >
                 <i class="fa fa-bars"></i>
                   compute
@@ -372,7 +372,7 @@
               </div>
               <div class="col-sm-6 col-md-6">
                 <div class="pull-right">
-                  <button type="button" class="btn btn-lg btn-default " id="exit">
+                  <button type="button" class="btn btn-lg btn-default " id="exit" onclick="exitButton()">
                       <i class="fa fa-power-off"  style="color: red;"></i>
                     Exit
                   </button>

@@ -4,6 +4,7 @@
   text-decoration: none;
   font-display: bold;
 }
+/* Main body wrapper div */
 
 .main_wrapper {
   margin-top: 0px;
@@ -114,5 +115,10 @@ span {
    background: white;
    color: black;
    border-radius: 5px;
+   padding: 10px;
+   text-align: right;
 
+ }
+ #quantity,#price{
+   text-align: right;
  }

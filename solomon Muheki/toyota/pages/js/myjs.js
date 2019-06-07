@@ -215,14 +215,14 @@
              var a=ship_Cost;
              }
              
-            
+           // output the shipping cost in html element
              this.ShippingCost=a;
              document.formToyota.shipper.value=ShippingCost;
             
              }
 
             
-             
+             /*calling the function sales Tax abd Shipping handling*/
              SalesTax(Cost);
              ShippingHandling();
 

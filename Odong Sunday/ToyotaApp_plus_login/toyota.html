@@ -8,8 +8,45 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <form action="/toyota" method="POST" onsubmit= " return ValidateData()" >
+    <!-- 
+        This section contains the form which has a post method. this method helps to post the data in to the database
+        it aslo calls a block of code on submit from javascript. there is a link to the javascript through the script tag just above the 
+        body closing tag 
+        the action helps to communicate to a certain route in the node.js section. it helps us to access a certain
+        form in the HTML
+     -->
+    <form action="/toyota" method="POST" onsubmit = " return ValidateData()" >
     <div class="container">
+
+        <!-- 
+            This section helps the user to logout. Just like above, the method and the action perform simillar functions.
+            it also contains a navbar with an image and a label
+         -->
+                <form action="/logout" method="POST"></form>
+                <nav>
+                    <div class="logo">
+                        <img src="/images/logo.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="welcome">
+                        <label>
+                            Welcome. Please make you order!
+                        </label>
+                    </div>
+                    <div class="register">
+                        <!-- <input type="button" value="Purchase"> -->
+                    </div>
+                    <div class="logout">
+                            <a class="navbar" href="/logout"> <input type="button" value="Logout"> </a>
+                    </div>
+                </nav>
+            </html>
+
+                <!-- 
+                    This section contains the various input fields where the user can enter his purchase information.
+                    There are also several checkboxes where a use can check to determine whether he is a wholesaler or retailer.
+                    The radio buttons determine the shipping method
+                 -->
+
         <div class="center">
             <div class="left">
                 <div class="customer_info">
@@ -22,7 +59,7 @@
                                 </label>
                             </div>
                             <div class="label">
-                                <input type="text" name="id_value" id="customer_id_input">
+                                <input type="text" name="id_value" id="customer_id_input" placeholder="eg: ADCX-XXX-45">
                                 <div class="customerSpan">
                                     <span id="customer_span"></span>
                                 </div>
@@ -35,7 +72,7 @@
                                 </label>
                             </div>
                             <div class="label">
-                                <input type="text" name="name_value" id="name_value_input">
+                                <input type="text" name="name_value" id="name_value_input" placeholder="eg: Alican">
                                 <div class="nameSpan">
                                     <span id="name_span"></span>
                                 </div>
@@ -48,7 +85,7 @@
                                 </label>
                             </div>
                             <div class="label">
-                                <input type="text" name="state_input" id="state_input">
+                                <input type="text" name="state_input" id="state_input" placeholder="eg: KLA" style="text-transform: uppercase">
                             </div>
                             <div class="retail_customer">
                                 <input type="checkbox" id="retail" name="name_checkbox" checked>Retail Customer
@@ -69,7 +106,7 @@
                                 </label>
                             </div>
                             <div class="label">
-                                <input type="text" name="part_number_value" id="part_number_value_input">
+                                <input type="text" name="part_number_value" id="part_number_value_input" placeholder="eg: 134546">
                                 <div class="numberSpan">
                                     <span id="number_span"></span>
                                 </div>
@@ -82,7 +119,7 @@
                                 </label>
                             </div>
                             <div class="label">
-                                <input type="text" name="description_value" id="description_value_input">
+                                <input type="text" name="description_value" id="description_value_input" placeholder="eg: wheel tyres">
                                 <div class="descriptionSpan">
                                     <span id="description_span"></span>
                                 </div>
@@ -95,13 +132,13 @@
                                 </label>
                             </div>
                             <div class="label">
-                                <input type="text" name="price_part" id="price_part_input">
+                                <input type="text" name="price_part" id="price_part_input" placeholder="eg:100" style="text-align: right">
                             </div>
                             <div class="quantity">
                                 <label>Quantity:</label>
                             </div>
                             <div class="quantity">
-                                <input type="text" name="quantity" id="quantity_input">
+                                <input type="text" name="quantity" id="quantity_input" placeholder="eg:2" style="text-align: right">
                             </div>
                         </div>
                         <div class="generalSpan">
@@ -188,6 +225,9 @@
         </div>
     </div>
     </form>
+    <!-- 
+        This section below allows us to have access to external javascript files
+     -->
     <script src="/js/app.js"></script>
 </body>
 </html>

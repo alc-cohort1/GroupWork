@@ -13,7 +13,7 @@ body{
 .container .center{
     height: 470px;
     width: 950px;
-    background-color: #FBBFCB;
+    background-color: #DDDDDD;
     margin-left: 180px;
     padding-top: 10px;
     display: flex;
@@ -22,20 +22,21 @@ body{
 .container .center .left{
     height: 450px;
     width: 580px;
-    background-color: #FBBFCB;
+    background-color: #DDDDDD;
     margin-left: 10px;
 }
 
 .container .center .right{
     height: 450px;
     width: 390px;
-    background-color: #FBBFCB;
+    background-color: #DDDDDD;
 }
 
 .container .center .left .customer_info{
     height: 190px;
     width: 525px;
-    background-color: #FFBF82;
+    background-color: #525B63;
+    color: white;
 }
 
 .container .center .left .customer_info .customer_id{
@@ -60,7 +61,7 @@ body{
 .container .center .left .customer_info .two input{
     height: 25px;
     margin-left: 65px;
-    width: 380px;
+    width: 180px;
 }
 
 
@@ -112,14 +113,16 @@ body{
     margin-top: 10px;
     height: 210px;
     width: 524px;
-    background-color: #FFBF82;
+    color: white;
+    background-color: #525B63;
 }
 
 .container .center .right .shipping{
     height: 190px;
     width: 380px;
-    background-color: #FFBF82;;
+    background-color: #525B63;;
     margin-right: 10px;
+    color: white;
 }
 
 .container .center .right .output{
@@ -127,20 +130,21 @@ body{
     height: 210px;
     width: 380px;
     margin-right: 10px;
-    background-color: #FFBF82;
+    background-color: #525B63;
+    color: white;
 }
 
 
 .container .center .left .part_order .one input{
     height: 25px;
-    width: 380px;
+    width: 180px;
     margin-left: 15px;
 }
 
 .container .center .left .part_order .two input{
     height: 25px;
     margin-left: 25px;
-    width: 380px;
+    width: 180px;
 }
 
 
@@ -151,7 +155,7 @@ body{
 
 .container .center .left .part_order .three .label input{
     height: 25px;
-    width: 190px;
+    width: 180px;
 }
 
 .container .center .left .part_order .three .quantity{
@@ -178,9 +182,10 @@ body{
     width: 150px;
     height: 40px;
     border-radius: 5px;
-    background-color: #FFBF82;
+    background-color: #525B63;
     border: none;
     border: 1px solid white;
+    
 
 }
 
@@ -193,7 +198,7 @@ body{
     height: 40px;
     border-radius: 5px;
     border: none;
-    background-color: #FFBF82;
+    background-color: #525B63;
     margin-left: 10px;
     border: 1px solid white;
 }
@@ -210,7 +215,7 @@ body{
     border: none;
     margin-top: 10px;
     margin-left: 230px;
-    background-color: #FFBF82;
+    background-color: #525B63;
     border: 1px solid white;
 
 }
@@ -357,4 +362,41 @@ fieldset {
 span{
     color: red;
     font-size: medium;
+}
+
+nav{
+    display: flex;
+    background-color: #515B63;
+    height: 50px;
+    width: 100%;
+    margin-top: -60px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+nav .welcome{
+    width: 300px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: white;
+}
+
+nav .register{
+    width: 80px;
+    margin-left: 600px;
+}
+
+nav img {
+    width: 50px;
+    height: 40px;
+    margin-left: 100px;
+    margin-top: -10px;
+}
+
+nav input{
+
+    height: 30px;
+    border-radius: 5px;
+    border: none;
 }

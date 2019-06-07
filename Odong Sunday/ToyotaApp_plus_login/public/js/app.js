@@ -225,6 +225,8 @@ const NewOrder = () => {
 }
 
 
+// The block of code enables the user to exit the page. 
+
 const close_window = () => {
     if (confirm("Close Window?")) {
         window.location = "http://www.google.com/";

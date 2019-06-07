@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Stylesheet used in the webpage.-->
+    <link rel="stylesheet" href="/Stylesheets/toyota.css">
+    <title> TOYOTA </title>
+</head>
+<body>
+
+<!--Form that shall be used to capture and send data to database.-->
+<form action="/toyota" method="POST" onsubmit="return validateData();">
+    <!--Main div section that holds all the various sections.-->
+    <div id="main">
+        <h1 style="text-align: center"><strong> TOYOTA UGANDA LIMITED. </strong></h1>
+        <!--Div section used to hold the two feildsets.-->
+        <div id="top">
+            <!--Fieldset section that captures user information.-->
+            <fieldset id="customer_info">
+                <legend><h2><strong> Customer Information </strong></h2></legend>
+                <table>
+                    <tr>
+                        <td> <label for="customer_id"> Customer ID:</label> </td>
+                        <td> <input id="customer_id" name="customer_id" type="text" placeholder="eg: 1234"> </td>
+                        <td> <span id="customer_span"></span> </td>
+                    </tr>
+        
+                    <tr>
+                        <td> <label for="name"> Name:</label> </td>
+                        <td> <input id="name" name="name" type="text" placeholder="eg: Declan"> </td>
+                        <td> <span id="name_span"></span> </td>
+                    </tr>
+            
+                    <tr>
+                        <td> <label for="state"> State:</label></td>
+                        <td> <input id="state" name="state" type="text" placeholder="eg: KLA"> </td>
+                        <td> <span id="state_span"></span> </td>
+                        <td> <input type="checkbox" name="retail" name="retail" id="retail" value="Retail Customer"> Retail Customer </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!--Fieldset section that handles shipping events.-->
+            <fieldset id="shipping">
+                    <legend><h2><strong> Shipping </strong></h2></legend>
+                    <table id="shipping_type">
+                        <tr> 
+                            <td> <input type="radio" name="shiping" name="ups" id="ups" value="ups"> UPS </td>
+                            <td> <input type="radio" name="shiping" name="fed_ex_g" id="fed_ex_g" value="fed_ex_g"> Fed Ex Gruond </td>
+                        </tr>
+                
+                        <tr> 
+                            <td> <input type="radio" name="shiping" name="us_postal" id="us_postal" value="us_postal"> US Postal Air </td>
+                            <td> <input type="radio" name="shiping" name="fed_ex_a" id="fed_ex_a" value="fed_ex_a"> Fed Ex Air </td>
+                        </tr>
+                    </table>
+            </fieldset>
+        </div>
+            
+        <!--Div that holds the remaining feildsets.-->
+        <div id="middle">
+            <!--Fieldset section that handles the order information.-->
+            <fieldset id="order">
+                <legend><h2><strong> Part Ordered </strong></h2></legend>
+                <table>
+                    <tr>
+                        <td> <label for="part_num"> Part Number:</label> </td>
+                        <td> <input id="part_num" name="part_num" type="text" placeholder="eg: AX-004"> </td>
+                        <td> <span id="number_span"></span> </td>
+                    </tr>
+            
+                    <tr>
+                        <td> <label for="description"> Description:</label> </td>
+                        <td> <input id="description" name="description" type="text" placeholder="eg: Tyres"> </td>
+                        <td> <span id="description_span"></span> </td>
+                    </tr>
+        
+                    <tr>
+                        <td> <label for="price"> Price Per Part:</label> </td>
+                        <td> <input id="price" name="price" type="text" placeholder="eg: 6000"> </td>
+            
+                        <td> <label for="quantity"> Quantity:</label> </td>
+                        <td> <input id="quantity" name="quantity" type="text" placeholder="eg: 3"> </td>
+                    </tr>
+            
+                    <tr>
+                        <td> <input type="checkbox" name="container" name="container" id="container" value="English"> Oversize Container? </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!--Fieldset section that computes the total cost.-->
+            <fieldset id="output">
+                <legend><h2><strong> Output </strong></h2></legend>
+                <table>
+                    <tr>
+                        <td> <label for="cost"> Cost:</label> </td>
+                        <td> <input  id="cost_output" name="cost" type="text"> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="tax"> Sales Tax:</label> </td>
+                        <td> <input id="tax_output" name="tax" type="text"> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="handling"> Shipping Handling:</label> </td>
+                        <td> <input id="handling_output" name="handling" type="text"> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="total"> Total:</label> </td>
+                        <td> <input id="total_output" name="total" type="text"> </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <!--The div section that contains all the buttons.-->
+        <div id="bottom">
+            <div id="button_left">
+                <table>
+                    <tr>
+                        <td> <input type="submit" onsubmit="return validateData()" name="compute" id="compute" value="Compute"/> </td>
+                        <td> <input type="button" onclick="return newOrder()" name="new_order" id="new_order" value="New Order"/> </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="button_right">
+                <table>
+                    <tr>
+                        <td> <input type="button" onclick="return close_window()" name="exit" id="exit" value="Exit"/> </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script language = "javascript" src="/JavaScript/toyota.js"></script>
+
+</body>
+</html>

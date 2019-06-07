@@ -23,7 +23,7 @@ app.post('/submit',(req, res)=>{
     const email = req.body.email
     const password = req.body.password
   
-
+//adding a query string to insert data for comparison/validation
     const querystring = "INSERT INTO `loginSystem`.`users` (`user_name`, `email`, `password`) VALUES (?,?,?)"
     getConnection.query(
         querystring, [user_name, email, password], (err,results,field)=>{

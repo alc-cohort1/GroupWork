@@ -1,0 +1,94 @@
+/* Giving the background an image */
+body {
+  background-image: url("/public/images/toyota2.jpg");
+  background-size: 100%;
+}
+
+/* Styling the container section */
+.container {
+  width: 500px;
+  height: 400px;
+  color: #fff;
+  margin: 40px 20px 20px 200px;
+}
+
+/* styling the login form */
+.login-form {
+  width: 500px;
+  margin: 0 20px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.login-form h1 {
+  text-align: center;
+  color: #ddd;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+}
+
+.login-form input[type="password"],
+.login-form input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+}
+
+.login-form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #535b63;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Styling the register page link */
+.register {
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #190233;
+}
+
+/* The register link styling */
+.register a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #81118b;
+}
+
+/* On hover the link font size increases */
+.register a:hover {
+  font-size: 25px;
+}
+
+/* Styling the flash message for login errors */
+.message {
+  color: #d60808;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  background: #ddd;
+  padding: 10px;
+  margin: 10px;
+}
+
+span {
+  color: #d60808;
+  font-weight: bold;
+}
+
+/* The logout flash message */
+.logout {
+  color: #d60808;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}

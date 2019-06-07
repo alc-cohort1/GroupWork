@@ -2,12 +2,21 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Toyota Sales Form</title>
+		<title>Toyota Mail Order Sales | Login</title>
 		<style>
+		/* Login form styling */
+		body {
+			background: linear-gradient(-90deg, #c850c0, #4158d0);
+		}
+
 		.login-form {
+			border-radius: 5px;
+			border-color: #858585;
+			padding: 20px 20px 20px 20px;
 			width: 300px;
-			margin: 0 auto;
+			margin: 6% auto;
 			font-family: Tahoma, Geneva, sans-serif;
+			background: #fff;
 		}
 		.login-form h1 {
 			text-align: center;
@@ -15,19 +24,61 @@
 			font-size: 24px;
 			padding: 20px 0 20px 0;
 		}
+
+		/* Styling input fields */
 		.login-form input[type="password"],
 		.login-form input[type="text"] {
 			width: 100%;
 			padding: 15px;
 			border: 1px solid #dddddd;
+			border-radius: 5px;
 			margin-bottom: 15px;
 			box-sizing:border-box;
 		}
+
+		/* Styling buttons */
 		.login-form input[type="submit"] {
 			width: 100%;
 			padding: 15px;
             margin: 0 0 15px 0;
+			background-color: #4158d0;
+			border: 0;
+			border-radius: 5px;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		.login-form input[type="submit"]:hover {
+			width: 100%;
+			padding: 15px;
+            margin: 0 0 15px 0;
+			background-color: #4c68f3;
+			border: 0;
+			border-radius: 5px;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		button {
+			width: 100%;
+			padding: 15px;
 			background-color: #535b63;
+			border: 0;
+			border-radius: 5px;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		button:hover {
+			width: 100%;
+			padding: 15px;
+			background-color: #747e88;
 			border: 0;
 			box-sizing: border-box;
 			cursor: pointer;
@@ -35,9 +86,10 @@
 			color: #ffffff;
 		}
 
-        a {
-            margin: 0 0 0 120px;
-        }
+		button a {
+			text-decoration: none;
+			color: #fff;
+		}
 
 		p {
 			padding: 0 0 0 135px; 
@@ -47,13 +99,13 @@
 	</head>
 	<body>
 		<div class="login-form">
-			<h1>Toyota Sales Form</h1>
+			<h1>Toyota Mail Order Sales Login</h1>
 			<form action="auth" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
 				<input type="password" name="password" placeholder="Password" required>
 				<input type="submit" value="Login">
-				<p><b>OR</b></p>
-                <a href="./register">Register</a>
+				<p><b style="color: #535b63;">OR</b></p>
+				<a href="./register"><button type="button">Register</button></a>
 			</form>
 		</div>
 	</body>

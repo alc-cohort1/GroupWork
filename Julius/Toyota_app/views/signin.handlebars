@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Toyota Sign In Form</title>
+  <link rel="stylesheet" href="/public/css/signin.css">
+</head>
+
+<body>
+  <!-- The main container section of the page -->
+  <div class="container">
+    <div class="logout">
+      {{#if messages.loggedout}}
+      <p>{{messages.loggedout}}</p>
+      {{/if}}
+    </div>
+
+    <div class="login-form">
+      <h1>Please log in here {{#if messages.message2}}{{messages.message2}}{{/if}}</h1>
+
+      <!-- The login form  -->
+      <form name="signInForm" onsubmit="return validSignInForm()" action="auth" method="POST">
+        <!-- The input field for the user name -->
+        <input type="text" name="username" placeholder="Username" /><span id="username"></span>
+
+        <!-- The input field for the password -->
+        <input type="password" name="password" placeholder="Password" /><span id="password"></span>
+
+        <!-- THe submit button for the form -->
+        <input type="submit" />
+
+        {{!-- The flash message logic --}}
+        {{#if messages.message}}
+        <div class="message">
+          <P>{{messages.message}}</P>
+        </div>
+        {{/if}}
+      </form>
+    </div>
+
+    <!-- The register section links to register page -->
+    <div class="register">
+      <p>If you don't have an account...</p>
+      <a href="/signup">Register here</a>
+    </div>
+  </div>
+  <script src="../public/js/signin.js"></script>
+</body>
+
+</html>

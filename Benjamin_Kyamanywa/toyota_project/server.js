@@ -1,4 +1,4 @@
-// Declaring dependencies
+// Declaring NodeJs dependencies
 var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
@@ -35,17 +35,17 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
 
-// Route that links to the registration page
+// Route that links to the Registration page
 app.get('/register', function(request, response) {
 	response.sendFile(path.join(__dirname + '/register.html'));
 });
 
-// Route that links to the sales application	
+// Route that links to the mail order sales application	
 app.get('/sales', function(request, response) {
 	response.sendFile(path.join(__dirname + '/sales.html'));
 });
 
-// Posting data to the database from the registration form
+// Posting data to the database from the Registration form
 app.post('/register', function(request, response) {
 	var username = request.body.username;
     var password = request.body.password;
@@ -98,7 +98,7 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-// Capturing data from the sales form and posting it to the database
+// Capturing data from the mail order sales form and posting it to the database
 app.post('/order_form', function(request, response) {
 	var customerId = request.body.customer_id;
     var customerName = request.body.name;
@@ -119,10 +119,7 @@ app.post('/order_form', function(request, response) {
                 console.log('An error occured' + err)
                 response.status(500)
                 return
-            } else {
-                response.redirect('/order_form');
-            }
-            response.end();
+			} 
     })
 });
 

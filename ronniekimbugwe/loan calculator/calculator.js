@@ -1,3 +1,4 @@
+//Method to calcuate monthly payment,total interest,total payment
 function calculate_interest() {
   event.preventDefault();
   var loan_amount = parseInt(document.getElementById("loan_amount").value);

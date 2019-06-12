@@ -8,14 +8,14 @@
 		/* styling the body */
 		body {
 			padding-left: 50px;
-			background-image: url("../img/tyota.jpg");
+			background-image: url("../img/tyot.jpg");
 			background-size: 1400px 700px;
 			background-repeat: no-repeat;
 			
 		}
 		/* styling the header */
 		.header {
-			color:white;
+			color:whitesmoke;
 			font-size: 20px;
 		}
 		/* 
@@ -26,12 +26,14 @@
 			font-family: Tahoma, Geneva, sans-serif;
 			height: 400px;
 			padding: 15px;
-			background-color: transparent;
-			box-shadow: 0 0 30px 10px;
+			background-color: rgb(194, 192, 192);
+			box-shadow: 0 0 30px 10px ;
+			opacity: 0.9;
+			
 		}
 		.login-form h1 {
 			text-align: center;
-			color:rgb(73, 73, 73);
+			color:rgb(51, 50, 50);
 			font-size: 26px;
 			padding: 20px 0 20px 0;
 		}
@@ -58,12 +60,15 @@
 		color: #4d4d4d;
 		}
 		p {
-		color: #F8F8F8;
+		color: rgb(51, 50, 50);
+		}
+		#button{
+			background-color: rgb(51, 50, 50);
 		}
 		button {
 		width: 100%;
 		padding: 15px;
-		background-color: #535b63;
+		background-color: rgb(51, 50, 50);
 		border: 0;
 		box-sizing: border-box;
 		cursor: pointer;
@@ -75,24 +80,27 @@
 		color: #ffffff; 
 		text-decoration: none;
 		}
+		#register {
+			color:white;
+		}
 	</style>
-	<body >
-	
+	<body>
+		<!-- creating an header for the page -->
         <div class="header">
             <h1> <strong>Toyota Uganda</strong> </h1>
 		</div>
-		<!-- creating a form for logingin by a user -->
+		<!-- creating a login form for a user -->
 		<div class="login-form">
 			<h1>Login Form</h1>
 			<form action="auth" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
 				<input type="password" name="password" placeholder="Password" required>
-				<input type="submit" value="Login"><br>
+				<input type="submit" value="Login" id="button"><br>
 			</form>
 			<center>
 				<p>Or</p>
 				<!-- linking to a registration form for those without an account -->
-				<button type="button"><a href="./register">Register</a></button>
+				<a href="./register"><button type="button" id="register">Register</button></a><br>
 			</center>
 		</div>
 	</body>

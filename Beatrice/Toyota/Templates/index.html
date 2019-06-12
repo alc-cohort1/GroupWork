@@ -5,35 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Customer form</title>
-    <!-- <link rel="stylesheet" href="./style.css"> -->
-    <!-- <script src="../validation.js"></script> -->
     <!-- links to Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <!-- <script> 
-            var Window; 
-
-            // function that Closes the open Window 
-            function windowClose() { 
-                Window.close(); 
-            } 
-        </script> -->
+    <!--Styling the page -->
     <style>
-        /* styling the body */
+        /* Styling the body */
         body {
-            background-image: url("../img/tyota.jpg");
+            background-image: url("../img/tyot.jpg");
         }
-        /* styling navigation bar */
+        /* Styling navigation bar */
         .navbar-brand {
             color: white;
             font-size: 30px;
         }
-        .navbar-brand :hover {
-            color: #C8C8C8;
-        }
+
         #out a {
             color: white;
             font-size: 18px;
@@ -42,7 +31,8 @@
             color: gray;
             
         }
-            /*  style for the container  */
+        /*  
+        Style for the container  */
         .container {
             padding-top: 8px;
             background-color: #efeffd;
@@ -59,22 +49,23 @@
             padding-left:50px;
             padding-right:50px;
             padding-bottom: 10px;
-            max-height: 557px;
+            max-height: 563px;
             max-width: 1500px;
             opacity: 0.9;
         
         }
-        /* style for the section divs */
+        /* 
+        Style for the section divs */
         #field{
             border: 1px solid #e6e6ff;
             padding: 2px; 
-            background-color: rgb(185, 184, 184);
+            background-color: rgb(201, 199, 199);
             
         }
         #field2{
             border: 1px solid #cccccf;
             padding: 2px; 
-            background-color: rgb(185, 184, 184);
+            background-color: rgb(201, 199, 199);
             width: 400px;
             
         }
@@ -84,7 +75,8 @@
             height: 235px;
             
         }
-        /* style for the legend */
+        /* 
+        Style for the legend in the fieldset */
         #leg{
             border-style: none;
             font-size: 12px;
@@ -92,6 +84,8 @@
             width: auto;
             padding: 0 10px;
         }
+        /* 
+        Styling the buttons */
         button {
             background-color: #D8D8D8;
         }
@@ -100,41 +94,50 @@
         }
         #exit {
             width: 80px;
+            text-decoration: none;
+            color: rgb(24, 24, 24);
         }
+        /* Styling the output section */
         #output {
             background-color: white;
             width: 150px;
             height: 25px;
         }
+        /* 
+        Styling the footer */
+        #copyright {
+            color: rgb(8, 8, 8);
+        }
     </style>
 </head>
 <body >
+    <!-- Creating a navigation bar -->
         <nav class="navbar">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="#"> <strong>Toyota Uganda</strong> </a>
+                    <strong class="navbar-brand">Toyota Order Form</strong>
                   </div>
-
                   <ul class="nav navbar-nav navbar-right" id="out">
                     <li><a href="./logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                   </ul>
+                  
                 </div>
-              </nav>
+        </nav>
     <div class="content">
-           <!-- sales form -->
-            <form action="order" method="POST" name="form" onsubmit="return orders()">
+           <!--Creating a sales form that caputers data about an order and makes calculations-->
+            <form action="order" method="POST" name="form" onsubmit="return orders()" id="myform">
                 <div class="row">
                     <div class="col-sm-8">
                         <div id="field">
                             <fieldset id="fie">
                                 <!-- Section that captures Customer's information  -->
-                                    <legend id="leg"><h3>Customer Information</h3></legend>
+                                    <legend id="leg"><h3> <b>Customer Information</b> </h3></legend>
                                     <div class="row">
                                             <div class="col-sm-2">
                                                 Customer ID: 
                                             </div>
                                             <div class="col-sm-10">
-                                                <input type="text" name="customer_id"><span id="customer_id"></span>
+                                                <input type="text" name="customer_id" placeholder="123-45-67"><span id="customer_id"></span>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -142,7 +145,7 @@
                                                 Name: 
                                             </div>
                                             <div class="col-sm-10">
-                                               <input type="text" name="customer_name"><span id="name"></span>
+                                               <input type="text" name="customer_name" placeholder="Enter name here"><span id="name"></span>
                                             </div>
                                         </div> <br> 
                                         <div class="row">
@@ -150,7 +153,7 @@
                                                     Town: 
                                                 </div>
                                                 <div class="col-sm-4">
-                                                   <input type="text" name="state"><span id="twn"></span>
+                                                   <input type="text" name="state" placeholder="EBB / KLA / MBR" oninput="this.value=this.value.toUpperCase()"><span id="twn"></span>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <input type="checkbox" name="retailcustomer" checked> &nbsp; Retail Customer
@@ -164,7 +167,7 @@
                         <div id="field2">
                         <!-- Section that captures shipping information  -->
                         <fieldset id="fie">
-                            <legend id="leg"><h3>Shipping</h3></legend>
+                            <legend id="leg"><h3><b>Shipping</b></h3></legend>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <input type="radio" name="shipping" checked> &nbsp;UPS
@@ -190,13 +193,13 @@
                             <div id="field">
                                 <!-- Section that captures ordered parts information  -->
                             <fieldset id="fie">
-                                <legend id="leg"><h3>Part Ordered</h3></legend>
+                                <legend id="leg"><h3><b>Part Ordered</b> </h3></legend>
                                 <div class="row">
                                     <div class="col-sm-2">
                                         Part Number: 
                                     </div>
                                     <div class="col-sm-5">
-                                        <input type="text" name="partno"><span id="part_no"></span>
+                                        <input type="text" name="partno" placeholder="001"><span id="part_no"></span>
                                     </div>
                                 </div><br>
                                 <div class="row">
@@ -204,7 +207,7 @@
                                         Description: 
                                     </div>
                                     <div class="col-sm-5">
-                                       <input type="text" name="description"><span id="descripn"></span>
+                                       <input type="text" name="description" placeholder="Oil Filter"><span id="descripn"></span>
                                     </div>
                                 </div> <br>
                                 <div class="row">
@@ -212,13 +215,13 @@
                                         Price per part:
                                     </div>
                                     <div class="col-sm-5">
-                                        <input type="text" name="price"><span id="ppp"></span>
+                                        <input type="text" name="price" placeholder="$7.51"><span id="ppp"></span>
                                     </div>
                                     <div class="col-sm-1">
                                         Quantity
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" name="quantity"><span id="qty"></span>
+                                        <input type="text" name="quantity" placeholder="2"><span id="qty"></span>
                                     </div>
                                 </div><br> 
                                 <div class="row " >
@@ -234,7 +237,7 @@
                             <div id="field2">
                             <fieldset id="fie">
                                 <!-- Section that outputs costs  information  -->
-                                <legend id="leg"><h3>Output</h3></legend>
+                                <legend id="leg"><h3><b>Output</b></h3></legend>
                                 <div class="row">
                                         <div class="col-sm-6">
                                             Cost:
@@ -273,44 +276,47 @@
                     </div><br>
                     <div class="row">
                         <div class="col-sm-3">
-                            <input type="submit" value="Compute" id="btn">
+                           <b><input type="submit" value="Compute" id="btn"></b> 
                         </div>
                         <div class="col-sm-2">
-                                <button type="reset">New Order</button>
-                            </div> 
-                            <div class="col-sm-4"></div>
+                            <!-- Creating a reset button that refreshes the page -->
+                            <button type="reset"  onclick="{ window.location.reload(); }" ><b>New Order</b></button>
+                        </div> 
+                            <div class="col-sm-4"> <p id="copyright"><b><i>© 2019 &nbsp; Beatrice Nakabanda &nbsp;&nbsp;&nbsp;&nbsp; </i> </b></p></div>
                             <div class="col-sm-3">
-                            
-                                    <a href="./logout"> <button type="button" id="exit" > Exit</button></a>
-                                   <!-- <button type="exit" onclick="windowClose()">Close </button>  -->
-                                </div>                       
-                    </div>     
-         
-            </form>
-            
+                                <!-- Creating a logout button that exits the page -->
+                                <a href="./logout"> <button type="button" id="exit" ><b>Exit</b></button></a>                  
+                            </div>                      
+                    </div>      
+            </form>          
     </div>
     <script>
-    function orders() {
-        //Variables that keep values from the form inputs
-        var customerId = document.form.customer_id.value;
-        var name = document.form.customer_name.value;
-        var town = document.form.state.value;
-        var partno = document.form.partno.value;
-        var description = document.form.description.value;
-        var price_per_part = document.form.price.value;
-        var quantity = document.form.quantity.value;
-        var shipping = document.form.shipping.value;
-        var oversize = document.form.oversizecontainer.value;
-        var cost = (price_per_part * quantity).toFixed(2);//to two decimal places
+        <!--
+            /*
+            Creating a function that calculates cost, holds other functions and is called on submiting a form
+            */
+            function orders() {
+                /*
+                Variables that keep values from the form inputs*/
+                var customerId = document.form.customer_id.value;
+                var name = document.form.customer_name.value;
+                var town = document.form.state.value;
+                var partno = document.form.partno.value;
+                var description = document.form.description.value;
+                var price_per_part = document.form.price.value;
+                var quantity = document.form.quantity.value;
+                var shipping = document.form.shipping.value;
+                var oversize = document.form.oversizecontainer.value;
+                // variable that calculates cost and fixes it to two decimal places
+                var cost = (price_per_part * quantity).toFixed(2);
 
 
             /*
             This function validates the customer form to check if the user input is correct
             */
             function validData(){
-                var noSpace = /\s/;
-                var num = /[^0-9]/;
-                if (!customerId || customerId.match(noSpace))
+                var space = /\s/;
+                if (!customerId || customerId.match(space))
                 {
                     document.getElementById("customer_id").innerHTML="<b>Required and cannot contain blank spaces</b>";
                     return false;
@@ -335,7 +341,7 @@
                     document.getElementById("ppp").innerHTML="<b>Price must be a number that is greater than zero</b>";
                     return false;
                 } 
-                else if(num.test(quantity) || quantity <= 0){
+                else if(isNaN(quantity) || quantity <= 0){
                     document.getElementById("qty").innerHTML="<b>Price must be a number that is greater than zero</b>";
                     return false;                    
                 } else {
@@ -344,9 +350,10 @@
     
             }
             /*
-            This function computes the sales tax*/
+            This function computes the sales tax
+            */
             function salesTax(amount){
-                //displaying cost
+                //Displaying cost
                 document.getElementById("cost").innerHTML = `$ ${cost}`;
                     
                 this.cost = amount;
@@ -361,7 +368,7 @@
                 //Displaying the sales tax
                 document.getElementById("salestax").innerHTML = `$ ${tax.toFixed(2)}`;
 
-                // getter for the total tax
+                // geting the total tax
                 this.getTax = function() {
                 return tax;
                 };
@@ -371,7 +378,9 @@
             This function computes the cost of shipping and handling
             */
            function shippingHandling(){
-                // Calculating the shipping cost
+                /* 
+                Calculating the shipping cost
+                */
                 if (shipping === "UPS") {
                 shippingCost = 7.0;
                 } else if (shipping === "Fed Ex Ground") {
@@ -381,43 +390,36 @@
                 } else {
                 shippingCost = 12.0;
                 }
-                //oversize container
+                /*
+                Checking if oversize container is checked or not
+                */
                 if (oversize.checked) {
                 handlingCost = 5.0;
                 } else {
                 handlingCost = 0.0;
                 }
-                //Calculating total shipping & handling cost
+                //Calculating total shipping & handling cost and fixing it to two decimal places
                 totalShippingCost = (quantity * (shippingCost + handlingCost)).toFixed(2);
-                //displaying total shipping and handling cost
+                //Displaying total shipping and handling cost
                 document.getElementById("shipping").innerHTML = `$ ${totalShippingCost}`;
-
+                //Getting the shiping cost and returning it
                 this.getshippingCost = function() {
                 return totalShippingCost;
                 };
                 return totalCost();
 
            }
-           // Function to calculate the total cost
+           /*
+           Function to calculate the total cost*/
            function totalCost(){
                var total = parseFloat(cost) + parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
-               //displaying total
+               //Displaying total
                document.getElementById("total").innerHTML = `$ ${total}`;
-
-               return closeMe();
            }  
-           //Function that closes the window
-        //    function closeMe(){
-        //         document.getElementById("exit").addEventListener("click", function(){ 
-        //             window.close();
-        //         });
-        //    } 
+        //Calling validData function    
         validData();
-        return false;
-        
     }  
-  
-   
+    -->
     </script>
 </body>
 </html>

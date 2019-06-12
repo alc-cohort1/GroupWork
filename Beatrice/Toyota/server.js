@@ -1,3 +1,4 @@
+//Creating variables that import libraries needed for this app to work
 var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
@@ -14,7 +15,7 @@ var connection = mysql.createConnection({
 });
 //Accessing files in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
-// creatiing express function that stores a session
+//Creatiing express function that stores a session
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -81,19 +82,9 @@ app.post('/auth', function(request, response) {
 		});
 	} else {
 		response.send('Please enter Username and Password!');
-		response.end(); //ends browser from continuos loading
+		response.end(); //Ends browser from continuos loading
 	}
 });
-//function that loads the index page
-// app.get('/home', function(request, response) {
-// 	if (request.session.loggedin) {
-//         response.send('Welcome back, ' + request.session.username + '!');
-//         // response.send()
-// 	} else {
-// 		response.send('Please login to view this page!');
-// 	}
-// 	response.end();
-// });
 /*
 Function that captures data from the customer form and posts it to the database 
 */
@@ -119,25 +110,20 @@ app.post('/order', function(request, response) {
                 response.status(500)
                 return
             } 
-            else {
-                response.redirect('/home');
-            }
-            response.end();
     })
     } else {
         response.send('Please login to make an order!');
+        
     }
-    response.end();
 });
+//Ceating a route for logging out 
 app.get('/logout', function(request, response){
 request.session.loggedin = false;
 if (!request.session.loggedin){
-    // request.redirect('/');
-    response.redirect('/register');
+    response.redirect('/');
 }    
 });
 
-
-//creating port number
-app.listen(9000);
+//Creating port number
+app.listen(3000);
 

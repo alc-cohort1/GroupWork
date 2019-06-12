@@ -7,7 +7,7 @@
 			/* styling the body */
 			body {
 				padding-left: 50px;
-				background-image: url("../img/tyota.jpg");
+				background-image: url("../img/tyot.jpg");
 				background-size: 1400px 700px;
 				background-repeat: no-repeat;
 				
@@ -23,14 +23,15 @@
 				width: 300px;
 				margin: 0 auto;
 				font-family: Tahoma, Geneva, sans-serif;
-				height: 430px;
+				height: 455px;
 				padding: 15px;
-				background-color: transparent;
+				background-color: rgb(194, 192, 192);
 				box-shadow: 0 0 30px 10px;
+				opacity: 0.9;
 			}
 			.login-form h1 {
 				text-align: center;
-				color:rgb(73, 73, 73);
+				color:rgb(51, 50, 50);
 				font-size: 26px;
 				padding: 20px 0 20px 0;
 			}
@@ -56,12 +57,15 @@
 				color: #ffffff;
 			}
 			p {
-				color: #F8F8F8;
+				color:rgb(51, 50, 50);
+			}
+			#button {
+				background-color: rgb(51, 50, 50);
 			}
 			button {
 				width: 100%;
 				padding: 15px;
-				background-color: #535b63;
+				background-color: rgb(51, 50, 50);
 				border: 0;
 				box-sizing: border-box;
 				cursor: pointer;
@@ -72,22 +76,27 @@
 				color: #ffffff; 
 				text-decoration: none;
 			}
+			#login {
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
+		<!-- creating an header for the page -->
         <div class="header">
             <h1> <strong>Toyota Uganda</strong> </h1>
-        </div>
+		</div>
+		<!-- creating a registration form for a user -->
 		<div class="login-form">
 			<h1>Registration Form</h1>
 			<form action="reg" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="email" name="email" placeholder="Email" required>
-				<input type="submit" value="Register">
+				<input type="submit" value="Register" id="button">
 				<center>
 					<p>Or</p>
-					<button type="button" ><a href="./">Login</a></button>
+					<a href="./"><button type="button" id="login">Login</button></a><br>
 				</center>				
 			</form>
 		</div>

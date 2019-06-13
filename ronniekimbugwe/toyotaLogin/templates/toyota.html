@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="toyota.css " />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Bhai:400,700,300|Open+Sans:400,600,700,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+        /* CSS code block */
+        * {
+          font-family: Baloo Bhai;
+          
+   
+  }
+  
+  fieldset {
+    border: 2px solid #fff;
+  }
+  
+  .top {
+    /* background-color: bisque; */
+    border: 1px black solid;
+    background-image: url(pic.jpg);
+   
+    
+    
+    
+  }
+  
+  .main-container {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .main-container div {
+    /* border: 2px white solid; */
+    /* padding: 0px; */
+    /* background-color: orange; */
+    background-color: transparent;
+    
+    border-radius: 2%;
+  }
+  .main-container1 {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  .main-container1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  #salestax {
+    background-color: #fff;
+    width: 10px;
+  }
+  
+  .main-container1 div {
+    /* border: 2px white solid; */
+    /* padding: 0px; */
+    background-color:transparent;
+    border-radius: 2%;
+  }
+  
+  .customer {
+    flex: 1;
+  }
+  .shipping {
+    flex: 1;
+  }
+  .parts {
+    flex: 1;
+  }
+  .output {
+    flex: 1;
+  }
+  
+  button {
+    background: transparent;
+    border: 1px solid black;
+    background-color:white;
+    border-radius: 5%;
+  }
+  .main-container3 {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  .main-container3 div {
+    padding: 10px;
+    background-color:transparent;
+  }
+  .btn3 {
+    justify-content: flex-end;
+  }
+  #customerid{
+    background-color: bisque;
+  }
+  .table td{
+  color:white;
+  }
+  .ship{
+    color:white;
+  }
+  .top h2{
+    color:white;
+  }
+  .heading{
+    padding-left: 450px;
+  }
+  .main-container3 a{
+    text-decoration:none;
+  }
+  
+  a{
+    color: black;
+  }
+  .btn2 .btn3{
+    text-emphasis-color: white;
+  
+  }
+  .main.heading{
+    min-height: 5px;
+    padding-top: 5px;
+  }
+  .error{
+    color:red;
+  }
+  </style>
+  <!-- Function called validData() having validation and calculation -->
+    <script>
+  function validData() {
+  // Event.preventDefault(); enables page refreshing
+  var customerid = document.getElementById("customerid").value;
+  var name = document.getElementById("name").value;
+  var townCode = document.getElementById("townCode").value;
+  var partNumber = document.getElementById("partnumber").value;
+  var description = document.getElementById("desc").value;
+  var price = document.getElementById("per").value;
+  var quantity = document.getElementById("quantity").value;
+  var UPS = document.getElementById("ups").checked;
+  var fedex = document.getElementById("fedex").checked;
+  var postal = document.getElementById("postal").checked;
+  var fedair = document.getElementById("fedair").checked;
+  var size = document.getElementById("oversize");
+  // .....
+
+  // Validation of records
+
+  if (customerid == "" || customerid.length < 11) {
+    alert("Customer ID is missing and has space");
+    document.getElementById("error1").innerHTML =
+      "Customer ID is missing and has space";
+      return false;
+  }else{
+    document.getElementById("error1").innerHTML =
+      "";
+  
+  } 
+  if (name == "") {
+    alert("Customer Name is missing");
+    document.getElementById("error2").innerHTML = "Customer Name is missing";
+    return false;   
+  }else{
+    document.getElementById("error2").innerHTML = "";
+
+  }
+  if (townCode == "" || townCode.length > 3) {
+    alert("Town Code should have three characters");
+    document.getElementById("error3").innerHTML =
+      "Town Code should have three characters";
+      return false;
+    
+  }
+  else{
+    document.getElementById("error3").innerHTML =
+      "";
+
+  }
+  if (partNumber == "") {
+    alert("Part number is missing");
+    document.getElementById("error4").innerHTML =
+      "Part Number is missing";
+      return false;
+    
+  }
+  else{
+    document.getElementById("error4").innerHTML =
+      "";
+    
+
+  }
+  if (description == "") {
+    alert("Description is missing");
+    document.getElementById("error5").innerHTML = "Description is missing";
+    return false;
+  }
+  else{
+    document.getElementById("error5").innerHTML = "";
+  }
+  if (price == 0 || price == "" || isNaN(price)) {
+    alert("Price must be greater than Zero");
+    document.getElementById("error6").innerHTML =
+      "Price must be greater than Zero";
+      return false;
+    
+  }
+  else{
+    document.getElementById("error6").innerHTML =
+      "";
+
+  }
+  if (quantity == 0 || quantity == "" || isNaN(quantity)) {
+    alert("Quantity must be greater than Zero");
+    document.getElementById("error6").innerHTML =
+      "Quantity must be greater than Zero";
+      return false;
+    
+  }
+  else{
+    document.getElementById("error6").innerHTML =
+      "";
+
+  }
+  //Calculating cost
+  cost = (price * quantity).toFixed(2);
+
+document.getElementById("Cost").value = cost;
+//Calling salesTax(cost) function
+SalesTax(cost);
+//Calling ShippingHandling();
+  ShippingHandling();
+  var floattax = parseFloat(document.getElementById("tax").value);
+  var floathandling = parseFloat(document.getElementById("handling").value);
+//Calculating  total
+  document.getElementById("Total").value = (
+    floattax +
+    floathandling +
+    parseFloat(document.getElementById("Cost").value)
+  ).toFixed(2);
+
+  // .....Function SalesTax(cost)
+
+  function SalesTax(cost) {
+    cost = document.getElementById("Cost").value;
+    document.getElementById("townCode").value = townCode;
+    switch (townCode) {
+      case "KLA":
+        document.getElementById("tax").value = (
+          document.getElementById("Cost").value * 0.1
+        ).toFixed(2);
+
+        break;
+      case "EBB":
+        document.getElementById("tax").value = (
+          document.getElementById("Cost").value * 0.05
+        ).toFixed(2);
+
+        break;
+      case "MBR":
+        document.getElementById("tax").value = (
+          document.getElementById("Cost").value * 0.05
+        ).toFixed(2);
+
+        break;
+      default:
+        document.getElementById("tax").value = 0;
+    }
+  }
+//Function ShippingHandling() handling the shipping cost based on the choice made
+  function ShippingHandling() {
+    if (size == true) {
+
+      oversized();
+    } else {
+      notOversized();
+    }
+    //Function oversized will be called if  oversize is checked.
+    function oversized() {
+      if (fedex == true) {
+        document.getElementById("handling").value = (
+          quantity *
+          (8.5 + 5)
+        ).toFixed(2);
+      }
+      if (fedair == true) {
+        document.getElementById("handling").value = (
+          quantity *
+          (5 + 12.0)
+        ).toFixed(2);
+      }
+      if (UPS == true) {
+        document.getElementById("handling").value = (
+          quantity *
+          (5 + 7.0)
+        ).toFixed(2);
+      }
+      if (postal == true) {
+        document.getElementById("handling").value = (
+          quantity *
+          (5 + 7.0)
+        ).toFixed(2);
+      }
+    }
+//Function notOversized will be called when oversize container isnt checked.
+    function notOversized() {
+      if (fedex == true) {
+        document.getElementById("handling").value = (quantity * 8.5).toFixed(2);
+      }
+      if (fedair == true) {
+        document.getElementById("handling").value = (quantity * 12.0).toFixed(
+          2
+        );
+      }
+      if (UPS == true) {
+        document.getElementById("handling").value = (quantity * 7.0).toFixed(2);
+      }
+      if (postal == true) {
+        document.getElementById("handling").value = (quantity * 7.0).toFixed(2);
+      }
+    }
+  }
+
+}
+
+
+    </script>
+   
+
+    <title>TOYOTA APP</title>
+    
+
+
+
+
+
+    </style>
+   
+  </head>
+
+  <body>
+    
+    
+    <br/>
+    <div class="main">
+      <h1 class="heading"><strong>Toyota Uganda Ordering App</strong></h1>
+    </div>
+    <header class="top">
+      <!-- Form for input records  -->
+    
+      <form onsubmit="return validData()"action="/login" method="POST">
+         
+           
+            
+        <div class="main-container">
+          
+          <div class="customer">
+            <fieldset>
+              <legend>
+                <h2>Information</h2>
+              </legend>
+              <br />
+              <!-- Table compassing records -->
+              <table class="table">
+                <tr>
+                  <td>Customer ID:</td>
+                  <td><input type="text" placeholder="123-45-6789" id="customerid" name="customer"/></td>
+                </tr>
+                <tr>
+                  <td>Name:</td>
+
+                  <td><input type="text"  id="name" name="name" placeholder="Tom Thumb"/></td>
+                </tr>
+                <tr>
+                    <tr>
+                        <td>Town:</td>
+      
+                        <td><input type="text"  id="townCode" name="tn" placeholder="KLA"oninput="this.value=this.value.toUpperCase()" /></td>
+                        <!--  -->
+                      <td>
+                    <input
+                      type="checkbox"
+                      id="customerR"
+                      value="retail"
+                      checked
+                    />Retail Customer
+                  </td>
+                      </tr>
+                  
+                </tr>
+              </table>
+            </fieldset>
+          </div>
+          <div class="shipping">
+            <fieldset class="special">
+              <legend>
+                <h2><strong>Shipping</strong></h2>
+              </legend>
+             
+              <!-- Shipping choices -->
+              <div class="ship">
+                <div>
+                  <input type="radio" id="ups" name="shipMethod" checked  />UPS
+                  &nbsp;&nbsp;
+                  <input type="radio" id="fedex"name="shipMethod" />Fed Ex Ground
+                </div>
+                
+                <br />
+                <br/>
+                <br/>
+
+                <div>
+                  <input type="radio" id="postal" name="shipMethod"/>US Posta Air
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" id="fedair" name="shipMethod" />Fed Ex Air
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="main-container1">
+          <div class="parts">
+            <fieldset>
+              <legend>
+                <h2><strong>Part Ordered</strong></h2>
+              </legend>
+              <table class="table">
+                <tr>
+                  <td>Part Number:</td>
+                  <td><input type="text"placeholder="10152" id="partnumber"  name="partNumber"/></td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td><input type="text"placeholder="Oil Filter" id="desc" name="description" /></td>
+                </tr>
+                <tr>
+                  <td>Price per part:</td>
+                  <td><input type="text"placeholder="$" id="per" name="price"/></td>
+                  <td>Quantity:<input type="text"placeholder="" id="quantity" name="quantity" /></td>
+                </tr>
+                <td></td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="oversize"
+                    name="size"
+                    value="container"
+                  />Oversize Container
+                </td>
+              </table>
+              
+            </fieldset>
+            
+          </div>
+          <div class="output">
+            <fieldset>
+              <legend>
+                <!-- Output table:cost,salesTax, -->
+
+                <h2><strong>Output</strong></h2>
+              </legend>
+              <table class="table">
+                <tr>
+                  <td>Cost:</td>
+                 
+                  <td><input type="text"placeholder="$" id="Cost" name="thecost" ></td>
+                </tr>
+                <tr>
+                  <td>Sales Tax:</td>
+                  <td>
+                    <input type="text" placeholder="$" id="tax" name="thetax" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Shipping and Handling</td>
+                  <td><input type="text" id="handling"placeholder="$"  name="thehandling"/></td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td><input type="text" placeholder="$" id="Total" name="thetotal"  /></td>
+                </tr>
+              </table>
+            </fieldset>
+            
+          </div>
+        </div>
+      
+        <!-- Btn2 compute will calculate the results and post to the 
+        database
+        btn3 will send you to login page -->
+        <div class="main-container3">
+          <div class="one">
+            <button class="btn2">Compute</button>
+            <button class="btn2"type="reset">New Order</button>
+          </div>
+
+          <div class="three">
+            
+            <button class="btn3"><a href="/">Exit</a></button>
+          </div>
+        </div>
+        <span>
+            <span id ="error1" class="error" name="errorMessage">
+                    
+              </span><br/>
+              <span id ="error2" class="error"name="errorMessage">
+                    
+              </span><br/>
+              <span id ="error3"name="errorMessage"class="error">
+                    
+              </span><br/>
+              <span id ="error4"name="errorMessage"class="error">
+                    
+              </span><br/>
+              <span id ="error5"name="errorMessage"class="error">
+                    
+              </span><br/>
+              <span id ="error6"name="errorMessage"class="error">
+                </span>
+                </span>
+      </form>
+        
+<!-- Error message block -->
+    <span>
+        <span id ="error1" class="error" name="errorMessage">
+                
+          </span><br/>
+          <span id ="error2" class="error"name="errorMessage">
+                
+          </span><br/>
+          <span id ="error3"name="errorMessage"class="error">
+                
+          </span><br/>
+          <span id ="error4"name="errorMessage"class="error">
+                
+          </span><br/>
+          <span id ="error5"name="errorMessage"class="error">
+                
+          </span><br/>
+          <span id ="error6"name="errorMessage"class="error">
+            </span>
+            </span>
+            
+              
+
+      
+     
+     
+    </header>
+    
+    
+  </body>
+</html>

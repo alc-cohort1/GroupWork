@@ -1,3 +1,4 @@
+//Adding dependecies to enable creating sessions,passing static images,encrypting data
 var mysql = require("mysql");
 var express = require("express");
 var session = require("express-session");
@@ -22,26 +23,27 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-//adding image(s) to the page
+//Adding image(s) to the page
 app.use(express.static(path.join(__dirname, "templates")));
 
-// root route to the login page
+//  Route to the login page
 app.get("/", function(request, response) {
   response.sendFile(path.join(__dirname + "/templates/login.html"));
 });
+app.get("/auth", function(request, response) {
+  response.sendFile(path.join(__dirname + "/templates/auth.html"));
+});
 
-// register.html route
+// Register.html route
 app.get("/register", function(request, response) {
   response.sendFile(path.join(__dirname + "/templates/register.html"));
 });
-// home route to the toyota page
+// Home route to the toyota page
 app.get("/home", function(request, response) {
   response.sendFile(path.join(__dirname + "/templates/toyota.html"));
 });
 
-// .....
-
-// inserting to table accounts
+// inserting  user records to table accounts
 app.post("/registration", function(request, response) {
   var username = request.body.username;
   var password = request.body.password;
@@ -60,7 +62,7 @@ app.post("/registration", function(request, response) {
     (err, results, field) => {
       if (err) {
         console.log("An error occured" + err);
-        res.status(500);
+        response.status(500);
         return;
       } else {
         response.redirect("/");
@@ -69,7 +71,7 @@ app.post("/registration", function(request, response) {
     }
   );
 });
-// function that checks if the credentials put are the same as the database
+// Function that checks if the credentials put are the same as the database
 app.post("/auth", function(request, response) {
   var username = request.body.username;
   var password = request.body.password;
@@ -87,7 +89,8 @@ app.post("/auth", function(request, response) {
           request.session.username = username;
           response.redirect("/home");
         } else {
-          response.send("Incorrect Username and/or Password!");
+          response.redirect("/auth");
+          // response.send("Incorrect Username and/or Password!");
         }
         response.end();
       }
@@ -97,7 +100,7 @@ app.post("/auth", function(request, response) {
     response.end();
   }
 });
-//toyota.html index page loading
+//Toyota.html index page loading
 app.get("/home", function(request, response) {
   if (request.session.loggedin) {
     response.send("Welcome back, " + request.session.username + "!");
@@ -106,7 +109,7 @@ app.get("/home", function(request, response) {
   }
   response.end();
 });
-//app.post requesting records
+//App.post requesting records
 app.post("/login", function(request, response) {
   if (request.session.loggedin) {
     console.log("you are posting data");
@@ -121,7 +124,7 @@ app.post("/login", function(request, response) {
     var size = request.body.size;
 
     const querystring =
-      "INSERT INTO `customers` (`customer`, `name`,`town`,`partNumber`, `description`, `price`, `quantity`, `size` ) VALUES (?,?,?,?,?,?,?,?)";
+      "INSERT INTO customers (customer, name,town,partNumber,description, price, quantity, size ) VALUES (?,?,?,?,?,?,?,?)";
 
     connection.query(
       querystring,
@@ -130,6 +133,7 @@ app.post("/login", function(request, response) {
         if (err) {
           console.log("An error occured" + err);
         }
+        // Not closing the session
         // } else {
         //    response.redirect("/home");
         // }
@@ -139,7 +143,7 @@ app.post("/login", function(request, response) {
   }
 });
 
-//creating port number
-app.listen(6500, () => {
-  console.log("Express at server 6500!");
+//Creating port number
+app.listen(3700, () => {
+  console.log("Express at server 3700!");
 });

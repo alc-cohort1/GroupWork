@@ -1,0 +1,13 @@
+How to run this application.
+
+
+1- Download the Zip folder and unzipped to the root on your computer.
+2. Download and Install NodeJS using the package manager NPM via the CMD/Terminal
+3. Install the list of these modules to the folder you would like to run the application from the terminal 
+	-mysql 
+	-express 
+ 	-session 
+	-bodyParser 
+	-path 
+	-crypto 
+4. 

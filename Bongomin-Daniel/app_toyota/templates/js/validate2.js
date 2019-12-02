@@ -144,6 +144,17 @@ validateData Function Handles Validation of input fields of the application
 
 // exit button
 
-$("#exit").click(function(){
-  window.location.href="index.html";
-});
+// $("#exit").click(function(){
+//   confirm()
+//   window.location.href="index.html";
+// });
+
+function exitButton() {
+  var r = confirm("Are You sure You want to EXIT");
+  if (r == true) {
+    window.location.href="index.html";
+  } else {
+    window.location.href="index.html";
+  }
+  
+}

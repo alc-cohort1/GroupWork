@@ -63,7 +63,7 @@ app.post("/contact", (req, res) => {
     }
   );
 });
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8000;
 
 // Binding to a port
 app.listen(PORT, () => {

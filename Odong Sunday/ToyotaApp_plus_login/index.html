@@ -5,6 +5,11 @@
 		<meta charset="utf-8">
 		<title>Login Form Tutorial</title>
 		<style>
+			/* 
+				This section provides the styling to the layout of the login page
+
+			 */
+
 		.login-form {
 			width: 300px;
 			margin: 0 auto;
@@ -52,6 +57,11 @@
 		</style>
 	</head>
 	<body>
+			<!-- 
+				This section contains the various input fields that a user can put his information so as to login.
+				the submit button below with the help of the Post method helps to verify if the information in the database
+				matches with what you have entered
+			 -->
 		<div class="login-form">
 			<h1>Login Form</h1>
 			<form action="auth" method="POST">
@@ -60,7 +70,7 @@
 				<input type="submit">
             </form>
             <div class="register">
-                <div class="one">
+                <div class="one" style="margin-left: 20px;">
                     <label>
                         OR
                     </label>
@@ -68,7 +78,7 @@
                 <div class="two">
                     <label>
                         <a href="/register">
-                            Register
+							<input type="submit" value="Register" style="margin-left: -45px">
                         </a>
                     </label>
                 </div>

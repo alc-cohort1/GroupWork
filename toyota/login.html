@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form Tutorial</title>
+		  <link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+				body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #E5E4E2;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+		.login-form1 {
+		   width: 35%;
+			border: 0px solid #535b63;
+			border-radius: 5;
+			margin: 0 auto;
+			background-color:white ;
+			margin-top:5%;
+		}
+		.login-form {
+			width: 400px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #2C3539;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form button {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		a:link {
+			  text-decoration: none;
+			}
+
+			a:visited {
+			  text-decoration: none;
+			}
+
+			a:hover {
+			  text-decoration: underline;
+			}
+			body{
+				background-image: url(bg.jpg);
+			}
+		</style>
+	</head>
+	<body style="background-color:;" >
+
+<ul class="topnav">
+  
+  <li><img src="head.png" width="400px" height="50px"></li>
+  <li class="right"><a href="#about">Register</a></li>
+</ul>
+		<div class="login-form1">
+			<div style="width: 100%; background-color: #535b63; text-align: center; padding: 7px 0 7px 0; color: #ffffff"><h1>Login</h1></div>
+			<br>
+		<div class="login-form">
+			
+			<form action="auth" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+
+				<button>Login</button>
+			</form>
+			<center>
+				<br>
+			<span><h3>OR</h3></span>
+			<span><a href="./register" style="text-transform: none;"><h2>Register</h2></a></span>
+			<br>
+			</center>
+		</div>
+	</div>
+	</body>
+</html>

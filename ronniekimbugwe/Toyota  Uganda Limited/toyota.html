@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="toyota.css " />
+    <script>
+      function validData() {
+      event.preventDefault();
+      var customerid = document.getElementById("customerid").value;
+      var name = document.getElementById("name").value;
+      var townCode = document.getElementById("state").value;
+      var partNumber = document.getElementById("partnumber").value;
+      var description = document.getElementById("desc").value;
+      var price = document.getElementById("per").value;
+      var quantity = document.getElementById("quantity").value;
+      var UPS = document.getElementById("ups").checked;
+      var fedex = document.getElementById("fedex").checked;
+      var postal = document.getElementById("postal").checked;
+      var fedair = document.getElementById("fedair").checked;
+      var size = document.getElementById("oversize").checked;
+      var cost = document.getElementById("Cost").value;
+      
+       
+      if (customerid == "" || customerid.length < 11) {
+        alert("Customer ID is missing and has space");
+        document.getElementById("error1").innerHTML =
+          "Customer ID is missing and has space";
+        return false;
+      }
+
+      if (name == "") {
+        alert("Customer Name is missing");
+        document.getElementById("error2").innerHTML =
+          "Customer Name is missing";
+        return false;
+      }
+
+      if (townCode == "" || townCode.length > 3) {
+        alert("Town Code should have three characters");
+        document.getElementById("error3").innerHTML =
+          "Town Code should have three characters";
+        return false;
+      }
+      if (partNumber == "") {
+        alert("Part number is missing");
+        document.getElementById("error4").innerHTML =
+          "Town Code should have three characters";
+        return false;
+      }
+      if (description == "") {
+        alert("Description is missing");
+        document.getElementById("error5").innerHTML = "Description is missing";
+        return false;
+      }
+      if (price == 0 || price == "" || isNaN(price)) {
+        alert("Price must be greater than Zero");
+        document.getElementById("error6").innerHTML =
+          "Price must be greater than Zero";
+        return false;
+      }
+      if (quantity == 0 || quantity == "" || isNaN(quantity)) {
+        alert("quantity must be greater than Zero");
+        document.getElementById("error6").innerHTML =
+          "quantity must be greater than Zero";
+        return false;
+      }  
+      cost = (price * quantity).toFixed(2);
+
+        document.getElementById("Cost").value = cost;
+        
+        SalesTax(cost);
+
+        ShippingHandling();
+        var floattax = parseFloat(document.getElementById("tax").value);
+        var floathandling = parseFloat(
+          document.getElementById("handling").value
+        );
+        document.getElementById("Total").value = (
+          floattax +
+          floathandling +
+          parseFloat(document.getElementById("Cost").value)
+        ).toFixed(2);
+
+      
+      function SalesTax(cost) {
+        cost = document.getElementById("Cost").value;
+        document.getElementById("state").value = "";
+        switch (townCode) {
+          case "KLA":
+            document.getElementById("tax").value = (
+              document.getElementById("Cost").value * 0.1
+            ).toFixed(2);
+
+            break;
+          case "EBB":
+            document.getElementById("tax").value = (
+              document.getElementById("Cost").value * 0.05
+            ).toFixed(2);
+
+            break;
+          case "MBR":
+            document.getElementById("tax").value = (
+              document.getElementById("Cost").value * 0.05
+            ).toFixed(2);
+
+            break;
+          default:
+            document.getElementById("tax").value = 0;
+        }
+      }
+
+      function ShippingHandling() {
+        if (size == true) {
+          oversized();
+        } else {
+          notOversized();
+        }
+        function oversized() {
+          if (fedex == true) {
+            document.getElementById("handling").value = (
+              quantity *
+              (8.5 + 5)
+            ).toFixed(2);
+          }
+          if (fedair == true) {
+            document.getElementById("handling").value = (
+              quantity *
+              (5 + 12.0)
+            ).toFixed(2);
+          }
+          if (UPS == true) {
+            document.getElementById("handling").value = (
+              quantity *
+              (5 + 7.0)
+            ).toFixed(2);
+          }
+          if (postal == true) {
+            document.getElementById("handling").value = (
+              quantity *
+              (5 + 7.0)
+            ).toFixed(2);
+          }
+        }
+
+        function notOversized() {
+          if (fedex == true) {
+            document.getElementById("handling").value = (
+              quantity * 8.5
+            ).toFixed(2);
+          }
+          if (fedair == true) {
+            document.getElementById("handling").value = (
+              quantity * 12.0
+            ).toFixed(2);
+          }
+          if (UPS == true) {
+            document.getElementById("handling").value = (
+              quantity * 7.0
+            ).toFixed(2);
+          }
+          if (postal == true) {
+            document.getElementById("handling").value = (
+              quantity * 7.0
+            ).toFixed(2);
+          }
+        }
+      }
+    }
+   
+    </script>
+    
+    <title>TOYOTA APP</title>
+    <style>
+      .top {
+  font-family: Baloo Bhai;
+}
+
+fieldset {
+  border: 2px solid #fff;
+}
+
+.top {
+  background-color: bisque;
+  border: 1px black solid;
+}
+
+.main-container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.main-container div {
+  /* border: 2px white solid; */
+  /* padding: 0px; */
+  background-color: orange;
+  border-radius: 2%;
+}
+.main-container1 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.main-container1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+#salestax {
+  background-color: #fff;
+  width: 10px;
+}
+
+.main-container1 div {
+  /* border: 2px white solid; */
+  /* padding: 0px; */
+  background-color: orange;
+  border-radius: 2%;
+}
+
+.customer {
+  flex: 1;
+}
+.shipping {
+  flex: 1;
+}
+.parts {
+  flex: 1;
+}
+.output {
+  flex: 1;
+}
+button {
+  background: transparent;
+  border: 1px solid black;
+  background-color: orange;
+  border-radius: 5%;
+}
+.main-container3 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.main-container3 div {
+  padding: 10px;
+  background-color: bisque;
+}
+.btn3 {
+  justify-content: flex-end;
+}
+
+    </style>
+   
+  </head>
+
+  <body>
+    <p>
+
+    </p>
+    <br/>
+    <br/>
+    <header class="top">
+        
+      <form onsubmit=" return validData()" action="/login" method="POST" >
+        <!-- <form action="/login" method="POST"
+           > -->
+        <div class="main-container">
+          <div class="customer">
+            <fieldset>
+              <legend>
+                <h2>Information</h2>
+              </legend>
+              <br />
+              <table>
+                <tr>
+                  <td>Customer ID:</td>
+                  <td><input type="text" id="customerid" name="customer"/></td>
+                </tr>
+                <tr>
+                  <td>Name:</td>
+
+                  <td><input type="text" id="name" name="name" /></td>
+                </tr>
+                <tr>
+                  <td>Town</td>
+                  <td>
+                    <input
+                      type="text"
+                      id="state"
+                      name="townCode"
+                      oninput="this.value=this.value.toUpperCase()"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      id="customerR"
+                      value="retail"
+                      checked
+                    />Retail Customer
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </div>
+          <div class="shipping">
+            <fieldset class="special">
+              <legend>
+                <h2><strong>Shipping</strong></h2>
+              </legend>
+              <br />
+              
+              <div class="ship">
+                <div>
+                  <input type="radio" id="ups" name="shipMethod" checked  />UPS
+                  &nbsp;&nbsp;
+
+                  <input type="radio" id="fedex"name="shipMethod" />Fed Ex Ground
+                </div>
+                <br />
+                <br />
+
+                <div>
+                  <input type="radio" id="postal" name="shipMethod"/>US Posta Air
+                  &nbsp;&nbsp;
+
+                  <input type="radio" id="fedair" name="shipMethod" />Fed Ex Air
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="main-container1">
+          <div class="parts">
+            <fieldset>
+              <legend>
+                <h2><strong>Part Ordered</strong></h2>
+              </legend>
+              <table>
+                <tr>
+                  <td>Part Number:</td>
+                  <td><input type="text" id="partnumber"  name="partNumber"/></td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td><input type="text" id="desc" name="description" /></td>
+                </tr>
+                <tr>
+                  <td>Price per part:</td>
+                  <td><input type="text" id="per" name="price"/></td>
+                  <td>Quantity:<input type="text" id="quantity" name="quantity" /></td>
+                </tr>
+                <td></td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="oversize"
+                    name="size"
+                    value="container"
+                  />Oversize Container
+                </td>
+              </table>
+              
+            </fieldset>
+            
+          </div>
+          <div class="output">
+            <fieldset>
+              <legend>
+                <h2><strong>Output</strong></h2>
+              </legend>
+              <table>
+                <tr>
+                  <td>Cost:</td>
+                  <!-- readonly  -->
+                  <td><input type="text" id="Cost" name="thecost" /></td>
+                </tr>
+                <tr>
+                  <td>Sales Tax:</td>
+                  <td>
+                    <input type="text" id="tax" name="thetax" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Shipping and Handling</td>
+                  <td><input type="text" id="handling"  name="thehandling"/></td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td><input type="text" id="Total" name="thetotal"  /></td>
+                </tr>
+              </table>
+            </fieldset>
+            
+          </div>
+        </div>
+        <div class="main-container3">
+          <div class="one">
+            <button class="btn2">Compute</button>
+            <button class="btn2"type="reset">New Order</button>
+          </div>
+
+          <div class="three">
+            <button class="btn3" >Exit</button>
+          </div>
+        </div>
+        
+
+        </div>
+        <span id ="error1" name="errorMessage">
+                
+          </span><br/>
+          <span id ="error2"name="errorMessage">
+                
+          </span><br/>
+          <span id ="error3"name="errorMessage">
+                
+          </span><br/>
+          <span id ="error4"name="errorMessage">
+                
+          </span><br/>
+          <span id ="error5"name="errorMessage">
+                
+          </span><br/>
+          <span id ="error6"name="errorMessage">
+              
+
+      </form>
+     
+    </header>
+    
+    
+  </body>
+</html>

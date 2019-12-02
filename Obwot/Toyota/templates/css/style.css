@@ -1,0 +1,98 @@
+/* styling the div content warpper for the header section */
+.content_wrapper{
+    text-align: center;
+
+}
+/* styling the full page section which holds the full page */
+#full_page{
+    background: #FBCEB1;
+    padding-bottom: 2em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+/* styling the customer div sector for customer inforation */
+#customer{
+    background: #FFCC99;
+    padding-bottom: 0em;
+    padding-left: 0em;
+    padding-top: 0em;
+    margin-top: 1em;
+}
+/* styling the section for the shipping information */
+#shipping{
+    background: #FFCC99;
+    padding-bottom: 5em;
+    padding-left: 0em;
+    padding-top: 0em;
+    margin-top: 1em;
+}
+/* styling the section for part ordered section */
+#order{
+    background: #FFCC99;
+    padding-top: 0m;
+    padding-bottom: 0em;
+    padding-left: 0em;
+    margin-top: 1em;
+}
+/* styling section for the output div */
+#output{
+    background: #FFCC99;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    padding-left: 0em;
+    margin-top: 1em;
+}
+/* styling the div for the lower buttons */
+#down_buttons{
+    margin-top: 1em;
+}
+/* styling the compute button */
+#compute{
+    background: #FFCC99;
+}
+/* styling the new order button */
+#new_order{
+    background: #FFCC99;
+}
+/* styling the exit button */
+#exit{
+    background: #FFCC99;
+    margin-right: 1em;
+}
+
+/* styling the fieldset */
+fieldset{
+    border: 5px solid white;
+    /* width: 540px; */
+    /* height: 250px; */
+    padding-right: 5em;
+}
+
+/* styling the shipping fieldset */
+#shipping_set{
+    height: 160px;
+
+}
+/* styling the output fieldset */
+#output_set{
+    height: 215px;
+}
+#contact input{
+    margin: 8px 0;
+    width: 100%;
+}
+
+/* making sure text entered is automatically capitalized */
+#state{
+    text-transform: uppercase;
+}
+
+/*styling the footer*/
+footer{
+      background:#FFCC99;
+      text-align: center;
+      margin-top: 2em; 
+      margin-left: 5em;
+      margin-right: 5em; 
+  }
+  /*end of styling the footer*/

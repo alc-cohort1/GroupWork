@@ -1,0 +1,95 @@
+/*Styling for the main div continer*/
+#main
+{
+    background-color: #FBCEB1;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px black solid;
+}
+
+/*Styling for the top div section*/
+#top
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#top fieldset
+{
+    border: 1px white solid;
+    padding: 1px;
+    background:  rgb(228, 158, 89);
+}
+
+/*Styling for he middle div section*/
+#middle
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#middle fieldset
+{
+    border: 1px white solid;
+    padding: 1px;
+    background: rgb(228, 158, 89);
+}
+
+/*Styling for he middle div section*/
+#bottom
+{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#bottom div
+{
+    padding: 1px;
+    background-color: #FBCEB1;
+}
+
+#customer_info 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
+
+#shipping 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
+#order 
+{ 
+    flex: 1;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+}
+
+#output 
+{ 
+    flex: 1; 
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+    display: flex;
+}
+
+#button_left { flex: 1; }
+#button_right { flex: 1; }
+#compute { background: rgb(228, 158, 89); }
+#new_order { background: rgb(228, 158, 89); }
+#exit { background: rgb(228, 158, 89); }

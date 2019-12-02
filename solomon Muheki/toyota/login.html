@@ -3,12 +3,18 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Login Form Tutorial</title>
+		  <link rel="stylesheet" href="css/bootstrap.min.css">
 		<style>
-			.login-form1 {
-		   width: 50%;
-			border: 3px solid #535b63;
+
+		.login-form1 {
+		   width: 35%;
+			border: 0px solid #535b63;
 			border-radius: 5;
 			margin: 0 auto;
+			background-color:white ;
+			margin-top:5%;
+			
+			 box-shadow: 10 8px 16px 0 rgba(0,0,0,0.2), 10 6px 20px 0 rgba(0,0,0,0.19);
 		}
 		.login-form {
 			width: 400px;
@@ -25,7 +31,7 @@
 		.login-form input[type="text"] {
 			width: 100%;
 			padding: 15px;
-			border: 1px solid #dddddd;
+			border: 1px solid #2C3539;
 			margin-bottom: 15px;
 			box-sizing:border-box;
 		}
@@ -50,11 +56,17 @@
 			a:hover {
 			  text-decoration: underline;
 			}
+			body{
+				background-image: url("./bg.jpg");
+				background-size: 100%;
+			}
 		</style>
 	</head>
-	<body>
+	<body style="background-color:;" >
+
+
 		<div class="login-form1">
-			<div style="width: 100%; background-color: #535b63; text-align: center; padding: 7px 0 7px 0; color: #ffffff"><h1>Login</h1></div>
+			<div style="width: 100%;  text-align: center; padding: 7px 0 7px 0; color:#2B547E"><h1 style="font-family: Georgia">TOYOTA LOGIN</h1></div>
 			<br>
 		<div class="login-form">
 			
@@ -64,11 +76,12 @@
 
 				<button>Login</button>
 			</form>
-			<center>
-				<br>
-			<span><h3>OR</h3></span>
-			<span><a href="./register" style="text-transform: none;"><h2>Register</h2></a></span>
-			</center>
+			
+				<br><br>
+			
+			I don't have an account : <a href="./register" style="text-transform: none; padding: 15px 70px; background-color: #41A317; color: white;"><b>Register</b></a>
+			<br><br><br>
+			
 		</div>
 	</div>
 	</body>

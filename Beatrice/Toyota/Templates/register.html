@@ -4,78 +4,99 @@
 		<meta charset="utf-8">
 		<title>Register</title>
 		<style>
-            body {
-                background-color: #04021a;
-                padding-left: 50px;
-                /* background: linear-gradient(90deg, rgb(3, 0, 19), rgb(214, 198, 253)); */
-            }
-            .header {
-                color: 	#F0F0F0;
-            }
-		.login-form {
-			width: 300px;
-			margin: 0 auto;
-			font-family: Tahoma, Geneva, sans-serif;
-		}
-		.login-form h1 {
-			text-align: center;
-			color: #F0F0F0 ;
-			font-size: 24px;
-			padding: 20px 0 20px 0;
-		}
-		.login-form input[type="password"],
-		.login-form input[type="text"],
-        .login-form input[type="email"]
-        {
-			width: 100%;
-			padding: 15px;
-			border: 1px solid #dddddd;
-			margin-bottom: 15px;
-			box-sizing:border-box;
-		}
-		.login-form input[type="submit"] {
-			width: 100%;
-			padding: 15px;
-			background-color: #535b63;
-			border: 0;
-			box-sizing: border-box;
-			cursor: pointer;
-			font-weight: bold;
-			color: #ffffff;
-		}
-        p {
-            color: #F0F0F0;
-        }
-        button {
-            width: 100%;
-			padding: 15px;
-			background-color: #535b63;
-			border: 0;
-			box-sizing: border-box;
-			cursor: pointer;
-			font-weight: bold;
-			
-        }
-        button a {
-            color: #ffffff; 
-            
-        }
+			/* styling the body */
+			body {
+				padding-left: 50px;
+				background-image: url("../img/tyot.jpg");
+				background-size: 1400px 700px;
+				background-repeat: no-repeat;
+				
+			}
+			/* styling the header */
+			.header {
+				color:white;
+				font-size: 20px;
+			}
+			/* 
+			styling the login form */
+			.login-form {
+				width: 300px;
+				margin: 0 auto;
+				font-family: Tahoma, Geneva, sans-serif;
+				height: 455px;
+				padding: 15px;
+				background-color: rgb(194, 192, 192);
+				box-shadow: 0 0 30px 10px;
+				opacity: 0.9;
+			}
+			.login-form h1 {
+				text-align: center;
+				color:rgb(51, 50, 50);
+				font-size: 26px;
+				padding: 20px 0 20px 0;
+			}
+			.login-form input[type="password"],
+			.login-form input[type="text"],
+			.login-form input[type="email"]
+			{
+				width: 100%;
+				padding: 15px;
+				border: 1px solid #dddddd;
+				margin-bottom: 15px;
+				box-sizing:border-box;
+				opacity: 10;
+			}
+			.login-form input[type="submit"] {
+				width: 100%;
+				padding: 15px;
+				background-color: #535b63;
+				border: 0;
+				box-sizing: border-box;
+				cursor: pointer;
+				font-weight: bold;
+				color: #ffffff;
+			}
+			p {
+				color:rgb(51, 50, 50);
+			}
+			#button {
+				background-color: rgb(51, 50, 50);
+			}
+			button {
+				width: 100%;
+				padding: 15px;
+				background-color: rgb(51, 50, 50);
+				border: 0;
+				box-sizing: border-box;
+				cursor: pointer;
+				font-weight: bold;
+				
+			}
+			button a {
+				color: #ffffff; 
+				text-decoration: none;
+			}
+			#login {
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
+		<!-- creating an header for the page -->
         <div class="header">
             <h1> <strong>Toyota Uganda</strong> </h1>
-        </div>
+		</div>
+		<!-- creating a registration form for a user -->
 		<div class="login-form">
 			<h1>Registration Form</h1>
 			<form action="reg" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="email" name="email" placeholder="Email" required>
-				<input type="submit" value="Register">
+				<input type="submit" value="Register" id="button">
 				<center>
 					<p>Or</p>
-					<button><a href="./">Login</a></button>
+					<a href="./"><button type="button" id="login">Login</button></a><br>
 				</center>				
 			</form>
 		</div>

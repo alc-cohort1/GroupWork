@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Register | Sign Up</title>
+    <style>
+      /* Styling for the body */
+     body{
+       margin:0px;
+       background-color:#FBCEB1
+     }
+     /* Styling for the heading */
+     .head{
+       height: 1%;
+       padding: 5px 0px 5px 0px;
+      background-color: #F79862;
+     }
+     .left, .right{
+       height: 300px;
+     }
+     .left{
+      width: 25%;
+      padding-left: 150px;
+      border-radius: 10px;
+     }
+     .right{
+      width: 47%;
+     }
+     .account{
+       display:flex;
+       width: 90%;
+       height: 100%;
+       margin: 100px 1000px 100px 100px;
+     }
+     .logIn{
+       padding: 15px 15px 30px 15px;
+       border-radius: 10px;
+       margin-bottom:10px;
+       background-color: #F79862
+     }
+     .signUp{
+       border-radius: 10px;
+       padding:15px 15px 45px 15px;
+       background-color: #F79862
+     }
+     .logInput{
+       height: 25px;
+       width: 210px;
+       border-radius: 5px;
+     }
+     .logButton{
+       height: 30px;
+       width: 100px;
+      border: 1px solid white;
+      outline: 1px solid blue;
+      -moz-outline-radius: 5px;
+     }
+     .signInput{
+       height: 25px;
+       border-radius: 5px;
+       width: 540px;
+       margin-bottom:5px;
+     }
+     .signButton{
+       height: 30px;
+       width: 100px;
+      float:right;
+      border: 1px solid white;
+      outline: 1px solid blue;
+      -moz-outline-radius: 5px;
+     }
+     .logButton:hover, .signButton:hover{
+        border: 2px dotted blue;
+     }
+     .noteLogIn{
+      width: 200px;
+      height: 100px;
+      margin: 10px 0px 20px 5px;
+      background: #F79862;
+      border-radius: 10px;
+      }
+     .noteSignUp{
+      width: 200px;
+      height: 100px;
+      margin: 5px 0px 5px 5px;
+      background: #F79862;
+      border-radius: 10px;
+      }
+      .logInNote, .signUpNotice{
+        display: flex;
+      }
+      .noteAfter{
+        width: 0;
+        height: 0;
+        margin-top:30px;
+        border-top: 15px solid transparent;
+        border-left: 100px solid #F79862;
+        border-bottom: 15px solid transparent;
+      }
+      .under{
+        display: flex;
+        margin-top: 5px;
+      }
+      p{
+        text-align: center;
+      }
+      span{
+        margin-left: 80px;
+      }
+      /* Styling for the footer */
+     .footer{
+       height: 1%;
+       width: 100%;
+       padding-top: 5px;
+       padding-bottom: 43px;
+       position: fixed;
+       background-color: #F79862
+     }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <p><strong>TOYOTA MAIL ORDER SYSTTEM</strong></p>  
+    </div>
+    <div class="account">
+      <div class="left">
+        <div class="logInNote">
+          <div class="noteLogIn">
+            <p><strong>Already have an account?</strong></p>
+            <p>Plesae Login to Continue</p>
+          </div>
+          <div class="noteAfter"></div>
+        </div>
+        <div class="signUpNotice">
+          <div class="noteSignUp">
+            <p><strong>New Here?</strong></p>
+            <p>Plesae Sign Up to Continue</p>
+          </div>
+          <div class="noteAfter"></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="logIn">
+            <form action="auth" method="POST">
+              <input type="text" name="username" placeholder="Username" class="logInput" required >
+              <input type="password" name="password" placeholder="Password" class="logInput" required>
+              <input type="submit" value="Log In" class="logButton">
+              <div class="under">
+                <div>
+                  <input type="checkbox" name="" id="">Keep me logged in
+                </div>
+                <div>
+                  <span>Fogot your details</span>
+                </div>
+              </div>
+            </form>
+        </div>
+        <div class="signUp">
+            <form action="register" method="POST">
+              <div>
+                <input type="text" name="username" placeholder="Username" class="signInput" required>
+              </div>
+              <div>
+                <input type="email" name="email" placeholder="email" class="signInput" required>
+              </div>
+              <div>
+                <input type="password" name="password" placeholder="Password" class="signInput" required>
+              </div>
+              <input type="submit" value="Sign Up" class="signButton">
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><p><strong>&copy Copyright 2019 | Designed by Oyee James</strong</p></div>      
+  </body>
+</html>

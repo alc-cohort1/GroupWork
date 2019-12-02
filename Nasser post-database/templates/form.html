@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+</head>
+<body>
+    <center>
+        <h1>Abdinaasir</h1>
+        <form action="user_register" method="POST">
+            <fieldset style="width: 50%" >
+                <h1>Registration</h1>
+                <table>
+                            <td>
+                                <label>User Id: </label>
+                            </td><p></p>
+                            <td>
+                                <input name="userId">
+                                <span id="error1"></span>
+                            </td><p>
+
+                        <tr>
+                            <td>
+                                <label>Password: </label>
+                            </td>
+                            <td>
+                                <input name="password">
+                                <span id="error2"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Name: </label>
+                            </td>
+                            <td>
+                                <input name="name">
+                                <span id="error3"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Address:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="address">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Country:</label>
+                            </td>
+                            <td>
+                                <select name="country"> 
+                                    <option value="">(Please seelct a country)</option>
+                                    <option value="DRC">Congo</option>
+                                    <option value="rw">Rwanda</option>
+                                    <option value="So">Somalia</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="us">US</option>
+                                    <option value="Uganda">Uganda</option>
+                                </select>
+                                <span id="error4"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Zip Code:</label>
+                            </td>
+                            <td>
+                                <input name="zipCode">
+                                <span id="error5"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Email:</label>
+                            </td>
+                            <td>
+                                <input name="email">
+                                <span id="error6"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Gender:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="gender">
+
+                                <span id="error7"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Language:</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="language" value="English">English
+
+                                <span id="error8"></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>About:</label>
+                            </td>
+                            <td>
+                                <textarea cols="30" rows="10" name="about"></textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Submit"
+                                />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+        </fieldset>
+    </center>
+</body>
+</html>

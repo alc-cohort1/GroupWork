@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <!--Form title-->
+                <title>Login Form </title>
+                <link rel="stylesheet" type="text/css" href="/css/login.css"></link>
+              
+    <script type="text/javascript" src="/login.js"></script>
+    
+    <script type="text/javascript" src="/js/index.js"></script>
+            </head>
+            <body>
+                    <div class="logo">
+                    </div>
+                <!--Create  a Form -->
+            <div class="login-form">
+                <h2 > Please Log In</h2>
+                
+                <form action="auth" method="POST">
+                        <h3 id="error"></h3>
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="password" name="password"  id="password" placeholder="Password" required>
+                        <!-- An element to toggle between password visibility -->
+                        <input type="checkbox" onclick="togglePassword()">Show Password 
+                        <input type="submit" value="Login"> 
+                </form>
+                 <a style="text-decoration:none" href="register"><p>Register Here</p></a>
+            </div>
+            </body>
+</html>

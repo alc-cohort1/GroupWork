@@ -1,26 +1,33 @@
+/*importing the different modules to be used to creat node server*/
 var session = require('express-session');
 crypto=require('crypto');
 var path = require('path');
  const mysql=require('mysql');
+ const form=require("express");
+ const parser=require('body-parser')
+ /*Data base connection*/
 const Connection = mysql.createConnection({
 	
 	host:'localhost',
 	user:'root',
 	database:'toyota'
 })
-const baseUrl="http://localhost:3000/home"
-const form=require("express");
+const baseUrl="http://localhost:3000"
+
 const app=form();
-//const parser=require('express')
-const parser=require('body-parser')
+
+app.use(form.static("./"));
+
+
 
 //login and registration
 //********************************************************
 app.use(parser.urlencoded({extended:false}))
+//This is used for routing to the registration page
 app.get('/register', function(request, response) {
 	response.sendFile(path.join(__dirname + '/register.html'));
 });
-
+/*getting the user registration details from the registration page*/
 app.post('/regit',(req,res)=>{
 	console.log("u are posting some data")
 	console.log('Username '+req.body.username)
@@ -31,12 +38,12 @@ app.post('/regit',(req,res)=>{
 const Username=req.body.username
 const Password=req.body.password
 const Email=req.body.email
-//encryting the password
+//encryting the password befor being saved inthe database
 hash=crypto.createHash('md5').update(Password).digest('hex');
 console.log(hash);
 
 
-
+//saving the user registration detail into the database
 const querystring="INSERT INTO accounts (`username`, `password`, `email`) VALUES(?,?,?)"
 Connection.query(querystring,[Username,hash,Email],(err,result,field)=>{
 	if(err){
@@ -47,6 +54,7 @@ Connection.query(querystring,[Username,hash,Email],(err,result,field)=>{
 
 	Connection.query(querystring,function(err,result){
 		res.redirect(baseUrl);
+
 	})
 })
 
@@ -62,6 +70,7 @@ app.use(session({
 app.use(parser.urlencoded({extended : true}));
 app.use(parser.json());
 
+//path for the login page
 app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
@@ -90,6 +99,7 @@ console.log("login password"+passwordEncrypted);
 		response.end();
 	}
 });
+/*file path for the home page when the session is true*/
 app.get('/home', function(request, response){
 	response.sendFile(path.join(__dirname + '/pages/index.html'));
 });
@@ -112,8 +122,8 @@ app.get('/pages/', function(request, response) {
 
 //middleware
 app.use(parser.urlencoded({extended : true}));
-//app.use(parser.urlencoded({extended:false}))
 
+/*Get the customer order details entered when the form is submitted*/
 app.post('/toyotaPost',(req,res)=>{
 	console.log("you are posting some data")
 	console.log('id: '+req.body.customerId)
@@ -153,7 +163,7 @@ const Description=req.body.desc
 const Price=req.body.price
 const Quantity=req.body.quantity
 
-
+/*inserting the order details into the database*/
 const querystring="INSERT INTO customer (`customerid`, `customername`, `town`,`customertype`, `shippingcompany`, `partnumber`,`description`, `price`, `quantity`,`container`) VALUES(?,?,?,?,?,?,?,?,?,?)"
 Connection.query(querystring,[CustId,CustName,Town,customerRetail1,shippingCompany,partNumber,Description,Price,Quantity,oversizeContainer1],(err,result,field)=>{
 	if(err){
@@ -162,11 +172,10 @@ Connection.query(querystring,[CustId,CustName,Town,customerRetail1,shippingCompa
 		return
 	}
 	Connection.query(querystring,function(err,result){
-		res.redirect(baseUrl);
+		//res.redirect(baseUrl);
+		res.end;
 	})
-//res.render('index.pug',{tittle:'Data saved',
-//message:'comment saved successfully.'})
-//Connection.end();
+
 })
 
 })

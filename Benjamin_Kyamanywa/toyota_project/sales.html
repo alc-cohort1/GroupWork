@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Toyota Mail Order Sales</title>
+    <style>
+        /* Body styling for background */
+        body {
+			background: linear-gradient(-90deg, #c850c0, #4158d0);
+		}
+        /* Styling for the main wrapper */
+        .wrapper {  
+            padding: 150px 0 0 0;
+        }
+
+        .container {
+            position: relative;
+            padding: 20px 40px 10px 40px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+
+        /* Styles for the sections */
+
+        .fence{
+            padding: 10px 20px 0px 0px;   
+        }
+
+        .fence-right{
+            padding:   0px 0px 0px 0px; 
+     
+        }
+
+        .fence-right-last{
+            padding:   0px 0px 0px 0px;  
+        }
+
+        .fence {
+            padding: 0 2px 0 0;
+        }
+
+        .fieldset {
+            border: 1px solid #4158d0; 
+            padding: 10px 0px 3px 7px;
+            border-radius: 5px;
+        }
+
+        .fieldset-second {
+            border: 1px solid #4158d0; 
+            padding: 10px 0px 17px 7px;
+            border-radius: 5px;
+        }
+
+        .fieldset-fourth {
+            border: 1px solid #4158d0; 
+            padding: 10px 0px 8px 7px;
+            border-radius: 5px;
+        }
+
+        .legend {
+            border-style: none;
+            border-width: 0;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 0;
+            width: auto;
+            padding: 0 1px;
+            
+        }
+
+        .state {
+            padding-right: 10px;
+        }
+
+        /* Styling for buttons */
+        .button-style {
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #4158d0;
+            border: none;
+            margin: 4px 0 0 0;
+        }
+
+        .button-style:hover {
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #4c68f3;
+            border: none;
+            margin: 4px 0 0 0;
+        }
+
+        /* Stying for the output section */
+        .output-display {  
+            height: 22px;
+            text-align: right;
+            background-color: rgb(238, 238, 238);
+            border-radius: 5px;
+        }
+
+        
+        /* Styling for text color */
+        h2, label, h5 {
+            color: #363b41;   
+        }
+
+        
+    </style>
+  </head>
+  
+  <body>
+        <!-- Header -->
+        <div class="container">
+        <div>
+            <h2 class="text-center">TOYOTA MAIL ORDER SALES</h2>
+        </div>
+        </div>
+      <div class="container wrapper">
+          <!-- Form -->
+          <form name="sales_form" action="order_form" method="POST" onsubmit="return orders()">
+          <div class="row">
+            <!-- Section that captures Customer Information -->
+            <div class="col-sm-8">
+                <div class="fence">
+                <fieldset class="fieldset">
+                <legend class="legend"><div class="col-sm-12"><h5>Customer Information</h5></div></legend>
+                <!-- Label for customer id -->
+                <div class="row">
+                    <div class="col-sm"><label for="customer_id">Customer ID: </label></div>
+                    <div class="col-sm-9 form-group"><input class="form-control-sm" type="text" name="customer_id" placeholder=" 88-88-88" ><span id="customer_id_error"></span></div>
+                </div>
+                <!-- Label for name -->
+                <div class="row">
+                    <div class="col-sm"><label for="name">Name: </label></div>
+                    <div class="col-sm-9"><input class="form-control-sm" type="text" name="name" placeholder=" John Doe"><span id="name_error"></span></div>
+                </div>
+                <!-- Label for town -->
+                <div class="row">
+                    <div class="col-sm"><label for="state">Town: </label></div>
+                    <div class="col-sm-6"><input class="form-control-sm" type="text" name="town" placeholder=" KLA / EBB / MBR" oninput="this.value=this.value.toUpperCase()" maxlength="3"><span id="town_error"></span></div>
+                    <div class="col-sm"><input type="checkbox"  name="retail_customer"  value="Retail Customer" checked> &nbsp; Retail Customer</div>
+                </div>
+                </fieldset>
+                </div>
+            </div>
+
+            <!--  Section that captures Shipping Information -->
+            <div class="col-sm-4">
+            <div class="fence-right">
+            <fieldset class="fieldset-second">
+                    <legend class="legend"><div class="col-sm-12"><label for="shipping"><h5>Shipping</h5></label></div></legend>
+            <div class="row">
+                <div class="col-sm-3"><input type="radio" name="shipping" value="UPS" checked>&nbsp; UPS</div>
+                <div class="col-sm-8"><input type="radio" name="shipping" value="Fed Ex Ground">&nbsp; Fed Ex Ground</div>
+            </div><br>
+            <div class="row">
+                    <div class="col-sm-5"><input type="radio" name="shipping" value="US Postal Air">&nbsp; US Postal Air</div>
+                    <div class="col-sm-7"><input type="radio" name="shipping" value="Fed Ex Air">&nbsp; Fed Ex Air</div>
+            </div>
+            </fieldset>
+            </div>  
+            </div>
+          </div><br>
+
+          <div class="row">
+            <!-- Section that captures Part Ordered -->
+            <div class="col-sm-8 field">
+                <div class="fence">
+                <fieldset class="fieldset">
+                    <legend class="legend"><div class="col-sm-12"><h5>Part Ordered</h5></div></legend>
+                    <!-- Part Number label -->
+                    <div class="row">
+                        <div class="col-sm-2"><label for="part">Part Number: </label></div>
+                        <div class="col-sm-9"><input class="form-control-sm" type="text" name="part" placeholder=" 12345"><span id="part_error"></span></div>
+                    </div>
+                    <!-- Description label -->
+                    <div class="row">
+                            <div class="col-sm-2"><label for="description">Description: </label></div>
+                            <div class="col-sm-9"><input class="form-control-sm" type="text" name="description" placeholder=" eg Tyres"><span id="description_error"></span></div>
+                        </div>
+                    <!-- Price Per Part Label -->
+                    <div class="row">
+                            <div class="col-sm-2"><label for="price_per_part">Price Per Part: </label></div>
+                            <div class="col-sm"><input class="form-control-sm" type="text" name="price_per_part" placeholder=" eg $40"><span id="price_error"></span></div>
+                            <div class="col-sm-2"><label for="Quantity">Quantity: </label></div>
+                            <div class="col-sm"><input class="form-control-sm" type="text" name="quantity" placeholder=" eg 5"><span id="quantity_error"></span></div>
+                    </div>
+                    <div class="row justify-content-sm-center ">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm "><input type="checkbox" name="oversize_container" value="Oversize Container">&nbsp; Oversize Container</div>
+                    </div>
+                </fieldset>
+                </div>
+            </div>
+            <!-- Section that Outputs  -->
+            <div class="col-sm-4 field">
+                <div class="fence-right-last">
+                <fieldset class="fieldset-fourth">
+                        <legend class="legend"><div class="col-sm-12"><label for="output"><h5>Output</h5></label></div></legend>
+                <!-- Cost Label -->
+                <div class="row">
+                    <div class="col-sm-4"><label for="cost">Cost: </label></div>
+                    <div class="col-sm-6 output-display"><span id="cost"></span></div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <!-- Sales Tax Label -->
+                <div class="row">
+                        <div class="col-sm-4"><label for="sales-tax">Sales Tax: </label></div>
+                        <div class="col-sm-6 output-display"><span id="salestax"></span></div>
+                        <div class="col-sm-2"></div>
+                </div>
+                <!-- Shipping & Handling Label -->
+                <div class="row">
+                        <div class="col-sm-4"><label for="shipping-&-handling">Shipping & Handling: </label></div>
+                        <div class="col-sm-6 output-display"><span id="shipping"></span></div>
+                        <div class="col-sm-2"></div>
+                </div>
+                <!-- Total Label -->
+                <div class="row">
+                        <div class="col-sm-4"><label for="total">Total: </label></div>
+                        <div class="col-sm-6 output-display"><span id="total"></span></div>
+                        <div class="col-sm-2"></div>
+                </div>
+                </fieldset>
+                </div>
+            </div>
+            </div><br>
+
+            <!-- Buttons -->
+            <div class="row">
+                <div class="col-sm-2">
+                    <input class="button-style" type="submit" value="Compute" name="compute">  
+                </div>
+                <div class="col-sm-3">   
+                    <input class="button-style" type="reset"  onclick="window.location.reload();" value="New Order">
+                </div>
+                <div class="col-sm-5"></div>
+                <div class="col-sm-2">
+                    <a href="/"><input class="button-style" type="button" value="Exit"></a>
+                </div>
+            </div>
+            </form>
+          </div>
+          <script>
+          <!--
+                /*
+                Orders function that contains all other functions for validData that checks validation, salesTax calculation, shippingHandling calculation 
+                and totalCost calculation
+                */
+                function orders() {
+                    //Variables that keep values from the form inputs
+                    var customerId = document.sales_form.customer_id.value;
+                    var name = document.sales_form.name.value;
+                    var town = document.sales_form.town.value;
+                    var partno = document.sales_form.part.value;
+                    var description = document.sales_form.description.value;
+                    var price_per_part = document.sales_form.price_per_part.value;
+                    var quantity = document.sales_form.quantity.value;
+                    var shipping = document.sales_form.shipping.value;
+                    var oversize = document.sales_form.oversize_container.value;
+                    var cost = (price_per_part * quantity).toFixed(2); //To two decimal places
+            
+                        /*
+                        This function validates the mail order sales form to check if the user inputs are correct
+                        */
+                        function validData(){
+                            var noSpace = /\s/;
+                            var num = /[^0-9]/;
+                            if (!customerId || customerId.match(noSpace))
+                            {
+                                document.getElementById("customer_id_error").innerHTML="<b>Required and cannot contain blank spaces</b>";
+                                return false;
+                            } 
+                            else if (!name){
+                                document.getElementById("name_error").innerHTML="<b>Required</b>";
+                                return false;
+                            }
+                            else if (town.length != 3){
+                                document.getElementById("town_error").innerHTML="<b>Town must be of three characters</b>";
+                                return false;
+                            }
+                            else if (!partno){
+                                document.getElementById("part_error").innerHTML="<b>Required</b>";
+                                return false;
+                            }
+                            else if(!description){
+                                document.getElementById("description_error").innerHTML="<b>Required</b>";
+                                return false;
+                            }
+                            else if(isNaN(price_per_part) || price_per_part <= 0){
+                                document.getElementById("price_error").innerHTML="<b>Price must be a number that is greater than zero</b>";
+                                return false;
+                            } 
+                            else if(num.test(quantity) || quantity <= 0){
+                                document.getElementById("quantity_error").innerHTML="<b>Price must be a number that is greater than zero</b>";
+                                return false;                    
+                            } else {
+                                return salesTax(cost);
+                            }
+                
+                        }
+
+                        /*
+                        This function computes the sales tax
+                        */
+                        function salesTax(amount){
+                            // Displaying cost
+                            document.getElementById("cost").innerHTML = `$ ${cost}`;
+                                
+                            this.cost = amount;
+                            // Calculating the sales tax for Kampala, Mbarara, Entebbe and other towns
+                            if (town === "KLA") {
+                                tax = this.cost * 0.1;
+                                } else if (town === "EBB" || town === "MBR") {
+                                tax = this.cost * 0.05;
+                                } else {
+                                tax = 0.0;
+                                }
+                            //Displaying the sales tax
+                            document.getElementById("salestax").innerHTML = `$ ${tax.toFixed(2)}`;
+            
+                            // Getter for the total tax
+                            this.getTax = function() {
+                            return tax;
+                            };
+                            return shippingHandling();
+                        }
+
+                        /*
+                        This function computes the cost of shipping and handling
+                        */
+                       function shippingHandling(){
+                            // Calculating the shipping cost for the different shipping companies
+                            if (shipping === "UPS") {
+                            shippingCost = 7.0;
+                            } else if (shipping === "Fed Ex Ground") {
+                            shippingCost = 8.5;
+                            } else if (shipping === "US Portal Air") {
+                            shippingCost = 9.25;
+                            } else {
+                            shippingCost = 12.0;
+                            }
+                            //Oversize container
+                            if (oversize.checked) {
+                            handlingCost = 5.0;
+                            } else {
+                            handlingCost = 0.0;
+                            }
+                            //Calculating total shipping & handling cost
+                            totalShippingCost = (quantity * (shippingCost + handlingCost)).toFixed(2);
+                            //Displaying total shipping cost
+                            document.getElementById("shipping").innerHTML = `$ ${totalShippingCost}`;
+            
+                            this.getshippingCost = function() {
+                            return totalShippingCost;
+                            };
+                            return totalCost();
+            
+                       }
+
+                       /*
+                       This function calculates the total cost
+                       */
+                       function totalCost(){
+                           var total = parseFloat(cost) + parseFloat(window.tax + parseFloat(window.totalShippingCost)).toFixed(2);
+                           //Displaying total
+                           document.getElementById("total").innerHTML = `$ ${total}`;
+                       }   
+                       
+                    validData();
+                    
+                }
+                -->
+                </script>
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</body>
+</html>

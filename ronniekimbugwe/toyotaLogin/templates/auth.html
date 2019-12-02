@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="toyota.css " />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Bhai:400,700,300|Open+Sans:400,600,700,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      /* CSS code block */
+      * {
+        font-family: Baloo Bhai;
+      }
+
+      fieldset {
+        border: 2px solid #fff;
+      }
+
+      .top {
+        /* background-color: bisque; */
+        border: 1px black solid;
+        background-image: url(pic.jpg);
+      }
+
+      .main-container {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      .main-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+
+      .main-container div {
+        /* border: 2px white solid; */
+        /* padding: 0px; */
+        /* background-color: orange; */
+        background-color: transparent;
+
+        border-radius: 2%;
+      }
+      .main-container1 {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      .main-container1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+      #salestax {
+        background-color: #fff;
+        width: 10px;
+      }
+
+      .main-container1 div {
+        /* border: 2px white solid; */
+        /* padding: 0px; */
+        background-color: transparent;
+        border-radius: 2%;
+      }
+
+      .customer {
+        flex: 1;
+      }
+      .shipping {
+        flex: 1;
+      }
+      .parts {
+        flex: 1;
+      }
+      .output {
+        flex: 1;
+      }
+
+      button {
+        background: transparent;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 5%;
+      }
+      .main-container3 {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      .main-container3 div {
+        padding: 10px;
+        background-color: transparent;
+      }
+      .btn3 {
+        justify-content: flex-end;
+      }
+      #customerid {
+        background-color: bisque;
+      }
+      .table td {
+        color: white;
+      }
+      .ship {
+        color: white;
+      }
+      .top h2 {
+        color: white;
+      }
+      .heading {
+        padding-left: 450px;
+      }
+      .main-container3 a {
+        text-decoration: none;
+      }
+
+      a {
+        color: black;
+      }
+      .btn2 .btn3 {
+        text-emphasis-color: white;
+      }
+      .main.heading {
+        min-height: 5px;
+        padding-top: 5px;
+      }
+      .error {
+        color: red;
+      }
+      .tryAgain h4 {
+        color: beige;
+      }
+    </style>
+    <!-- Function called validData() having validation and calculation -->
+  </head>
+
+  <body>
+    <br />
+    <div class="main">
+      <h1 class="heading"><strong>Toyota Uganda Ordering App</strong></h1>
+    </div>
+    <header class="top">
+      <!-- Form for input records  -->
+      <div class="tryAgain">
+        &nbsp &nbsp
+        <h4>Incorrect Username and/or Password!</h4>
+
+        <button class="btn3"><a href="/">Try Again</a></button>
+      </div>
+    </header>
+  </body>
+</html>

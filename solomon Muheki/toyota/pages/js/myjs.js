@@ -8,6 +8,7 @@
 	function ValidData(){   
 		//assigning  values from the form to variables
 	    var CustomerId=document.formToyota.customerId.value; 
+
 	    var CustomerName=document.formToyota.customerName.value;
 		var TownCode=document.formToyota.town.value;
 		var PartNumber=document.formToyota.partNo.value;
@@ -25,16 +26,29 @@
  var errormessage = "";
 	if (CustomerId==null || CustomerId=="")
 				{
-			
-				
-				 document.formToyota.CustomerId.focus() ;
+
+				 document.formToyota.customerId.focus() ;
 				 document.getElementById('customerId').style.borderColor ="red";
 				 document.getElementById("customerId").style.borderWidth = "3px 4px 5px 4px";
 				 document.getElementById("ErrorDiv").style.display = 'block';
 				errormessage="           "+"Please the customer Id is needed";
 				document.getElementById('error').innerHTML=errormessage;
+				
 				return false;
 				
+				}
+				 var str = CustomerId;
+				
+				if (str.match(/\s/g)!==null) {
+					
+						 document.formToyota.customerId.focus() ;
+				 document.getElementById('customerId').style.borderColor ="red";
+				 document.getElementById("customerId").style.borderWidth = "3px 4px 5px 4px";
+				 document.getElementById("ErrorDiv").style.display = 'block';
+				errormessage="           "+"Please the customer Id is should not contain spaces";
+				document.getElementById('error').innerHTML=errormessage;
+				return false;
+
 				}
         //checking if the custmer Name is empty
 				if (CustomerName==null || CustomerName=="")
@@ -201,14 +215,14 @@
              var a=ship_Cost;
              }
              
-            
+           // output the shipping cost in html element
              this.ShippingCost=a;
              document.formToyota.shipper.value=ShippingCost;
             
              }
 
             
-             
+             /*calling the function sales Tax abd Shipping handling*/
              SalesTax(Cost);
              ShippingHandling();
 

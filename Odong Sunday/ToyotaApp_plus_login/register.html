@@ -5,6 +5,11 @@
 		<meta charset="utf-8">
 		<title>register</title>
 		<style>
+			/* 
+				This section provides the styling to the layout of the login page
+
+			 */
+
 		.login-form {
 			width: 300px;
 			margin: 0 auto;
@@ -55,12 +60,18 @@
 	<body>
 		<div class="login-form">
 			<h1>Register Form</h1>
+			<!-- 
+				This section contains the various input fields that a user can put his information.
+				the submit button below with the help of the Post method helps to put the information into the database
+			 -->
 			<form action="register" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
 				<input type="email" name="email" placeholder="email" required>
-				<input type="submit">
+				<a href="/">
+					<input type="submit">
+				</a>
             </form>
 		</div>
 	</body>
-</html>
+</html>s

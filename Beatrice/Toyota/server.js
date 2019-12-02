@@ -1,3 +1,4 @@
+//Creating variables that import libraries needed for this app to work
 var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
@@ -10,10 +11,11 @@ var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
 	password : '123@#Beat',
-	database : 'nodelogin'
+	database : 'toyota'
 });
-// creatiing express function that stores a session
-
+//Accessing files in the public folder
+app.use(express.static(path.join(__dirname, 'public')));
+//Creatiing express function that stores a session
 app.use(session({
 	secret: 'secret',
 	resave: true,
@@ -44,10 +46,10 @@ app.post('/reg', function(request, response) {
 	var username = request.body.username;
     var password = request.body.password;
     var email = request.body.email;
-    hash = crypto.createHash('md5').update(password).digest('hex');
 
     const querystring = "INSERT INTO accounts (username, password, email) VALUES (?,?,?)";
 
+    hash = crypto.createHash('md5').update(password).digest('hex');
     connection.query(
         querystring, [username, hash, email], (err, results, field)=>{
             if (err) {
@@ -80,18 +82,48 @@ app.post('/auth', function(request, response) {
 		});
 	} else {
 		response.send('Please enter Username and Password!');
-		response.end(); //ends browser from continuos loading
+		response.end(); //Ends browser from continuos loading
 	}
 });
-//function that loads the index page
-app.get('/home', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
+/*
+Function that captures data from the customer form and posts it to the database 
+*/
+app.post('/order', function(request, response) {
+    if (request.session.loggedin) {
+        var customer_id = request.body.customer_id;
+        var customer_name = request.body.customer_name;
+        var state = request.body.state;
+        var retailcustomer = request.body.retailcustomer;
+        var shipping = request.body.shipping;
+        var part_no = request.body.partno;
+        var description = request.body.description;
+        var price = request.body.price;
+        var quantity = request.body.quantity;
+        var oversizecontainer = request.body.oversizecontainer;
+
+        const querystring = "INSERT INTO orders (customer_ID, name, town, retail_customers, shipping, part_no, description, partprice, quantity, oversize_container) VALUES (?,?,?,?,?,?,?,?,?,?)";
+
+    connection.query(
+        querystring, [customer_id, customer_name, state, retailcustomer, shipping, part_no, description, price, quantity, oversizecontainer], (err, results, field)=>{
+            if (err) {
+                console.log('An error occured' + err)
+                response.status(500)
+                return
+            } 
+    })
+    } else {
+        response.send('Please login to make an order!');
+        
+    }
 });
-//creating port number
-app.listen(3200);
+//Ceating a route for logging out 
+app.get('/logout', function(request, response){
+request.session.loggedin = false;
+if (!request.session.loggedin){
+    response.redirect('/');
+}    
+});
+
+//Creating port number
+app.listen(3000);
 

@@ -1,0 +1,23 @@
+<div class="container mt-5 pt-3">
+	<h1 class="pt-3 pb-3">List of Countries in the World</h1>
+	<table class="table table-striped table-hover">
+  	<thead>
+  		<tr>
+  			<th>#</th>
+  			<th>Country Code</th>
+  			<th>Country Name</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		{{#each rows}}
+	  		<tr>
+	  			<td>{{ id }}</td>
+	  			<td>{{ country_code }}</td>
+	  			<td>{{ country_name }}</td>
+	  		</tr>
+  		{{/each}}
+  	</tbody>
+  </table>
+</div>
+
+

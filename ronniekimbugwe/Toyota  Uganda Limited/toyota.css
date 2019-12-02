@@ -1,0 +1,82 @@
+.top {
+  font-family: Baloo Bhai;
+}
+
+fieldset {
+  border: 2px solid #fff;
+}
+
+.top {
+  background-color: bisque;
+  border: 1px black solid;
+}
+
+.main-container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.main-container div {
+  /* border: 2px white solid; */
+  /* padding: 0px; */
+  background-color: orange;
+  border-radius: 2%;
+}
+.main-container1 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.main-container1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+#salestax {
+  background-color: #fff;
+  width: 10px;
+}
+
+.main-container1 div {
+  /* border: 2px white solid; */
+  /* padding: 0px; */
+  background-color: orange;
+  border-radius: 2%;
+}
+
+.customer {
+  flex: 1;
+}
+.shipping {
+  flex: 1;
+}
+.parts {
+  flex: 1;
+}
+.output {
+  flex: 1;
+}
+button {
+  background: transparent;
+  border: 1px solid black;
+  background-color: orange;
+  border-radius: 5%;
+}
+.main-container3 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.main-container3 div {
+  padding: 10px;
+  background-color: bisque;
+}
+.btn3 {
+  justify-content: flex-end;
+}

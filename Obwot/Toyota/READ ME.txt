@@ -1,13 +1,16 @@
+This is the Toyota Mail Order Sales Application I did under the Catlyst Program at Refactory Tech Academy where you can calculate the shipping cost and sales tax percentage for the different spare-parts of vehicles.
+
+Pre-requisites. 
+1- NPM(or any Package Manager)
+2- NodeJs 
+3- Any Code Editor of your chioce and a terminal.
+4- Local Host Server(Xampp, Wampp, Lampp) of your choice.
+
+
 How to run this application.
 
-
-1- Download the Zip folder and unzipped to the root on your computer.
-2. Download and Install NodeJS using the package manager NPM via the CMD/Terminal
-3. Install the list of these modules to the folder you would like to run the application from the terminal 
-	-mysql 
-	-express 
- 	-session 
-	-bodyParser 
-	-path 
-	-crypto 
-4. 
+1- Download the Zip folder and Unzipped to the root on your computer.
+2. Run Command "npm init" to install a new Node Project and set the entry point to login.js or Read a Detail Descirption on how to [Setup a Node Environment Here.] (https://www.npmjs.com/package/create-nodejs-project)
+3. Make sure you add all of these dependcies(modules) using npm to your porject ( "body-parser","crypto", "express", "express-parser", "express-session", "mysql".)
+4. Start the Node project by typing "node login.js" in your terminal to start the project
+5. Go to your browser and access the page from your localhost at port 3000 i.e http://localhost:3000/
